@@ -1,18 +1,3 @@
-const FONT_FAMILY_BASE = [
-	'Roboto Flex',
-	'system-ui',
-	'-apple-system',
-	'BlinkMacSystemFont',
-	'Segoe UI',
-	'Roboto',
-	'Oxygen',
-	'Ubuntu',
-	'Cantarell',
-	'Open Sans',
-	'Helvetica Neue',
-	'sans-serif',
-]
-
 module.exports = {
 	corePlugins: {
 		container: false,
@@ -20,46 +5,39 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
 	theme: {
 		fontFamily: {
-			body: FONT_FAMILY_BASE,
-			display: FONT_FAMILY_BASE,
-			mono: [
-				'Menlo',
-				'Monaco',
-				'Lucida Console',
-				'Liberation Mono',
-				'DejaVu Sans Mono',
-				'Bitstream Vera Sans Mono',
-				'Courier New',
-				'monospace',
-			],
+			sans: 'var(--font-body)',
+			body: 'var(--font-body)',
+			display: 'var(--font-display)',
+			mono: 'var(--font-mono)',
 		},
 		fontSize: {
-			xs: 'clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem)',
-			sm: 'clamp(0.88rem, 0.83rem + 0.24vw, 1rem)',
-			base: 'clamp(1.09rem, 1rem + 0.47vw, 1.33rem)',
-			lg: 'clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem)',
-			xl: 'clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem)',
-			'2xl': 'clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem)',
-			'3xl': 'clamp(2.67rem, 2.07rem + 3vw, 4.21rem)',
-			'4xl': 'clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem)',
+			xs: 'var(--size-300)',
+			sm: 'var(--size-400)',
+			base: 'var(--size-500)',
+			lg: 'var(--size-600)',
+			xl: 'var(--size-700)',
+			'2xl': 'var(--size-800)',
+			'3xl': 'var(--size-900)',
+			'4xl': 'var(--size-1000)',
+			'5xl': 'var(--size-1500)',
 		},
 		extend: {
 			colors: {
-				white: '#fefeff',
-				black: '#000',
+				white: 'var(--color-white)',
+				black: 'var(--color-black)',
 				transparent: 'transparent',
-				tan: '#f4efed',
-				dawn: '#f3e9fa',
-				dusk: '#514375',
-				midnight: '#31274a',
-				blue: '#1d5bfc',
-				red: '#ff5050',
-				yellow: '#ffd542',
-				purple: '#af43ff',
-				pink: '#fdb2b7',
-				pop: {
-					1: 'linear-gradient(180deg, #1d5bfc 0%, #c238bd 115%)',
-				},
+				tan: 'var(--color-tan)',
+				dawn: 'var(--color-dawn)',
+				dusk: 'var(--color-dusk)',
+				midnight: 'var(--color-midnight)',
+				blue: 'var(--color-blue)',
+				red: 'var(--color-red)',
+				yellow: 'var(--color-yellow)',
+				purple: 'var(--color-purple)',
+				pink: 'var(--color-pink)',
+				oldpink:'var(--color-oldpink)',
+				selva: 'var(--color-selva)',
+				pop: 'var(--gradient-pop)',
 			},
 			typography: ({ theme }) => {
 				const headings = {
@@ -139,9 +117,9 @@ module.exports = {
 		},
 	},
 	plugins: [
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/aspect-ratio'),
 		function ({ addComponents, theme }) {
-			require('@tailwindcss/typography'),
-			require('@tailwindcss/aspect-ratio'),
 			addComponents({
 				'.container': {
 					maxWidth: '40rem',
