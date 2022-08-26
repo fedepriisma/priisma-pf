@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer/index.jsx';
+import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
@@ -15,21 +15,15 @@ const projects = (await Astro.glob('./project/**/*.md'))
 <html lang="en">
 	<head>
 		<MainHead
-			title="All Projects | Jeanine White"
-			description="Learn about Jeanine White's most recent projects"
+			title="All Projects | Fede Bozo"
+			description="Learn about Fede Bozo's most recent projects"
 		/>
-		<style lang="scss">
-			.grid {
-				display: grid;
-				grid-gap: 3rem;
-			}
-		</style>
 	</head>
-	<body>
+	<body class="bg-[#182616] text-[#FFEFB8]">
 		<Nav />
-		<div class="wrapper">
+		<div class="container">
 			<h1 class="title mt4 mb4">All Projects</h1>
-			<div class="grid">
+			<div class="grid gap-12">
 				{projects.map((project) => <PortfolioPreview project={project} />)}
 			</div>
 		</div>

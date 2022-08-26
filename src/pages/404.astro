@@ -1,19 +1,20 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
+import MainHead from "../components/MainHead.astro";
+import HomeLink from "../components/Button/HomeLink.astro";
 ---
 
 <html lang="en">
 	<head>
 		<MainHead title="Not Found" />
 	</head>
-	<body>
-		<nav></nav>
-		<div class="wrapper mt4 mb4">
-			<h1>Page Not Found</h1>
-			<p>Not found</p>
+	<body class="bg-selva text-oldpink">
+		<div
+			class="container flex flex-col items-center justify-center h-screen"
+		>
+			<h1 class="text-5xl uppercase font-display">
+				🤷‍♀️ This is not the page<br /> you're looking for...
+			</h1>
+			<HomeLink title="Back to homepage" />
 		</div>
-		<footer></footer>
 	</body>
 </html>

@@ -1,7 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index.jsx';
-import Footer from '../components/Footer/index.jsx';
+import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav/index.jsx';
 
 const { content } = Astro.props;
@@ -43,13 +42,6 @@ const { content } = Astro.props;
 				}
 			}
 
-			.title {
-				font-size: var(--f-u10);
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: 0.0625em;
-			}
-
 			.leadIn {
 				color: var(--t-bg);
 				background-color: var(--t-fg);
@@ -82,9 +74,7 @@ const { content } = Astro.props;
 			<div class="content"><slot /></div>
 		</div>
 		<footer class="tac mt6">
-			<a href="/projects">
-				<Button>View More</Button>
-			</a>
+			<a href="/projects" class="inline-block px-4 py-2 font-bold uppercase border-2 border-current">View more projects</a>
 		</footer>
 		<Footer />
 	</body>
