@@ -1,0 +1,56 @@
+---
+import { Picture } from "@astrojs/image/components";
+import hero from "../quotingbill/qb-cancellations-selected.jpg";
+---
+
+<div class="mx-24 quotingbill">
+	<h3 class="text-4xl uppercase font-display">
+		<span class="text-gradient">QuotingBill</span> is a platform that makes recurring
+		billing, accurately simple for tel-com.
+	</h3>
+
+	<ul class="mt-8 mb-16">
+		<li class="flex">
+			<span class="w-20 font-medium">Role:</span> Principal designer + Front-end
+			html/css/vue
+		</li>
+		<li class="flex">
+			<span class="w-20 font-medium">Date:</span> 2019–2021
+		</li>
+		<li class="flex">
+			<span class="w-20 font-medium">Website:</span>
+			<a href="https://quotingbill.com">QuotingBill.com</a>
+		</li>
+	</ul>
+
+	<div class="mx-auto">
+		<Picture
+			src={hero}
+			widths={[200, 400, 1400]}
+			sizes="(max-width: 1400px) 100vw, 1400px"
+			alt="Fitter happier"
+		/>
+	</div>
+	<div class="max-w-sm text-xs prose">
+		<p>
+			A telecom billing platform startup. A small team building a big
+			dream.
+		</p>
+		<p>
+			I'm accountable for asking a lot of questions (product+ux), figuring
+			out what's important to build (product), writing copy (ux),
+			designing (ux), prototyping (ui/ux), and play the best music in our
+			meetings.
+		</p>
+		<p>
+			The Shape Up book methodology has redefined our approach to get the
+			important things first (including emails to our customers) and helps
+			how we approach design and development.
+		</p>
+		<p>
+			The technologies I use → Design: Sketch & Figma. Prototyping: Vue,
+			Vuetify, HTML/JS/CSS, Github, Tailwind. Product: whiteboard, our
+			heads and TONS of Notion notes and photos.
+		</p>
+	</div>
+</div>
