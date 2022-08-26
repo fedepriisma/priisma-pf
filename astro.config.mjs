@@ -6,6 +6,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://fedepriisma.github.io',
   integrations: [preact(), tailwind({
     config: {
       applyBaseStyles: false
