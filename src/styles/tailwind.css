@@ -13,6 +13,10 @@
 		line-height: 1.11;
 	}
 
+	a:not(:is(.homelink)) {
+		@apply border-b border-current motion-safe:transition-all motion-safe:duration-200 hover:text-indigo-600 focus:text-indigo-600 hover:bg-white focus:bg-white;
+	}
+
 	:where(a:not(:is(.btn, .pill))),
 	.link {
 		@apply transition-colors duration-150 ease-in-out text-blue;
