@@ -3,65 +3,66 @@
 @tailwind utilities;
 
 @layer base {
-	/** sanitize.css makes the line-height 1.5 globally, fix this for headers */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.11;
-	}
+  /** sanitize.css makes the line-height 1.5 globally, fix this for headers */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.11;
+  }
 
-	a:not(:is(.homelink)) {
-		@apply border-b border-current motion-safe:transition-all motion-safe:duration-200 hover:text-indigo-600 focus:text-indigo-600 hover:bg-white focus:bg-white;
-	}
+  a:not(:is(.homelink)) {
+    @apply border-b border-current motion-safe:transition-all motion-safe:duration-200 hover:text-indigo-600 focus:text-indigo-600 hover:bg-white focus:bg-white;
+  }
 
-	:where(a:not(:is(.btn, .pill))),
-	.link {
-		@apply transition-colors duration-150 ease-in-out text-blue;
-	}
+  :where(a:not(:is(.btn, .pill))),
+  .link {
+    @apply transition-colors duration-150 ease-in-out text-blue;
+  }
 
-	a.subtle,
-	.link.link--subtle {
-		@apply text-inherit hover:no-underline hover:text-purple focus:text-purple;
-	}
+  a.subtle,
+  .link.link--subtle {
+    @apply text-inherit hover:no-underline hover:text-purple focus:text-purple;
+  }
 
-	.btn {
-		@apply inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-colors duration-200 ease-in-out border-2 border-transparent rounded-md shadow-sm bg-dusk hover:bg-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-midnight;
-	}
+  .btn {
+    @apply inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-colors duration-200 ease-in-out border-2 border-transparent rounded-md shadow-sm bg-dusk hover:bg-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-midnight;
+  }
 
-
-	.prose :is(h2, h3, h4, h5, h6) a {
-		font: inherit;
-		color: inherit;
-		text-decoration: none !important;
-		display: inline-flex;
-		flex-wrap: wrap;
-	}
-	@media (hover: hover) {
-		.prose :is(h2, h3, h4, h5, h6) a:after {
-			content: '#';
-			width: 1em;
-			margin-left: 0.25em;
-			color: inherit;
-			opacity: 0;
-			transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-			order: 999;
-		}
-	}
-	.prose :is(h2, h3, h4, h5, h6) a:is(:active, :visited, :hover, :focus) {
-		color: var(--color-dusk);
-	}
-	.prose :is(h2, h3, h4, h5, h6) a:active:after,
-	.prose :is(h2, h3, h4, h5, h6) a:hover:after,
-	.prose :is(h2, h3, h4, h5, h6) a:focus:after {
-		opacity: 0.6 !important;
-	}
-
-	.text-gradient {
-		background: var(--fill, var(--gradient-pop-2));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+  .prose :is(h2, h3, h4, h5, h6) a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none !important;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  @media (hover: hover) {
+    .prose :is(h2, h3, h4, h5, h6) a:after {
+      content: "#";
+      width: 1em;
+      margin-left: 0.25em;
+      color: inherit;
+      opacity: 0;
+      transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+      order: 999;
+    }
+  }
+  .prose :is(h2, h3, h4, h5, h6) a:is(:active, :visited, :hover, :focus) {
+    color: var(--color-dusk);
+  }
+  .prose :is(h2, h3, h4, h5, h6) a:active:after,
+  .prose :is(h2, h3, h4, h5, h6) a:hover:after,
+  .prose :is(h2, h3, h4, h5, h6) a:focus:after {
+    opacity: 0.6 !important;
+  }
+  .section-space {
+    @apply px-4 py-16 mt-4 sm:mt-16 lg:mt-24 sm:p-16 lg:p-24;
+  }
+  .text-gradient {
+    background: var(--fill, var(--gradient-pop-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
