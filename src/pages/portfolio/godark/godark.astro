@@ -1,0 +1,60 @@
+---
+import { Picture } from "@astrojs/image/components";
+import WebOne from "../godark/godark-web-01.jpg";
+import SnackM from "../godark/gd-snack-mylk.jpg";
+import SnackC from "../godark/gd-snack-71-cane.jpg";
+import SnackW from "../godark/gd-snack-white.jpg";
+---
+
+<div class="p-24 mt-24 godark bg-[#f2daf0] text-[#074b50]">
+	<h3 class="text-4xl uppercase font-display">
+		<span class="text-[#f2daf0] bg-[#074b50]">GoDark Chocolates</span> are premium stone-ground chocolates for chefs.
+	</h3>
+
+	<ul class="mt-8 mb-16">
+		<li class="flex">
+			<span class="w-20 font-medium">Role:</span> Brand design + Website
+		</li>
+		<li class="flex">
+			<span class="w-20 font-medium">Date:</span> 2017–2022
+		</li>
+		<li class="flex">
+			<span class="w-20 font-medium">Website:</span>
+			<a href="https://godarkchocolate.com">godarkchocolate.com</a>
+		</li>
+	</ul>
+
+	<div class="mx-auto">
+		<Picture
+			src={WebOne}
+			widths={[200, 400, 1400]}
+			sizes="(max-width: 1400px) 100vw, 1400px"
+			alt="Fitter happier"
+		/>
+	</div>
+	<div class="max-w-sm mt-8 text-xs prose">
+		<p>A nice project for delicious chocolates.
+			We did the branding and the web looking for fun, tropical and colorfull palettes conveying the warm and rich flavors.
+		</p>
+	</div>
+	<div class="flex gap-4 mt-8">
+		<div><Picture
+			src={SnackM}
+			widths={[200, 400, 1400]}
+			sizes="(max-width: 1400px) 100vw, 1400px"
+			alt="Fitter happier"
+		/></div>
+		<div><Picture
+			src={SnackC}
+			widths={[200, 400, 1400]}
+			sizes="(max-width: 1400px) 100vw, 1400px"
+			alt="Fitter happier"
+		/></div>
+		<div><Picture
+			src={SnackW}
+			widths={[200, 400, 1400]}
+			sizes="(max-width: 1400px) 100vw, 1400px"
+			alt="Fitter happier"
+		/></div>
+	</div>
+</div>

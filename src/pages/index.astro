@@ -4,6 +4,7 @@ import MainHead from "../components/MainHead.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 import Footer from "../components/Footer.astro";
 import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
+import Godark from "./portfolio/godark/godark.astro";
 // import PortfolioPreview from "../components/PortfolioPreview/index.jsx";
 
 // Data Fetching: List all Markdown posts in the repo.
@@ -16,18 +17,18 @@ import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 <html lang="en">
 	<head>
 		<MainHead
-			title="Fede Bozo: Personal Site"
-			description="Fede Bozo: Developer, Speaker, and Writer..."
+			title="Fede Bozo — Product Designer"
+			description="Designer, storyteller, developer, musician."
 		/>
 	</head>
 	<body
 		class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-oldpink text-selva"
 	>
-	<header class="container">
+	<header class="m-8">
 		<ContactInfo />
 	</header>
-		<div class="container my-16 md:my-24 lg:my-48">
-			<h2 class="text-5xl leading-none uppercase font-display">
+		<div class="my-16 ml-4 md:my-24 lg:my-48">
+			<h2 class="text-[9vw] leading-none uppercase font-display">
 				I'm Fede, a Product Designer in Miami.
 			</h2>
 			<p class="mt-1 text-sm">Design to empower people. Scroll to check my work, or have a peak to the <a href="/about">about me</a> section.</p>
@@ -35,6 +36,7 @@ import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 		<main class="main-thingi">
 			<div class="grid">
 				<Quotingbill />
+				<Godark />
 				<!-- <div class="section">
 					<h3 class="sectionTitle">Selected Work</h3>
 					<PortfolioPreview project={featuredProject} />

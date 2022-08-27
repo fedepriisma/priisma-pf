@@ -1,5 +1,6 @@
 :root {
 	--color-white: #fefeff;
+	--color-black: #111;
 	--color-tan: #f4efed;
 	--color-tan-rgb: 244, 239, 237;
 	--color-dawn: #f3e9fa;
@@ -11,9 +12,10 @@
 	--color-yellow: #ffd542;
 	--color-purple: #af43ff;
 	--color-pink: #fdb2b7;
-	--color-oldpink: #f2daf0;
-	--color-selva: #074b50;
-
+	/* --color-oldpink: #f2daf0;
+	--color-selva: #074b50; */
+	--color-oldpink: #683ffd;
+	--color-selva: #fefeff;
 	
 
 	--gradient-pop-1: linear-gradient(180deg, #1d5bfc 0%, #c238bd 115%);
