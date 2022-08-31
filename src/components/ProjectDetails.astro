@@ -1,0 +1,22 @@
+---
+export interface Props {
+  role: string;
+  projectDate: string;
+  projName: string;
+  projUrl?: string;
+}
+const { role, projectDate, projName, projUrl} = Astro.props;
+---
+<ul class="mt-8 mb-16">
+	<li class="flex">
+		<span class="w-24 font-medium">Role:</span> {role}		
+	</li>
+	<li class="flex">
+		<span class="w-24 font-medium">Date:</span> {projectDate}	
+	</li>
+	<li class="flex">
+		<span class="w-24 font-medium">Company:</span>
+		{projUrl ? <a href={projUrl}>{projName}</a> : projName}
+		
+	</li>
+</ul>

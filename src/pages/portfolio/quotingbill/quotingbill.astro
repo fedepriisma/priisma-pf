@@ -1,6 +1,12 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import hero from "../quotingbill/qb-cancellations-selected.jpg";
+import ProjectDetails from "../../../components/ProjectDetails.astro";
+import MainPage from "../quotingbill/qb-cancellations-selected.jpg";
+import CustomersPage from "../quotingbill/qb-customers-closed.png";
+import ModalError from "../quotingbill/qb-error-modal.png";
+import InvoicePage from "../quotingbill/qb-invoice.png";
+import ProjectPage from "../quotingbill/qb-projects.png";
+import UsersPage from "../quotingbill/qb-users.png";
 ---
 
 <div id="quotingbill" class="section-space">
@@ -8,39 +14,34 @@ import hero from "../quotingbill/qb-cancellations-selected.jpg";
 		<span class="text-black bg-yellow">QuotingBill</span> is a platform that
 		makes recurring billing, accurately simple for tel-com.
 	</h3>
-
-	<ul class="mt-8 mb-16">
-		<li class="flex">
-			<span class="w-20 font-medium">Role:</span> Principal designer + Front-end
-			html/css/vue
-		</li>
-		<li class="flex">
-			<span class="w-20 font-medium">Date:</span> 2019–2021
-		</li>
-		<li class="flex">
-			<span class="w-20 font-medium">Website:</span>
-			<a href="https://quotingbill.com">QuotingBill.com</a>
-		</li>
-	</ul>
+	<ProjectDetails
+		role="Principal designer + Front-end html/css/vue"
+		projectDate="2019–2021"
+		projName="QuotingBill.com"
+		projUrl="https://quotingbill.com"
+	/>
 
 	<div class="mx-auto">
-		<Picture
-			src={hero}
-			widths={[200, 400, 1400]}
-			sizes="(max-width: 1400px) 100vw, 1400px"
-			alt="Fitter happier"
-		/>
+		<div class="mx-auto my-16 text-gray-900 image-solid-high">
+			<Picture
+				src={MainPage}
+				widths={[200, 400, 1980]}
+				sizes="(max-width: 1980px) 100vw, 1980px"
+				alt="Customers page showing different products selected for cancellation"
+			/>
+			
+		</div>
 	</div>
 	<div class="max-w-sm mt-8 text-xs prose text-white">
 		<p>
-			A telecom billing platform startup. A small team building a big
-			dream.
+			A small team of 6 people (3 backend, 1 PM, 1 Frontend and myself)
+			building a telecom billing platform in a year.
 		</p>
 		<p>
-			I'm accountable for asking a lot of questions (product+ux), figuring
-			out what's important to build (product), writing copy (ux),
-			designing (ux), prototyping (ui/ux), and play the best music in our
-			meetings.
+			As the only Designer on the team I was in charge of asking a lot of
+			questions (product+ux), figuring out what's important to build
+			(product), writing copy (ux), designing (ux), prototyping (ui/ux),
+			and playing the best music in our meetings.
 		</p>
 		<p>
 			The Shape Up book methodology has redefined our approach to get the
@@ -48,9 +49,54 @@ import hero from "../quotingbill/qb-cancellations-selected.jpg";
 			how we approach design and development.
 		</p>
 		<p>
-			The technologies I use → Design: Sketch & Figma. Prototyping: Vue,
-			Vuetify, HTML/JS/CSS, Github, Tailwind. Product: whiteboard, our
-			heads and TONS of Notion notes and photos.
+			I used Sketch & Figma for design iterations and library.
+			Prototyping: Vue, Vuetify, HTML/JS/CSS, Github, Tailwind. Product:
+			whiteboard, our heads and TONS of Notion notes and photos.
 		</p>
 	</div>
+
+	<div class="flex gap-4 my-8">
+		<figure>
+			<Picture
+			src={InvoicePage}
+			widths={[200, 400, 800]}
+			sizes="(max-width: 800px) 100vw, 800px"
+			alt="Customers page showing different products selected for cancellation"
+		/>
+			<figcaption class="text-xs text-white">Set invoices with customized</figcaption>
+		</figure>
+		<figure>
+			<Picture
+			src={ProjectPage}
+			widths={[200, 400, 800]}
+			sizes="(max-width: 800px) 100vw, 800px"
+			alt="Customers page showing different products selected for cancellation"
+		/>
+			<figcaption class="text-xs text-white">Set invoices with customized</figcaption>
+		</figure>
+		<figure>
+			<Picture
+			src={UsersPage}
+			widths={[200, 400, 800]}
+			sizes="(max-width: 800px) 100vw, 800px"
+			alt="Customers page showing different products selected for cancellation"
+		/>
+			<figcaption class="text-xs text-white">Set invoices with customized</figcaption>
+		</figure>
+		
+		
+		
+		
+	</div>	<Picture
+		src={CustomersPage}
+		widths={[200, 400, 800]}
+		sizes="(max-width: 800px) 100vw, 800px"
+		alt="Customers page showing different products selected for cancellation"
+	/>
+	<Picture
+		src={ModalError}
+		widths={[200, 400, 800]}
+		sizes="(max-width: 800px) 100vw, 800px"
+		alt="Customers page showing different products selected for cancellation"
+	/>
 </div>

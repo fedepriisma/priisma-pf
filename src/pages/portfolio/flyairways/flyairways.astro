@@ -1,0 +1,49 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ProjectDetails from "../../../components/ProjectDetails.astro";
+import Flyer from "../flyairways/fly-airways-devices.png";
+---
+
+<div id="godark" class="section-space bg-sky-100 text-sky-900">
+	<h3 class="text-4xl uppercase font-display">
+		<span class="bg-black text-yellow">airTRFX</span> launch landing pages with
+		real-time fares for airlines.
+	</h3>
+
+	<ProjectDetails
+		role="UI/UX Design + Web development (html/css/js)"
+		projectDate="2016-2018"
+		projName="EveryMundo"
+	/>
+
+	<div class="mx-auto">
+		<div class="mx-auto my-16 text-gray-900">
+			<Picture
+				src={Flyer}
+				widths={[200, 400, 1500]}
+				sizes="(max-width: 1500px) 100vw, 1500px"
+				alt="Airline ticket booking sample"
+			/>
+		</div>
+	</div>
+	<div class="max-w-sm mt-8 text-xs prose prose-sky">
+		<p>We built fares pages and search engine to serve airlines.</p>
+		<p>
+			Lead the design of modular products to help a growing list of 20+
+			airlines and alliances increasing revenue by an average of 20% a
+			year.
+		</p>
+		<p>
+			Prototyped and delivered over 5 intuitive and easy-to-use products
+			and updates by collecting requirements, research and wireframes
+		</p>
+		<p>
+			Cut design delivery times by 40% creating design workflows along
+			with 5 different departments.
+		</p>
+		<p>
+			Personalized Module designs for concept prototypes to secure +$1.5MM
+			in sales in a quarter.
+		</p>
+	</div>
+</div>

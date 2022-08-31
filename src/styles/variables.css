@@ -5,7 +5,7 @@
 	--color-tan-rgb: 244, 239, 237;
 	--color-dawn: #f3e9fa;
 	--color-dusk: #514375;
-	--color-midnight: #31274a;
+	--color-midnight: #434343;
 	--color-midnight-rgb: 49, 39, 74;
 	--color-blue: #1d5bfc;
 	--color-red: #ff5050;
@@ -63,6 +63,9 @@
 		0px 22px 18px 0px rgba(var(--color-midnight-rgb), 0.04),
 		0px 42px 34px 0px rgba(var(--color-midnight-rgb), 0.05),
 		0px 100px 80px 0px rgba(var(--color-midnight-rgb), 0.07);
+		--shadow-solid: 2px 2px 0 0 currentColor;
+
+
 
 	--blur-md: blur(10px);
 	--blur-xl: blur(128px);

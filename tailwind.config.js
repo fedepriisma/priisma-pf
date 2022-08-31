@@ -39,6 +39,12 @@ module.exports = {
 				selva: 'var(--color-selva)',
 				pop: 'var(--gradient-pop)',
 			},
+			boxShadow: {
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'xl': 'var(--shadow-xl)',
+				'solid': 'var(--shadow-solid)',
+			  },
 			typography: ({ theme }) => {
 				const headings = {
 					'h1, h2, h3, h4, h5, h6': {
