@@ -1,0 +1,86 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ProjectDetails from "../../../components/ProjectDetails.astro";
+import MchTablet from "../mch/mch-tablet-view.png";
+import Appointment from "../mch/mch-appointment.png";
+import DashboardSpecs from "../mch/mch-dashboard-specs.png";
+import PaymentFlow from "../mch/mch-payment-flow.png";
+import Payment from "../mch/mch-payment.png";
+---
+
+<div id="mch" class="section-space bg-sky-100 text-sky-900">
+  <h3 class="text-4xl uppercase font-display">
+    <span class="bg-black text-yellow">MCHAnywhere</span> help patients get consultations
+    remotely from MCH's doctors.
+  </h3>
+
+  <ProjectDetails
+    role="UI/UX Design + Web development (html/css/js)"
+    projectDate="2015"
+    projName="MCH Anywhere"
+  />
+
+  <div class="mx-auto">
+    <div class="mx-auto my-16 text-gray-900">
+      <Picture
+        src={MchTablet}
+        widths={[200, 400, 1500]}
+        sizes="(max-width: 1500px) 100vw, 1500px"
+        alt="Airline ticket booking sample"
+      />
+    </div>
+  </div>
+
+  <div class="max-w-sm mt-8 text-xs prose prose-sky">
+    <p>MchAnywhere is a telemedicine app for remote consultations for the Miami Children's Hospital (now Nicklaus Children's Hospital)</p>
+  </div><div class="mx-auto my-16 text-gray-900">
+    <figure>
+      <Picture
+        src={PaymentFlow}
+        widths={[200, 400, 1500]}
+        sizes="(max-width: 1500px) 100vw, 1500px"
+        alt="Customers page showing different products selected for cancellation"
+      />
+      <figcaption class="text-xs">Invoice page</figcaption>
+    </figure>
+  </div>
+  <div class="flex gap-4 my-8">
+    <figure>
+      <Picture
+        src={Appointment}
+        widths={[200, 400, 800]}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="Customers page showing different products selected for cancellation"
+      />
+      <figcaption class="text-xs">Schedule an appointment</figcaption>
+    </figure>
+	<div class="max-w-sm text-xs prose prose-sky">
+	  <p>
+		We created a simple flow for getting an appointment to fit all the available spots for a consultation and quick to reserve.
+	  </p>
+	</div>
+    <figure>
+      <Picture
+        src={Payment}
+        widths={[200, 400, 800]}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="Customers page showing different products selected for cancellation"
+      />
+      <figcaption class="text-xs">Payment information</figcaption>
+    </figure>
+    <div class="max-w-sm text-xs prose prose-sky">
+      <p>
+        The payment process was streamlined to show as little steps as possible to meke it quick to start an appointment for parents in a rush. 
+      </p>
+    </div>
+  </div>
+  <figure>
+    <Picture
+      src={DashboardSpecs}
+      widths={[200, 400, 1500]}
+      sizes="(max-width: 1500px) 100vw, 1500px"
+      alt="Customers page showing different products selected for cancellation"
+    />
+    <figcaption class="text-xs">Dashboard specs for implementation</figcaption>
+  </figure>
+</div>

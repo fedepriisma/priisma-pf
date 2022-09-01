@@ -58,7 +58,7 @@
     opacity: 0.6 !important;
   }
   .section-space {
-    @apply px-4 py-16 mt-4 sm:mt-16 lg:mt-24 sm:p-16 lg:p-24;
+    @apply px-4 py-16 sm:p-16 lg:p-24;
   }
   .image-solid-high {
 	@apply border border-current border-solid rounded-md overflow-clip shadow-solid;
