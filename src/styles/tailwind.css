@@ -63,6 +63,12 @@
   .image-solid-high {
 	@apply border border-current border-solid rounded-md overflow-clip shadow-solid;
   }
+  .section-subtitle {
+    @apply mt-4 text-xl uppercase font-display md:mt-8 lg:mt-16;
+  }
+  .section-spread {
+    @apply grid gap-4 my-4 md:flex-row md:my-8;
+  }
   .text-gradient {
     background: var(--fill, var(--gradient-pop-2));
     -webkit-background-clip: text;
