@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
+    "@astrojs/partytown": "^1.0.0",
     "@astrojs/preact": "^1.0.2",
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
