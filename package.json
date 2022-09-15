@@ -17,6 +17,9 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
     "astro": "^1.0.6",
+    "astro-compressor": "^0.1.2",
+    "astro-critters": "^1.0.4",
+    "astro-html-minifier": "^0.2.0",
     "sass": "^1.52.2"
   },
   "dependencies": {

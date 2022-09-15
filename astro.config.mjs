@@ -3,6 +3,9 @@ import preact from '@astrojs/preact';
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import image from "@astrojs/image";
+import compressor from "astro-compressor";
+import critters from "astro-critters";
+import htmlMinifier from "astro-html-minifier";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +23,6 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    htmlMinifier(), critters(), compressor()
   ]
 });
