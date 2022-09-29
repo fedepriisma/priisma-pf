@@ -31,6 +31,9 @@
     @apply inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-colors duration-200 ease-in-out border-2 border-transparent rounded-md shadow-sm bg-dusk hover:bg-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-midnight;
   }
 
+  .prose {
+    color: inherit !important;
+  }
   .prose :is(h2, h3, h4, h5, h6) a {
     font: inherit;
     color: inherit;
@@ -49,9 +52,9 @@
       order: 999;
     }
   }
-  .prose :is(h2, h3, h4, h5, h6) a:is(:active, :visited, :hover, :focus) {
+  /* .prose :is(h2, h3, h4, h5, h6) a:is(:active, :visited, :hover, :focus) {
     color: var(--color-dusk);
-  }
+  } */
   .prose :is(h2, h3, h4, h5, h6) a:active:after,
   .prose :is(h2, h3, h4, h5, h6) a:hover:after,
   .prose :is(h2, h3, h4, h5, h6) a:focus:after {

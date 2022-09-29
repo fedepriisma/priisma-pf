@@ -37,6 +37,8 @@ module.exports = {
 				pink: 'var(--color-pink)',
 				oldpink:'var(--color-oldpink)',
 				selva: 'var(--color-selva)',
+				woodstock: 'var(--color-woodstock)',
+				sunset: 'var(--color-sunset)',
 				pop: 'var(--gradient-pop)',
 			},
 			boxShadow: {
@@ -85,8 +87,7 @@ module.exports = {
 							'--tw-prose-headings': theme('colors.dusk'),
 							'--tw-prose-links': theme('colors.blue'),
 							'--tw-prose-code': theme('colors.purple'),
-							'--tw-prose-pre-bg':
-								'linear-gradient(to bottom,var(--color-midnight),#1f1638)',
+							'--tw-prose-pre-bg': 'linear-gradient(to bottom,var(--color-midnight),#1f1638)',
 							'--tw-prose-pre-code': theme('colors.white'),
 							'--tw-prose-bullets': 'rgba(var(--color-midnight-rgb), 0.5)',
 							':focus-visible': {
