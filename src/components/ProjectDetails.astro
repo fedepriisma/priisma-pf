@@ -16,7 +16,7 @@ const { role, projectDate, projName, projUrl} = Astro.props;
 	</li>
 	<li class="flex">
 		<span class="w-24 font-medium">Company:</span>
-		{projUrl ? <a href={projUrl}>{projName}</a> : projName}
+		{projUrl ? <a target="_blank" href={projUrl}>{projName}</a> : projName}
 		
 	</li>
 </ul>
