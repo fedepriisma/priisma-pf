@@ -12,10 +12,10 @@
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
     "@astrojs/partytown": "^1.0.0",
-    "@astrojs/preact": "^1.0.2",
+    "@astrojs/preact": "^2.1.0",
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
     "astro": "^1.0.6",
     "astro-compressor": "^0.1.2",
     "astro-critters": "^1.0.4",

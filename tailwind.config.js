@@ -18,6 +18,7 @@ module.exports = {
 			yellow: colors.yellow,
 			blue: colors.blue,
 			slate: colors.slate,
+			amber: colors.amber,
 			primary: {
 				50:  'rgb(var(--color-primary-50) / <alpha-value>)',
 				100: 'rgb(var(--color-primary-100) / <alpha-value>)',

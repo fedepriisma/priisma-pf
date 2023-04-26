@@ -1,65 +1,17 @@
 ---
-// import MainHead from '../components/MainHead.astro';
-// import Footer from '../components/Footer.astro';
-// import Nav from '../components/Nav/index.jsx';
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav/index.jsx';
 
-// const { content } = Astro.props;
+const { content } = Astro.props;
 ---
 
-	<!-- <html lang={content.lang || 'en'}>
+<html lang={content.lang || 'en'}>
 	<head>
 		<MainHead title={content.title} description={content.description} />
-		<style lang="scss">
-			.hero {
-				padding: 8rem;
-				display: flex;
-				background-color: var(--t-fg);
-				background-repeat: no-repeat;
-				background-size: cover;
-				min-height: 25vw;
-				color: white;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
 
-			.tag {
-				margin-left: 0.5em;
-				margin-right: 0.5em;
-				text-transform: uppercase;
-
-				&:nth-of-type(1n) {
-					color: var(--c-green);
-				}
-				&:nth-of-type(2n) {
-					color: var(--c-orange);
-				}
-				&:nth-of-type(3n) {
-					color: var(--c-blue);
-				}
-				&:nth-of-type(4n) {
-					color: var(--c-pink);
-				}
-			}
-
-			.leadIn {
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-			}
-
-			.tagline {
-				font-weight: 300;
-				font-size: var(--f-u3);
-				line-height: 1.5;
-			}
-
-			.content {
-				font-size: var(--f-u1);
-				line-height: 2.2;
-			}
-		</style>
 	</head>
-<body>
+	<body>
 		<Nav />
 		<header style={`background-image:url(${content.img})`} class="hero">
 			<h1 class="title">{content.title}</h1>
@@ -77,5 +29,5 @@
 			<a href="/projects" class="inline-block px-4 py-2 font-bold uppercase border-2 border-current">View more projects</a>
 		</footer>
 		<Footer />
-	</body> -->
+	</body>
 </html>
