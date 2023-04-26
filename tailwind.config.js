@@ -53,19 +53,19 @@ module.exports = {
 			mono: 'var(--font-mono)',
 		},
 		fontSize: {
-			xs: 'var(--size-300)',
-			sm: 'var(--size-400)',
-			base: 'var(--size-500)',
-			lg: 'var(--size-600)',
-			xl: 'var(--size-700)',
-			'2xl': ['var(--size-800)', { lineHeight: '2rem' }],
-			'3xl': ['1.5rem', { lineHeight: '2rem' }],
-			'4xl': ['2rem', { lineHeight: '2.5rem' }],
-			'5xl': ['var(--size-1100)', { lineHeight: '1' }],
-			'6xl': ['4rem', { lineHeight: '1' }],
-			'7xl': ['4.5rem', { lineHeight: '1' }],
-			'8xl': ['6rem', { lineHeight: '1' }],
-			'9xl': ['8rem', { lineHeight: '1' }],
+			xs: 'var(--font-size-xs)',
+			sm: 'var(--font-size-sm)',
+			base: 'var(--font-size-base)',
+			lg: 'var(--font-size-lg)',
+			xl: 'var(--font-size-xl)',
+			'2xl': 'var(--font-size-2xl)',
+			'3xl': 'var(--font-size-3xl)',
+			'4xl': 'var(--font-size-4xl)',
+			'5xl': 'var(--font-size-5xl)',
+			'6xl': 'var(--font-size-6xl)',
+			'7xl': 'var(--font-size-7xl)',
+			'8xl': 'var(--font-size-8xl)',
+			'9xl': 'var(--font-size-9xl)',
 		},
 		extend: {
 			borderRadius: {
@@ -75,7 +75,6 @@ module.exports = {
 			},
 			colors: {
 				white: 'rgb(var(--color-white) / <alpha-value>)',
-				black: 'var(--color-black)',
 				tan: 'var(--color-tan)',
 				dawn: 'var(--color-dawn)',
 				dusk: 'var(--color-dusk)',
@@ -129,7 +128,7 @@ module.exports = {
 					DEFAULT: {
 						css: {
 							maxWidth: '75ch',
-							fontSize: 'var(--size-500)',
+							fontSize: 'var(--font-size-base)',
 							lineHeight: '1.5',
 							// override @tailwindcss/typography colors
 							'--tw-prose-body': theme('colors.midnight'),

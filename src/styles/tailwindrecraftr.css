@@ -12,4 +12,11 @@
     .btn-secondary {
         @apply inline-flex justify-center rounded-xl border-2 py-4 px-[calc(theme(spacing.4)-1px)] text-base font-semibold tracking-tight focus:outline-none border-secondary-800 text-secondary-950 hover:border-secondary-400 hover:bg-secondary-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-950 active:text-secondary-950/70 disabled:opacity-40 disabled:hover:border-secondary-300 disabled:hover:bg-transparent;
     }
+    .title-recraftr {
+        @apply text-2xl font-extrabold leading-snug font-display text-slate-900;
+    }
+
+    .h2-recraftr {
+        @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
+    }
 }
