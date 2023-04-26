@@ -1,13 +1,13 @@
 :root {
-	--color-white: #fefeff;
+	--color-white: 254 254 255;
 	--color-black: #111;
 	--color-tan: #f4efed;
-	--color-tan-rgb: 244, 239, 237;
+	--color-tan-rgb: 244 239 237;
 	--color-dawn: #f3e9fa;
 	--color-dusk: #514375;
 	--color-midnight: #434343;
-	--color-midnight-rgb: 49, 39, 74;
-	--color-blue: #1d5bfc;
+	--color-midnight-rgb: 49 39 74;
+	--color-blue: 255 115 179;
 	--color-red: #ff5050;
 	--color-yellow: #ffd542;
 	--color-purple: #af43ff;

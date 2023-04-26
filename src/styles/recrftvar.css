@@ -1,0 +1,93 @@
+:root {
+
+	--color-blue: 255 115 179;
+	--color-white: 254 254 255;
+
+	/* https://uicolors.app/edit */
+
+	--color-primary-50: 252 255 229;
+	--color-primary-100: 246 255 199;
+	--color-primary-200: 236 255 150;
+	--color-primary-300: 220 253 89;
+	--color-primary-400: 194 243 13;
+	--color-primary-500: 170 219 7;
+	--color-primary-600: 129 184 0;
+	--color-primary-700: 94 132 6;
+	--color-primary-950: 70 95 7;
+	--color-primary-900: 56 76 11;
+
+	--color-secondary-50: 248 245 237;
+	--color-secondary-100: 243 240 226;
+	--color-secondary-200: 231 224 197;
+	--color-secondary-300: 216 197 151;
+	--color-secondary-400: 202 168 109;
+	--color-secondary-500: 197 155 89;
+	--color-secondary-600: 179 130 71;
+	--color-secondary-700: 143 100 63;
+	--color-secondary-800: 116 81 56;
+	--color-secondary-900: 94 68 48;
+	--color-secondary-950: 56 50 46;
+
+	--shadow-sm: 0px 19px 53px 0px rgb(var(--color-primary-400) / 0.03),
+		0px 10px 28px 0px rgb(var(--color-primary-400) / 0.05),
+		0px 6px 16px 0px rgb(var(--color-primary-400) / 0.05),
+		0px 3px 9px 0px rgb(var(--color-primary-400) / 0.075),
+		0px 1px 4px 0px rgb(var(--color-primary-400) / 0.1);
+	--shadow-md: 0px 2px 2px 0px rgb(var(--color-primary-400) / 0.04),
+		0px 6px 5px 0px rgb(var(--color-primary-400) / 0.06),
+		0px 15px 14px 0px rgb(var(--color-primary-400) / 0.08),
+		0px 50px 46px 0px rgb(var(--color-primary-400) / 0.12);
+	--shadow-xl: 0px 3px 2px 0px rgb(var(--color-primary-400) / 0.02),
+		0px 6px 5px 0px rgb(var(--color-primary-400) / 0.03),
+		0px 12px 10px 0px rgb(var(--color-primary-400) / 0.04),
+		0px 22px 18px 0px rgb(var(--color-primary-400) / 0.04),
+		0px 42px 34px 0px rgb(var(--color-primary-400) / 0.05),
+		0px 100px 80px 0px rgb(var(--color-primary-400) / 0.07);
+		--shadow-solid: 2px 2px 0 0 currentColor;
+
+
+
+	--blur-md: blur(10px);
+	--blur-xl: blur(128px);
+
+	--font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-body: 'Inter', var(--font-base);
+	--font-display: 'Cabinet Grotesk', var(--font-base);
+	--font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Courier New, monospace;
+
+	--corner-md: 12px;
+
+	/* --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+	--size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+	--size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+	--size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+	--size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+	--size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+	--size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+	--size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+	--size-1500: clamp(3rem, 4.43vw + 2.45rem, 8.5rem); */
+
+--size-300: 0.75rem;
+--size-400: 0.875rem;
+--size-500: 1rem;
+--size-600: 1.125rem;
+--size-700: 1.25rem;
+--size-800: 1.375rem;
+--size-900: 1.5rem;
+--size-1000: 2rem;
+--size-1100: 3.5rem;
+--size-1200: 4rem;
+--size-1300: 4.5rem;
+--size-1400: 6rem;
+--size-1500: 8rem;
+--size-1600: 4rem;
+--size-1700: 4.5rem;
+
+	/* @property fallbacks */
+	--border-radius: 4;
+	--pixel-size: 4;
+	--link-color-stop-a: #1d5bfc;
+	--link-color-stop-b: #c238bd;
+}
