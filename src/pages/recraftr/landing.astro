@@ -1,269 +1,435 @@
 ---
-import MainHead from '../../components/RecraftrHead.astro'
-
+import MainHead from "../../components/RecraftrHead.astro";
+import svgSymbol from "../recraftr/img/symbols.svg";
 ---
 
 <html lang="en">
-	<head>
-		<MainHead
-			title="ReCraftr - Landing page"
-			description="ReCraftr Landing page"
-		/>
-	</head>
-	<body class="antialiased bg-secondary-50">
-			<header class="overflow-hidden bg-secondary-100 lg:bg-transparent lg:px-5">
-				<div
-					class="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
-					<div class="relative flex items-end lg:col-span-5 lg:row-span-2">
-						<div
-							class="absolute -bottom-12 -top-20 left-0 right-1/2 z-10 rounded-br-6xl bg-primary-400 text-primary-900 md:bottom-8 lg:-inset-y-32 lg:left-[-100vw] lg:right-full lg:-mr-40 overflow-clips">
-							<svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-								<defs>
-									<pattern id=":R196:" width="128" height="128" patternUnits="userSpaceOnUse" x="100%"
-										y="100%" patternTransform="translate(72 24)">
-										<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-									</pattern>
-								</defs>
-								<rect width="100%" height="100%" fill="url(#:R196:)"></rect>
-							</svg></div>
-						<div class="relative z-10 flex w-64 mx-auto shadow-xl rounded-xl bg-secondary-600 md:w-80 lg:w-auto">
-							<img alt="" fetchpriority="high" width="960" height="1284" decoding="async" data-nimg="1"
-								class="w-full" style="color:transparent"
-								srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcover.63d6cb7d.png&amp;w=1080&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcover.63d6cb7d.png&amp;w=1920&amp;q=75 2x"
-								src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcover.63d6cb7d.png&amp;w=1920&amp;q=75">
-						</div>
-					</div>
-					<div class="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">
-						<div
-							class="hidden lg:absolute lg:-top-32 lg:bottom-0 lg:left-[-100vw] lg:right-[-100vw] lg:block lg:bg-secondary-100">
-						</div>
-						<figure class="relative max-w-md mx-auto text-center lg:mx-0 lg:text-left">
-							<div class="flex justify-center text-primary-600 lg:justify-start">
-								<div class="flex gap-1"><svg aria-hidden="true" viewBox="0 0 20 20"
-										class="w-5 h-5 fill-current">
-										<path
-											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-										</path>
-									</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-										<path
-											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-										</path>
-									</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-										<path
-											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-										</path>
-									</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-										<path
-											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-										</path>
-									</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-										<path
-											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-										</path>
-									</svg></div>
-							</div>
-							<blockquote class="mt-2">
-								<p class="text-base font-medium font-display text-secondary-900">“ReCraftr has been a game changer for our LinkedIn presence. Our engagement has skyrocketed, and we've seen a noticeable increase in leads!”</p>
-							</blockquote>
-							<figcaption class="mt-2 text-sm text-secondary-500"><strong
-									class="font-semibold text-primary-600 before:content-['—_']">Sarah L., CEO</strong>,
-								Founder at Retail Park</figcaption>
-						</figure>
-					</div>
-					<div class="pt-16 bg-white lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
-						<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
-							<h1 class="text-3xl font-extrabold leading-none font-display text-slate-900">We turn your blog posts into conversions 🤑</h1>
-							<p class="mt-4 text-lg text-secondary-600">We repurpose your posts to create engaging and conversion assets.</p>
-							<div class="flex gap-4 mt-8"><a
-									class="btn-primary"
-									href="/#free-chapters">Start now ($650)</a><a
-									class="btn-secondary"
-									href="/#pricing">Price list</a></div>
-						</div>
-					</div>
-				</div>
-			</header>
-			
-			<section id="introduction" aria-label="Introduction" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
-				<div
-					class="px-4 mx-auto text-base tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-12 text-secondary-700">
-					<h2 class="title-recraftr">
-						We take your old blog content <br>
-						and create new content <br>
-						for LinkedIn and Instagram.</h2>
-					<h3 class="mt-8 text-base font-bold tracking-tight font-display text-secondary-900">Why reusing your content?</h3>
-					
-					
-					<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-					<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3 ">
+  <head>
+    <MainHead
+      title="ReCraftr - Repurposing Blog posts to social media conversions"
+      description="Repurposing Blog posts to social media conversions"
+    />
+  </head>
+  <body class="antialiased bg-secondary-50">
+    <header class="overflow-hidden bg-secondary-100 lg:bg-transparent lg:px-5">
+      <head>
+        <div class="flex justify-center mt-8 text-dark-coal">
+          <svg role="img" class="h-auto fill-current w-fit max-h-7">
+            <use xlink:href={svgSymbol + "#recraftr-logo"}></use>
+          </svg>
+          <div class="text-base sr-only">
+            ReCraftr: Repurposing blog posts to LinkedIn, Twitter and Instagram
+            conversions.
+          </div>
+        </div>
+      </head>
+    </header>
+    <section
+      id="introduction"
+      aria-label="Introduction"
+      class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32"
+    >
+      <div
+        class="px-4 mx-auto text-base tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-12 text-secondary-700"
+      >
+        <h1
+          class="text-3xl font-extrabold leading-none sm:text-4xl font-display text-slate-900"
+        >
+          We turn your<br />
+          blog posts<br />
+          into conversions 🤑
+        </h1>
 
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">👀<br/> Reach</h3>
-	<p>Not many people see your content.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">🗣️<br/> Engagement</h3>
-	<p>It's hard to keep people interested and talking about your stuff.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">⏰<br/> Time</h3>
-	<p>You don't have enough time to make new, good content often.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">🤷‍♀️<br/> Resources</h3>
-	<p>It's tough to use your money and resources right for making content.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">😕<br/> Branding</h3>
-	<p>It's hard to make your brand look the same everywhere.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">🔎<br/> SEO</h3>
-	<p>It's difficult to show up at the top of search results and get more visitors.</p></li>
-<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"><h3 class="text-lg font-extrabold font-display">📢<br/> Publishing</h3>
-	<p>Adapting content for different social media sites is tricky.</p></li>
-</ul>
-</div>
-<h3 class="mt-16 text-xl title-recraftr">Why Content Repurposing matters?</h3>
+        <p class="mt-4 text-lg leading-tight text-secondary-600">
+          Repurposed content subscriptions to elevate your business.
+        </p>
 
-<p class="mt-4 text-base">
-	Content repurposing is important because it helps businesses get the most from what they've already made. Changing content for different places and styles lets you connect with more people and make your brand's message stronger. Plus, repurposing content saves time, boost your SEO and the overall online presence of your brand.
-</p>
+        <div class="flex flex-col mx-auto mt-12 max-w-max">
+          <a href="#prices" class="btn-primary"> See plans</a>
+          <div class="mt-3 text-sm text-slate-400">
+            Content that converts, guaranteed.
+          </div>
+        </div>
 
+        <h2
+          class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display text-slate-900"
+        >
+          We take your old <br />
+          blog content <br />
+          and create new content <br />
+          for LinkedIn and Instagram. ↗️
+        </h2>
 
-				</div>
-			</section>
+        <h3 class="mt-24 title-recraftr">Why reusing your content?</h3>
+        <div
+          class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8"
+        >
+          <ul
+            role="list"
+            class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">
+                👀<br /> Reach
+              </h3>
+              <p>Not many people see your content.</p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">
+                🗣️<br /> Engagement
+              </h3>
+              <p>
+                It's hard to keep people interested and talking about your
+                stuff.
+              </p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
+              <p>You don't have enough time to make new, good content often.</p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">
+                🤷‍♀️<br /> Resources
+              </h3>
+              <p>
+                It's tough to use your money and resources right for making
+                content.
+              </p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">
+                😕<br /> Branding
+              </h3>
+              <p>It's hard to make your brand look the same everywhere.</p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
+              <p>
+                It's difficult to show up at the top of search results and get
+                more visitors.
+              </p>
+            </li>
+            <li
+              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
+            >
+              <h3 class="text-lg font-extrabold font-display">
+                📢<br /> Publishing
+              </h3>
+              <p>
+                Adapting content for different social media sites is tricky.
+              </p>
+            </li>
+            <li class="col-span-2 pl-4">
+              <h3 class="mt-4 text-xl title-recraftr">Is this for me?</h3>
 
-			
+              <p class="mt-4 text-base">
+                You wrote a nice article, a review, a comment or your thoughts
+                on life. Sharing those thoughts through different social media
+                platforms can be daunting. Changing content for different places
+                and styles lets you connect with more people and make your
+                brand's message stronger. Plus, now you can use this content to
+                boost your SEO and the overall online presence of your brand.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-
-			<div class="sticky top-0 z-50">
-				<div class="sm:hidden" data-headlessui-state="">
-					<div
-						class="relative flex items-center px-4 py-3 bg-white/95 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
-						<span aria-hidden="true" class="font-mono text-sm text-primary-600">01</span><span
-							class="ml-4 text-base font-medium text-secondary-900"><span class="hidden lg:inline">Table of
-								contents</span><span class="lg:hidden">Contents</span></span><button
-							class="flex items-center justify-center w-8 h-8 ml-auto -mr-1"
-							aria-label="Toggle navigation menu" type="button" aria-expanded="false" data-headlessui-state=""
-							id="headlessui-popover-button-:R9a6:"><span class="absolute inset-0"></span><svg
-								aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round"
-								stroke-linejoin="round" viewBox="0 0 24 24" class="w-6 h-6 stroke-secondary-700">
-								<path d="m15 16-3 3-3-3M15 8l-3-3-3 3"></path>
-							</svg></button></div>
-					<div class="absolute inset-x-0 z-10 h-4 bg-white bottom-full"></div>
-				</div>
-				<div
-					class="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-secondary-200 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
-					<ol role="list"
-						class="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-secondary-900 [counter-reset:section]">
-						
-						<li class="flex [counter-increment:section]"><a
-								class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-								href="/#whatwedo">What we do</a></li>
-						<!-- <li class="flex [counter-increment:section]"><a
-								class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-								href="/#resources">Resources</a></li> -->
-								<li class="flex [counter-increment:section]"><a
-								class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-								href="/#results">Results</a></li>
-					
-						<li class="flex [counter-increment:section]"><a
-								class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-								href="/#pricing">Pricing</a></li>
-						</ol>
-				</div>
-			</div>
-			<aside id="testimonial-from-tommy-stroman" aria-label="Testimonial from Tommy Stroman"
-				class="relative py-16 bg-secondary-100 sm:py-32">
-				<div class="text-secondary-900/10"><svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-						<defs>
-							<pattern id=":Rb6:" width="128" height="128" patternUnits="userSpaceOnUse" x="50%"
-								patternTransform="translate(0 80)">
-								<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-							</pattern>
-						</defs>
-						<rect width="100%" height="100%" fill="url(#:Rb6:)"></rect>
-					</svg></div>
-				<div class="relative px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:px-2">
-					<figure>
-						<div class="flex text-secondary-900 sm:justify-center">
-							<div class="flex gap-1"><svg aria-hidden="true" viewBox="0 0 20 20"
-									class="w-5 h-5 fill-current">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-									</path>
-								</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-									</path>
-								</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-									</path>
-								</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-									</path>
-								</svg><svg aria-hidden="true" viewBox="0 0 20 20" class="w-5 h-5 fill-current">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-									</path>
-								</svg></div>
-						</div>
-						<blockquote
-							class="mt-10 text-base font-medium tracking-tight font-display text-secondary-900 sm:text-center">
-							<p>“The team at ReCraftr truly understands our brand and consistently creates visually stunning content that drives conversions. Highly recommended!”</p>
-						</blockquote>
-						<figcaption class="flex items-center mt-10 sm:justify-center">
-							<div class="overflow-hidden rounded-full bg-secondary-200"><img alt="" loading="lazy" width="48"
-									height="48" decoding="async" data-nimg="1" class="object-cover w-12 h-12"
-									style="color:transparent"
-									srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&amp;w=96&amp;q=75 2x"
-									src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&amp;w=96&amp;q=75">
-							</div>
-							<div class="ml-4">
-								<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Tom B.
-								</div>
-								<div class="mt-1 text-sm text-secondary-600">Marketing</div>
-							</div>
-						</figcaption>
-					</figure>
-				</div>
-			</aside>
-			<section id="whatwedo" aria-labelledby="whatwedo-title" class="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32">
-				<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-					<h2 class="h2-recraftr" id="whatwedo-title"><span class="font-mono text-sm" aria-hidden="true">01</span><span class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span class="ml-3 text-base font-medium tracking-tight">What we do</span></h2>
-					<h3 class="title-recraftr">We breathe new life into your old content.</h3>
-					<p class="mt-4 text-base tracking-tight text-secondary-700">Learn how to design your very first icons in a series of whatwedo that will teach you everything you need to know to go from beginner to pro in just over an hour.</p>
-				</div>
-				<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-					<ol role="list"
-						class="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-3">
-						<li class="[counter-increment:video]">
-							<div class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl" style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"><div class="flex overflow-hidden rounded shadow-sm"><img alt="" loading="lazy" width="200" height="108" decoding="async" data-nimg="1" style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"></div></div>
-							<h3
-								class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]">🕵🏻‍♂️ Analysis</h3>
-							<p class="mt-2 text-sm text-secondary-600">We find the best blog posts for getting more visits and actions.</p>
-						</li>
-						<li class="[counter-increment:video]">
-							<div class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl" style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"><div class="flex overflow-hidden rounded shadow-sm"><img alt="" loading="lazy" width="200" height="108" decoding="async" data-nimg="1" style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"></div></div>
-							<h3
-								class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]">🔑 Key messages</h3>
-							<p class="mt-2 text-sm text-secondary-600">Our team picks the most important parts and makes an interesting story.</p>
-						</li>
-						<li class="[counter-increment:video]">
-							<div class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl" style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"><div class="flex overflow-hidden rounded shadow-sm"><img alt="" loading="lazy" width="200" height="108" decoding="async" data-nimg="1" style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"></div></div>
-							<h3
-								class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]">🖼️ Designing</h3>
-							<p class="mt-2 text-sm text-secondary-600">We make eye-catching pictures that fit your brand and message.</p>
-						</li>
-						<li class="[counter-increment:video]">
-							<div class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl" style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"><div class="flex overflow-hidden rounded shadow-sm"><img alt="" loading="lazy" width="200" height="108" decoding="async" data-nimg="1" style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"></div></div>
-							<h3
-								class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]">💙 Branding</h3>
-							<p class="mt-2 text-sm text-secondary-600">We create nice-looking templates and slideshows that match your brand and work well on LinkedIn.</p>
-						</li>
-						<li class="[counter-increment:video]">
-							<div class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl" style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"><div class="flex overflow-hidden rounded shadow-sm"><img alt="" loading="lazy" width="200" height="108" decoding="async" data-nimg="1" style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"></div></div>
-							<h3
-								class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]">🚀 Optimization</h3>
-							<p class="mt-2 text-sm text-secondary-600">We change your content to do well on different social media sites, so more people see it and care about it.</p>
-						</li>
-						
-					</ol>
-				</div>
-			</section>
-			<!-- <section id="resources" aria-labelledby="resources-title"
+    <aside
+      id="testimonial-from-tommy-stroman"
+      aria-label="Testimonial from Tommy Stroman"
+      class="relative py-16 bg-secondary-100 sm:py-32"
+    >
+      <div class="text-secondary-900/10">
+        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
+          <defs>
+            <pattern
+              id=":Rb6:"
+              width="128"
+              height="128"
+              patternUnits="userSpaceOnUse"
+              x="50%"
+              patternTransform="translate(0 80)"
+            >
+              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#:Rb6:)"></rect>
+        </svg>
+      </div>
+      <div class="relative px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:px-2">
+        <figure>
+          <div class="flex text-secondary-900 sm:justify-center">
+            <div class="flex gap-1">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg><svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg><svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg><svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg><svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg>
+            </div>
+          </div>
+          <blockquote
+            class="mt-10 text-base font-medium tracking-tight font-display text-secondary-900 sm:text-center"
+          >
+            <p>
+              “The team at ReCraftr truly understands our brand and consistently
+              creates visually stunning content that drives conversions. Highly
+              recommended!”
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center mt-10 sm:justify-center">
+            <div class="overflow-hidden rounded-full bg-secondary-200">
+              <img
+                alt=""
+                loading="lazy"
+                width="48"
+                height="48"
+                decoding="async"
+                data-nimg="1"
+                class="object-cover w-12 h-12"
+                style="color:transparent"
+                srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=96&q=75 2x"
+                src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=96&q=75"
+              />
+            </div>
+            <div class="ml-4">
+              <div
+                class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+              >
+                Tom B.
+              </div>
+              <div class="mt-1 text-sm text-secondary-600">Marketing</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </aside>
+    <section
+      id="whatwedo"
+      aria-labelledby="whatwedo-title"
+      class="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+    >
+      <div
+        class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h2 class="h2-recraftr" id="whatwedo-title">
+          <span class="font-mono text-sm" aria-hidden="true">01</span><span
+            class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
+            class="ml-3 text-base font-medium tracking-tight">What we do</span
+          >
+        </h2>
+        <h3 class="title-recraftr">
+          We breathe new life into your old content.
+        </h3>
+        <p class="mt-4 text-base tracking-tight text-secondary-700">
+          Learn how to design your very first icons in a series of whatwedo that
+          will teach you everything you need to know to go from beginner to pro
+          in just over an hour.
+        </p>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8"
+      >
+        <ol
+          role="list"
+          class="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <li class="[counter-increment:video]">
+            <div
+              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
+              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
+            >
+              <div class="flex overflow-hidden rounded shadow-sm">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="200"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  style="color:transparent"
+                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
+                />
+              </div>
+            </div>
+            <h3
+              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+            >
+              🕵🏻‍♂️ Analysis
+            </h3>
+            <p class="mt-2 text-sm text-secondary-600">
+              We find the best blog posts for getting more visits and actions.
+            </p>
+          </li>
+          <li class="[counter-increment:video]">
+            <div
+              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
+              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
+            >
+              <div class="flex overflow-hidden rounded shadow-sm">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="200"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  style="color:transparent"
+                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
+                />
+              </div>
+            </div>
+            <h3
+              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+            >
+              🔑 Key messages
+            </h3>
+            <p class="mt-2 text-sm text-secondary-600">
+              Our team picks the most important parts and makes an interesting
+              story.
+            </p>
+          </li>
+          <li class="[counter-increment:video]">
+            <div
+              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
+              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
+            >
+              <div class="flex overflow-hidden rounded shadow-sm">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="200"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  style="color:transparent"
+                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
+                />
+              </div>
+            </div>
+            <h3
+              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+            >
+              🖼️ Designing
+            </h3>
+            <p class="mt-2 text-sm text-secondary-600">
+              We make eye-catching pictures that fit your brand and message.
+            </p>
+          </li>
+          <li class="[counter-increment:video]">
+            <div
+              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
+              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
+            >
+              <div class="flex overflow-hidden rounded shadow-sm">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="200"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  style="color:transparent"
+                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
+                />
+              </div>
+            </div>
+            <h3
+              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+            >
+              💙 Branding
+            </h3>
+            <p class="mt-2 text-sm text-secondary-600">
+              We create nice-looking templates and slideshows that match your
+              brand and work well on LinkedIn.
+            </p>
+          </li>
+          <li class="[counter-increment:video]">
+            <div
+              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
+              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
+            >
+              <div class="flex overflow-hidden rounded shadow-sm">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="200"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  style="color:transparent"
+                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
+                />
+              </div>
+            </div>
+            <h3
+              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+            >
+              🚀 Optimization
+            </h3>
+            <p class="mt-2 text-sm text-secondary-600">
+              We change your content to do well on different social media sites,
+              so more people see it and care about it.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <!-- <section id="resources" aria-labelledby="resources-title"
 				class="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32">
 				<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
 					<h2 class="h2-recraftr"
@@ -328,7 +494,7 @@ import MainHead from '../../components/RecraftrHead.astro'
 					</ol>
 				</div>
 			</section> -->
-			<!-- <section id="free-chapters" aria-label="Free preview" class="bg-primary-600 scroll-mt-14 sm:scroll-mt-32">
+    <!-- <section id="free-chapters" aria-label="Free preview" class="bg-primary-600 scroll-mt-14 sm:scroll-mt-32">
 				<div class="overflow-hidden lg:relative">
 					<div
 						class="relative grid items-end grid-cols-1 px-4 py-20 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-8 gap-y-12 lg:static lg:grid-cols-2 lg:py-28 xl:py-32">
@@ -354,376 +520,626 @@ import MainHead from '../../components/RecraftrHead.astro'
 					</div>
 				</div>
 			</section> -->
-			<section id="results" aria-labelledby="results-title"
-				class="relative pt-8 pb-3 scroll-mt-14 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
-				<div
-					class="absolute inset-x-0 bottom-0 top-1/2 text-secondary-900/10 [mask-image:linear-gradient(transparent,white)]">
-					<svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-						<defs>
-							<pattern id=":Rem:" width="128" height="128" patternUnits="userSpaceOnUse" x="50%" y="100%">
-								<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-							</pattern>
-						</defs>
-						<rect width="100%" height="100%" fill="url(#:Rem:)"></rect>
-					</svg></div>
-				<div class="relative max-w-5xl pt-16 mx-auto sm:px-6">
-					<div class="pt-px bg-secondary-50 sm:rounded-6xl">
-						<div
-							class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-secondary-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
-							<img alt="" loading="lazy" width="576" height="576" decoding="async" data-nimg="1"
-								class="absolute inset-0 object-cover w-full h-full" style="color:transparent"
-								sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
-								srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=16&amp;q=75 16w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=32&amp;q=75 32w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=48&amp;q=75 48w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=64&amp;q=75 64w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=96&amp;q=75 96w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=128&amp;q=75 128w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=256&amp;q=75 256w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=384&amp;q=75 384w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=640&amp;q=75 640w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=750&amp;q=75 750w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=828&amp;q=75 828w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=1080&amp;q=75 1080w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=1200&amp;q=75 1200w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=1920&amp;q=75 1920w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=2048&amp;q=75 2048w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=3840&amp;q=75 3840w"
-								src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&amp;w=3840&amp;q=75">
-						</div>
-						<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-							<h2 class="h2-recraftr"
-								id="results-title"><span class="font-mono text-sm" aria-hidden="true">02</span><span
-									class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-									class="ml-3 text-base font-medium tracking-tight">Results</span></h2>
-									<h3 class="leading-none title-recraftr text-primary-600">Sutro –</h3>
-									<h4 class="text-lg leading-none">a 3x conversion with a single post.</h4>
-								<ul class="pl-8 my-8 list-disc list">
-									<li>
-										Up to 3X increase in a single Instagram post engagement
-									</li>
-									<li>40% increase in inbound leads</li>
-									<li>Strengthened brand image with consistent, professional visuals</li>
-								</ul>
-							<p class="mt-8"><a
-									class="inline-flex items-center text-base font-medium tracking-tight text-primary-600"
-									href="/#"><svg aria-hidden="true" viewBox="0 0 40 40" class="w-10 h-10 fill-current">
-										<path
-											d="M13.817 33.753c12.579 0 19.459-10.422 19.459-19.458 0-.297 0-.592-.02-.884a13.913 13.913 0 0 0 3.411-3.543 13.65 13.65 0 0 1-3.928 1.077 6.864 6.864 0 0 0 3.007-3.784 13.707 13.707 0 0 1-4.342 1.66 6.845 6.845 0 0 0-11.655 6.239A19.417 19.417 0 0 1 5.654 7.915a6.843 6.843 0 0 0 2.117 9.128 6.786 6.786 0 0 1-3.104-.853v.086a6.842 6.842 0 0 0 5.487 6.704 6.825 6.825 0 0 1-3.088.116 6.847 6.847 0 0 0 6.39 4.75A13.721 13.721 0 0 1 3.334 30.68a19.36 19.36 0 0 0 10.483 3.066">
-										</path>
-									</svg><span class="ml-4">Follow on Twitter</span></a></p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="pricing" aria-labelledby="pricing-title"
-				class="pt-16 pb-8 scroll-mt-14 sm:scroll-mt-32 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
-				<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-					<h2 class="h2-recraftr"
-						id="pricing-title"><span class="font-mono text-sm" aria-hidden="true">04</span><span
-							class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-							class="ml-3 text-base font-medium tracking-tight">Pricing</span></h2>
-					<h3 class="title-recraftr">Prices with ROI</h3>
-					<p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">ROIs means everything. Conversions or your Money back. Guaranteed.</p>
-				</div>
-				<div class="max-w-5xl mx-auto mt-16 lg:px-6">
-					<div class="grid bg-secondary-50 sm:px-6 sm:pb-16 md:grid-cols-2 md:rounded-6xl md:px-8 md:pt-16 lg:p-20">
-						<div class="relative px-4 py-16 sm:rounded-5xl sm:px-10 md:py-12 lg:px-12">
-							<div class="relative flex flex-col">
-								<h3 class="text-lg font-semibold tracking-tight mt-7 text-secondary-900">The 3 pack</h3>
-								<p class="mt-2 text-base tracking-tight text-secondary-600">The perfect starting point if you’re
-									on a budget.</p>
-								<p class="flex order-first font-bold font-display"><span
-										class="text-lg leading-none text-secondary-500">$</span><span
-										class="mt-1 ml-1 text-4xl leading-none tracking-tighter">650</span></p>
-								<div class="order-last mt-8">
-									<ul role="list"
-										class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
-										<li class="py-2"><strong>✓ 3 Posts</strong> </li>
-										<li class="py-2">✓ 3 Custom images per post</li>
-										<li class="py-2">✓ 1 Branded template</li>
-										<li class="py-2">✓ 1 Carousel for your LinkedIn content</li>
-										<li class="py-2">+ <strong>Bonus:</strong> 4 revisions</li>
-									</ul>
-								</div><a
-									class="mt-8 btn-primary"
-									aria-label="Get started with the Essential plan for $15" href="/#">Start now</a>
-							</div>
-						</div>
-						<div class="relative px-4 py-16 bg-primary-400 sm:rounded-5xl sm:px-10 md:py-12 lg:px-12 sm:shadow-lg">
-							<div class="absolute inset-0 text-primary-700/10 [mask-image:linear-gradient(white,transparent)]"><svg
-									aria-hidden="true" class="absolute inset-0 w-full h-full">
-									<defs>
-										<pattern id=":R6lm:" width="128" height="128" patternUnits="userSpaceOnUse" x="50%"
-											y="50%">
-											<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-										</pattern>
-									</defs>
-									<rect width="100%" height="100%" fill="url(#:R6lm:)"></rect>
-								</svg></div>
-							<div class="relative flex flex-col">
-								<h3 class="text-lg font-semibold tracking-tight text-primary-800 mt-7">Enterprise</h3>
-								<p class="mt-2 text-base tracking-tight text-primary-800">Post more, and better.</p>
-								<p class="flex order-first font-bold font-display"><span
-										class="text-base leading-none text-primary-600">Starting at $</span><span
-										class="mt-1 ml-1 text-4xl leading-none tracking-tighter text-primary-900">800</span></p>
-								<div class="order-last mt-8">
-									<ul role="list"
-										class="-my-2 text-base tracking-tight divide-y text-primary-800 divide-primary-800/10">
-										<li class="py-2"><strong>✓ From 6 Posts</strong> </li>
-										<li class="py-2">✓ 3 Custom images per post</li>
-										<li class="py-2">✓ 1 Branded template</li>
-										<li class="py-2">✓ 1 Carousel for your LinkedIn content</li>
-										<li class="py-2">+ <strong>Bonus:</strong> Unlimited revisions</li>
-										<li class="py-2">+ <strong>Bonus:</strong> Conversion focused post selection</li>
-										<li class="py-2">+ <strong>Bonus:</strong> Result-driven content strategy</li>
-									</ul>
-								</div><a
-									class="mt-8 btn-third"
-									aria-label="Get started with the Complete plan for $229" href="/#">Contact us</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="py-8 sm:py-10 lg:py-16">
-				<div class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-					<h2 class="title-recraftr">Some kind words from early
-						customers...</h2>
-					<p class="mt-4 text-base tracking-tight text-secondary-600">I worked with a small group of early access
-						customers to make sure all of the content in the book was exactly what they needed. Hears what they
-						had to say about the finished product.</p>
-				</div>
-				<ul role="list"
-					class="grid max-w-2xl grid-cols-1 gap-8 px-4 mx-auto mt-16 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
-					<li class="lg:hidden">
-						<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-							<blockquote>
-								<p class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-									Mira’s teaching style is second to none. Everything was easy to follow every step of the
-									way.</p>
-							</blockquote>
-							<figcaption class="flex items-center mt-6">
-								<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy" width="48"
-										height="48" decoding="async" data-nimg="1" class="object-cover w-12 h-12"
-										style="color:transparent"
-										srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=96&amp;q=75 2x"
-										src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=96&amp;q=75">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Antonio
-										Littel</div>
-									<div class="mt-1 text-sm text-secondary-600">Frontend Developer</div>
-								</div>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="lg:hidden">
-						<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-							<blockquote>
-								<p class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">I
-									run an ecommerce store selling rare vintage gummy bears and could never find a good
-									gummy bear icon. Now I can design my own in minutes.</p>
-							</blockquote>
-							<figcaption class="flex items-center mt-6">
-								<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy" width="48"
-										height="48" decoding="async" data-nimg="1" class="object-cover w-12 h-12"
-										style="color:transparent"
-										srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=96&amp;q=75 2x"
-										src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=96&amp;q=75">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Cameron
-										Considine</div>
-									<div class="mt-1 text-sm text-secondary-600">Entrepreneur</div>
-								</div>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="lg:hidden">
-						<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-							<blockquote>
-								<p class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">I
-									couldn’t believe how fast Mira moved in Figma compared to my own workflow. I’m designing
-									icons more accurately in half the time with the shortcuts I learned from her videos.</p>
-							</blockquote>
-							<figcaption class="flex items-center mt-6">
-								<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy" width="48"
-										height="48" decoding="async" data-nimg="1" class="object-cover w-12 h-12"
-										style="color:transparent"
-										srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=96&amp;q=75 2x"
-										src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=96&amp;q=75">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Steven
-										Hackett</div>
-									<div class="mt-1 text-sm text-secondary-600">Bootcamp Instructor</div>
-								</div>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="hidden lg:list-item">
-						<ul role="list">
-							<li class="hidden lg:list-item">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											Mira’s teaching style is second to none. Everything was easy to follow every
-											step of the way.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">
-												Antonio Littel</div>
-											<div class="mt-1 text-sm text-secondary-600">Frontend Developer</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-							<li class="lg:mt-8">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											Even though I was excited to learn, I was pessimistic that I wouldn’t actually
-											ever get good enough to design my own icons. I was wrong — this book is all I
-											needed.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Lynn
-												Nolan</div>
-											<div class="mt-1 text-sm text-secondary-600">Growth Marketer</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-						</ul>
-					</li>
-					<li class="hidden lg:list-item">
-						<ul role="list">
-							<li class="hidden lg:list-item">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											I run an ecommerce store selling rare vintage gummy bears and could never find a
-											good gummy bear icon. Now I can design my own in minutes.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">
-												Cameron Considine</div>
-											<div class="mt-1 text-sm text-secondary-600">Entrepreneur</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-							<li class="lg:mt-8">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											The complete package is worth it for the weekly teardown videos alone. I’ve
-											learned so much watching Mira take apart other icons and recreate them from
-											scratch.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">
-												Regina Wisoky</div>
-											<div class="mt-1 text-sm text-secondary-600">Design Student</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-						</ul>
-					</li>
-					<li class="hidden lg:list-item">
-						<ul role="list">
-							<li class="hidden lg:list-item">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											I couldn’t believe how fast Mira moved in Figma compared to my own workflow. I’m
-											designing icons more accurately in half the time with the shortcuts I learned
-											from her videos.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">
-												Steven Hackett</div>
-											<div class="mt-1 text-sm text-secondary-600">Bootcamp Instructor</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-							<li class="lg:mt-8">
-								<figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-									<blockquote>
-										<p
-											class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']">
-											I never thought I would enjoy designing icons but using the ideas in this book,
-											it’s become a great way for me to relax while still being creative.</p>
-									</blockquote>
-									<figcaption class="flex items-center mt-6">
-										<div class="overflow-hidden rounded-full bg-secondary-50"><img alt="" loading="lazy"
-												width="48" height="48" decoding="async" data-nimg="1"
-												class="object-cover w-12 h-12" style="color:transparent"
-												srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&amp;w=48&amp;q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&amp;w=96&amp;q=75 2x"
-												src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&amp;w=96&amp;q=75">
-										</div>
-										<div class="ml-4">
-											<div class="text-base font-medium leading-6 tracking-tight text-secondary-900">Carla
-												Schoen</div>
-											<div class="mt-1 text-sm text-secondary-600">Startup Founder</div>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<!-- <div class="flex justify-center mt-10"><button type="button"
-						class="flex items-center text-base font-medium tracking-tight text-secondary-900 hover:text-secondary-700">Read
-						more testimonials<svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 ml-2">
-							<path d="m17 14-5 5-5-5M12 18.5V5" fill="none" stroke="currentColor" stroke-width="2"
-								stroke-linecap="round" stroke-linejoin="round"></path>
-						</svg></button></div> -->
-			</section>
-			
-			<footer class="relative pt-5 pb-20 sm:pb-32 sm:pt-14">
-				<div
-					class="absolute inset-x-0 top-0 h-32 text-secondary-900/10 [mask-image:linear-gradient(white,transparent)]">
-					<svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-						<defs>
-							<pattern id=":Rf6:" width="128" height="128" patternUnits="userSpaceOnUse" x="50%">
-								<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-							</pattern>
-						</defs>
-						<rect width="100%" height="100%" fill="url(#:Rf6:)"></rect>
-					</svg></div>
-				<div class="relative text-sm text-center text-secondary-600">
-					<p>Copyright © <!-- -->2023<!-- --> ReCraftr</p>
-					<p>All rights reserved.</p>
-				</div>
-			</footer>
-	</body>
+    <!-- <section id="results" aria-labelledby="results-title" class="relative pt-8 pb-3 scroll-mt-14 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
+      <div
+        class="absolute inset-x-0 bottom-0 top-1/2 text-secondary-900/10 [mask-image:linear-gradient(transparent,white)]"
+      >
+        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
+          <defs>
+            <pattern
+              id=":Rem:"
+              width="128"
+              height="128"
+              patternUnits="userSpaceOnUse"
+              x="50%"
+              y="100%">
+              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#:Rem:)"></rect>
+        </svg>
+      </div>
+      <div class="relative max-w-5xl pt-16 mx-auto sm:px-6">
+        <div class="pt-px bg-secondary-50 sm:rounded-6xl">
+          <div
+            class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-secondary-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
+            <img
+              alt=""
+              loading="lazy"
+              width="576"
+              height="576"
+              decoding="async"
+              data-nimg="1"
+              class="absolute inset-0 object-cover w-full h-full"
+              style="color:transparent"
+              sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
+              srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=16&q=75 16w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=32&q=75 32w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=48&q=75 48w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=64&q=75 64w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=96&q=75 96w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=128&q=75 128w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=256&q=75 256w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=384&q=75 384w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=640&q=75 640w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=750&q=75 750w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=828&q=75 828w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1080&q=75 1080w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1200&q=75 1200w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1920&q=75 1920w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=2048&q=75 2048w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=3840&q=75 3840w"
+              src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=3840&q=75"
+            />
+          </div>
+          <div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
+            <h2 class="h2-recraftr" id="results-title">
+              <span class="font-mono text-sm" aria-hidden="true">02</span><span
+                class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
+                class="ml-3 text-base font-medium tracking-tight">Results</span>
+            </h2>
+            <h3 class="leading-none title-recraftr text-primary-600">
+              Sutro –
+            </h3>
+            <h4 class="text-lg leading-none">
+              a 3x conversion with a single post.
+            </h4>
+            <ul class="pl-8 my-8 list-disc list">
+              <li>Up to 3X increase in a single Instagram post engagement</li>
+              <li>40% increase in inbound leads</li>
+              <li>
+                Strengthened brand image with consistent, professional visuals
+              </li>
+            </ul>
+            <p class="mt-8">
+              <a
+                class="inline-flex items-center text-base font-medium tracking-tight text-primary-600"
+                href="/#"
+                ><svg
+                  aria-hidden="true"
+                  viewBox="0 0 40 40"
+                  class="w-10 h-10 fill-current"
+                >
+                  <path
+                    d="M13.817 33.753c12.579 0 19.459-10.422 19.459-19.458 0-.297 0-.592-.02-.884a13.913 13.913 0 0 0 3.411-3.543 13.65 13.65 0 0 1-3.928 1.077 6.864 6.864 0 0 0 3.007-3.784 13.707 13.707 0 0 1-4.342 1.66 6.845 6.845 0 0 0-11.655 6.239A19.417 19.417 0 0 1 5.654 7.915a6.843 6.843 0 0 0 2.117 9.128 6.786 6.786 0 0 1-3.104-.853v.086a6.842 6.842 0 0 0 5.487 6.704 6.825 6.825 0 0 1-3.088.116 6.847 6.847 0 0 0 6.39 4.75A13.721 13.721 0 0 1 3.334 30.68a19.36 19.36 0 0 0 10.483 3.066"
+                  >
+                  </path>
+                </svg><span class="ml-4">Follow on Twitter</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section
+      id="pricing"
+      aria-labelledby="pricing-title"
+      class="pt-16 pb-8 scroll-mt-14 sm:scroll-mt-32 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
+    >
+      <div
+        class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h2 class="h2-recraftr" id="pricing-title">
+          <span class="font-mono text-sm" aria-hidden="true">04</span><span
+            class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
+            class="ml-3 text-base font-medium tracking-tight">Pricing</span
+          >
+        </h2>
+        <h3 class="title-recraftr">Prices with ROI</h3>
+        <p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">
+          ROIs means everything. Conversions or your Money back. Guaranteed.
+        </p>
+      </div>
+      <div class="max-w-5xl mx-auto mt-16 lg:px-6">
+        <div class="grid max-w-2xl grid-cols-1 gap-2 mx-auto bg-secondary-50 lg:max-w-7xl lg:grid-cols-4">
+          <div id="price-1" class="p-4 bg-white">
+            <div class="asdfasdf">
+              <div class="text-lg font-extrabold text-black font-display">Monthly</div>
+              <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
+              <div class="text-sm text-slate-700">Pause or cancel anytime</div>
+              <div class="flex flex-col items-center my-6">
+                <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
+				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+              </div>
+            </div>
+			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
+				<li class="py-2">5 blog posts repurposed</li>
+				<li class="py-2">Unlimited images</li>
+				<li class="py-2">Single template</li>
+				<li class="py-2">1 platform adaptation</li>
+				<li class="py-2">2 revisions per post</li>
+			  </ul>
+          </div>
+          <div id="price-2" class="p-4 bg-white">
+            <div class="asdfasdf">
+              <div class="text-lg font-extrabold text-black font-display">Quarterly</div>
+              <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
+              <div class="text-sm text-slate-700">Pause or cancel anytime</div>
+              <div class="flex flex-col items-center my-6">
+                <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
+				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+              </div>
+            </div>
+			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
+				<li class="py-2">5 blog posts repurposed</li>
+				<li class="py-2">Unlimited images</li>
+				<li class="py-2">Single template</li>
+				<li class="py-2">1 platform adaptation</li>
+				<li class="py-2">2 revisions per post</li>
+			  </ul>
+          </div>
+          <div id="price-3" class="p-4 bg-white">
+            <div class="asdfasdf">
+              <div class="text-lg font-extrabold text-black font-display">Yearly</div>
+              <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
+              <div class="text-sm text-slate-700">Pause or cancel anytime</div>
+              <div class="flex flex-col items-center my-6">
+                <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
+				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+              </div>
+            </div>
+			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
+				<li class="py-2">5 blog posts repurposed</li>
+				<li class="py-2">Unlimited images</li>
+				<li class="py-2">Single template</li>
+				<li class="py-2">1 platform adaptation</li>
+				<li class="py-2">2 revisions per post</li>
+			  </ul>
+          </div>
+		  <div id="bookacall" class="p-4 bg-white">
+			<div class="text-lg font-extrabold text-black font-display">Book a call</div>
+            <div class="text-sm">Learn more about how ReCraftr works and how we can help you.</div>
+			<a href="bookcall" class="text-sm text-black">Book a call</a>
+		  </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="py-8 sm:py-10 lg:py-16">
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h2 class="title-recraftr">Some kind words from early customers...</h2>
+        <p class="mt-4 text-base tracking-tight text-secondary-600">
+          I worked with a small group of early access customers to make sure all
+          of the content in the book was exactly what they needed. Hears what
+          they had to say about the finished product.
+        </p>
+      </div>
+      <ul
+        role="list"
+        class="grid max-w-2xl grid-cols-1 gap-8 px-4 mx-auto mt-16 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
+      >
+        <li class="lg:hidden">
+          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
+            <blockquote>
+              <p
+                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+              >
+                Mira’s teaching style is second to none. Everything was easy to
+                follow every step of the way.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center mt-6">
+              <div class="overflow-hidden rounded-full bg-secondary-50">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  decoding="async"
+                  data-nimg="1"
+                  class="object-cover w-12 h-12"
+                  style="color:transparent"
+                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75 2x"
+                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75"
+                />
+              </div>
+              <div class="ml-4">
+                <div
+                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                >
+                  Antonio Littel
+                </div>
+                <div class="mt-1 text-sm text-secondary-600">
+                  Frontend Developer
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="lg:hidden">
+          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
+            <blockquote>
+              <p
+                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+              >
+                I run an ecommerce store selling rare vintage gummy bears and
+                could never find a good gummy bear icon. Now I can design my own
+                in minutes.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center mt-6">
+              <div class="overflow-hidden rounded-full bg-secondary-50">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  decoding="async"
+                  data-nimg="1"
+                  class="object-cover w-12 h-12"
+                  style="color:transparent"
+                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75 2x"
+                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75"
+                />
+              </div>
+              <div class="ml-4">
+                <div
+                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                >
+                  Cameron Considine
+                </div>
+                <div class="mt-1 text-sm text-secondary-600">Entrepreneur</div>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="lg:hidden">
+          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
+            <blockquote>
+              <p
+                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+              >
+                I couldn’t believe how fast Mira moved in Figma compared to my
+                own workflow. I’m designing icons more accurately in half the
+                time with the shortcuts I learned from her videos.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center mt-6">
+              <div class="overflow-hidden rounded-full bg-secondary-50">
+                <img
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  decoding="async"
+                  data-nimg="1"
+                  class="object-cover w-12 h-12"
+                  style="color:transparent"
+                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75 2x"
+                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75"
+                />
+              </div>
+              <div class="ml-4">
+                <div
+                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                >
+                  Steven Hackett
+                </div>
+                <div class="mt-1 text-sm text-secondary-600">
+                  Bootcamp Instructor
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="hidden lg:list-item">
+          <ul role="list">
+            <li class="hidden lg:list-item">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    Mira’s teaching style is second to none. Everything was easy
+                    to follow every step of the way.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Antonio Littel
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Frontend Developer
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="lg:mt-8">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    Even though I was excited to learn, I was pessimistic that I
+                    wouldn’t actually ever get good enough to design my own
+                    icons. I was wrong — this book is all I needed.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Lynn Nolan
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Growth Marketer
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li class="hidden lg:list-item">
+          <ul role="list">
+            <li class="hidden lg:list-item">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    I run an ecommerce store selling rare vintage gummy bears
+                    and could never find a good gummy bear icon. Now I can
+                    design my own in minutes.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Cameron Considine
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Entrepreneur
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="lg:mt-8">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    The complete package is worth it for the weekly teardown
+                    videos alone. I’ve learned so much watching Mira take apart
+                    other icons and recreate them from scratch.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Regina Wisoky
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Design Student
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li class="hidden lg:list-item">
+          <ul role="list">
+            <li class="hidden lg:list-item">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    I couldn’t believe how fast Mira moved in Figma compared to
+                    my own workflow. I’m designing icons more accurately in half
+                    the time with the shortcuts I learned from her videos.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Steven Hackett
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Bootcamp Instructor
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="lg:mt-8">
+              <figure
+                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
+              >
+                <blockquote>
+                  <p
+                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
+                  >
+                    I never thought I would enjoy designing icons but using the
+                    ideas in this book, it’s become a great way for me to relax
+                    while still being creative.
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-6">
+                  <div class="overflow-hidden rounded-full bg-secondary-50">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width="48"
+                      height="48"
+                      decoding="async"
+                      data-nimg="1"
+                      class="object-cover w-12 h-12"
+                      style="color:transparent"
+                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=96&q=75 2x"
+                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=96&q=75"
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div
+                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                    >
+                      Carla Schoen
+                    </div>
+                    <div class="mt-1 text-sm text-secondary-600">
+                      Startup Founder
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section> -->
+
+    <div
+      class="sticky z-50 max-w-xl mx-auto border-4 border-black overflow-clip bottom-4 rounded-xl shadow-solid"
+    >
+      <div
+        class="sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-secondary-200 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur"
+      >
+        <ol
+          role="list"
+          class="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-secondary-900 [counter-reset:section]"
+        >
+          <li class="flex items-center text-dark-coal">
+            <svg role="img" class="fill-current h-fit w-fit max-h-16">
+              <use xlink:href={svgSymbol + "#recraftr-emblem-default"}></use>
+            </svg>
+          </li>
+          <li class="flex [counter-increment:section]">
+            <a
+              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
+              href="/#whatwedo">What we do</a
+            >
+          </li>
+          <!-- <li class="flex [counter-increment:section]"><a
+								  class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
+								  href="/#resources">Resources</a></li> -->
+          <li class="flex [counter-increment:section]">
+            <a
+              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
+              href="/#results">Results</a
+            >
+          </li>
+
+          <li class="flex [counter-increment:section]">
+            <a
+              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
+              href="/#pricing">Pricing</a
+            >
+          </li>
+        </ol>
+      </div>
+    </div>
+    <footer class="relative pt-5 pb-20 sm:pb-32 sm:pt-14">
+      <div
+        class="absolute inset-x-0 top-0 h-32 text-secondary-900/10 [mask-image:linear-gradient(white,transparent)]"
+      >
+        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
+          <defs>
+            <pattern
+              id=":Rf6:"
+              width="128"
+              height="128"
+              patternUnits="userSpaceOnUse"
+              x="50%"
+            >
+              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#:Rf6:)"></rect>
+        </svg>
+      </div>
+      <div class="relative text-sm text-center text-secondary-600">
+        <p>Copyright © <!-- -->2023<!-- --> ReCraftr</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
