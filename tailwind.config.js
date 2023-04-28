@@ -56,6 +56,7 @@ module.exports = {
 			xs: 'var(--font-size-xs)',
 			sm: 'var(--font-size-sm)',
 			base: 'var(--font-size-base)',
+			md: 'var(--font-size-md)',
 			lg: 'var(--font-size-lg)',
 			xl: 'var(--font-size-xl)',
 			'2xl': 'var(--font-size-2xl)',
@@ -88,6 +89,8 @@ module.exports = {
 				woodstock: 'var(--color-woodstock)',
 				sunset: 'var(--color-sunset)',
 				pop: 'var(--gradient-pop)',
+				'yellow-lemon': 'var(--color-yellow-lemon)',
+				'dark-coal': 'var(--color-dark-coal)',
 			},
 			boxShadow: {
 				'sm': 'var(--shadow-sm)',

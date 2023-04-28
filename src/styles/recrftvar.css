@@ -28,6 +28,9 @@
 	--color-secondary-900: 94 68 48;
 	--color-secondary-950: 56 50 46;
 
+	--color-yellow-lemon: #F8FC2F ;
+	--color-dark-coal: #082E41 ;
+
 	--shadow-sm: 0px 19px 53px 0px rgb(var(--color-primary-400) / 0.03),
 		0px 10px 28px 0px rgb(var(--color-primary-400) / 0.05),
 		0px 6px 16px 0px rgb(var(--color-primary-400) / 0.05),
