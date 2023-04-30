@@ -1,9 +1,12 @@
 ---
 import MainHead from "../../components/RecraftrHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
 import svgSymbol from "../recraftr/img/symbols.svg";
+import ReNav from "../../components/Nav/renav.astro";
+// import Navigation from "../../components/Nav/scrollnav.jsx";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <MainHead
       title="ReCraftr - Repurposing Blog posts to social media conversions"
@@ -11,7 +14,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
     />
   </head>
   <body class="antialiased bg-secondary-50">
-    <header class="overflow-hidden bg-secondary-100 lg:bg-transparent lg:px-5">
+    <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5">
       <head>
         <div class="flex justify-center mt-8 text-dark-coal">
           <svg role="img" class="h-auto fill-current w-fit max-h-7">
@@ -23,137 +26,104 @@ import svgSymbol from "../recraftr/img/symbols.svg";
           </div>
         </div>
       </head>
+	  <div class="px-4 mx-auto mt-12 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+		  <h1 class="text-3xl font-extrabold leading-none sm:text-4xl font-display text-slate-900">
+			We turn your<br />
+			blog posts<br />
+			into conversions 🤑
+		  </h1>
+  
+		  <p class="mt-4 leading-tight text-md text-secondary-600">
+			Repurposed content subscriptions to elevate your business.
+		  </p>
+  
+		  <div class="flex flex-col mx-auto mt-12 max-w-max">
+			<a href="#pricing" class="btn-primary"> See plans</a>
+			<div class="mt-3 text-sm text-slate-400">
+			  Content that converts, guaranteed.
+			</div>
+		  </div>
+	  </div>
     </header>
-    <section
-      id="introduction"
-      aria-label="Introduction"
-      class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32"
-    >
-      <div
-        class="px-4 mx-auto text-base tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-12 text-secondary-700"
-      >
-        <h1
-          class="text-3xl font-extrabold leading-none sm:text-4xl font-display text-slate-900"
-        >
-          We turn your<br />
-          blog posts<br />
-          into conversions 🤑
-        </h1>
-
-        <p class="mt-4 text-lg leading-tight text-secondary-600">
-          Repurposed content subscriptions to elevate your business.
-        </p>
-
-        <div class="flex flex-col mx-auto mt-12 max-w-max">
-          <a href="#prices" class="btn-primary"> See plans</a>
-          <div class="mt-3 text-sm text-slate-400">
-            Content that converts, guaranteed.
-          </div>
-        </div>
-
-        <h2
-          class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display text-slate-900"
-        >
-          We take your old <br />
-          blog content <br />
-          and create new content <br />
-          for LinkedIn and Instagram. ↗️
-        </h2>
-
-        <h3 class="mt-24 title-recraftr">Why reusing your content?</h3>
-        <div
-          class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8"
-        >
-          <ul
-            role="list"
-            class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3"
-          >
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">
-                👀<br /> Reach
-              </h3>
-              <p>Not many people see your content.</p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">
-                🗣️<br /> Engagement
-              </h3>
-              <p>
-                It's hard to keep people interested and talking about your
-                stuff.
-              </p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
-              <p>You don't have enough time to make new, good content often.</p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">
-                🤷‍♀️<br /> Resources
-              </h3>
-              <p>
-                It's tough to use your money and resources right for making
-                content.
-              </p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">
-                😕<br /> Branding
-              </h3>
-              <p>It's hard to make your brand look the same everywhere.</p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
-              <p>
-                It's difficult to show up at the top of search results and get
-                more visitors.
-              </p>
-            </li>
-            <li
-              class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid"
-            >
-              <h3 class="text-lg font-extrabold font-display">
-                📢<br /> Publishing
-              </h3>
-              <p>
-                Adapting content for different social media sites is tricky.
-              </p>
-            </li>
-            <li class="col-span-2 pl-4">
-              <h3 class="mt-4 text-xl title-recraftr">Is this for me?</h3>
-
-              <p class="mt-4 text-base">
-                You wrote a nice article, a review, a comment or your thoughts
-                on life. Sharing those thoughts through different social media
-                platforms can be daunting. Changing content for different places
-                and styles lets you connect with more people and make your
-                brand's message stronger. Plus, now you can use this content to
-                boost your SEO and the overall online presence of your brand.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <section id="introduction" aria-label="Introduction" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h2
+			class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display text-slate-900"
+			>
+			We take your old <br />
+			blog content <br />
+			and create new content <br />
+			for LinkedIn and Instagram. ↗️
+			</h2>
+		</div>
     </section>
-
+    <section id="simple-reusable-content" aria-label="simple-reusable-content" class="pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">We didn't reinvent the wheel, just design</h3>
+			<p class="mt-4 leading-tight text-md text-secondary-600">Design as you know it is out the door. Design as you want it just arrived.</p>
+			<div class="grid grid-cols-1 gap-16 mt-12 sm:grid-cols-3">
+				<div class="flex flex-col">			
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
+					<div>Subscribe to a plan & request as many designs as you'd like.</div>
+				</div>
+				<div class="flex flex-col">
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
+					<div>Receive your design within a few business days on average, Monday to Friday.</div>
+				</div>
+				<div class="flex flex-col">
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
+					<div>We'll revise the designs until you're 100% satisfied.</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    <section id="why-reuse-content" aria-label="why-reuse-content" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">Why reusing your content?</h3>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
+			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3">
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">👀<br /> Reach</h3>
+					<p>Not many people see your content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Engagement</h3>
+					<p>It's hard to keep people interested and talking about your stuff.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
+					<p>You don't have enough time to make new, good content often.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-2">
+					<h3 class="text-lg font-extrabold font-display">🤷‍♀️<br /> Resources</h3>
+					<p>It's tough to use your money and resources right for making content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">😕<br /> Branding</h3>
+					<p>It's hard to make your brand look the same everywhere.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
+					<p>It's difficult to show up at the top of search results and get more visitors.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">📢<br /> Publishing</h3>
+					<p>Adapting content for different social media sites is tricky.</p>
+				</li>
+				<li class="pl-4 lg:col-span-2">
+					<h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3>
+					<p class="mt-4 text-base">You or your team already have written articles, reviews, comments or thoughts on your industry. Adapting that content for different social media platforms can be daunting but will help you connect with more people, make your brand's message stronger and convert more.</p>
+				</li>
+			</ul>
+		</div>
+    </section>
     <aside
       id="testimonial-from-tommy-stroman"
       aria-label="Testimonial from Tommy Stroman"
       class="relative py-16 bg-secondary-100 sm:py-32"
     >
-      <div class="text-secondary-900/10">
+      <div class="/10">
         <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
           <defs>
             <pattern
@@ -172,58 +142,17 @@ import svgSymbol from "../recraftr/img/symbols.svg";
       </div>
       <div class="relative px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:px-2">
         <figure>
-          <div class="flex text-secondary-900 sm:justify-center">
+          <div class="flex sm:justify-center">
             <div class="flex gap-1">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                class="w-5 h-5 fill-current"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                >
-                </path>
-              </svg><svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                class="w-5 h-5 fill-current"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                >
-                </path>
-              </svg><svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                class="w-5 h-5 fill-current"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                >
-                </path>
-              </svg><svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                class="w-5 h-5 fill-current"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                >
-                </path>
-              </svg><svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                class="w-5 h-5 fill-current"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                >
-                </path>
-              </svg>
+				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
+				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
+				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
+				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
+				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
             </div>
           </div>
           <blockquote
-            class="mt-10 text-base font-medium tracking-tight font-display text-secondary-900 sm:text-center"
+            class="mt-10 text-base font-medium tracking-tight font-display sm:text-center"
           >
             <p>
               “The team at ReCraftr truly understands our brand and consistently
@@ -248,7 +177,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
             </div>
             <div class="ml-4">
               <div
-                class="text-base font-medium leading-6 tracking-tight text-secondary-900"
+                class="text-base font-medium leading-6 tracking-tight "
               >
                 Tom B.
               </div>
@@ -258,23 +187,9 @@ import svgSymbol from "../recraftr/img/symbols.svg";
         </figure>
       </div>
     </aside>
-    <section
-      id="whatwedo"
-      aria-labelledby="whatwedo-title"
-      class="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
-    >
-      <div
-        class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
-      >
-        <h2 class="h2-recraftr" id="whatwedo-title">
-          <span class="font-mono text-sm" aria-hidden="true">01</span><span
-            class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-            class="ml-3 text-base font-medium tracking-tight">What we do</span
-          >
-        </h2>
-        <h3 class="title-recraftr">
-          We breathe new life into your old content.
-        </h3>
+    <section id="whatwedo" aria-labelledby="whatwedo-title" class="py-16 scroll-mt-14 sm:-scroll-mt-32 sm:py-20 lg:py-32">
+      <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+        <h3 class="title-recraftr">We breathe new life into your old content.</h3>
         <p class="mt-4 text-base tracking-tight text-secondary-700">
           Learn how to design your very first icons in a series of whatwedo that
           will teach you everything you need to know to go from beginner to pro
@@ -286,9 +201,9 @@ import svgSymbol from "../recraftr/img/symbols.svg";
       >
         <ol
           role="list"
-          class="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
         >
-          <li class="[counter-increment:video]">
+          <li>
             <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
@@ -307,7 +222,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               </div>
             </div>
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black"
             >
               🕵🏻‍♂️ Analysis
             </h3>
@@ -315,7 +230,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               We find the best blog posts for getting more visits and actions.
             </p>
           </li>
-          <li class="[counter-increment:video]">
+          <li>
             <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
@@ -334,7 +249,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               </div>
             </div>
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black"
             >
               🔑 Key messages
             </h3>
@@ -343,7 +258,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               story.
             </p>
           </li>
-          <li class="[counter-increment:video]">
+          <li>
             <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
@@ -362,7 +277,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               </div>
             </div>
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black"
             >
               🖼️ Designing
             </h3>
@@ -370,7 +285,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               We make eye-catching pictures that fit your brand and message.
             </p>
           </li>
-          <li class="[counter-increment:video]">
+          <li>
             <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
@@ -389,7 +304,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               </div>
             </div>
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black"
             >
               💙 Branding
             </h3>
@@ -398,7 +313,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               brand and work well on LinkedIn.
             </p>
           </li>
-          <li class="[counter-increment:video]">
+          <li>
             <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
@@ -417,7 +332,7 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               </div>
             </div>
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black before:mb-2 before:block before:font-mono before:text-sm before:text-secondary-500 before:content-[counter(video,decimal-leading-zero)]"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black"
             >
               🚀 Optimization
             </h3>
@@ -429,194 +344,13 @@ import svgSymbol from "../recraftr/img/symbols.svg";
         </ol>
       </div>
     </section>
-    <!-- <section id="resources" aria-labelledby="resources-title"
-				class="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32">
-				<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-					<h2 class="h2-recraftr"
-						id="resources-title"><span class="font-mono text-sm" aria-hidden="true">03</span><span
-							class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-							class="ml-3 text-base font-medium tracking-tight">Resources</span></h2>
-					<p class="mt-8 text-base font-bold tracking-tight font-display text-secondary-900">Tools and resources you
-						can use to get started even faster and progress even further.</p>
-					<p class="mt-4 text-base tracking-tight text-secondary-700">Design assets, icon teardowns, and a community of
-						fellow icon designers where you can ask questions, get feedback, and accelerate your learning.</p>
-				</div>
-				<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-					<ol role="list"
-						class="grid grid-cols-1 -mx-3 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-secondary-400/20">
-						<li
-							class="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12">
-							<div class="relative h-48 overflow-hidden shadow-lg rounded-2xl sm:h-60 lg:h-40">
-								<div
-									class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#2C313D_35%,#000)]">
-									<img alt="" loading="lazy" width="160" height="144" decoding="async" data-nimg="1"
-										style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/figma.0d78130b.svg"></div>
-							</div>
-							<div>
-								<h3 class="text-base font-medium tracking-tight text-secondary-900">Figma icon templates</h3>
-								<p class="mt-2 text-sm text-secondary-600">Pefectly structured templates for quickly designing
-									new icons at dozens of common sizes.</p>
-							</div>
-						</li>
-						<li
-							class="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12">
-							<div class="relative h-48 overflow-hidden shadow-lg rounded-2xl sm:h-60 lg:h-40">
-								<div class="absolute inset-0 flex items-center justify-center"><img alt="" loading="lazy"
-										width="4096" height="4096" decoding="async" data-nimg="1"
-										class="absolute inset-0 object-cover w-full h-full" style="color:transparent"
-										sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
-										srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=256&amp;q=75 256w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=384&amp;q=75 384w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=640&amp;q=75 640w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=750&amp;q=75 750w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=828&amp;q=75 828w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=1080&amp;q=75 1080w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=1200&amp;q=75 1200w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=1920&amp;q=75 1920w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=2048&amp;q=75 2048w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=3840&amp;q=75 3840w"
-										src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabstract-background.807725df.png&amp;w=3840&amp;q=75"><img
-										alt="" loading="lazy" width="160" height="144" decoding="async" data-nimg="1"
-										class="relative" style="color:transparent"
-										src="https://primer.tailwindui.com//_next/static/media/video-player.e8496657.svg"></div>
-							</div>
-							<div>
-								<h3 class="text-base font-medium tracking-tight text-secondary-900">Weekly icon teardowns</h3>
-								<p class="mt-2 text-sm text-secondary-600">Weekly videos where we dissect and recreate beautiful
-									icons we find on the web.</p>
-							</div>
-						</li>
-						<li
-							class="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12">
-							<div class="relative h-48 overflow-hidden shadow-lg rounded-2xl sm:h-60 lg:h-40">
-								<div class="absolute inset-0 flex items-center justify-center bg-[#6366F1]"><img alt=""
-										loading="lazy" width="160" height="144" decoding="async" data-nimg="1"
-										style="color:transparent" src="https://primer.tailwindui.com//_next/static/media/discord.ad5bcc98.svg"></div>
-							</div>
-							<div>
-								<h3 class="text-base font-medium tracking-tight text-secondary-900">Community of icon designers
-								</h3>
-								<p class="mt-2 text-sm text-secondary-600">A private Discord server where you can get help and
-									give feedback on each others' work.</p>
-							</div>
-						</li>
-					</ol>
-				</div>
-			</section> -->
-    <!-- <section id="free-chapters" aria-label="Free preview" class="bg-primary-600 scroll-mt-14 sm:scroll-mt-32">
-				<div class="overflow-hidden lg:relative">
-					<div
-						class="relative grid items-end grid-cols-1 px-4 py-20 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-8 gap-y-12 lg:static lg:grid-cols-2 lg:py-28 xl:py-32">
-						<div>
-							<h2
-							h2-recraftr 	class="text-5xl font-extrabold leading-none tracking-tight text-white font-display sm:w-3/4 sm:text-6xl md:w-2/3 lg:w-auto">
-								Get the free sample chapters</h2>
-							<p class="mt-4 text-base tracking-tight text-primary-200">Enter your email address and I’ll send you
-								a sample from the book containing two of my favorite chapters.</p>
-						</div>
-						<form class="lg:pl-16">
-							<h3 class="text-base font-medium tracking-tight text-white">Get two free chapters straight to your inbox <span aria-hidden="true">→</span></h3>
-							<div class="mt-4 sm:relative sm:flex sm:items-center sm:py-0.5 sm:pr-2.5">
-								<div class="relative sm:static sm:flex-auto"><input type="email" id="email-address"
-										required="" aria-label="Email address" placeholder="Email address"
-										class="relative z-10 w-full px-4 py-2 text-base text-white bg-transparent appearance-none peer placeholder:text-white/70 focus:outline-none sm:py-3">
-									<div
-										class="absolute inset-0 border rounded-md border-white/20 peer-focus:border-primary-300 peer-focus:bg-primary-500 peer-focus:ring-1 peer-focus:ring-primary-300 sm:rounded-xl">
-									</div>
-								</div><button class="btn-third" type="submit">Get free chapters</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</section> -->
-    <!-- <section id="results" aria-labelledby="results-title" class="relative pt-8 pb-3 scroll-mt-14 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
-      <div
-        class="absolute inset-x-0 bottom-0 top-1/2 text-secondary-900/10 [mask-image:linear-gradient(transparent,white)]"
-      >
-        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-          <defs>
-            <pattern
-              id=":Rem:"
-              width="128"
-              height="128"
-              patternUnits="userSpaceOnUse"
-              x="50%"
-              y="100%">
-              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#:Rem:)"></rect>
-        </svg>
+    <section id="pricing" aria-labelledby="pricing-title" class="pt-16 pb-8 scroll-mt-14 sm:-scroll-mt-24 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
+      <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+        <h3 class="title-recraftr">Memberships </h3>
+        <p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">Choose the right plan for you</p>
       </div>
-      <div class="relative max-w-5xl pt-16 mx-auto sm:px-6">
-        <div class="pt-px bg-secondary-50 sm:rounded-6xl">
-          <div
-            class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-secondary-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
-            <img
-              alt=""
-              loading="lazy"
-              width="576"
-              height="576"
-              decoding="async"
-              data-nimg="1"
-              class="absolute inset-0 object-cover w-full h-full"
-              style="color:transparent"
-              sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
-              srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=16&q=75 16w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=32&q=75 32w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=48&q=75 48w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=64&q=75 64w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=96&q=75 96w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=128&q=75 128w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=256&q=75 256w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=384&q=75 384w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=640&q=75 640w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=750&q=75 750w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=828&q=75 828w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1080&q=75 1080w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1200&q=75 1200w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=1920&q=75 1920w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=2048&q=75 2048w, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=3840&q=75 3840w"
-              src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fauthor.962d41ee.png&w=3840&q=75"
-            />
-          </div>
-          <div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-            <h2 class="h2-recraftr" id="results-title">
-              <span class="font-mono text-sm" aria-hidden="true">02</span><span
-                class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-                class="ml-3 text-base font-medium tracking-tight">Results</span>
-            </h2>
-            <h3 class="leading-none title-recraftr text-primary-600">
-              Sutro –
-            </h3>
-            <h4 class="text-lg leading-none">
-              a 3x conversion with a single post.
-            </h4>
-            <ul class="pl-8 my-8 list-disc list">
-              <li>Up to 3X increase in a single Instagram post engagement</li>
-              <li>40% increase in inbound leads</li>
-              <li>
-                Strengthened brand image with consistent, professional visuals
-              </li>
-            </ul>
-            <p class="mt-8">
-              <a
-                class="inline-flex items-center text-base font-medium tracking-tight text-primary-600"
-                href="/#"
-                ><svg
-                  aria-hidden="true"
-                  viewBox="0 0 40 40"
-                  class="w-10 h-10 fill-current"
-                >
-                  <path
-                    d="M13.817 33.753c12.579 0 19.459-10.422 19.459-19.458 0-.297 0-.592-.02-.884a13.913 13.913 0 0 0 3.411-3.543 13.65 13.65 0 0 1-3.928 1.077 6.864 6.864 0 0 0 3.007-3.784 13.707 13.707 0 0 1-4.342 1.66 6.845 6.845 0 0 0-11.655 6.239A19.417 19.417 0 0 1 5.654 7.915a6.843 6.843 0 0 0 2.117 9.128 6.786 6.786 0 0 1-3.104-.853v.086a6.842 6.842 0 0 0 5.487 6.704 6.825 6.825 0 0 1-3.088.116 6.847 6.847 0 0 0 6.39 4.75A13.721 13.721 0 0 1 3.334 30.68a19.36 19.36 0 0 0 10.483 3.066"
-                  >
-                  </path>
-                </svg><span class="ml-4">Follow on Twitter</span>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <section
-      id="pricing"
-      aria-labelledby="pricing-title"
-      class="pt-16 pb-8 scroll-mt-14 sm:scroll-mt-32 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
-    >
-      <div
-        class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
-      >
-        <h2 class="h2-recraftr" id="pricing-title">
-          <span class="font-mono text-sm" aria-hidden="true">04</span><span
-            class="ml-3 h-3.5 w-px bg-primary-600/20"></span><span
-            class="ml-3 text-base font-medium tracking-tight">Pricing</span
-          >
-        </h2>
-        <h3 class="title-recraftr">Prices with ROI</h3>
-        <p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">
-          ROIs means everything. Conversions or your Money back. Guaranteed.
-        </p>
-      </div>
-      <div class="max-w-5xl mx-auto mt-16 lg:px-6">
-        <div class="grid max-w-2xl grid-cols-1 gap-2 mx-auto bg-secondary-50 lg:max-w-7xl lg:grid-cols-4">
+      <div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">
+        <div class="grid w-full grid-cols-1 gap-2 mx-auto bg-secondary-50 lg:grid-cols-4">
           <div id="price-1" class="p-4 bg-white">
             <div class="asdfasdf">
               <div class="text-lg font-extrabold text-black font-display">Monthly</div>
@@ -625,12 +359,12 @@ import svgSymbol from "../recraftr/img/symbols.svg";
             <div class="my-8">
               <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
               <div class="text-sm text-slate-700">Pause or cancel anytime</div>
-              <div class="flex flex-col items-center my-6">
+              <div class="flex flex-col items-center my-8">
                 <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
-				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+				<a href="calendly" target="_blank" class="mt-2 text-xs text-black underline decoration-dotted">Book a call</a>
               </div>
             </div>
-			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
+			<ul class="-my-2 text-sm tracking-tight divide-y">
 				<li class="py-2">5 blog posts repurposed</li>
 				<li class="py-2">Unlimited images</li>
 				<li class="py-2">Single template</li>
@@ -644,19 +378,20 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
             </div>
             <div class="my-8">
-              <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
+              <div class="font-extrabold leading-none text-black text-md font-display">$1,300/m</div>
               <div class="text-sm text-slate-700">Pause or cancel anytime</div>
-              <div class="flex flex-col items-center my-6">
+              <div class="flex flex-col items-center my-8">
                 <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
-				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+				<a href="calendly" target="_blank" class="mt-2 text-xs text-black underline decoration-dotted">Book a call</a>
               </div>
             </div>
-			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
-				<li class="py-2">5 blog posts repurposed</li>
+			<ul class="-my-2 text-sm tracking-tight divide-y">
+				<li class="py-2">Unlimited blog posts repurposed</li>
 				<li class="py-2">Unlimited images</li>
-				<li class="py-2">Single template</li>
-				<li class="py-2">1 platform adaptation</li>
-				<li class="py-2">2 revisions per post</li>
+				<li class="py-2">Unlimited brands</li>
+				<li class="py-2">Unlimited templates</li>
+				<li class="py-2">Unlimited social media channels</li>
+				<li class="py-2">Unlimited revisions</li>
 			  </ul>
           </div>
           <div id="price-3" class="p-4 bg-white">
@@ -665,21 +400,23 @@ import svgSymbol from "../recraftr/img/symbols.svg";
               <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
             </div>
             <div class="my-8">
-              <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
+              <div class="font-extrabold leading-none text-black text-md font-display">$1,000/m</div>
               <div class="text-sm text-slate-700">Pause or cancel anytime</div>
-              <div class="flex flex-col items-center my-6">
+              <div class="flex flex-col items-center my-8">
                 <a role="button" href="buynow" class="text-base btn-primary">Get started</a>
-				<a href="calendly" target="_blank" class="mt-4 text-black underline decoration-dotted">Book a call</a>
+				<a href="calendly" target="_blank" class="mt-2 text-xs text-black underline decoration-dotted">Book a call</a>
               </div>
             </div>
-			<ul class="-my-2 text-base tracking-tight divide-y divide-secondary-200 text-secondary-900">
-				<li class="py-2">5 blog posts repurposed</li>
+			<ul class="-my-2 text-sm tracking-tight divide-y">
+				<li class="py-2">Unlimited blog posts repurposed</li>
 				<li class="py-2">Unlimited images</li>
-				<li class="py-2">Single template</li>
-				<li class="py-2">1 platform adaptation</li>
-				<li class="py-2">2 revisions per post</li>
+				<li class="py-2">Unlimited brands</li>
+				<li class="py-2">Unlimited templates</li>
+				<li class="py-2">Unlimited social media channels</li>
+				<li class="py-2">Unlimited revisions</li>
 			  </ul>
           </div>
+          
 		  <div id="bookacall" class="p-4 bg-white">
 			<div class="text-lg font-extrabold text-black font-display">Book a call</div>
             <div class="text-sm">Learn more about how ReCraftr works and how we can help you.</div>
@@ -688,438 +425,19 @@ import svgSymbol from "../recraftr/img/symbols.svg";
         </div>
       </div>
     </section>
-    <!-- <section class="py-8 sm:py-10 lg:py-16">
-      <div
-        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
-      >
-        <h2 class="title-recraftr">Some kind words from early customers...</h2>
-        <p class="mt-4 text-base tracking-tight text-secondary-600">
-          I worked with a small group of early access customers to make sure all
-          of the content in the book was exactly what they needed. Hears what
-          they had to say about the finished product.
-        </p>
-      </div>
-      <ul
-        role="list"
-        class="grid max-w-2xl grid-cols-1 gap-8 px-4 mx-auto mt-16 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
-      >
-        <li class="lg:hidden">
-          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-            <blockquote>
-              <p
-                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-              >
-                Mira’s teaching style is second to none. Everything was easy to
-                follow every step of the way.
-              </p>
-            </blockquote>
-            <figcaption class="flex items-center mt-6">
-              <div class="overflow-hidden rounded-full bg-secondary-50">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="48"
-                  height="48"
-                  decoding="async"
-                  data-nimg="1"
-                  class="object-cover w-12 h-12"
-                  style="color:transparent"
-                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75 2x"
-                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75"
-                />
-              </div>
-              <div class="ml-4">
-                <div
-                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                >
-                  Antonio Littel
-                </div>
-                <div class="mt-1 text-sm text-secondary-600">
-                  Frontend Developer
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="lg:hidden">
-          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-            <blockquote>
-              <p
-                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-              >
-                I run an ecommerce store selling rare vintage gummy bears and
-                could never find a good gummy bear icon. Now I can design my own
-                in minutes.
-              </p>
-            </blockquote>
-            <figcaption class="flex items-center mt-6">
-              <div class="overflow-hidden rounded-full bg-secondary-50">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="48"
-                  height="48"
-                  decoding="async"
-                  data-nimg="1"
-                  class="object-cover w-12 h-12"
-                  style="color:transparent"
-                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75 2x"
-                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75"
-                />
-              </div>
-              <div class="ml-4">
-                <div
-                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                >
-                  Cameron Considine
-                </div>
-                <div class="mt-1 text-sm text-secondary-600">Entrepreneur</div>
-              </div>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="lg:hidden">
-          <figure class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5">
-            <blockquote>
-              <p
-                class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-              >
-                I couldn’t believe how fast Mira moved in Figma compared to my
-                own workflow. I’m designing icons more accurately in half the
-                time with the shortcuts I learned from her videos.
-              </p>
-            </blockquote>
-            <figcaption class="flex items-center mt-6">
-              <div class="overflow-hidden rounded-full bg-secondary-50">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="48"
-                  height="48"
-                  decoding="async"
-                  data-nimg="1"
-                  class="object-cover w-12 h-12"
-                  style="color:transparent"
-                  srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75 2x"
-                  src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75"
-                />
-              </div>
-              <div class="ml-4">
-                <div
-                  class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                >
-                  Steven Hackett
-                </div>
-                <div class="mt-1 text-sm text-secondary-600">
-                  Bootcamp Instructor
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="hidden lg:list-item">
-          <ul role="list">
-            <li class="hidden lg:list-item">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    Mira’s teaching style is second to none. Everything was easy
-                    to follow every step of the way.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Antonio Littel
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Frontend Developer
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="lg:mt-8">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    Even though I was excited to learn, I was pessimistic that I
-                    wouldn’t actually ever get good enough to design my own
-                    icons. I was wrong — this book is all I needed.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.60373f01.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Lynn Nolan
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Growth Marketer
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </li>
-        <li class="hidden lg:list-item">
-          <ul role="list">
-            <li class="hidden lg:list-item">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    I run an ecommerce store selling rare vintage gummy bears
-                    and could never find a good gummy bear icon. Now I can
-                    design my own in minutes.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Cameron Considine
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Entrepreneur
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="lg:mt-8">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    The complete package is worth it for the weekly teardown
-                    videos alone. I’ve learned so much watching Mira take apart
-                    other icons and recreate them from scratch.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-11.6af33989.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Regina Wisoky
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Design Student
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </li>
-        <li class="hidden lg:list-item">
-          <ul role="list">
-            <li class="hidden lg:list-item">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    I couldn’t believe how fast Mira moved in Figma compared to
-                    my own workflow. I’m designing icons more accurately in half
-                    the time with the shortcuts I learned from her videos.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Steven Hackett
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Bootcamp Instructor
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="lg:mt-8">
-              <figure
-                class="p-8 shadow-md rounded-4xl ring-1 ring-secondary-900/5"
-              >
-                <blockquote>
-                  <p
-                    class="text-base tracking-tight text-secondary-900 before:content-['“'] after:content-['”']"
-                  >
-                    I never thought I would enjoy designing icons but using the
-                    ideas in this book, it’s become a great way for me to relax
-                    while still being creative.
-                  </p>
-                </blockquote>
-                <figcaption class="flex items-center mt-6">
-                  <div class="overflow-hidden rounded-full bg-secondary-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                      decoding="async"
-                      data-nimg="1"
-                      class="object-cover w-12 h-12"
-                      style="color:transparent"
-                      srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=96&q=75 2x"
-                      src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-10.8ffba813.png&w=96&q=75"
-                    />
-                  </div>
-                  <div class="ml-4">
-                    <div
-                      class="text-base font-medium leading-6 tracking-tight text-secondary-900"
-                    >
-                      Carla Schoen
-                    </div>
-                    <div class="mt-1 text-sm text-secondary-600">
-                      Startup Founder
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section> -->
 
-    <div
-      class="sticky z-50 max-w-xl mx-auto border-4 border-black overflow-clip bottom-4 rounded-xl shadow-solid"
-    >
-      <div
-        class="sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-secondary-200 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur"
-      >
-        <ol
-          role="list"
-          class="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-secondary-900 [counter-reset:section]"
-        >
-          <li class="flex items-center text-dark-coal">
-            <svg role="img" class="fill-current h-fit w-fit max-h-16">
-              <use xlink:href={svgSymbol + "#recraftr-emblem-default"}></use>
-            </svg>
-          </li>
-          <li class="flex [counter-increment:section]">
-            <a
-              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-              href="/#whatwedo">What we do</a
-            >
-          </li>
-          <!-- <li class="flex [counter-increment:section]"><a
-								  class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-								  href="/#resources">Resources</a></li> -->
-          <li class="flex [counter-increment:section]">
-            <a
-              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-              href="/#results">Results</a
-            >
-          </li>
+	<ReNav>
+		<div class="flex items-center pr-4" slot="before-items">
+			<a href="#page-intro" class="text-indigo-500">
+				<svg role="img" class="w-12 h-12 fill-current"><use xlink:href={svgSymbol + "#recraftr-emblem-default"}></use></svg>
+			</a>
+		</div>
+	</ReNav>
 
-          <li class="flex [counter-increment:section]">
-            <a
-              class="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] border-transparent before:text-secondary-500 hover:bg-primary-50/40 hover:before:text-secondary-900"
-              href="/#pricing">Pricing</a
-            >
-          </li>
-        </ol>
-      </div>
-    </div>
+    
     <footer class="relative pt-5 pb-20 sm:pb-32 sm:pt-14">
       <div
-        class="absolute inset-x-0 top-0 h-32 text-secondary-900/10 [mask-image:linear-gradient(white,transparent)]"
+        class="absolute inset-x-0 top-0 h-32 /10 [mask-image:linear-gradient(white,transparent)]"
       >
         <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
           <defs>
@@ -1141,5 +459,6 @@ import svgSymbol from "../recraftr/img/symbols.svg";
         <p>All rights reserved.</p>
       </div>
     </footer>
+	<FooterScripts />
   </body>
 </html>

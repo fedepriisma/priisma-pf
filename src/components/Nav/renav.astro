@@ -1,0 +1,46 @@
+<nav
+  role="navigation"
+  class="sticky z-50 px-4 py-2 mx-auto border-4 border-black max-w-fit overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50"
+>
+  <div
+    class="grid grid-flow-col gap-2 text-base font-medium text-black auto-cols"
+  >
+    <slot name="before-items" />
+
+    <div class="nav-item">
+      <a class="btn-secondary" href="#whatwedo">What we do</a>
+    </div>
+    <div class="nav-item">
+      <a class="btn-secondary" href="#why-reuse-content">Why reuse</a>
+    </div>
+
+    <div class="nav-item">
+      <a class="btn-secondary" href="#pricing">Pricing</a>
+    </div>
+    <slot name="after-items" />
+  </div>
+</nav>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        if (entry.intersectionRatio > 0) {
+          document
+            .querySelector(`div.nav-item a[href="#${id}"]`)
+            .parentElement.classList.add("nav-active");
+        } else {
+          document
+            .querySelector(`div.nav-item a[href="#${id}"]`)
+            .parentElement.classList.remove("nav-active");
+        }
+      });
+    });
+
+    // Track all sections that have an `id` applied
+    document.querySelectorAll("section[id]").forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
