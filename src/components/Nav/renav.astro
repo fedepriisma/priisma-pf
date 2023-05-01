@@ -1,23 +1,31 @@
 <nav
   role="navigation"
-  class="sticky z-50 px-4 py-2 mx-auto border-4 border-black max-w-fit overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50"
+  class="sticky z-50 max-w-xs px-4 py-2 mx-4 border-4 border-black sm:mx-auto sm:max-w-fit sm:overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50"
 >
-  <div
-    class="grid grid-flow-col gap-2 text-base font-medium text-black auto-cols"
-  >
+  <div class="flex flex-wrap gap-1 text-base font-medium text-black sm:grid sm:grid-flow-col sm:gap-2 sm:auto-cols">
     <slot name="before-items" />
 
+    <div class="nav-item">
+      <a class="btn-secondary" href="#benefits">Benefits</a>
+    </div>
+    <!-- <div class="nav-item">
+      <a class="btn-secondary" href="#whatwedo">Recent work</a>
+    </div> -->
     <div class="nav-item">
       <a class="btn-secondary" href="#whatwedo">What we do</a>
     </div>
     <div class="nav-item">
-      <a class="btn-secondary" href="#why-reuse-content">Why reuse</a>
+      <a class="btn-secondary" href="#sow">Scope of work</a>
     </div>
-
     <div class="nav-item">
       <a class="btn-secondary" href="#pricing">Pricing</a>
     </div>
+    <!-- <div class="nav-item">
+      <a class="btn-secondary" href="#whatwedo">FAQs</a>
+    </div> -->
+
     <slot name="after-items" />
+
   </div>
 </nav>
 

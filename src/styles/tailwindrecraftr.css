@@ -10,12 +10,34 @@
         @apply inline-flex justify-center px-4 py-4 text-base font-semibold tracking-tight border-2 shadow-sm text-secondary-950 rounded-xl bg-secondary-50 focus:outline-none hover:bg-secondary-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-50 active:bg-secondary-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-secondary-50;
     }
     .btn-secondary {
-        @apply inline-flex justify-center rounded-xl border-2 py-4 px-[calc(theme(spacing.4)-1px)] text-base bg-[#CAAFF7] font-semibold tracking-tight focus:outline-none border-secondary-950 text-secondary-950 hover:bg-[#CEEED7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-950 active:text-secondary-950/70 disabled:opacity-40 disabled:hover:border-secondary-300 disabled:hover:bg-transparent;
+        @apply
+        inline-flex
+        justify-center
+        rounded-xl
+        border-2
+        py-3
+        px-[calc(theme(spacing.3)-1px)]
+        sm:py-4
+        sm:px-[calc(theme(spacing.4)-1px)]
+        text-base
+        bg-[#CAAFF7]
+        font-semibold
+        tracking-tight
+        focus:outline-none
+        border-secondary-950
+        text-secondary-950
+        hover:bg-[#CEEED7]
+        focus-visible:outline-2
+        focus-visible:outline-offset-2
+        focus-visible:outline-secondary-950
+        active:text-secondary-950/70
+        disabled:opacity-40
+        disabled:hover:border-secondary-300
+        disabled:hover:bg-transparent;
     }
     .title-recraftr {
         @apply text-2xl font-extrabold leading-none font-display text-slate-900;
     }
-
     .h2-recraftr {
         @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
     }

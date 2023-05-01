@@ -1,9 +1,12 @@
 ---
 import MainHead from "../../components/RecraftrHead.astro";
 import FooterScripts from "../../components/FooterScripts.astro";
+import Footer from "./footer.astro";
 import svgSymbol from "../recraftr/img/symbols.svg";
 import ReNav from "../../components/Nav/renav.astro";
 // import Navigation from "../../components/Nav/scrollnav.jsx";
+
+// Inspired by https://www.designjoy.co
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -14,7 +17,7 @@ import ReNav from "../../components/Nav/renav.astro";
     />
   </head>
   <body class="antialiased bg-secondary-50">
-    <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5">
+    <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5 scroll-mt-12">
       <head>
         <div class="flex justify-center mt-8 text-dark-coal">
           <svg role="img" class="h-auto fill-current w-fit max-h-7">
@@ -59,66 +62,90 @@ import ReNav from "../../components/Nav/renav.astro";
     </section>
     <section id="simple-reusable-content" aria-label="simple-reusable-content" class="pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="mt-24 title-recraftr">We didn't reinvent the wheel, just design</h3>
-			<p class="mt-4 leading-tight text-md text-secondary-600">Design as you know it is out the door. Design as you want it just arrived.</p>
+			<h3 class="mt-24 title-recraftr">We didn't reinvent the wheel, just content repurposing</h3>
+			<p class="mt-4 leading-tight text-md text-secondary-600">Traditional content is out the door. Reimagined content just arrived.</p>
 			<div class="grid grid-cols-1 gap-16 mt-12 sm:grid-cols-3">
 				<div class="flex flex-col">			
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
-					<div>Subscribe to a plan & request as many designs as you'd like.</div>
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-envelope"}></use></svg>
+					<div>Subscribe to a plan & request as many repurposed pieces as you'd like.</div>
 				</div>
 				<div class="flex flex-col">
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
-					<div>Receive your design within a few business days on average, Monday to Friday.</div>
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-photo"}></use></svg>
+					<div>Receive your revamped content within a few business days on average, Monday to Friday.</div>
 				</div>
 				<div class="flex flex-col">
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-filter"}></use></svg>
-					<div>We'll revise the designs until you're 100% satisfied.</div>
+					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-arrow-path-rounded"}></use></svg>
+					<div>We'll revise the content until you're 100% satisfied.</div>
 				</div>
 			</div>
 		</div>
     </section>
-    <section id="why-reuse-content" aria-label="why-reuse-content" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
+    <section id="youll-never-go-back" aria-label="youll-never-go-back" class="pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="mt-24 title-recraftr">Why reusing your content?</h3>
+			<h3 class="mt-24 title-recraftr">Transforming content like never before</h3>
+			<p class="mt-4 leading-tight text-md text-secondary-600">ReCraftr swaps out those unreliable freelancers and costly agencies for a simple, flat monthly fee – and our speedy content repurposing will amaze you!</p>
 		</div>
-		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3">
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
-					<h3 class="text-lg font-extrabold font-display">👀<br /> Reach</h3>
-					<p>Not many people see your content.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
-					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Engagement</h3>
-					<p>It's hard to keep people interested and talking about your stuff.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
-					<h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
-					<p>You don't have enough time to make new, good content often.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-2">
-					<h3 class="text-lg font-extrabold font-display">🤷‍♀️<br /> Resources</h3>
-					<p>It's tough to use your money and resources right for making content.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
-					<h3 class="text-lg font-extrabold font-display">😕<br /> Branding</h3>
-					<p>It's hard to make your brand look the same everywhere.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
-					<h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
-					<p>It's difficult to show up at the top of search results and get more visitors.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
-					<h3 class="text-lg font-extrabold font-display">📢<br /> Publishing</h3>
-					<p>Adapting content for different social media sites is tricky.</p>
-				</li>
-				<li class="pl-4 lg:col-span-2">
-					<h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3>
-					<p class="mt-4 text-base">You or your team already have written articles, reviews, comments or thoughts on your industry. Adapting that content for different social media platforms can be daunting but will help you connect with more people, make your brand's message stronger and convert more.</p>
-				</li>
-			</ul>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2">
+				<div class="flex items-center justify-center p-8 text-left text-black bg-white">
+					<div>
+						<p class="text-xl font-extrabold leading-none font-display">Content is everything, and these guys have nailed it.</p>
+						<p class="text-body">Tibo, Taplio</p>
+					</div>
+				</div>
+				<div class="flex flex-col text-left">
+					<h4 class="font-extrabold text-md font-display">No meetings, no problem!</h4>
+					<p class="text-body">We're not fans of meetings either, so we've ditched them entirely.</p>
+					<h4 class="mt-8 font-extrabold text-md font-display">Notion for easy management</h4>
+					<p class="text-body">Effortlessly manage your content repurposing board with Notion, keeping tabs on active, queued, and completed tasks.</p>
+					<h4 class="mt-8 font-extrabold text-md font-display">Bring the whole team!</h4>
+					<p class="text-body">Invite all your team members, so everyone can submit requests and monitor progress.</p>
+				</div>
+			</div>
 		</div>
     </section>
-    <aside
+    <section id="benefits" aria-label="benefits" class="pt-20 pb-16 text-center -scroll-mt-32 sm:-scroll-mt-40 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">Membership benefits</h3>
+			<p class="mt-4 leading-tight text-md text-secondary-600">Benefits so amazing, you'll never look elsewhere for your social media content needs. Seriously! 😎</p>
+			<a href="#pricing" class="mt-12 btn-primary"> See plans</a>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-24 mt-12 sm:grid-cols-2 md:grid-cols-3">
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-view-columns"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Repurposing Board</h4>
+					<p class="text-body">Add as many blog posts requests to your board as you'd like.</p>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-fire"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Superfast Delivery</h4>
+					<p class="text-body">Get your repurposed content one at a time in just a few days on average.</p>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-currency-dollar"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Fixed Monthly Rate</h4>
+					<p class="text-body">No surprises here! Pay the same fixed price each month.</p>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-sparkles"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Top-Quality Content</h4>
+					<p class="text-body">Outstanding content quality at your fingertips whenever you need it.</p>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-arrow-trending-up"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Flexible and Scalable</h4>
+					<p class="text-body">Scale up or down as needed, and pause or cancel at any time.</p>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-paint-brush"}></use></svg>
+					<h4 class="font-extrabold text-md font-display">Tailored and Yours</h4>
+					<p class="text-body">Each of your repurposed content pieces is made especially for you and is 100% yours.</p>
+				</div>
+			</div>
+		</div>
+    </section>
+    <!-- <aside
       id="testimonial-from-tommy-stroman"
       aria-label="Testimonial from Tommy Stroman"
       class="relative py-16 bg-secondary-100 sm:py-32"
@@ -186,11 +213,11 @@ import ReNav from "../../components/Nav/renav.astro";
           </figcaption>
         </figure>
       </div>
-    </aside>
-    <section id="whatwedo" aria-labelledby="whatwedo-title" class="py-16 scroll-mt-14 sm:-scroll-mt-32 sm:py-20 lg:py-32">
+    </aside> -->
+    <section id="whatwedo" aria-labelledby="whatwedo-title" class="py-16 -scroll-mt-12 sm:-scroll-mt-12 sm:py-20 lg:py-32">
       <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <h3 class="title-recraftr">We breathe new life into your old content.</h3>
-        <p class="mt-4 text-base tracking-tight text-secondary-700">
+        <p class="mt-4 text-base tracking-tight">
           Learn how to design your very first icons in a series of whatwedo that
           will teach you everything you need to know to go from beginner to pro
           in just over an hour.
@@ -204,7 +231,7 @@ import ReNav from "../../components/Nav/renav.astro";
           class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
         >
           <li>
-            <div
+            <!-- <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
             >
@@ -220,18 +247,18 @@ import ReNav from "../../components/Nav/renav.astro";
                   src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
                 />
               </div>
-            </div>
+            </div> -->
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
             >
               🕵🏻‍♂️ Analysis
             </h3>
-            <p class="mt-2 text-sm text-secondary-600">
+            <p class="mt-2 text-sm text-slate-800">
               We find the best blog posts for getting more visits and actions.
             </p>
           </li>
           <li>
-            <div
+            <!-- <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
             >
@@ -247,19 +274,19 @@ import ReNav from "../../components/Nav/renav.astro";
                   src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
                 />
               </div>
-            </div>
+            </div> -->
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
             >
               🔑 Key messages
             </h3>
-            <p class="mt-2 text-sm text-secondary-600">
+            <p class="mt-2 text-sm text-slate-800">
               Our team picks the most important parts and makes an interesting
               story.
             </p>
           </li>
           <li>
-            <div
+            <!-- <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
             >
@@ -275,18 +302,18 @@ import ReNav from "../../components/Nav/renav.astro";
                   src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
                 />
               </div>
-            </div>
+            </div> -->
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
             >
               🖼️ Designing
             </h3>
-            <p class="mt-2 text-sm text-secondary-600">
+            <p class="mt-2 text-sm text-slate-800">
               We make eye-catching pictures that fit your brand and message.
             </p>
           </li>
           <li>
-            <div
+            <!-- <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
             >
@@ -302,19 +329,19 @@ import ReNav from "../../components/Nav/renav.astro";
                   src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
                 />
               </div>
-            </div>
+            </div> -->
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
             >
               💙 Branding
             </h3>
-            <p class="mt-2 text-sm text-secondary-600">
+            <p class="mt-2 text-sm text-slate-800">
               We create nice-looking templates and slideshows that match your
               brand and work well on LinkedIn.
             </p>
           </li>
           <li>
-            <div
+            <!-- <div
               class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
               style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
             >
@@ -330,13 +357,13 @@ import ReNav from "../../components/Nav/renav.astro";
                   src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
                 />
               </div>
-            </div>
+            </div> -->
             <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black"
+              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
             >
               🚀 Optimization
             </h3>
-            <p class="mt-2 text-sm text-secondary-600">
+            <p class="mt-2 text-sm text-slate-800">
               We change your content to do well on different social media sites,
               so more people see it and care about it.
             </p>
@@ -344,7 +371,69 @@ import ReNav from "../../components/Nav/renav.astro";
         </ol>
       </div>
     </section>
-    <section id="pricing" aria-labelledby="pricing-title" class="pt-16 pb-8 scroll-mt-14 sm:-scroll-mt-24 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
+	<section id="why-reuse-content" aria-label="why-reuse-content" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">Why reusing your content?</h3>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
+			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3">
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">👀<br /> Reach</h3>
+					<p>Not many people see your content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Engagement</h3>
+					<p>It's hard to keep people interested and talking about your stuff.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
+					<p>You don't have enough time to make new, good content often.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-2">
+					<h3 class="text-lg font-extrabold font-display">🤷‍♀️<br /> Resources</h3>
+					<p>It's tough to use your money and resources right for making content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">😕<br /> Branding</h3>
+					<p>It's hard to make your brand look the same everywhere.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
+					<p>It's difficult to show up at the top of search results and get more visitors.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">📢<br /> Publishing</h3>
+					<p>Adapting content for different social media sites is tricky.</p>
+				</li>
+				<li class="pl-4 lg:col-span-2">
+					<h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3>
+					<p class="mt-4 text-base">You or your team already have written articles, reviews, comments or thoughts on your industry. Adapting that content for different social media platforms can be daunting but will help you connect with more people, make your brand's message stronger and convert more.</p>
+				</li>
+			</ul>
+		</div>
+    </section>
+	<section id="sow" aria-label="sow" class="pt-20 pb-16 text-center -scroll-mt-32 sm:-scroll-mt-32 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">Blog to: LinkedIn, Instagram and Twitter</h3>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<ul class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display">
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to LinkedIn</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to LinkedIn</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to Instagram</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to Instagram</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to Twitter</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to Twitter</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Custom images</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Infographics</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Branded templates</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Slideshows</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Carrousels</li>
+				<li class="py-2 m-0 border-b-4 border-color-slate-700">Key message extraction</li>
+			</ul>
+		</div>
+    </section>
+    <section id="pricing" aria-labelledby="pricing-title" class="pt-16 pb-8 -scroll-mt-12 sm:-scroll-mt-12 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
       <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <h3 class="title-recraftr">Memberships </h3>
         <p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">Choose the right plan for you</p>
@@ -427,38 +516,15 @@ import ReNav from "../../components/Nav/renav.astro";
     </section>
 
 	<ReNav>
-		<div class="flex items-center pr-4" slot="before-items">
-			<a href="#page-intro" class="text-indigo-500">
+		<div class="flex items-center w-12 h-12 pr-4" slot="before-items">
+			<a href="#page-intro" class="text-indigo-700">
 				<svg role="img" class="w-12 h-12 fill-current"><use xlink:href={svgSymbol + "#recraftr-emblem-default"}></use></svg>
 			</a>
 		</div>
 	</ReNav>
 
-    
-    <footer class="relative pt-5 pb-20 sm:pb-32 sm:pt-14">
-      <div
-        class="absolute inset-x-0 top-0 h-32 /10 [mask-image:linear-gradient(white,transparent)]"
-      >
-        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-          <defs>
-            <pattern
-              id=":Rf6:"
-              width="128"
-              height="128"
-              patternUnits="userSpaceOnUse"
-              x="50%"
-            >
-              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#:Rf6:)"></rect>
-        </svg>
-      </div>
-      <div class="relative text-sm text-center text-secondary-600">
-        <p>Copyright © <!-- -->2023<!-- --> ReCraftr</p>
-        <p>All rights reserved.</p>
-      </div>
-    </footer>
-	<FooterScripts />
+	<Footer />
+
+	<!-- <FooterScripts /> -->
   </body>
 </html>
