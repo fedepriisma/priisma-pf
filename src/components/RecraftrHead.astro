@@ -3,12 +3,11 @@ const {
 	title = 'Fede Bozo: Designer',
 	description = 'Fede Bozo — Designer',
 } = Astro.props;
-// import '../styles/variables.css'
+import HeaderScripts from '../components/HeaderScripts.astro';
 import '../styles/recrftvar.css'
 import '../styles/tailwindrecraftr.css'
 ---
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-SPNJS94CCP"></script>
-<script type="text/partytown">window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SPNJS94CCP');</script>
+<HeaderScripts />
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
