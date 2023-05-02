@@ -1,32 +1,24 @@
-<nav
-  role="navigation"
-  class="sticky z-50 max-w-xs px-4 py-2 mx-4 border-4 border-black sm:mx-auto sm:max-w-fit sm:overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50"
->
-  <div class="flex flex-wrap gap-1 text-base font-medium text-black sm:grid sm:grid-flow-col sm:gap-2 sm:auto-cols">
+<nav role="navigation"
+class="sticky z-50 max-w-xs px-4 py-2 mx-4 border-4 border-black sm:mx-auto sm:max-w-fit sm:overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50">
+  <ul class="flex flex-wrap gap-1 text-base font-medium text-black sm:grid sm:grid-flow-col sm:gap-2 sm:auto-cols">
     <slot name="before-items" />
-
-    <div class="nav-item">
+    <li class="nav-item">
       <a class="btn-secondary" href="#benefits">Benefits</a>
-    </div>
-    <div class="nav-item">
+    </li>
+    <li class="nav-item">
       <a class="btn-secondary" href="#recentwork">Recent work</a>
-    </div>
-    <div class="nav-item">
+    </li>
+    <li class="nav-item">
       <a class="btn-secondary" href="#whatwedo">What we do</a>
-    </div>
-    <div class="nav-item">
+    </li>
+    <li class="nav-item">
       <a class="btn-secondary" href="#sow">Scope of work</a>
-    </div>
-    <div class="nav-item">
-      <a class="btn-secondary" href="#thepricing">Pricing</a>
-    </div>
-    <!-- <div class="nav-item">
-      <a class="btn-secondary" href="#whatwedo">FAQs</a>
-    </div> -->
-
+    </li>
+    <li class="nav-item">
+      <a class="btn-secondary" href="#pricing">Pricing</a>
+    </li>
     <slot name="after-items" />
-
-  </div>
+  </ul>
 </nav>
 
 <script>
@@ -34,15 +26,24 @@ window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
+      const navLink = document.querySelector(`nav a[href="#${id}"]`);
       if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
+        setTimeout(() => {
+          document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
+        }, 50); // add a 50ms delay
       } else {
-        document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
+        setTimeout(() => {
+          document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
+        }, 50); // add a 100ms delay
       }
     });
   });
 
+
+
   // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {observer.observe(section);});
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
 });
 </script>
