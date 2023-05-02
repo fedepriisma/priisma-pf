@@ -1,9 +1,15 @@
 ---
+import { Picture } from "@astrojs/image/components";
 import MainHead from "../../components/RecraftrHead.astro";
 import FooterScripts from "../../components/FooterScripts.astro";
 import Footer from "./footer.astro";
 import svgSymbol from "../recraftr/img/symbols.svg";
 import ReNav from "../../components/Nav/renav.astro";
+
+import RecentWork1 from "./img/recent-work-01.jpg"
+import RecentWork2 from "./img/recent-work-02.jpg"
+import RecentWork3 from "./img/recent-work-03.jpg"
+import RecentWork4 from "./img/recent-work-04.jpg"
 
 // Inspired by https://www.designjoy.co
 ---
@@ -89,7 +95,7 @@ import ReNav from "../../components/Nav/renav.astro";
 				<div class="flex items-center justify-center p-8 text-left text-black bg-white">
 					<div>
 						<p class="text-xl font-extrabold leading-none font-display">Content is everything, and these guys have nailed it.</p>
-						<p class="text-body">Tibo, Taplio</p>
+						<p class="text-body">Vero, Parisando</p>
 					</div>
 				</div>
 				<div class="flex flex-col text-left">
@@ -103,7 +109,7 @@ import ReNav from "../../components/Nav/renav.astro";
 			</div>
 		</div>
     </section>
-    <section id="benefits" aria-label="benefits" class="pt-20 pb-16 text-center -scroll-mt-32 sm:-scroll-mt-40 sm:pb-20 md:pt-36 lg:py-32">
+    <section id="benefits" aria-label="benefits" class="max-h-screen pt-20 pb-16 text-center -scroll-mt-32 sm:-scroll-mt-40 sm:pb-20 md:pt-36 lg:py-32">
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
 			<h3 class="mt-24 title-recraftr">Membership benefits</h3>
 			<p class="mt-4 leading-tight text-md text-secondary-600">Benefits so amazing, you'll never look elsewhere for your social media content needs. Seriously! 😎</p>
@@ -144,75 +150,41 @@ import ReNav from "../../components/Nav/renav.astro";
 			</div>
 		</div>
     </section>
-    <!-- <aside
-      id="testimonial-from-tommy-stroman"
-      aria-label="Testimonial from Tommy Stroman"
-      class="relative py-16 bg-secondary-100 sm:py-32"
-    >
-      <div class="/10">
-        <svg aria-hidden="true" class="absolute inset-0 w-full h-full">
-          <defs>
-            <pattern
-              id=":Rb6:"
-              width="128"
-              height="128"
-              patternUnits="userSpaceOnUse"
-              x="50%"
-              patternTransform="translate(0 80)"
-            >
-              <path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#:Rb6:)"></rect>
-        </svg>
-      </div>
-      <div class="relative px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:px-2">
-        <figure>
-          <div class="flex sm:justify-center">
-            <div class="flex gap-1">
-				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
-				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
-				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
-				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
-				<svg role="img" class="w-5 h-5 fill-current"><use xlink:href={svgSymbol + "#icon-star"}></use></svg>
-            </div>
-          </div>
-          <blockquote
-            class="mt-10 text-base font-medium tracking-tight font-display sm:text-center"
-          >
-            <p>
-              “The team at ReCraftr truly understands our brand and consistently
-              creates visually stunning content that drives conversions. Highly
-              recommended!”
-            </p>
-          </blockquote>
-          <figcaption class="flex items-center mt-10 sm:justify-center">
-            <div class="overflow-hidden rounded-full bg-secondary-200">
-              <img
-                alt=""
-                loading="lazy"
-                width="48"
-                height="48"
-                decoding="async"
-                data-nimg="1"
-                class="object-cover w-12 h-12"
-                style="color:transparent"
-                srcset="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=48&q=75 1x, https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=96&q=75 2x"
-                src="https://primer.tailwindui.com//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.fe0baac2.png&w=96&q=75"
-              />
-            </div>
-            <div class="ml-4">
-              <div
-                class="text-base font-medium leading-6 tracking-tight "
-              >
-                Tom B.
-              </div>
-              <div class="mt-1 text-sm text-secondary-600">Marketing</div>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-    </aside> -->
+    <section id="recentwork" aria-label="recentwork" class="pt-20 pb-16 text-center -scroll-mt-32 sm:-scroll-mt-40 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="mt-24 title-recraftr">Recent work</h3>
+			<p class="mt-4 leading-tight text-md text-secondary-600">Content to conversion design. Make it flow</p>
+			<!-- <a href="#pricing" class="mt-12 btn-primary"> See plans</a> -->
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
+				<Picture
+					src={RecentWork1}
+					widths={[200, 400, 1500]}
+					sizes="(max-width: 1500px) 100vw, 1500px"
+					alt="Airline ticket booking sample"
+				/>
+				<Picture
+					src={RecentWork2}
+					widths={[200, 400, 1500]}
+					sizes="(max-width: 1500px) 100vw, 1500px"
+					alt="Airline ticket booking sample"
+				/>
+				<Picture
+					src={RecentWork3}
+					widths={[200, 400, 1500]}
+					sizes="(max-width: 1500px) 100vw, 1500px"
+					alt="Airline ticket booking sample"
+				/>
+				<Picture
+					src={RecentWork4}
+					widths={[200, 400, 1500]}
+					sizes="(max-width: 1500px) 100vw, 1500px"
+					alt="Airline ticket booking sample"
+				/>
+			</div>
+		</div>
+    </section>
     <section id="whatwedo" aria-labelledby="whatwedo-title" class="py-16 -scroll-mt-12 sm:-scroll-mt-12 sm:py-20 lg:py-32">
       <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <h3 class="title-recraftr">We breathe new life into your old content.</h3>
@@ -230,138 +202,27 @@ import ReNav from "../../components/Nav/renav.astro";
           class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
         >
           <li>
-            <!-- <div
-              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
-              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
-            >
-              <div class="flex overflow-hidden rounded shadow-sm">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="200"
-                  height="108"
-                  decoding="async"
-                  data-nimg="1"
-                  style="color:transparent"
-                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
-                />
-              </div>
-            </div> -->
-            <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
-            >
-              🕵🏻‍♂️ Analysis
-            </h3>
-            <p class="mt-2 text-sm text-slate-800">
-              We find the best blog posts for getting more visits and actions.
-            </p>
-          </li>
-          <li>
-            <!-- <div
-              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
-              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
-            >
-              <div class="flex overflow-hidden rounded shadow-sm">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="200"
-                  height="108"
-                  decoding="async"
-                  data-nimg="1"
-                  style="color:transparent"
-                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
-                />
-              </div>
-            </div> -->
-            <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
-            >
-              🔑 Key messages
-            </h3>
+			<h3 class="mt-8 text-lg font-extrabold tracking-tight text-black font-display">🔑 Key messages</h3>
             <p class="mt-2 text-sm text-slate-800">
               Our team picks the most important parts and makes an interesting
               story.
             </p>
           </li>
           <li>
-            <!-- <div
-              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
-              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
-            >
-              <div class="flex overflow-hidden rounded shadow-sm">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="200"
-                  height="108"
-                  decoding="async"
-                  data-nimg="1"
-                  style="color:transparent"
-                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
-                />
-              </div>
-            </div> -->
-            <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
-            >
-              🖼️ Designing
-            </h3>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight text-black font-display">🖼️ Designing</h3>
             <p class="mt-2 text-sm text-slate-800">
               We make eye-catching pictures that fit your brand and message.
             </p>
           </li>
           <li>
-            <!-- <div
-              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
-              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
-            >
-              <div class="flex overflow-hidden rounded shadow-sm">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="200"
-                  height="108"
-                  decoding="async"
-                  data-nimg="1"
-                  style="color:transparent"
-                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
-                />
-              </div>
-            </div> -->
-            <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
-            >
-              💙 Branding
-            </h3>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight text-black font-display">💙 Branding</h3>
             <p class="mt-2 text-sm text-slate-800">
               We create nice-looking templates and slideshows that match your
               brand and work well on LinkedIn.
             </p>
           </li>
           <li>
-            <!-- <div
-              class="relative flex items-center justify-center px-6 shadow-lg h-44 rounded-2xl"
-              style="background-image:conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)"
-            >
-              <div class="flex overflow-hidden rounded shadow-sm">
-                <img
-                  alt=""
-                  loading="lazy"
-                  width="200"
-                  height="108"
-                  decoding="async"
-                  data-nimg="1"
-                  style="color:transparent"
-                  src="https://primer.tailwindui.com//_next/static/media/setup.5831258d.svg"
-                />
-              </div>
-            </div> -->
-            <h3
-              class="mt-8 text-lg font-extrabold tracking-tight text-black font-display"
-            >
-              🚀 Optimization
-            </h3>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight text-black font-display">🚀 Optimization</h3>
             <p class="mt-2 text-sm text-slate-800">
               We change your content to do well on different social media sites,
               so more people see it and care about it.
@@ -432,9 +293,9 @@ import ReNav from "../../components/Nav/renav.astro";
 			</ul>
 		</div>
     </section>
-    <section id="pricing" aria-labelledby="pricing-title" class="pt-16 pb-8 -scroll-mt-12 sm:-scroll-mt-12 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
+    <section id="thepricing" aria-labelledby="thepricing" class="min-h-screen pt-16 pb-8 -scroll-mt-12 sm:-scroll-mt-12 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32">
       <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-        <h3 class="title-recraftr">Memberships </h3>
+        <h3 class="title-recraftr">Memberships</h3>
         <p class="max-w-xl mt-4 text-base tracking-tight text-secondary-600">Choose the right plan for you</p>
       </div>
       <div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">

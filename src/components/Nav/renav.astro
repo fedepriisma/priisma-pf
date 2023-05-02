@@ -8,9 +8,9 @@
     <div class="nav-item">
       <a class="btn-secondary" href="#benefits">Benefits</a>
     </div>
-    <!-- <div class="nav-item">
-      <a class="btn-secondary" href="#whatwedo">Recent work</a>
-    </div> -->
+    <div class="nav-item">
+      <a class="btn-secondary" href="#recentwork">Recent work</a>
+    </div>
     <div class="nav-item">
       <a class="btn-secondary" href="#whatwedo">What we do</a>
     </div>
@@ -18,7 +18,7 @@
       <a class="btn-secondary" href="#sow">Scope of work</a>
     </div>
     <div class="nav-item">
-      <a class="btn-secondary" href="#pricing">Pricing</a>
+      <a class="btn-secondary" href="#thepricing">Pricing</a>
     </div>
     <!-- <div class="nav-item">
       <a class="btn-secondary" href="#whatwedo">FAQs</a>
@@ -30,25 +30,19 @@
 </nav>
 
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute("id");
-        if (entry.intersectionRatio > 0) {
-          document
-            .querySelector(`div.nav-item a[href="#${id}"]`)
-            .parentElement.classList.add("nav-active");
-        } else {
-          document
-            .querySelector(`div.nav-item a[href="#${id}"]`)
-            .parentElement.classList.remove("nav-active");
-        }
-      });
-    });
-
-    // Track all sections that have an `id` applied
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
+      } else {
+        document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
+      }
     });
   });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {observer.observe(section);});
+});
 </script>

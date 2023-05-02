@@ -4,7 +4,8 @@
 
 @layer base {
     .btn-primary {
-        @apply inline-flex justify-center px-6 py-4 font-extrabold tracking-wide text-white bg-black border-2 shadow-sm text-md rounded-xl focus:outline-none hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:bg-black active:text-white/80 disabled:opacity-30 disabled:hover:bg-black font-display;
+        @apply
+        inline-flex justify-center px-6 py-4 font-extrabold tracking-wide text-white bg-black border-2 shadow-sm text-md rounded-xl focus:outline-none hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:bg-black active:text-white/80 disabled:opacity-30 disabled:hover:bg-black font-display;
     }
     .btn-third {
         @apply inline-flex justify-center px-4 py-4 text-base font-semibold tracking-tight border-2 shadow-sm text-secondary-950 rounded-xl bg-secondary-50 focus:outline-none hover:bg-secondary-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-50 active:bg-secondary-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-secondary-50;
