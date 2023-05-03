@@ -84,4 +84,9 @@
 	--pixel-size: 4;
 	--link-color-stop-a: #1d5bfc;
 	--link-color-stop-b: #c238bd;
+
+	--color-red: #ff5050;
+	--color-yellow: #ffd542;
+	--color-purple: #af43ff;
+	--color-pink: #fdb2b7;
 }
