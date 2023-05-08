@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
-    "preact": "^10.7.3"
+    "preact": "^10.7.3",
+    "sharp": "^0.32.1"
   }
 }
