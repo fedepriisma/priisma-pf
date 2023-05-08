@@ -6,11 +6,6 @@ import Footer from "./footer.astro";
 import svgSymbol from "../recraftr/img/symbols.svg";
 import ReNav from "../../components/Nav/renav.astro";
 
-import RecentWork1 from "./img/recent-work-01.jpg"
-import RecentWork2 from "./img/recent-work-02.jpg"
-import RecentWork3 from "./img/recent-work-03.jpg"
-import RecentWork4 from "./img/recent-work-04.jpg"
-
 // Inspired by https://www.designjoy.co
 ---
 
@@ -21,10 +16,10 @@ import RecentWork4 from "./img/recent-work-04.jpg"
       description="Repurposing Blog posts to social media conversions"
     />
   </head>
-  <body class="antialiased bg-secondary-50">
+  <body class="antialiased text-[#3300ff] bg-secondary-50">
     <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5 scroll-mt-12">
       <head>
-        <div class="flex justify-center mt-8 text-dark-coal">
+        <div class="flex justify-center mt-8">
           <svg role="img" class="h-auto fill-current w-fit max-h-7">
             <use xlink:href={svgSymbol + "#recraftr-logo"}></use>
           </svg>
@@ -35,7 +30,7 @@ import RecentWork4 from "./img/recent-work-04.jpg"
         </div>
       </head>
 	  <div class="px-4 mx-auto mt-12 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-		  <h1 class="text-3xl font-extrabold leading-none sm:text-4xl font-display text-slate-900">
+		  <h1 class="text-3xl font-extrabold leading-none sm:text-4xl font-display">
 			We turn your<br />
 			blog posts<br />
 			into growth 🤑
@@ -47,14 +42,14 @@ import RecentWork4 from "./img/recent-work-04.jpg"
   
 		  <div class="flex flex-col mx-auto mt-12 max-w-max">
 			<a href="#pricing" class="btn-primary"> See plans</a>
-			<div class="mt-6 text-sm text-slate-600">
+			<div class="mt-6 text-sm text-current">
 			  Content that converts, guaranteed.
 			</div>
 		  </div>
 	  </div>
     </header>
     <section id="introduction" aria-label="Introduction" class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-		<h2 class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display text-slate-900">
+		<h2 class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display">
 		We take your old <br />
 		blog content <br />
 		and create new content <br />
@@ -67,15 +62,15 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 			<p class="subtitle-recraftr">Traditional content is out the door.<br/>Reimagined content just arrived.</p>
 			<div class="grid grid-cols-1 gap-16 mt-12 sm:grid-cols-3">
 				<div class="flex flex-col">			
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-envelope"}></use></svg>
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-subscribe-plan"}></use></svg>
 					<div>Subscribe to a plan & request as many repurposed pieces as you'd like.</div>
 				</div>
 				<div class="flex flex-col">
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-photo"}></use></svg>
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-revamped-img"}></use></svg>
 					<div>Receive your revamped content within a few business days on average, Monday to Friday.</div>
 				</div>
 				<div class="flex flex-col">
-					<svg role="img" class="h-auto fill-current max-h-20"><use xlink:href={svgSymbol + "#icon-arrow-path-rounded"}></use></svg>
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-iteration"}></use></svg>
 					<div>We'll revise the content until you're 100% satisfied.</div>
 				</div>
 			</div>
@@ -89,34 +84,34 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
 			<div class="grid grid-cols-1 gap-24 mt-12 sm:grid-cols-2 md:grid-cols-3">
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-view-columns"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Repurposing Board</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-repurposing-board"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Repurposing Board</h4>
 					<p class="text-body">Add as many blog posts requests to your board as you'd like.</p>
 				</div>
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-fire"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Superfast Delivery</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-superfast-delivery"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Superfast Delivery</h4>
 					<p class="text-body">Get your repurposed content one at a time in just a few days on average.</p>
 				</div>
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-currency-dollar"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Fixed Monthly Rate</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-fixed-rate"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Fixed Monthly Rate</h4>
 					<p class="text-body">No surprises here! Pay the same fixed price each month.</p>
 				</div>
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-sparkles"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Top-Quality Content</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-top-quality"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Top-Quality Content</h4>
 					<p class="text-body">Outstanding content quality at your fingertips whenever you need it.</p>
 				</div>
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-arrow-trending-up"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Flexible and Scalable</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-flexible-scalable"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Flexible and Scalable</h4>
 					<p class="text-body">Scale up or down as needed, and pause or cancel at any time.</p>
 				</div>
-				<div class="flex flex-col items-center justify-center">
-					<svg role="img" class="w-16 h-16 stroke-current"><use xlink:href={svgSymbol + "#icon-paint-brush"}></use></svg>
-					<h4 class="font-extrabold text-md font-display">Tailored and Yours</h4>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-tailored"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Tailored and Yours</h4>
 					<p class="text-body">Each of your repurposed content pieces is made especially for you and is 100% yours.</p>
 				</div>
 			</div>
@@ -129,7 +124,7 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
 			<div class="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2">
-				<div class="flex items-center justify-center p-8 text-left text-black bg-white">
+				<div class="flex items-center justify-center p-8 text-left bg-white">
 					<div>
 						<p class="text-xl font-extrabold leading-none font-display">Content is everything, and these guys have nailed it.</p>
 						<p class="text-body">Vero, Parisando</p>
@@ -155,33 +150,41 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
 			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
 				<Picture
-					src={RecentWork1}
-					widths={[200, 400, 1500]}
-					sizes="(max-width: 1500px) 100vw, 1500px"
+					class={'pic-withloader'}
+					src={import('./img/recent-work-01.jpg')}
+					widths={[400, 1000]}
+					aspectRatio="1:1"
+					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Sutro Instagram carrousel"
 				/>
 				<Picture
-					src={RecentWork2}
-					widths={[200, 400, 1500]}
-					sizes="(max-width: 1500px) 100vw, 1500px"
+					class={'pic-withloader'}
+					src={import('./img/recent-work-02.jpg')}
+					widths={[400, 1000]}
+					aspectRatio="1:1"
+					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Guiajando Paris Pass"
 				/>
 				<Picture
-					src={RecentWork3}
-					widths={[200, 400, 1500]}
-					sizes="(max-width: 1500px) 100vw, 1500px"
+					class={'pic-withloader'}
+					src={import('./img/recent-work-03.jpg')}
+					widths={[400, 1000]}
+					aspectRatio="1:1"
+					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Tweet Hunter tips and tricks for blog"
 				/>
 				<Picture
-					src={RecentWork4}
-					widths={[200, 400, 1500]}
-					sizes="(max-width: 1500px) 100vw, 1500px"
+					class={'pic-withloader'}
+					src={import('./img/recent-work-04.jpg')}
+					widths={[400, 1000]}
+					aspectRatio="1:1"
+					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Taplio blog and tutorial"
 				/>
 			</div>
 		</div>
     </section>
-	<div class="text-black dividing-section">
+	<div class="dividing-section">
 		<div class="w-full h-1/2 bg-[#eef6d7]"></div>
 		<div class="w-full h-1/2 bg-[#f9f3c8]"></div>
 		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
@@ -193,7 +196,7 @@ import RecentWork4 from "./img/recent-work-04.jpg"
         </p>
       </div>
       <div
-        class="px-4 mx-auto mt-16 text-base font-medium text-black sm:px-6 md:max-w-2xl md:px-4 lg:px-8"
+        class="px-4 mx-auto mt-16 text-base font-medium sm:px-6 md:max-w-2xl md:px-4 lg:px-8"
       >
         <ol
           role="list"
@@ -234,32 +237,32 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 			<h3 class="title-recraftr">Why reusing your content?</h3>
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium text-black sm:grid-cols-2 lg:grid-cols-3">
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium sm:grid-cols-2 lg:grid-cols-3">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
 					<h3 class="text-lg font-extrabold font-display">👀<br /> Reach</h3>
 					<p>Not many people see your content.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
 					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Engagement</h3>
 					<p>It's hard to keep people interested and talking about your stuff.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
 					<h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
 					<p>You don't have enough time to make new, good content often.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-2">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-2">
 					<h3 class="text-lg font-extrabold font-display">🤷‍♀️<br /> Resources</h3>
 					<p>It's tough to use your money and resources right for making content.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-3">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
 					<h3 class="text-lg font-extrabold font-display">😕<br /> Branding</h3>
 					<p>It's hard to make your brand look the same everywhere.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid -rotate-1">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
 					<h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
 					<p>It's difficult to show up at the top of search results and get more visitors.</p>
 				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-black rounded-lg shadow-solid rotate-2">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
 					<h3 class="text-lg font-extrabold font-display">📢<br /> Publishing</h3>
 					<p>Adapting content for different social media sites is tricky.</p>
 				</li>
@@ -275,47 +278,50 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 			<h3 class="title-recraftr">Blog to: LinkedIn, Instagram and Twitter</h3>
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			<ul class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display">
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to LinkedIn</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to LinkedIn</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to Instagram</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to Instagram</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Blog posts to Twitter</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Articles to Twitter</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Custom images</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Infographics</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Branded templates</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Slideshows</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Carrousels</li>
-				<li class="py-2 m-0 border-b-4 border-color-slate-700">Key message extraction</li>
+			<ul class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 border-current rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display">
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to LinkedIn</li>
+				<li class="py-2 m-0 border-b-4 border-current">Articles to LinkedIn</li>
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to Instagram</li>
+				<li class="py-2 m-0 border-b-4 border-current">Articles to Instagram</li>
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to Twitter</li>
+				<li class="py-2 m-0 border-b-4 border-current">Articles to Twitter</li>
+				<li class="py-2 m-0 border-b-4 border-current">Custom images</li>
+				<li class="py-2 m-0 border-b-4 border-current">Infographics</li>
+				<li class="py-2 m-0 border-b-4 border-current">Branded templates</li>
+				<li class="py-2 m-0 border-b-4 border-current">Slideshows</li>
+				<li class="py-2 m-0 border-b-4 border-current">Carrousels</li>
+				<li class="py-2 m-0 border-b-4 border-current">Key message extraction</li>
 			</ul>
 		</div>
     </section>
 	
-	<div class="text-black dividing-section">
+	<div class="dividing-section">
 		<div class="w-full h-1/2 bg-[#def4d4]"></div>
 		<div class="w-full h-1/2 bg-[#efe0ed]"></div>
 		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
 	</div>
 
-    <section id="pricing" aria-labelledby="pricing" class="section-spacing bg-[#efe0ed]">
+    <section id="pricing" aria-labelledby="pricing" class="section-spacing bg-[#efe0ed] -scroll-mt-16">
       <div class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <h3 class="title-recraftr">Memberships</h3>
         <p class="subtitle-recraftr">Choose the right plan for you</p>
       </div>
       <div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">
         <div class="grid w-full grid-cols-1 gap-2 mx-auto bg-secondary-50 lg:grid-cols-4">
-          <div id="price-1" class="px-4 pt-8 pb-16 bg-white">
+          <div id="price-1" class="relative px-4 pt-8 pb-16 bg-white">
+			<div class="absolute text-blue-600 -top-3 -left-2 -rotate-12">
+				<svg role="img" class="w-32 h-12 fill-current"><use xlink:href={svgSymbol + "#most-popular"}></use></svg>
+			</div>
             <div class=" min-h-[120px]">
-              <div class="text-lg font-extrabold text-black font-display">Monthly</div>
+              <div class="text-lg font-extrabold font-display">Monthly</div>
               <div class="text-sm">No minimum commitment. Pause or cancel anytime.</div>
             </div>
             <div class="my-8">
-              <div class="font-extrabold leading-none text-black text-md font-display">$2,000/m</div>
-              <div class="text-sm text-slate-700">Pause or cancel anytime</div>
+              <div class="font-extrabold leading-none text-md font-display">$2,000/m</div>
+              <div class="text-sm text-current">Pause or cancel anytime</div>
               <div class="flex flex-col items-center my-8">
-                <a role="button" href="https://buy.stripe.com/bIYcNEfqgbk662s6op" target="_blank" class="w-full text-base btn-primary">Get started</a>
-				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold text-black underline decoration-dotted">Book a call</a>
+                <a role="button" href="https://buy.stripe.com/bIYcNEfqgbk662s6op" target="_blank" class="w-full text-md btn-primary">Get started</a>
+				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a>
               </div>
             </div>
 			<p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -331,15 +337,15 @@ import RecentWork4 from "./img/recent-work-04.jpg"
           </div>
           <div id="price-2" class="px-4 pt-8 pb-16 bg-white">
             <div class=" min-h-[120px]">
-              <div class="text-lg font-extrabold text-black font-display">Quarterly</div>
+              <div class="text-lg font-extrabold font-display">Quarterly</div>
               <div class="text-sm">Save $500 per month.</div>
             </div>
             <div class="my-8">
-              <div class="font-extrabold leading-none text-black text-md font-display">$1,500/m</div>
-              <div class="text-sm text-slate-700">Paid quarterly</div>
+              <div class="font-extrabold leading-none text-md font-display">$1,500/m</div>
+              <div class="text-sm text-current">Paid quarterly</div>
               <div class="flex flex-col items-center my-8">
-                <a role="button" href="https://buy.stripe.com/aEU6pg6TKewiduU002" target="_blank" class="w-full text-base btn-primary">Get started</a>
-				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold text-black underline decoration-dotted">Book a call</a>
+                <a role="button" href="https://buy.stripe.com/aEU6pg6TKewiduU002" target="_blank" class="w-full text-md btn-primary">Get started</a>
+				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a>
               </div>
             </div>
 			<p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -354,15 +360,15 @@ import RecentWork4 from "./img/recent-work-04.jpg"
           </div>
           <div id="price-3" class="px-4 pt-8 pb-16 bg-white">
             <div class="min-h-[120px]">
-              <div class="text-lg font-extrabold text-black font-display">Yearly</div>
+              <div class="text-lg font-extrabold font-display">Yearly</div>
               <div class="text-sm">Save $1,000 per month.</div>
             </div>
             <div class="my-8">
-              <div class="font-extrabold leading-none text-black text-md font-display">$1,000/m</div>
-              <div class="text-sm text-slate-700">Paid annually</div>
+              <div class="font-extrabold leading-none text-md font-display">$1,000/m</div>
+              <div class="text-sm text-current">Paid annually</div>
               <div class="flex flex-col items-center my-8">
-                <a role="button" href="https://buy.stripe.com/9AQ4h85PG4VI9eEfZ1" target="_blank" class="w-full text-base btn-primary">Get started</a>
-				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold text-black underline decoration-dotted">Book a call</a>
+                <a role="button" href="https://buy.stripe.com/9AQ4h85PG4VI9eEfZ1" target="_blank" class="w-full text-md btn-primary">Get started</a>
+				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a>
               </div>
             </div>
 			<p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -376,22 +382,22 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 			  </ul>
           </div>
 		  <div id="bookacall" class="px-4 pt-8 pb-16 bg-white">
-			<div class="min-h-[210px] border-b border-slate-600">
-				<div class="text-lg font-extrabold text-black font-display">Book a call</div>
+			<div class="min-h-[210px] border-b border-current">
+				<div class="text-lg font-extrabold font-display">Book a call</div>
 				<div class="text-sm">Learn more about how ReCraftr works and how we can help you.</div>
-				<a href="https://calendly.com/recraftr/recraftr-intro" class="block mt-8 font-bold text-black text-body">Book a call</a>
+				<a href="https://calendly.com/recraftr/recraftr-intro" class="block mt-8 font-bold text-body">Book a call</a>
 			</div>
 			<div id="price-4" class="px-4 pt-8 pb-16 bg-white">
 				<div class="elatardecer">
-				  <div class="text-lg font-extrabold text-black font-display">Starter pack</div>
+				  <div class="text-lg font-extrabold font-display">Starter pack</div>
 				  <div class="text-sm">Give it a run, you'll love it.</div>
 				</div>
 				<div class="my-8">
-				  <div class="font-extrabold leading-none text-black text-md font-display">$650/m</div>
-				  <div class="text-sm text-slate-700">A single use.</div>
+				  <div class="font-extrabold leading-none text-md font-display">$650/m</div>
+				  <div class="text-sm text-current">A single use.</div>
 				  <div class="flex flex-col items-center my-8">
 					<a role="button" href="https://buy.stripe.com/6oEbJA91SgEqduU000" target="_blank" class="w-full text-base btn-primary">Start with 5</a>
-					<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold text-black underline decoration-dotted">Book a call</a>
+					<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a>
 				  </div>
 				</div>
 				<p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -410,7 +416,7 @@ import RecentWork4 from "./img/recent-work-04.jpg"
 
 	<ReNav>
 		<li class="flex items-center pr-4 nav-item" slot="before-items">
-			<a href="#page-intro" class="transition-all text-slate-500 hover:rotate-12 hover:text-slate-700">
+			<a href="#page-intro" class="transition-all hover:rotate-12 hover:text-slate-700">
 				<svg role="img" class="w-12 h-12 fill-current"><use xlink:href={svgSymbol + "#recraftr-emblem-default"}></use></svg>
 			</a>
 		</li>
