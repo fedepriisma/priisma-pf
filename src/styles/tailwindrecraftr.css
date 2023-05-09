@@ -67,6 +67,9 @@
         @apply relative z-0 flex flex-col items-center justify-center h-32;
     }
     .pic-withloader {
-        @apply relative bg-gray-50 before:bg-gray-300 before:absolute before:w-full before:h-full before:animate-pulse;
+        @apply relative bg-gray-50 before:bg-gray-300 before:absolute before:w-full before:h-full before:animate-pulse before:z-0 ;
+    }
+    .pic-withloader img {
+        @apply relative z-10;
     }
 }
