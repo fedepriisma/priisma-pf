@@ -21,29 +21,27 @@ class="sticky z-50 max-w-xs px-4 py-2 mx-4 border-4 border-current -mb-28 sm:mx-
   </ul>
 </nav>
 
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      const navLink = document.querySelector(`nav a[href="#${id}"]`);
-      if (entry.intersectionRatio > 0) {
-        setTimeout(() => {
-          document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
-        }, 50); // add a 50ms delay
-      } else {
-        setTimeout(() => {
-          document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
-        }, 50); // add a 100ms delay
-      }
-    });
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          const navLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (entry.intersectionRatio > 0) {
+          setTimeout(() => {
+              document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
+          }, 50); // add a 50ms delay
+          } else {
+          setTimeout(() => {
+              document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
+          }, 50); // add a 100ms delay
+          }
+      });
+      });
+  
+      // Track all sections that have an `id` applied
+      document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+      });
   });
-
-
-
-  // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-  });
-});
-</script>
+  </script>
