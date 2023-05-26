@@ -23,6 +23,9 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    htmlMinifier(), critters(), compressor()
+    htmlMinifier(), critters(), compressor({
+      gzip: false,
+      brotli: true
+    })
   ]
 });
