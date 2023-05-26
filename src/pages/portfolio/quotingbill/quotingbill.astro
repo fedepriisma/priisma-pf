@@ -18,6 +18,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
   <div class="mx-auto">
     <div class="mx-auto my-16 text-gray-900 image-solid-high">
       <Picture
+        class={'pic-withloader'}
         src={import("../quotingbill/qb-cancellations-selected.jpg")}
         widths={[200, 400, 1980]}
         sizes="(max-width: 1980px) 100vw, 1980px"
@@ -25,7 +26,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
       />
     </div>
   </div>
-  <div class="max-w-sm mt-8 text-sm prose text-white">
+  <div class="flex-col max-w-sm mt-8 space-y-4 text-base text-white">
     <p>
       In the last part of 2019, I worked on the design of QuotingBill to bring a
       simple and streamlined way to invoice the Telecommunications space to the
@@ -44,7 +45,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
   </div>
 
   <h3 class="section-subtitle">Breadboarding</h3>
-  <div class="max-w-sm my-6 text-sm prose text-white">
+  <div class="max-w-sm my-6 text-base text-white">
     <p>We wired the whole process of cancelling a product from the very concept, to each of the steps in detail in order to define each step as needed.</p>
   </div>
   <div
@@ -107,7 +108,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
-      <figcaption class="text-xs text-white">Invoice page</figcaption>
+      <figcaption class="text-sm text-white">Invoice page</figcaption>
     </figure>
     <figure>
       <Picture
@@ -116,7 +117,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
-      <figcaption class="text-xs text-white">Project page</figcaption>
+      <figcaption class="text-sm text-white">Project page</figcaption>
     </figure>
     <figure>
       <Picture
@@ -125,14 +126,14 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
-      <figcaption class="text-xs text-white">
+      <figcaption class="text-sm text-white">
         Adding users to a third-party service through QuotingBill
       </figcaption>
     </figure>
   </div>
 
   <div class="section-spread sm:grid-cols-2 md:grid-cols-3">
-    <div class="max-w-sm mt-8 text-sm prose text-white md:col-start-2">
+    <div class="max-w-sm mt-8 text-base text-white md:col-start-2">
       <p>
         The end product comprises a full suite of helpers connected to other
         services to make invoicing metered usage simple and trackable.
@@ -145,6 +146,7 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
         alt="Fat marker for the bucket"
       /> -->
     <Picture
+      class={'pic-withloader'}
       src={import("../quotingbill/qb-provisioning-frontpage.png")}
       widths={[200, 400, 800]}
       sizes="(max-width: 800px) 100vw, 800px"

@@ -1,7 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import ProjectDetails from "../../../components/ProjectDetails.astro";
-import Flyer from "../flyairways/fly-airways-devices.png";
 ---
 
 <div id="flyairways" class="section-space bg-sky-100 text-sky-900">
@@ -18,15 +17,15 @@ import Flyer from "../flyairways/fly-airways-devices.png";
 
 	<div class="mx-auto">
 		<div class="mx-auto my-16 text-gray-900">
-			<Picture
-				src={Flyer}
-				widths={[200, 400, 1500]}
-				sizes="(max-width: 1500px) 100vw, 1500px"
-				alt="Airline ticket booking sample"
-			/>
+		  <Picture
+			src={import("../flyairways/fly-airways-devices.png")}
+			widths={[200, 400, 1980]}
+			sizes="(max-width: 1980px) 100vw, 1980px"
+			alt="Customers page showing different products selected for cancellation"
+		  />
 		</div>
-	</div>
-	<div class="max-w-sm mt-8 text-xs prose">
+	  </div>
+	<div class="flex flex-col max-w-sm mt-8 space-y-4 text-base">
 		<p>We built fares pages and search engine to serve airlines.</p>
 		<p>
 			Lead the design of modular products to help a growing list of 20+
@@ -35,7 +34,7 @@ import Flyer from "../flyairways/fly-airways-devices.png";
 		</p>
 		<p>
 			Prototyped and delivered over 5 intuitive and easy-to-use products
-			and updates by collecting requirements, research and wireframes
+			and updates by collecting requirements, research and wireframes.
 		</p>
 		<p>
 			Cut design delivery times by 40% creating design workflows along

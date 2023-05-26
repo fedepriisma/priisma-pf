@@ -22,6 +22,7 @@ import SnackW from "../godark/gd-snack-white.jpg";
 	<div class="mx-auto">
 		<div class="mx-auto my-16 text-gray-900 image-solid-high">
 			<Picture
+				class={'pic-withloader'}
 				src={WebOne}
 				widths={[200, 400, 1980]}
 				sizes="(max-width: 1980px) 100vw, 1980px"
@@ -29,25 +30,31 @@ import SnackW from "../godark/gd-snack-white.jpg";
 			/>
 		</div>
 	</div>
-	<div class="max-w-sm mt-8 text-xs prose">
+	<div class="max-w-sm mt-8 text-base">
 		<p>A nice project for delicious chocolates.
 			We did the branding and the web looking for fun, tropical and colorfull palettes conveying the warm and rich flavors.
 		</p>
 	</div>
 	<div class="flex flex-col gap-4 mt-8 sm:flex-row">
-		<div class="image-solid-high"><Picture
+		<div class="image-solid-high">
+			<Picture
+			class={'pic-withloader'}
 			src={SnackM}
 			widths={[200, 400, 800]}
 			sizes="(max-width: 800px) 100vw, 800px"
 			alt="Fitter happier"
 		/></div>
-		<div class="image-solid-high"><Picture
+		<div class="image-solid-high">
+			<Picture
+			class={'pic-withloader'}
 			src={SnackC}
 			widths={[200, 400, 800]}
 			sizes="(max-width: 800px) 100vw, 800px"
 			alt="Fitter happier"
 		/></div>
-		<div class="image-solid-high"><Picture
+		<div class="image-solid-high">
+			<Picture
+			class={'pic-withloader'}
 			src={SnackW}
 			widths={[200, 400, 800]}
 			sizes="(max-width: 800px) 100vw, 800px"
