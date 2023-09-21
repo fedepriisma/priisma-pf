@@ -1,10 +1,14 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import MainHead from "../../components/RecraftrHead.astro";
-import FooterScripts from "../../components/FooterScripts.astro";
-import Footer from "./footer.astro";
-import svgSymbol from "../recraftr/img/symbols.svg";
-import ReNav from "../../components/Nav/renav.astro";
+import { Image } from 'astro:assets';
+import MainHead from '../../components/RecraftrHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import Footer from './footer.astro';
+import svgSymbol from '../recraftr/img/symbols.svg?url';
+import ReNav from '../../components/Nav/renav.astro';
+import RecentWork01 from './img/recent-work-01.jpg';
+import RecentWork02 from './img/recent-work-02.jpg';
+import RecentWork03 from './img/recent-work-03.jpg';
+import RecentWork04 from './img/recent-work-04.jpg';
 
 // Inspired by https://www.designjoy.co
 ---
@@ -145,39 +149,31 @@ import ReNav from "../../components/Nav/renav.astro";
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
 			<h3 class="title-recraftr">Recent work</h3>
 			<p class="subtitle-recraftr">Content to conversion design. Make it flow</p>
-			<a href="https://www.figma.com/proto/qZaTAtQiGQrXKgkMhyCEkr/Sample-Work?page-id=0%3A1&type=design&node-id=1-6&viewport=459%2C218%2C0.16&scaling=scale-down-width&starting-point-node-id=1%3A6" target="_blank" class="mt-12 btn-primary">View recent plans</a>
+			<a href="https://www.figma.com/proto/qZaTAtQiGQrXKgkMhyCEkr/Sample-Work?page-id=0%3A1&type=design&node-id=1-6&viewport=459%2C218%2C0.16&scaling=scale-down-width&starting-point-node-id=1%3A6" target="_blank" class="mt-12 btn-primary">View recent work</a>
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
 			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
-				<Picture
+				<Image
 					class={'pic-withloader'}
-					src={import('./img/recent-work-01.jpg')}
-					widths={[400, 1000]}
-					aspectRatio="1:1"
+					src={RecentWork01}
 					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Sutro Instagram carrousel"
 				/>
-				<Picture
+				<Image
 					class={'pic-withloader'}
-					src={import('./img/recent-work-02.jpg')}
-					widths={[400, 1000]}
-					aspectRatio="1:1"
+					src={RecentWork02}
 					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Guiajando Paris Pass"
 				/>
-				<Picture
+				<Image
 					class={'pic-withloader'}
-					src={import('./img/recent-work-03.jpg')}
-					widths={[400, 1000]}
-					aspectRatio="1:1"
+					src={RecentWork03}
 					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Tweet Hunter tips and tricks for blog"
 				/>
-				<Picture
+				<Image
 					class={'pic-withloader'}
-					src={import('./img/recent-work-04.jpg')}
-					widths={[400, 1000]}
-					aspectRatio="1:1"
+					src={RecentWork04}
 					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Taplio blog and tutorial"
 				/>

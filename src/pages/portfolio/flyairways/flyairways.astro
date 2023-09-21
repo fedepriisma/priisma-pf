@@ -1,6 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import ProjectDetails from "../../../components/ProjectDetails.astro";
+import { Image } from 'astro:assets';
+import ProjectDetails from '../../../components/ProjectDetails.astro';
+import FlyAirwaysImg from './fly-airways-devices.png';
 ---
 
 <div id="flyairways" class="section-space bg-sky-100 text-sky-900">
@@ -17,9 +18,8 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
 
 	<div class="mx-auto">
 		<div class="mx-auto my-16 text-gray-900">
-		  <Picture
-			src={import("../flyairways/fly-airways-devices.png")}
-			widths={[200, 400, 1980]}
+		  <Image
+			src={FlyAirwaysImg}
 			sizes="(max-width: 1980px) 100vw, 1980px"
 			alt="Customers page showing different products selected for cancellation"
 		  />

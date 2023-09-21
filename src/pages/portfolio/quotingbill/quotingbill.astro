@@ -1,6 +1,19 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import ProjectDetails from "../../../components/ProjectDetails.astro";
+import { Image } from 'astro:assets';
+import ProjectDetails from '../../../components/ProjectDetails.astro';
+import QBCancellationsSelected from './qb-cancellations-selected.jpg';
+import QBbbSubWLog from './qb-breadboard-subs-w-log.jpg';
+import QBbbSubWBucket from './qb-breadboard-subs-w-bucket.jpg';
+import QBbbSubWCancel from './qb-breadboard-subs-cancellations.jpg';
+import QBbbSubCanCust from './qb-breadboard-subs-cancellations-customers.jpg';
+import QBFatMBuck from './qb-fatmarker-bucket.jpg';
+import QBFatMSel from './qb-fatmarker-selection-to-bucket.jpg';
+import QBBucket from './qb-bucket-prototype.jpg';
+import QBInvoice from './qb-invoice.png';
+import QBProjects from './qb-projects.png';
+import QBUsers from './qb-users.png';
+// import QBProvUsr from './qb-provision-users-sample.jpg';
+import QBProvFrn from './qb-provisioning-frontpage.png';
 ---
 
 <div id="quotingbill" class="section-space">
@@ -17,10 +30,9 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
 
   <div class="mx-auto">
     <div class="mx-auto my-16 text-gray-900 image-solid-high">
-      <Picture
+      <Image
         class={'pic-withloader'}
-        src={import("../quotingbill/qb-cancellations-selected.jpg")}
-        widths={[200, 400, 1980]}
+        src={QBCancellationsSelected}  
         sizes="(max-width: 1980px) 100vw, 1980px"
         alt="Customers page showing different products selected for cancellation"
       />
@@ -51,50 +63,43 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
   <div
     class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
   >
-    <Picture
-      src={import("../quotingbill/qb-breadboard-subs-w-log.jpg")}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBbbSubWLog} 
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Breadboard on for cancelling with logs"
     />
-    <Picture
+    <Image
       src={import("../quotingbill/qb-breadboard-subs-w-bucket.jpg")}
-      widths={[200, 400, 800]}
+      src={QBbbSubWBucket}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Breadboard on for cancelling with buckeet"
     />
-    <Picture
-      src={import(
-        "../quotingbill/qb-breadboard-subs-cancellations-customers.jpg"
-      )}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBbbSubCanCust}
+
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Breadboard on for cancelling with customers"
     />
-    <Picture
-      src={import("../quotingbill/qb-breadboard-subs-cancellations.jpg")}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBbbSubWCancel}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Breadboard on for cancelling a product"
     />
   </div>
   <h3 class="section-subtitle">Fat markers</h3>
   <div class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3">
-    <Picture
-      src={import("../quotingbill/qb-fatmarker-bucket.jpg")}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBFatMBuck}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Fat marker for the bucket"
     />
-    <Picture
-      src={import("../quotingbill/qb-fatmarker-selection-to-bucket.jpg")}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBFatMSel}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Fat marker for the bucket selection"
     />
-    <Picture
-      src={import("../quotingbill/qb-bucket-prototype.jpg")}
-      widths={[200, 400, 800]}
+    <Image
+      src={QBBucket}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Fat marker for the bucket selection"
     />
@@ -102,27 +107,24 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
   <h3 class="section-subtitle">Sections in details</h3>
   <div class="section-spread sm:grid-cols-2 md:grid-cols-3">
     <figure>
-      <Picture
-        src={import("../quotingbill/qb-invoice.png")}
-        widths={[200, 400, 800]}
+      <Image
+        src={QBInvoice}
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
       <figcaption class="text-sm text-white">Invoice page</figcaption>
     </figure>
     <figure>
-      <Picture
-        src={import("../quotingbill/qb-projects.png")}
-        widths={[200, 400, 800]}
+      <Image
+        src={QBProjects}
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
       <figcaption class="text-sm text-white">Project page</figcaption>
     </figure>
     <figure>
-      <Picture
-        src={import("../quotingbill/qb-users.png")}
-        widths={[200, 400, 800]}
+      <Image
+        src={QBUsers}
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Customers page showing different products selected for cancellation"
       />
@@ -139,16 +141,14 @@ import ProjectDetails from "../../../components/ProjectDetails.astro";
         services to make invoicing metered usage simple and trackable.
       </p>
     </div>
-    <!-- <Picture
-	  src={import('../quotingbill/qb-provision-users-sample.jpg')}
-        widths={[200, 400, 800]}
+    <!-- <Image
+        src={QBProvUsr}
         sizes="(max-width: 800px) 100vw, 800px"
         alt="Fat marker for the bucket"
       /> -->
-    <Picture
+    <Image
       class={'pic-withloader'}
-      src={import("../quotingbill/qb-provisioning-frontpage.png")}
-      widths={[200, 400, 800]}
+      src={QBProvFrn}
       sizes="(max-width: 800px) 100vw, 800px"
       alt="Fat marker for the bucket selection"
     />
