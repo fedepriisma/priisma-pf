@@ -17,6 +17,7 @@ module.exports = {
 			indigo: colors.indigo,
 			yellow: colors.yellow,
 			blue: colors.blue,
+			sky: colors.sky,
 			slate: colors.slate,
 			amber: colors.amber,
 			primary: {
@@ -25,6 +26,7 @@ module.exports = {
 				200: 'rgb(var(--color-primary-200) / <alpha-value>)',
 				300: 'rgb(var(--color-primary-300) / <alpha-value>)',
 				400: 'rgb(var(--color-primary-400) / <alpha-value>)',
+				DEFAULT: 'var(--color-blue-craftr)',
 				500: 'rgb(var(--color-primary-500) / <alpha-value>)',
 				600: 'rgb(var(--color-primary-600) / <alpha-value>)',
 				700: 'rgb(var(--color-primary-700) / <alpha-value>)',
@@ -91,6 +93,7 @@ module.exports = {
 				pop: 'var(--gradient-pop)',
 				'yellow-lemon': 'var(--color-yellow-lemon)',
 				'dark-coal': 'var(--color-dark-coal)',
+				'blue-craftr': 'var(--color-blue-craftr)',
 			},
 			boxShadow: {
 				'sm': 'var(--shadow-sm)',

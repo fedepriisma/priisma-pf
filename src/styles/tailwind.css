@@ -15,14 +15,14 @@
   }
 
   
-  a:not(:is(.homelink)) {
+  /* a:not(:is(.homelink)) {
     @apply border-b border-current motion-safe:transition-all motion-safe:duration-200 hover:text-indigo-600 focus:text-indigo-600 hover:bg-white focus:bg-white;
   }
 
   :where(a:not(:is(.btn, .pill))),
   .link {
     @apply text-blue-600 transition-colors duration-150 ease-in-out;
-  }
+  } */
 
   a.subtle,
   .link.link--subtle {
@@ -36,6 +36,7 @@
   .prose {
     color: inherit !important;
   }
+
   .prose :is(h2, h3, h4, h5, h6) a {
     font: inherit;
     color: inherit;
@@ -62,6 +63,14 @@
   .prose :is(h2, h3, h4, h5, h6) a:focus:after {
     opacity: 0.6 !important;
   }
+
+  .project-details li {
+    @apply py-2;
+  }
+  .project-details li:not(:nth-last-child(1)) {
+    @apply border-b border-b-current;
+  }
+
   .section-space {
     @apply px-4 py-16 sm:p-16 lg:p-24;
   }
