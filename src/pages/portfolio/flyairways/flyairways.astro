@@ -2,6 +2,11 @@
 import { Image } from 'astro:assets';
 import ProjectDetails from '../../../components/ProjectDetails.astro';
 import FlyAirwaysImg from './fly-airways-devices.png';
+import FlyAirwaysMob from './flyairways-mob.jpg';
+import FlyAirwaysMobThumb from './flyairways-mob-thumb.jpg';
+import FlyAirwaysdesk from './flyairways-desk.jpg';
+import FlyAirwaysdeskThumb from './flyairways-desk-thumb.jpg';
+
 ---
 
 <div id="flyairways" class="section-space bg-sky-100 text-sky-900">
@@ -25,24 +30,54 @@ import FlyAirwaysImg from './fly-airways-devices.png';
 		  />
 		</div>
 	  </div>
-	<div class="flex flex-col max-w-sm mt-8 space-y-4 text-base">
-		<p>We built fares pages and search engine to serve airlines.</p>
-		<p>
-			Lead the design of modular products to help a growing list of 20+
-			airlines and alliances increasing revenue by an average of 20% a
-			year.
-		</p>
-		<p>
-			Prototyped and delivered over 5 intuitive and easy-to-use products
-			and updates by collecting requirements, research and wireframes.
-		</p>
-		<p>
-			Cut design delivery times by 40% creating design workflows along
-			with 5 different departments.
-		</p>
-		<p>
-			Personalized Module designs for concept prototypes to secure +$1.5MM
-			in sales in a quarter.
-		</p>
+	<div class="flex flex-col justify-between gap-20 mt-8 sm:flex-row">
+		<div class="flex flex-col max-w-sm space-y-4 text-base">
+			<p>We built fares pages and search engine to serve airlines.</p>
+			<p>
+				Lead the design of modular products to help a growing list of 20+
+				airlines and alliances increasing revenue by an average of 20% a
+				year.
+			</p>
+			<p>
+				Prototyped and delivered over 5 intuitive and easy-to-use products
+				and updates by collecting requirements, research and wireframes.
+			</p>
+			<p>
+				Cut design delivery times by 40% creating design workflows along
+				with 5 different departments.
+			</p>
+			<p>
+				Personalized Module designs for concept prototypes to secure +$1.5MM
+				in sales in a quarter.
+			</p>
+		</div>
+		<div class="flex flex-col w-full gap-4 sm:flex-row pswp-gallery" id="flyairways-gallery">
+			<a href={FlyAirwaysdesk.src}
+				data-pswp-width={FlyAirwaysdesk.width} 
+				data-pswp-height={FlyAirwaysdesk.height} 
+				target="_blank">
+				<figure>
+					<Image
+					src={FlyAirwaysdeskThumb}
+					sizes="(max-width: 800px) 100vw, 800px"
+					alt="Desktop version"
+				/>
+					<figcaption class="text-sm text-white">Desktop version</figcaption>
+				</figure>
+			</a>
+			<a href={FlyAirwaysMob.src}
+				data-pswp-width={FlyAirwaysMob.width} 
+				data-pswp-height={FlyAirwaysMob.height} 
+				target="_blank">
+				<figure>
+					<Image
+					src={FlyAirwaysMobThumb}
+					sizes="(max-width: 800px) 100vw, 800px"
+					alt="Mobile version"
+				/>
+					<figcaption class="text-sm text-white">Mobile version</figcaption>
+				</figure>
+			</a>
+		</div>
 	</div>
 </div>

@@ -12,6 +12,16 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
+<script>
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
+	  const lightbox = new PhotoSwipeLightbox({
+	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery',
+	  children: 'a',
+	  pswpModule: () => import('photoswipe')
+	});
+	lightbox.init();
+</script>
 <html lang="en">
 	<head>
 		<MainHead
@@ -35,12 +45,12 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 		<main class="main-thingi">
 			<div class="grid">
 				<Quotingbill />
-				<Godark />
-				<Flyairways />
 				<MchAnywhere />
+				<Flyairways />
+				<Godark />
 			</div>
 		</main>
 		<Footer />
-		<FooterScript />
+		<!-- <FooterScript /> -->
 	</body>
 </html>

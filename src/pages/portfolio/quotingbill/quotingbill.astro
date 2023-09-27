@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+
+
 import ProjectDetails from '../../../components/ProjectDetails.astro';
 import QBCancellationsSelected from './qb-cancellations-selected.jpg';
 import QBbbSubWLog from './qb-breadboard-subs-w-log.jpg';
@@ -13,7 +15,9 @@ import QBInvoice from './qb-invoice.png';
 import QBProjects from './qb-projects.png';
 import QBUsers from './qb-users.png';
 // import QBProvUsr from './qb-provision-users-sample.jpg';
+import QBwireframe from './qb-wireframe.jpg';
 import QBProvFrn from './qb-provisioning-frontpage.png';
+
 ---
 
 <div id="quotingbill" class="section-space">
@@ -38,100 +42,166 @@ import QBProvFrn from './qb-provisioning-frontpage.png';
       />
     </div>
   </div>
-  <div class="flex-col max-w-sm mt-8 space-y-4 text-base text-white">
-    <p>
-      In the last part of 2019, I worked on the design of QuotingBill to bring a
-      simple and streamlined way to invoice the Telecommunications space to the
-      market.
-    </p><p>
-      We deeply researched what the current market had to offer for billing and
-      invoicing and started building a simple yet powerful experience for our
-      customers from the ground up.
-    </p>
+  <div class="flex flex-col justify-between gap-20 mt-8 sm:flex-row">
 
-    <p>
-      From that research, we developed an internal process for building each
-      section with intention and meaning for the global system and for each
-      component.
-    </p>
+    <div class="flex-col max-w-sm space-y-4 text-base text-white">
+      <p>
+        In the last part of 2019, I worked on the design of QuotingBill to bring a
+        simple and streamlined way to invoice the Telecommunications space to the
+        market.
+      </p><p>
+        We deeply researched what the current market had to offer for billing and
+        invoicing and started building a simple yet powerful experience for our
+        customers from the ground up.
+      </p>
+  
+      <p>
+        From that research, we developed an internal process for building each
+        section with intention and meaning for the global system and for each
+        component.
+      </p>
+    </div>
+    <figure class="max-w-6xl">
+      <Image
+      class={'pic-withloader'}
+      src={QBwireframe}  
+      sizes="(max-width: 1980px) 100vw, 1980px"
+      alt="QuotingBill User Flow"
+    />
+      <figcaption class="text-sm text-white">QuotingBill User Flow</figcaption>
+    </figure>
   </div>
+
 
   <h3 class="section-subtitle">Breadboarding</h3>
   <div class="max-w-sm my-6 text-base text-white">
     <p>We wired the whole process of cancelling a product from the very concept, to each of the steps in detail in order to define each step as needed.</p>
   </div>
   <div
-    class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-  >
-    <Image
-      src={QBbbSubWLog} 
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Breadboard on for cancelling with logs"
-    />
-    <Image
-      src={import("../quotingbill/qb-breadboard-subs-w-bucket.jpg")}
-      src={QBbbSubWBucket}
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Breadboard on for cancelling with buckeet"
-    />
-    <Image
-      src={QBbbSubCanCust}
+    class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3 pswp-gallery" id="breadboarding-gallery">
+        <a href={QBbbSubWCancel.src}
+      data-pswp-width={QBbbSubWCancel.width} 
+      data-pswp-height={QBbbSubWCancel.height} 
+      target="_blank">
+      <figure>
+        <Image
+        src={QBbbSubWCancel}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="First, the steps for cancelling a susbcription"
+      />
+        <figcaption class="text-sm text-white">First, the steps for cancelling a susbcription</figcaption>
+      </figure>
+    </a>
+    <a href={QBbbSubWLog.src}
+      data-pswp-width={QBbbSubWLog.width} 
+      data-pswp-height={QBbbSubWLog.height} 
+      target="_blank">
+      <figure>
+        <Image
+          src={QBbbSubWLog} 
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Requests and activity log shows up"
+        />
+        <figcaption class="text-sm text-white">Requests and activity log shows up</figcaption>
+      </figure>
+    </a>
+    <a href={QBbbSubWBucket.src}
+      data-pswp-width={QBbbSubWBucket.width} 
+      data-pswp-height={QBbbSubWBucket.height} 
+      target="_blank">
+      <figure>
+        <Image
+        src={QBbbSubWBucket}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="Lastly, handling multiple products and confirmations"
+      />
+        <figcaption class="text-sm text-white">Lastly, handling multiple products and confirmations</figcaption>
+      </figure>
+    </a>
 
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Breadboard on for cancelling with customers"
-    />
-    <Image
-      src={QBbbSubWCancel}
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Breadboard on for cancelling a product"
-    />
   </div>
   <h3 class="section-subtitle">Fat markers</h3>
-  <div class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3">
-    <Image
-      src={QBFatMBuck}
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Fat marker for the bucket"
-    />
-    <Image
-      src={QBFatMSel}
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Fat marker for the bucket selection"
-    />
-    <Image
-      src={QBBucket}
-      sizes="(max-width: 800px) 100vw, 800px"
-      alt="Fat marker for the bucket selection"
-    />
+  <div
+    class="grid-cols-1 section-spread sm:grid-cols-2 md:grid-cols-3 pswp-gallery" id="fatmarkers-gallery">
+
+    <a href={QBFatMBuck.src}
+      data-pswp-width={QBFatMBuck.width} 
+      data-pswp-height={QBFatMBuck.height} 
+      target="_blank">
+      <Image
+        src={QBFatMBuck}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="Fat marker for the bucket"
+      />
+    </a>
+    <a href={QBFatMSel.src}
+      data-pswp-width={QBFatMSel.width} 
+      data-pswp-height={QBFatMSel.height} 
+      target="_blank">
+      <Image
+        src={QBFatMSel}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="Fat marker for the bucket selection"
+      />
+    </a>
+    <a href={QBBucket.src}
+      data-pswp-width={QBBucket.width} 
+      data-pswp-height={QBBucket.height} 
+      target="_blank">
+      <figure>
+        <Image
+        src={QBBucket}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="The first html/css/js prototype"
+      />
+        <figcaption class="text-sm text-white">The first html/css/js prototype</figcaption>
+      </figure>
+    </a>
   </div>
   <h3 class="section-subtitle">Sections in details</h3>
-  <div class="section-spread sm:grid-cols-2 md:grid-cols-3">
-    <figure>
-      <Image
-        src={QBInvoice}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="Customers page showing different products selected for cancellation"
-      />
-      <figcaption class="text-sm text-white">Invoice page</figcaption>
-    </figure>
-    <figure>
-      <Image
-        src={QBProjects}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="Customers page showing different products selected for cancellation"
-      />
-      <figcaption class="text-sm text-white">Project page</figcaption>
-    </figure>
-    <figure>
-      <Image
-        src={QBUsers}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="Customers page showing different products selected for cancellation"
-      />
-      <figcaption class="text-sm text-white">
-        Adding users to a third-party service through QuotingBill
-      </figcaption>
-    </figure>
+  <div class="section-spread sm:grid-cols-2 md:grid-cols-3 pswp-gallery" id="sectiondetails-gallery">
+    
+   <a href={QBInvoice.src}
+      data-pswp-width={QBInvoice.width} 
+      data-pswp-height={QBInvoice.height} 
+      target="_blank">
+      <figure>
+        <Image
+          src={QBInvoice}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Customers page showing different products selected for cancellation"
+        />
+        <figcaption class="text-sm text-white">Invoice page</figcaption>
+      </figure>
+    </a>
+   <a href={QBProjects.src}
+      data-pswp-width={QBProjects.width} 
+      data-pswp-height={QBProjects.height} 
+      target="_blank">
+      <figure>
+        <Image
+          src={QBProjects}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Customers page showing different products selected for cancellation"
+        />
+        <figcaption class="text-sm text-white">Project page</figcaption>
+      </figure>
+    </a>
+   <a href={QBUsers.src}
+      data-pswp-width={QBUsers.width} 
+      data-pswp-height={QBUsers.height} 
+      target="_blank">
+      <figure>
+        <Image
+          src={QBUsers}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Customers page showing different products selected for cancellation"
+        />
+        <figcaption class="text-sm text-white">
+          Adding users to a third-party service through QuotingBill
+        </figcaption>
+      </figure>
+    </a>
   </div>
 
   <div class="section-spread sm:grid-cols-2 md:grid-cols-3">
