@@ -3,7 +3,6 @@
 import MainHead from "../components/MainHead.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 import Footer from "../components/Footer.astro";
-import FooterScript from "../components/FooterScripts.astro";
 import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 import Godark from "./portfolio/godark/godark.astro";
 import Flyairways from "./portfolio/flyairways/flyairways.astro";
@@ -16,7 +15,7 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import 'photoswipe/style.css';
 	  const lightbox = new PhotoSwipeLightbox({
-	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery',
+	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery, #mch-gallery',
 	  children: 'a',
 	  pswpModule: () => import('photoswipe')
 	});
@@ -30,17 +29,13 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 		/>
 	</head>
 	
-	<body
-		class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-oldpink text-selva"
-	>
-	<header class="m-8">
+	<body class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-oldpink text-selva">
+	<header class="sticky px-4 py-4 mx-2 border border-solid rounded-full sm:px-8 sm:mx-8 top-2 bg-oldpink/70 text-selva backdrop-blur-md border-selva/30">
 		<ContactInfo />
 	</header>
-		<div class="my-16 ml-4 md:my-24 lg:my-48">
-			<h2 class="text-[8vw] leading-none uppercase font-display">
-				I'm Fede, a Product Designer in Miami.
-			</h2>
-			<p class="mt-1 text-base">Design to empower people. Scroll down to check the work ↓</p>
+		<div class="relative z-10 my-16 ml-4 text-left md:my-24 lg:my-48">
+			<h2 class="text-4xl font-medium uppercase font-display font-strech-expanded">I'm Fede Bozo, <br/> a Product Designer<br/> in Miami.</h2>
+			<p class="mt-1 text-base"> Here are some samples of my work ↓</p>
 		</div>
 		<main class="main-thingi">
 			<div class="grid">
@@ -51,6 +46,5 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 			</div>
 		</main>
 		<Footer />
-		<!-- <FooterScript /> -->
 	</body>
 </html>

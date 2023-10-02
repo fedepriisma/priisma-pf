@@ -1,16 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import ProjectDetails from '../../../components/ProjectDetails.astro';
+import { Image } from "astro:assets";
+import ProjectDetails from "../../../components/ProjectDetails.astro";
 
-import MchTabletView from './mch-tablet-view.png';
-import MchPaymentFlow from './mch-payment-flow.png';
-import MchAppointment from './mch-appointment.png';
-import MchPayment from './mch-payment.png';
-import MchDashboard from './mch-dashboard-specs.png';
+import MchTabletView from "./mch-tablet-view.png";
+import MchPaymentFlow from "./mch-payment-flow.png";
+import MchAppointment from "./mch-appointment.png";
+import MchPayment from "./mch-payment.png";
+import MchDashboard from "./mch-dashboard-specs.png";
 ---
+
 <div id="mch" class="text-sunset bg-woodstock section-space">
-  <h3 class="text-4xl uppercase font-display">
-    <span class="bg-black text-yellow">MCHAnywhere</span> helps patients get remote consultations from MCH's doctors.
+  <h3 class="section-header">
+    <span class="bg-black text-yellow">MCHAnywhere</span> helps patients get
+    remote consultations from MCH's doctors.
   </h3>
 
   <ProjectDetails
@@ -19,63 +21,85 @@ import MchDashboard from './mch-dashboard-specs.png';
     projName="MCH Anywhere"
   />
 
-  <div class="mx-auto">
-    <div class="mx-auto my-16">
-      <Image
-        src={MchTabletView}
-        sizes="(max-width: 1500px) 100vw, 1500px"
-        alt="Airline ticket booking sample"
-      />
-    </div>
+  <div class="mx-auto my-16">
+    <Image
+      src={MchTabletView}
+      sizes="(max-width: 1500px) 100vw, 1500px"
+      alt="Airline ticket booking sample"
+    />
   </div>
 
-  <div class="max-w-sm mt-8 text-base">
-    <p>MchAnywhere is a telemedicine app for remote consultations for the Miami Children's Hospital (now Nicklaus Children's Hospital)</p>
-  </div><div class="mx-auto my-16">
-    <figure>
-      <Image  
-        src={MchPaymentFlow}
-        sizes="(max-width: 1500px) 100vw, 1500px"
-        alt="Customers page showing different products selected for cancellation"
-        />
-        <figcaption class="text-sm">Invoice page</figcaption>
-      </figure>
-    </div>
-    <div class="flex gap-4 my-8">
+  <p class="max-w-sm mt-8 text-base">
+    MchAnywhere is a telemedicine app for remote consultations for the Miami
+    Children's Hospital (now Nicklaus Children's Hospital)
+  </p>
+  <figure class="mx-auto my-16">
+    <Image
+      src={MchPaymentFlow}
+      sizes="(max-width: 1500px) 100vw, 1500px"
+      alt="Customers page showing different products selected for cancellation"
+    />
+    <figcaption class="text-sm">Invoice page</figcaption>
+  </figure>
+
+  <!-- <h3 class="section-subtitle">Breadboarding</h3>
+  <div class="max-w-sm my-6 text-base text-white">
+    <p>
+      We wired the whole process of cancelling a product from the very concept,
+      to each of the steps in detail in order to define each step as needed.
+    </p>
+  </div> -->
+  <div
+    class="grid-cols-1 section-spread sm:grid-cols-2 pswp-gallery"
+    id="mch-gallery"
+  >
+    <a
+      href={MchAppointment.src}
+      data-pswp-width={MchAppointment.width}
+      data-pswp-height={MchAppointment.height}
+      target="_blank"
+    >
       <figure>
         <Image
-        src={MchAppointment}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="Customers page showing different products selected for cancellation"
-      />
-      <figcaption class="text-sm">Schedule an appointment</figcaption>
-    </figure>
-	<div class="max-w-sm text-base">
-	  <p>
-		We created a simple flow for getting an appointment to fit all the available spots for a consultation and quick to reserve.
-	  </p>
-	</div>
-    <figure>
-      <Image
-        src={MchPayment}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="Customers page showing different products selected for cancellation"
-      />
-      <figcaption class="text-sm">Payment information</figcaption>
-    </figure>
-    <div class="max-w-sm text-base">
-      <p>
-        The payment process was streamlined to show as little steps as possible to meke it quick to start an appointment for parents in a rush. 
-      </p>
-    </div>
+          src={MchAppointment}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Appointment"
+        />
+        <figcaption class="text-sm">Appointments showing all available spots and quick reservation.</figcaption>
+      </figure>
+    </a>
+    <a
+      href={MchPayment.src}
+      data-pswp-width={MchPayment.width}
+      data-pswp-height={MchPayment.height}
+      target="_blank"
+    >
+      <figure>
+        <Image
+          src={MchPayment}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="Payment"
+        />
+        <figcaption class="text-sm">The copy and icons reinforces the privacy and security standards.</figcaption>
+      </figure>
+    </a>
   </div>
+
+  <p class="max-w-sm mb-8 text-base">
+    The goal was to create and polish the flow for getting an appointment to fit all the available
+    spots for a consultation and make the appointment reservation process quick and easy to follow.
+  </p>
+
+  <p class="max-w-sm text-base">
+    The payment process was streamlined for parents to get an appointment quickly and secure.
+  </p>
   <figure>
     <Image
-      class={'pic-withloader'}
+      class={"pic-withloader"}
       src={MchDashboard}
       sizes="(max-width: 1500px) 100vw, 1500px"
       alt="Customers page showing different products selected for cancellation"
     />
-    <figcaption class="text-sm">Dashboard specs for implementation</figcaption>
+    <figcaption class="text-sm">Dashboard specs for implementation. Details were crucial for the iOS/Android development team.</figcaption>
   </figure>
 </div>
