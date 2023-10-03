@@ -1,0 +1,47 @@
+<nav role="navigation"
+class="sticky z-50 max-w-xs px-4 py-2 mx-4 border-4 border-current -mb-28 sm:mx-auto sm:max-w-fit sm:overflow-clip bottom-4 rounded-xl shadow-solid bg-secondary-50">
+  <ul class="flex flex-wrap gap-1 text-base font-medium sm:grid sm:grid-flow-col sm:gap-2 sm:auto-cols">
+    <slot name="before-items" />
+    <li class="nav-item">
+      <a class="btn-secondary group" href="#benefits"><span class="text-current group-hover:text-current">Benefits</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="btn-secondary group" href="#recentwork"><span class="text-current group-hover:text-current">Recent work</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="btn-secondary group" href="#whatwedo"><span class="text-current group-hover:text-current">What we do</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="btn-secondary group" href="#sow"><span class="text-current group-hover:text-current">How we work</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="btn-secondary group" href="#pricing"><span class="text-current group-hover:text-current">Pricing</span></a>
+    </li>
+    <slot name="after-items" />
+  </ul>
+</nav>
+
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          const navLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (entry.intersectionRatio > 0) {
+          setTimeout(() => {
+              document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.add('nav-active');
+          }, 50); // add a 50ms delay
+          } else {
+          setTimeout(() => {
+              document.querySelector(`nav a[href="#${id}"]`).parentElement.classList.remove('nav-active');
+          }, 50); // add a 100ms delay
+          }
+      });
+      });
+  
+      // Track all sections that have an `id` applied
+      document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+      });
+  });
+  </script>

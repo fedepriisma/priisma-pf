@@ -1,0 +1,341 @@
+---
+import { Image } from 'astro:assets';
+import MainHead from '../../components/SwatHead.astro';
+// import FooterScripts from '../../components/FooterScripts.astro';
+import Footer from './footer.astro';
+import svgSymbol from '../swatseo/img/symbols.svg?url';
+import SwatNav from '../../components/Nav/swatnav.astro';
+import RecentWork01 from './img/recent-work-01.jpg';
+import RecentWork02 from './img/recent-work-02.jpg';
+import RecentWork03 from './img/recent-work-03.jpg';
+import RecentWork04 from './img/recent-work-04.jpg';
+
+// Inspired by https://www.designjoy.co
+---
+
+<html lang="en" class="antialiased scroll-smooth">
+  <head>
+    <MainHead
+      title="SWAT SEO - An SEO Content Team for your Start-up"
+      description="An SEO Content Team for your Start-up"
+    />
+  </head>
+  <body class="antialiased text-primary-950 bg-primary-50">
+    <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5 scroll-mt-12">
+      <head>
+        <div class="flex justify-center mt-8">
+          <svg role="img" class="h-auto fill-current w-fit max-h-7">
+            <use xlink:href={svgSymbol + "#swatseo-logo"}></use>
+          </svg>
+          <div class="text-base sr-only">
+            ReCraftr: Repurposing blog posts to LinkedIn, Twitter and Instagram
+            conversions.
+          </div>
+        </div>
+      </head>
+	  <div class="px-4 mx-auto mt-12 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+		  <h1 class="text-3xl font-extrabold leading-none sm:text-4xl font-display">
+			An SEO<br> Content Team <br> for your<br> start-up
+		  </h1>
+  
+		  <p class="subtitle-recraftr">
+			Repurposed content subscriptions to elevate your business.
+		  </p>
+  
+		  <div class="flex flex-col mx-auto mt-12 max-w-max">
+			<a href="#pricing" class="btn-primary">See plans</a>
+			<div class="mt-6 text-sm text-current">
+			  Content that converts, guaranteed.
+			</div>
+		  </div>
+	  </div>
+    </header>
+    <div id="introduction" aria-label="Introduction" class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+		<h2 class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display">
+		We take<br />
+		your blog posts<br />
+		and make<br />
+		awesome carousels<br />
+		for <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-700">LinkedIn</span>.↗️
+		<!-- , <span class="text-transparent bg-clip-text bg-gradient-to-bl from-blue-200 to-blue-500">Twitter</span> and <span class="text-transparent bg-gradient-to-br from-purple to-pink bg-clip-text">Instagram</span>-->
+		</h2>
+    </div>
+    <div id="simple-reusable-content" aria-label="simple-reusable-content" class="min-h-screen pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">We didn't reinvent the wheel, just content repurposing</h3>
+			<p class="subtitle-recraftr">Traditional content is out the door.<br/>Reimagined content just arrived.</p>
+			<div class="grid grid-cols-1 gap-16 mt-12 sm:grid-cols-3">
+				<div class="flex flex-col">			
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-subscribe-plan"}></use></svg>
+					<div>Subscribe to a plan & request as many repurposed pieces as you'd like.</div>
+				</div>
+				<div class="flex flex-col">
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-revamped-img"}></use></svg>
+					<div>Receive your revamped content within a few business days on average, Monday to Friday.</div>
+				</div>
+				<div class="flex flex-col">
+					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-iteration"}></use></svg>
+					<div>We'll revise the content until you're 100% satisfied.</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <section id="benefits" aria-label="benefits" class="section-spacing text-center bg-[#f7e3da]">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">Membership benefits</h3>
+			<p class="subtitle-recraftr">You'll never look elsewhere for your social media content needs. Seriously! 😎</p>
+			<a href="#pricing" class="mt-12 btn-primary">See plans</a>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-24 mt-12 sm:grid-cols-2 md:grid-cols-3">
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-repurposing-board"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Repurposing Board</h4>
+					<p class="text-body">Add as many blog posts requests to your board as you'd like.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-superfast-delivery"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Superfast Delivery</h4>
+					<p class="text-body">Get your repurposed content one at a time in just a few days on average.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-fixed-rate"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Fixed Monthly Rate</h4>
+					<p class="text-body">No surprises here! Pay the same fixed price each month.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-top-quality"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Top-Quality Content</h4>
+					<p class="text-body">Outstanding content quality at your fingertips whenever you need it.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-flexible-scalable"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Flexible and Scalable</h4>
+					<p class="text-body">Scale up or down as needed, and pause or cancel at any time.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-tailored"}></use></svg>
+					<h4 class="my-4 font-extrabold text-md font-display">Tailored and Yours</h4>
+					<p class="text-body">Each of your repurposed content pieces is made especially for you and is 100% yours.</p>
+				</div>
+			</div>
+		</div>
+    </section>
+	<div id="youll-never-go-back" aria-label="youll-never-go-back" class="min-h-screen pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">Transforming content like never before</h3>
+			<p class="subtitle-recraftr">ReCraftr swaps out those unreliable freelancers and costly agencies for a simple, flat monthly fee – and our speedy content repurposing will amaze you!</p>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2">
+				<div class="flex items-center justify-center p-8 text-left bg-white">
+					<div>
+						<p class="text-xl font-extrabold leading-none font-display">Content is everything, and these guys have nailed it.</p>
+						<p class="text-body">Veronica Pineda, <a href="https://www.parisando.com/" target="_blank">Parisando</a></p>
+					</div>
+				</div>
+				<div class="flex flex-col text-left">
+					<h4 class="font-extrabold text-md font-display">No meetings, no problem!</h4>
+					<p class="text-body">We're not fans of meetings either, so we've ditched them entirely.</p>
+					<h4 class="mt-8 font-extrabold text-md font-display">Notion for easy management</h4>
+					<p class="text-body">Effortlessly manage your content repurposing board with Notion, keeping tabs on active, queued, and completed tasks.</p>
+					<h4 class="mt-8 font-extrabold text-md font-display">Bring the whole team!</h4>
+					<p class="text-body">Invite all your team members, so everyone can submit requests and monitor progress.</p>
+				</div>
+			</div>
+		</div>
+    </div>
+    <section id="recentwork" aria-label="recentwork" class="section-spacing bg-[#eef6d7]">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">Recent work</h3>
+			<p class="subtitle-recraftr">Content to conversion design. Make it flow</p>
+			<a href="https://www.figma.com/proto/qZaTAtQiGQrXKgkMhyCEkr/Sample-Work?page-id=0%3A1&type=design&node-id=1-6&viewport=459%2C218%2C0.16&scaling=scale-down-width&starting-point-node-id=1%3A6" target="_blank" class="mt-12 btn-primary">View recent work</a>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
+				<Image
+					class={'pic-withloader'}
+					src={RecentWork01}
+					sizes="(max-width: 1000px) 100vw, 1000px"
+					alt="Sutro Instagram carrousel"
+				/>
+				<Image
+					class={'pic-withloader'}
+					src={RecentWork02}
+					sizes="(max-width: 1000px) 100vw, 1000px"
+					alt="Guiajando Paris Pass"
+				/>
+				<Image
+					class={'pic-withloader'}
+					src={RecentWork03}
+					sizes="(max-width: 1000px) 100vw, 1000px"
+					alt="Tweet Hunter tips and tricks for blog"
+				/>
+				<Image
+					class={'pic-withloader'}
+					src={RecentWork04}
+					sizes="(max-width: 1000px) 100vw, 1000px"
+					alt="Taplio blog and tutorial"
+				/>
+			</div>
+		</div>
+    </section>
+	<div class="dividing-section">
+		<div class="w-full h-1/2 bg-[#eef6d7]"></div>
+		<div class="w-full h-1/2 bg-[#f9f3c8]"></div>
+		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
+	</div>
+    <section id="whatwedo" aria-labelledby="whatwedo-title" class="section-spacing bg-[#f9f3c8]">
+      <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+        <h3 class="title-recraftr">We breathe new life into your old content.</h3>
+        <p class="subtitle-recraftr">The things we do for content. Like a Lannister said.
+        </p>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 text-base font-medium sm:px-6 md:max-w-2xl md:px-4 lg:px-8"
+      >
+        <ol
+          role="list"
+          class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2"
+        >
+          <li>
+			<h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🔑 Key messages</h3>
+            <p class="mt-2">
+              Our team picks the most important parts and makes an interesting
+              story.
+            </p>
+          </li>
+          <li>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🖼️ Designing</h3>
+            <p class="mt-2">
+              We make eye-catching pictures that fit your brand and message.
+            </p>
+          </li>
+          <li>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">💙 Branding</h3>
+            <p class="mt-2">
+              We create nice-looking templates and slideshows that match your
+              brand and work well on LinkedIn.
+            </p>
+          </li>
+          <li>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🚀 Optimization</h3>
+            <p class="mt-2">
+              We change your content to do well on different social media sites,
+              so more people see it and care about it.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+	<div id="why-reuse-content" aria-label="why-reuse-content" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">Why reusing your content?</h3>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
+			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium sm:grid-cols-2 lg:grid-cols-3">
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">👀<br /> Reach</h3>
+					<p>Get more people to see your content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Engagement</h3>
+					<p>Keep people interested and talking about your stuff.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">⏰<br /> Time</h3>
+					<p>More time to make new, good content often.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-2">
+					<h3 class="text-lg font-extrabold font-display">💡<br /> Resources</h3>
+					<p>Use your money and resources right for making content.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
+					<h3 class="text-lg font-extrabold font-display">😕<br /> Branding</h3>
+					<p>Make your brand look the same everywhere.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
+					<h3 class="text-lg font-extrabold font-display">🔎<br /> SEO</h3>
+					<p>Show up at the top of search results and get more visitors.</p>
+				</li>
+				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
+					<h3 class="text-lg font-extrabold font-display">📢<br /> Publishing</h3>
+					<p>Adapting content for different social media sites.</p>
+				</li>
+				<li class="pl-4 lg:col-span-2">
+					<h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3>
+					<p class="mt-4 text-base">You or your team already have written articles, reviews, comments or thoughts on your industry. Adapting that content for different social media platforms can be daunting but will help you connect with more people, make your brand's message stronger and convert more.</p>
+				</li>
+			</ul>
+		</div>
+    </div>
+	<section id="sow" aria-label="sow" class="section-spacing text-center bg-[#def4d4]">
+		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+			<h3 class="title-recraftr">How we work</h3>
+		</div>
+		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
+			<ul class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 border-current rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display">
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to LinkedIn</li>
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to Instagram</li>
+				<li class="py-2 m-0 border-b-4 border-current">Blog posts to Twitter</li>
+				<li class="py-2 m-0 border-b-4 border-current">Custom images</li>
+				<li class="py-2 m-0 border-b-4 border-current">Infographics</li>
+				<li class="py-2 m-0 border-b-4 border-current">Branded templates</li>
+				<li class="py-2 m-0 border-b-4 border-current">Slideshows</li>
+				<li class="py-2 m-0 border-b-4 border-current">Carrousels</li>
+				<li class="py-2 m-0 border-b-4 border-current">Key message extraction</li>
+			</ul>
+		</div>
+    </section>
+	
+	<div class="dividing-section">
+		<div class="w-full h-1/2 bg-[#def4d4]"></div>
+		<div class="w-full h-1/2 bg-[#efe0ed]"></div>
+		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
+	</div>
+
+    <section id="pricing" aria-labelledby="pricing" class="section-spacing bg-[#efe0ed] -scroll-mt-16">
+      <div class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+        <h3 class="title-recraftr">Pricing</h3>
+        <p class="subtitle-recraftr">Really straight forward</p>
+      </div>
+      <div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">
+        <div class="grid max-w-xs grid-cols-1 mx-auto bg-secondary-50 ">
+          <div id="price-1" class="relative px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
+			<div class="absolute text-blue-600 -top-3 -left-2 -rotate-12">
+				<svg role="img" class="w-32 h-12 fill-current"><use xlink:href={svgSymbol + "#most-popular"}></use></svg>
+			</div>
+            <div class=" min-h-[120px]">
+              <div class="text-lg font-extrabold font-display">Price deal of €30K per SEO Sprint (3 months)
+				</div>
+              <div class="text-sm">Three (3) spots available per month</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-md font-display">€10,000/m</div>
+              <div class="text-sm text-current">Pause or cancel anytime</div>
+              <div class="flex flex-col items-center my-8">
+                <a role="button" href="https://buy.stripe.com/bIYcNEfqgbk662s6op" target="_blank" class="w-full text-md btn-primary">Get started</a>
+				<a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a>
+              </div>
+            </div>
+			<p class="mt-2 mb-4 font-bold">What's included:</p>
+			<ul class="-my-2 text-sm tracking-tight list-disc list-inside">
+				<li class="py-1">Unlimited blog posts repurposed</li>
+				<li class="py-1">Unlimited images</li>
+				<li class="py-1">Unlimited brands</li>
+				<li class="py-1">Unlimited templates</li>
+				<li class="py-1">Unlimited social media channels</li>
+				<li class="py-1">Unlimited revisions</li>
+				<li class="py-1">Pause or cancel anytime</li>
+			  </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	<SwatNav />
+
+	<Footer />
+
+  </body>
+</html>
