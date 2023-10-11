@@ -5,12 +5,10 @@ import MainHead from '../../components/SwatHead.astro';
 import Footer from './footer.astro';
 import svgSymbol from '../swatseo/img/symbols.svg?url';
 import SwatNav from '../../components/Nav/swatnav.astro';
-import RecentWork01 from './img/recent-work-01.jpg';
-import RecentWork02 from './img/recent-work-02.jpg';
-import RecentWork03 from './img/recent-work-03.jpg';
-import RecentWork04 from './img/recent-work-04.jpg';
-
-// Inspired by https://www.designjoy.co
+import RecentWork01 from './img/swats-ref-turodebt.jpg';
+import RecentWork02 from './img/swats-ref-tweethunter.jpg';
+import RecentWork03 from './img/swats-ref-guiajando.jpg';
+// import RecentWork04 from './img/recent-work-04.jpg';
 ---
 
 <html lang="en" class="antialiased scroll-smooth">
@@ -77,7 +75,7 @@ import RecentWork04 from './img/recent-work-04.jpg';
     <section id="benefits" aria-label="benefits" class="section-spacing text-center bg-[#f7e3da]">
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
 			<h3 class="title-recraftr">We’ll help you 2x-5x your traffic</h3>
-			<p class="subtitle-recraftr">You'll never look elsewhere for your social media content needs. Seriously! 😎</p>
+			<p class="subtitle-recraftr">You’ll never look elsewhere for your SEO Content Startegy and Content Generation needs. Seriously! 😎</p>
 			<a href="#pricing" class="mt-12 btn-primary">See plans</a>
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
@@ -186,39 +184,45 @@ import RecentWork04 from './img/recent-work-04.jpg';
 		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
 			<h3 class="title-recraftr">Recent work</h3>
 			<p class="subtitle-recraftr">Some of our recent ranking posts:</p>
-			<a href="#viewRecentWork" target="_blank" class="mt-12 btn-primary">View recent work</a>
+			<!-- <a href="#viewRecentWork" target="_blank" class="mt-12 btn-primary">View recent work</a> -->
 		</div>
 		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			<ul>
-				<li>Debt Relief (https://www.turbodebt.com/debt-relief)</li>
-				<li>Where to Stay in Porto (https://porto.travel/where-to-stay-in-porto/)</li>
-				<li>Twitter Scheduling Tools (https://tweethunter.io/blog/twitter-scheduling-tools)</li>
-			</ul>
+			
 			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
-				<Image
+				<figure>
+					<Image
 					class={'pic-withloader'}
 					src={RecentWork01}
 					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="Sutro Instagram carrousel"
+					alt="TuroDebt"
 				/>
-				<Image
+					<figcaption class="text-sm">TuroDebt</figcaption>
+				</figure>
+				<figure>
+					<Image
 					class={'pic-withloader'}
 					src={RecentWork02}
 					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="Guiajando Paris Pass"
+					alt="TweetHunter"
 				/>
-				<Image
+					<figcaption class="text-sm">TweetHunter</figcaption>
+				</figure>
+				<figure>
+					<Image
 					class={'pic-withloader'}
 					src={RecentWork03}
 					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="Tweet Hunter tips and tricks for blog"
+					alt="Guiajando"
 				/>
-				<Image
+					<figcaption class="text-sm">Guiajando</figcaption>
+				</figure>
+				
+				<!-- <Image
 					class={'pic-withloader'}
 					src={RecentWork04}
 					sizes="(max-width: 1000px) 100vw, 1000px"
 					alt="Taplio blog and tutorial"
-				/>
+				/> -->
 			</div>
 		</div>
     </section>
