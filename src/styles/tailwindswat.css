@@ -28,10 +28,9 @@
         focus:outline-none
         border-current
         text-current
-        hover:bg-[#CEEED7]
         hover:bg-gradient-to-tl
-        hover:from-yellow-lemon
-        hover:to-[#CEEED7]
+        hover:from-secondary-100
+        hover:to-secondary-500
         transition-all
         focus-visible:outline-2
         focus-visible:outline-offset-2
@@ -51,16 +50,12 @@
         @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
     }
     .nav-active > .btn-secondary {
-        @apply transition-all bg-current
-        group-hover:bg-[#CEEED7]
-        group-hover:bg-gradient-to-tl
-        group-hover:from-yellow-lemon
-        group-hover:to-[#CEEED7]
-        group-hover:text-current;
+        @apply transition-all bg-current group-hover:bg-primary-950 group-hover:bg-gradient-to-tl group-hover:from-secondary-100 group-hover:to-secondary-500 group-hover:text-current;
     }
     .nav-active > .btn-secondary > span { @apply text-white;}
+
     .section-spacing {
-        @apply min-h-screen pt-16 pb-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32;
+        @apply pt-16 pb-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32 -scroll-mt-16;
     }
     .dividing-section {
         @apply relative z-0 flex flex-col items-center justify-center h-32;

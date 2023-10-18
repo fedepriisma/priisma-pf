@@ -94,7 +94,6 @@ module.exports = {
 				pop: 'var(--gradient-pop)',
 				'yellow-lemon': 'var(--color-yellow-lemon)',
 				'dark-coal': 'var(--color-dark-coal)',
-				'blue-craftr': 'var(--color-blue-craftr)',
 			},
 			boxShadow: {
 				'sm': 'var(--shadow-sm)',
