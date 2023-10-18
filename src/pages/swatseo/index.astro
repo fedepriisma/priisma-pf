@@ -1,14 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import MainHead from '../../components/SwatHead.astro';
+import { Image } from "astro:assets";
+import MainHead from "../../components/SwatHead.astro";
 // import FooterScripts from '../../components/FooterScripts.astro';
-import Footer from './footer.astro';
-import svgSymbol from '../swatseo/img/symbols.svg?url';
-import SwatNav from '../../components/Nav/swatnav.astro';
-import RecentWork01 from './img/swats-ref-turodebt.jpg';
-import RecentWork02 from './img/swats-ref-tweethunter.jpg';
-import RecentWork03 from './img/swats-ref-guiajando.jpg';
-// import RecentWork04 from './img/recent-work-04.jpg';
+import Footer from "./footer.astro";
+import svgSymbol from "../swatseo/img/symbols.svg?url";
+import SwatNav from "../../components/Nav/swatnav.astro";
+import RecentWork01 from "./img/swats-ref-turodebt.jpg";
+import RecentWork02 from "./img/swats-ref-tweethunter.jpg";
+import RecentWork03 from "./img/swats-ref-guiajando.jpg";
+import TiboImg from "./img/tibo.jpg";
+import TweetHunterLogo from "./img/tweethunter-logo.svg";
+import CatavinoLogo from "./img/catavino-logo-negative.png";
+import GabriellaImg from "./img/gabriella-opaz.webp";
+
 ---
 
 <html lang="en" class="antialiased scroll-smooth">
@@ -19,7 +23,7 @@ import RecentWork03 from './img/swats-ref-guiajando.jpg';
     />
   </head>
   <body class="antialiased text-primary-950 bg-primary-50">
-    <header id="page-intro" class="bg-secondary-100 lg:bg-transparent lg:px-5 scroll-mt-12">
+    <header id="page-intro" class="lg:px-5 scroll-mt-12">
       <head>
         <div class="flex justify-center mt-8">
           <svg role="img" class="h-auto fill-current w-fit max-h-7">
@@ -30,396 +34,708 @@ import RecentWork03 from './img/swats-ref-guiajando.jpg';
           </div>
         </div>
       </head>
-	  <div class="px-4 mx-auto mt-12 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-		  <h1 class="text-3xl font-extrabold leading-none sm:text-4xl font-display">An effective<br> SEO Team<br> for your Startup</h1>
-  
-		  <p class="subtitle-recraftr">
-			SEO Traffic hacks, the SWAT Way
-		  </p>
-  
-		  <div class="flex flex-col mx-auto mt-12 max-w-max">
-			<a href="#pricing" class="btn-primary">See plans</a>
-			<div class="mt-6 text-sm text-current">
-				Strategies that work, guaranteed.
-			</div>
-		  </div>
-	  </div>
+      <div
+        class="px-4 mx-auto mt-12 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h1
+          class="text-3xl font-extrabold leading-none sm:text-4xl font-display"
+        >
+          An effective<br /> SEO Team<br /> for your Startup
+        </h1>
+
+        <p class="subtitle-recraftr">SEO Traffic hacks, the SWAT Way</p>
+
+        <div class="flex flex-col mx-auto mt-12 max-w-max">
+          <a href="#pricing" class="btn-primary">See plans</a>
+          <div class="mt-6 text-sm text-current">
+            Strategies that work, guaranteed.
+          </div>
+        </div>
+      </div>
     </header>
-    <div id="introduction" aria-label="Introduction" class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-		<h2 class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display">
-			We’ll build your<br />
-			<span class="text-transparent bg-clip-text bg-gradient-to-bl from-blue-200 to-blue-500">SEO Content Machine</span>.
-		</h2>
+    <div
+      id="introduction"
+      aria-label="Introduction"
+      class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+    >
+      <h2
+        class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display"
+      >
+        We’ll build your<br />
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-bl from-secondary-200 to-secondary-700"
+          >SEO Content Machine</span
+        >.
+      </h2>
     </div>
-
-	
-    <!-- <div id="simple-reusable-content" aria-label="simple-reusable-content" class="min-h-screen pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">We’ll help you 2x-5x your traffic</h3>
-			<div class="grid grid-cols-1 gap-16 mt-12 sm:grid-cols-3">
-				<div class="flex flex-col">			
-					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-subscribe-plan"}></use></svg>
-					<div>Subscribe to a plan & request as many repurposed pieces as you'd like.</div>
-				</div>
-				<div class="flex flex-col">
-					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-revamped-img"}></use></svg>
-					<div>Receive your revamped content within a few business days on average, Monday to Friday.</div>
-				</div>
-				<div class="flex flex-col">
-					<svg role="img" class="mb-4 fill-current h-14"><use xlink:href={svgSymbol + "#il-iteration"}></use></svg>
-					<div>We'll revise the content until you're 100% satisfied.</div>
-				</div>
-			</div>
-		</div>
-    </div> -->
-    <section id="benefits" aria-label="benefits" class="section-spacing text-center bg-[#f7e3da]">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">We’ll help you 2x-5x your traffic</h3>
-			<p class="subtitle-recraftr">You’ll never look elsewhere for your SEO Content Startegy and Content Generation needs. Seriously! 😎</p>
-			<a href="#pricing" class="mt-12 btn-primary">See plans</a>
-		</div>
-		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			<div class="grid grid-cols-1 gap-24 mt-12 sm:grid-cols-2 md:grid-cols-3">
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-repurposing-board"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Search-Focused Content</h4>
-					<p class="text-body">We'll optimize and create new content to help you rank for the first places in Google</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-superfast-delivery"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Data Driven Market-Fit Content</h4>
-					<p class="text-body">Still don't understand fully what makes your audience tick? We will help you uncover the mysteries of it.</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-fixed-rate"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Fixed Monthly Rate</h4>
-					<p class="text-body">No surprises here! Pay the same fixed price each month.</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 scale-125 fill-current"><use xlink:href={svgSymbol + "#il-top-quality"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Context Driven Content</h4>
-					<p class="text-body">We'll help you deliver the right content, to the right person at the right moment. Value for your audience means more money in your pocket.</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-flexible-scalable"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Everlasting Content</h4>
-					<p class="text-body">We focus on creating content that stands the test of time.</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<svg role="img" class="w-auto h-16 fill-current"><use xlink:href={svgSymbol + "#il-tailored"}></use></svg>
-					<h4 class="my-4 font-extrabold text-md font-display">Tailored and Yours</h4>
-					<p class="text-body">Each of your repurposed content pieces is made especially for you and is 100% yours.</p>
-				</div>
-			</div>
-		</div>
+    <section
+      id="benefits"
+      aria-label="benefits"
+      class="section-spacing"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h3 class="title-recraftr">We’ll help you<br>2x-5x your traffic</h3>
+        <p class="subtitle-recraftr">
+          You’ll never look elsewhere for your SEO Content Startegy and Content
+          Generation needs. Seriously! 😎
+        </p>
+        <a href="#pricing" class="mt-12 btn-primary">See plans</a>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8"
+      >
+        <div
+          class="grid grid-cols-1 gap-24 mt-12 sm:grid-cols-2 md:grid-cols-3"
+        >
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 fill-current"
+              ><use xlink:href={svgSymbol + "#il-repurposing-board"}></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Search-Focused Content
+            </h4>
+            <p class="text-body">
+              We'll optimize and create new content to help you rank for the
+              first places in Google
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 scale-125 fill-current"
+              ><use xlink:href={svgSymbol + "#il-superfast-delivery"}
+              ></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Data Driven Market-Fit Content
+            </h4>
+            <p class="text-body">
+              Still don't understand fully what makes your audience tick? We
+              will help you uncover the mysteries of it.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 fill-current"
+              ><use xlink:href={svgSymbol + "#il-fixed-rate"}></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Fixed Monthly Rate
+            </h4>
+            <p class="text-body">
+              No surprises here! Pay the same fixed price each month.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 scale-125 fill-current"
+              ><use xlink:href={svgSymbol + "#il-top-quality"}></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Context Driven Content
+            </h4>
+            <p class="text-body">
+              We'll help you deliver the right content, to the right person at
+              the right moment. Value for your audience means more money in your
+              pocket.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 fill-current"
+              ><use xlink:href={svgSymbol + "#il-flexible-scalable"}></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Everlasting Content
+            </h4>
+            <p class="text-body">
+              We focus on creating content that stands the test of time.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <svg role="img" class="w-auto h-16 fill-current"
+              ><use xlink:href={svgSymbol + "#il-tailored"}></use></svg
+            >
+            <h4 class="my-4 font-extrabold text-md font-display">
+              Tailored and Yours
+            </h4>
+            <p class="text-body">
+              Each of your repurposed content pieces is made especially for you
+              and is 100% yours.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-	<div id="youll-never-go-back" aria-label="youll-never-go-back" class="min-h-screen pt-20 pb-16 text-center sm:pb-20 md:pt-36 lg:py-32">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">Scale Your Content <br>Totally hands-off</h3>
-			<p class="subtitle-recraftr">Your right-hand arm to help you make your strategies a reality.</p>
-		</div>
-		<section class="py-24 text-left sm:py-32">
-			<div class="px-6 mx-auto max-w-7xl lg:px-8">
-			  <div class="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none lg:grid-cols-2">
-				<div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
-				  <img class="self-start h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="">
-				  <figure class="flex flex-col justify-between flex-auto mt-10">
-					<blockquote class="font-extrabold text-gray-900 text-lg/10 font-display">
-					  <p>“Very great experience overall. The communication is great and we feel you really care about our business, which is rare.”</p>
-					</blockquote>
-					<figcaption class="flex items-center mt-10 gap-x-6">
-						<img class="rounded-full h-14 w-14 bg-gray-50" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-					  <div class="text-base">
-						<div class="font-semibold text-gray-900">Tibo</div>
-						<div class="mt-1 text-gray-500">CEO of <a href="https://www.tweethunter.io/" target="_blank">tweethunter.io</a></div>
-					  </div>
-					</figcaption>
-				  </figure>
-				</div>
-				<div class="flex flex-col pt-10 border-t border-gray-900/10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
-				  <img class="self-start h-12" src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="">
-				  <figure class="flex flex-col justify-between flex-auto mt-10">
-					<blockquote class="font-extrabold text-gray-900 text-lg/10 font-display">
-					  <p>“The team works hard to actively listen to our needs, achieve our agreed-upon goals and follow-up in a timely manner. We couldn't be more pleased.”</p>
-					</blockquote>
-					<figcaption class="flex items-center mt-10 gap-x-6">
-					  <img class="rounded-full h-14 w-14 bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-					  <div class="text-base">
-						<div class="font-semibold text-gray-900">Gabriella Opaz</div>
-						<div class="mt-1 text-gray-500">CEO of <a href="https://www.catavino.net/" target="_blank">catavino.net</a></div>
-					  </div>
-					</figcaption>
-				  </figure>
-				</div>
-			  </div>
-			</div>
-		  </section>
+    <section
+      id="youll-never-go-back"
+      aria-label="youll-never-go-back"
+      class="section-spacing bg-primary-900 text-primary-50"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h3 class="title-recraftr">
+          Scale Your Content <br />Totally hands-off
+        </h3>
+        <p class="subtitle-recraftr">
+          Your right-hand arm to help you make your strategies a reality.
+        </p>
+      </div>
+      <section class="py-24 text-left sm:py-32">
+        <div class="px-6 mx-auto max-w-7xl lg:px-8">
+          <div
+            class="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none lg:grid-cols-2"
+          >
+            <div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
+              <Image
+                class={"self-start h-12"}
+                src={TweetHunterLogo}
+                alt="TweetHunter Logo"
+              />
+              <figure class="flex flex-col justify-between flex-auto mt-10">
+                <blockquote
+                  class="font-extrabold text-primary-50 text-lg/10 font-display"
+                >
+                  <p>
+                    “Very great experience overall. The communication is great
+                    and we feel you really care about our business, which is
+                    rare.”
+                  </p>
+                </blockquote>
 
-		<!-- <div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			<div class="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2">
-				<div class="flex items-center justify-center p-8 text-left bg-white">
-					<div>
-						<p class="text-xl font-extrabold leading-none font-display">Very great experience overall. The communication is great and we feel you really care about our business, which is rare.</p>
-						<p class="text-body">Tibo<a href="https://www.tweethunter.io/" target="_blank">tweethunter.io</a></p>
-					</div>
-				</div>
-				<div class="flex items-center justify-center p-8 text-left bg-white">
-					<div>
-						<p class="text-xl font-extrabold leading-none font-display">The team works hard to actively listen to our needs, achieve our agreed-upon goals and follow-up in a timely manner. We couldn't be more pleased.</p>
-						<p class="text-body">Gabriella Opaz<a href="https://www.catavino.net/" target="_blank">catavino.net</a></p>
-					</div>
-				</div>
-				<div class="flex flex-col text-left">
-					<h4 class="font-extrabold text-md font-display">No meetings, no problem!</h4>
-					<p class="text-body">We're not fans of meetings either, so we've ditched them entirely.</p>
-					<h4 class="mt-8 font-extrabold text-md font-display">Notion for easy management</h4>
-					<p class="text-body">Effortlessly manage your content repurposing board with Notion, keeping tabs on active, queued, and completed tasks.</p>
-					<h4 class="mt-8 font-extrabold text-md font-display">Bring the whole team!</h4>
-					<p class="text-body">Invite all your team members, so everyone can submit requests and monitor progress.</p>
-				</div>
-			</div>
-		</div> -->
-    </div>
-    <section id="recentwork" aria-label="recentwork" class="section-spacing bg-[#eef6d7]">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">Recent work</h3>
-			<p class="subtitle-recraftr">Some of our recent ranking posts:</p>
-			<!-- <a href="#viewRecentWork" target="_blank" class="mt-12 btn-primary">View recent work</a> -->
-		</div>
-		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			
-			<div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-2">
-				<figure>
-					<Image
-					class={'pic-withloader'}
-					src={RecentWork01}
-					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="TuroDebt"
-				/>
-					<figcaption class="text-sm">TuroDebt</figcaption>
-				</figure>
-				<figure>
-					<Image
-					class={'pic-withloader'}
-					src={RecentWork02}
-					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="TweetHunter"
-				/>
-					<figcaption class="text-sm">TweetHunter</figcaption>
-				</figure>
-				<figure>
-					<Image
-					class={'pic-withloader'}
-					src={RecentWork03}
-					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="Guiajando"
-				/>
-					<figcaption class="text-sm">Guiajando</figcaption>
-				</figure>
-				
-				<!-- <Image
-					class={'pic-withloader'}
-					src={RecentWork04}
-					sizes="(max-width: 1000px) 100vw, 1000px"
-					alt="Taplio blog and tutorial"
-				/> -->
-			</div>
-		</div>
+                <figcaption class="flex items-center mt-10 gap-x-6">
+                  <Image
+                    class={"rounded-full h-14 w-14 bg-primary-50"}
+                    src={TiboImg}
+                    alt="Tibo — TweetHunter.io CEO"
+                  />
+                  <div class="text-base">
+                    <div class="font-semibold text-primary-50">Tibo</div>
+                    <div class="mt-1 text-primary-500">
+                      CEO of <a
+                        href="https://www.tweethunter.io/"
+                        target="_blank">tweethunter.io</a
+                      >
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div
+              class="flex flex-col pt-10 border-t border-primary-100/10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20"
+            >
+              <Image
+                class={"self-start h-12 w-auto"}
+                src={CatavinoLogo}
+                alt="Catavino Logo"
+              />
+              <figure class="flex flex-col justify-between flex-auto mt-10">
+                <blockquote
+                  class="font-extrabold text-primary-50 text-lg/10 font-display"
+                >
+                  <p>
+                    “The team works hard to actively listen to our needs,
+                    achieve our agreed-upon goals and follow-up in a timely
+                    manner. We couldn't be more pleased.”
+                  </p>
+                </blockquote>
+                <figcaption class="flex items-center mt-10 gap-x-6">
+                  <Image
+                    class={"rounded-full h-14 w-14 bg-primary-50"}
+                    src={GabriellaImg}
+                    alt="Gabriella Opaz — Catavino.net"
+                  />
+                  <div class="text-base">
+                    <div class="font-semibold text-primary-50">
+                      Gabriella Opaz
+                    </div>
+                    <div class="mt-1 text-primary-500">
+                      CEO of <a href="https://www.catavino.net/" target="_blank"
+                        >catavino.net</a
+                      >
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
-	<div class="dividing-section">
-		<div class="w-full h-1/2 bg-[#eef6d7]"></div>
-		<div class="w-full h-1/2 bg-[#f9f3c8]"></div>
-		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
-	</div>
-    <section id="whatwedo" aria-labelledby="whatwedo-title" class="section-spacing bg-[#f9f3c8]">
-      <div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-        <h3 class="title-recraftr">We’ll help you 2x-5x your traffic</h3>
-        <!-- <p class="subtitle-recraftr">The things we do for content. Like a Lannister said.
-        </p> -->
+    <section id="recentwork" aria-label="recentwork" class="section-spacing">
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h3 class="title-recraftr">Recent work</h3>
+        <p class="subtitle-recraftr">Some of our recent ranking posts:</p>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8"
+      >
+        <div class="gap-4 mt-12 columns-1 lg:columns-3">
+          <figure>
+            <Image
+              class={"pic-withloader"}
+              src={RecentWork01}
+              sizes="(max-width: 1000px) 100vw, 1000px"
+              alt="TuroDebt"
+            />
+            <figcaption class="text-sm">TuroDebt</figcaption>
+          </figure>
+          <figure>
+            <Image
+              class={"pic-withloader"}
+              src={RecentWork02}
+              sizes="(max-width: 1000px) 100vw, 1000px"
+              alt="TweetHunter"
+            />
+            <figcaption class="text-sm">TweetHunter</figcaption>
+          </figure>
+          <figure>
+            <Image
+              class={"pic-withloader"}
+              src={RecentWork03}
+              sizes="(max-width: 1000px) 100vw, 1000px"
+              alt="Guiajando"
+            />
+            <figcaption class="text-sm">Guiajando</figcaption>
+          </figure>
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              ⚡️ Mini-case study - Services Agency (6 months)<br /><br />Work
+              done<br /><br />﹒Website Migration planning, overview and
+              estabilitzation<br />﹒Pillar and Content Clusters research<br
+              />﹒Content Creation<br />﹒Content revamp<br /><br />Results<br
+              /><br />﹒3x clicks<br />﹒2x Impressions<br />﹒2x leads<br
+              />﹒Increased brand searches<br /><br />Next… <a
+                href="https://t.co/eLotGPYYUL">pic.twitter.com/eLotGPYYUL</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1656659841023348736?ref_src=twsrc%5Etfw"
+              >May 11, 2023</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              📈 From 70 to 185 organics in ONE day.<br /><br />We spent 1 hour
+              on it:<br /><br />- Improved imagery<br />- Updated titling<br />-
+              Updated prices (is a travel product)<br />- Eliminated fluff and
+              gave direct answers<br /><br />Full details in a case study soon. <a
+                href="https://t.co/Mzg4y2xrmQ">pic.twitter.com/Mzg4y2xrmQ</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1592184351445458944?ref_src=twsrc%5Etfw"
+              >November 14, 2022</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              Just got this notice from Google Search Console. <br /><br />A
+              client just got to 100k clicks in 28 days.<br /><br />A case study
+              coming soon! <a href="https://t.co/7sBoqXXynK"
+                >pic.twitter.com/7sBoqXXynK</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1650192990139285506?ref_src=twsrc%5Etfw"
+              >April 23, 2023</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              ⚡️ 5-min Case Study<br /><br />Nov &#39;22.<br /><br />Major
+              European Capital City Travel Niche <br /><br />Identified DOUBLE
+              CONTENT GAP in &quot;Hotels&quot;<br /><br />How did we do it?<br
+              /><br />✅ Identified a Double Content Gap <br />✅ SEO Keyword
+              Research<br />✅ Outlines<br />✅ Write<br />✅ Publish SEO
+              articles in bulk<br /><br />What? Let&#39;s see! <a
+                href="https://t.co/KxL69a17ZS">pic.twitter.com/KxL69a17ZS</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1636708756598800386?ref_src=twsrc%5Etfw"
+              >March 17, 2023</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              ⚡️ Mini Case Study<br /><br />This website was translated 9
+              months ago.<br /><br />(Can&#39;t believe how much money is left
+              on the table for not translating) <br /><br />What we did:
+              translated 93 pages.<br /><br />How? <a
+                href="https://t.co/bCaJ56Oj8v">pic.twitter.com/bCaJ56Oj8v</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1633797552439951361?ref_src=twsrc%5Etfw"
+              >March 9, 2023</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              Can you imagine your SaaS getting 120K traffic visits/month?<br
+              /><br />Well, this client just did so last April. We managed to
+              help them get there in 7 months.<br /><br />How? <br /><br />Stay
+              tuned, I&#39;m prepping the case study.<br /><br />(or DM if you
+              want to know more) <a href="https://t.co/tn8KH4K2Vg"
+                >pic.twitter.com/tn8KH4K2Vg</a
+              >
+            </p>&mdash; Flavio Amiel - SEO for growing Startups (@fba) <a
+              href="https://twitter.com/fba/status/1663209782918955015?ref_src=twsrc%5Etfw"
+              >May 29, 2023</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script>
+        </div>
+      </div>
+    </section>
+	<section
+	id="whatwedo"
+	aria-labelledby="whatwedo-title"
+      class="section-spacing bg-primary-900 text-primary-50"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+	  <h3 class="title-recraftr">We’ll help you<br>2x-5x your traffic</h3>
       </div>
 
       <div
-        class="px-4 mx-auto mt-16 text-base font-medium sm:px-6 md:max-w-2xl md:px-4 lg:px-8"
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-8"
       >
-        <ol
-          role="list"
-          class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2"
-        >
+	  <ul
+	  role="list"
+	  class="grid grid-cols-1 gap-8 mt-8 text-base font-medium text-left sm:grid-cols-2"
+	>
           <li>
-			<h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🔑 Search-Focused Content</h3>
-            <p class="mt-2">We'll optimize and create new content to help you rank for the first places in Google</p>
-          </li>
-          <li>
-            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🖼️ Data Driven Market-Fit Content</h3>
-            <p class="mt-2">Still don't understand fully what makes your audience tick? We will help you uncover the mysteries of it.
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
+              🔑 Search-Focused Content
+            </h3>
+            <p class="mt-2">
+              We'll optimize and create new content to help you rank for the
+              first places in Google
             </p>
           </li>
           <li>
-            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">💙 Context Driven Content</h3>
-            <p class="mt-2">We'll help you deliver the right content, to the right person at the right moment. Value for your audience means more money in your pocket.
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
+              🖼️ Data Driven Market-Fit Content
+            </h3>
+            <p class="mt-2">
+              Still don't understand fully what makes your audience tick? We
+              will help you uncover the mysteries of it.
             </p>
           </li>
           <li>
-            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">🚀 Everlasting Content</h3>
-            <p class="mt-2">We focus on creating content that stands the test of time. 
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
+              💙 Context Driven Content
+            </h3>
+            <p class="mt-2">
+              We'll help you deliver the right content, to the right person at
+              the right moment. Value for your audience means more money in your
+              pocket.
+            </p>
+          </li>
+          <li>
+            <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
+              🚀 Everlasting Content
+            </h3>
+            <p class="mt-2">
+              We focus on creating content that stands the test of time.
             </p>
           </li>
         </ol>
       </div>
     </section>
-	<div id="why-reuse-content" aria-label="why-reuse-content" class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">⚡️ We’ll build your blazing-fast Content Machine.</h3>
-		</div>
-		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8">
-			<ul role="list" class="grid grid-cols-1 gap-4 mt-8 text-base font-medium sm:grid-cols-2 lg:grid-cols-3">
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
-
-					<h3 class="text-lg font-extrabold font-display">👀<br /> SEO Technicals</h3>
-					<p>All your SEO technicals taken care by our team on a weekly basis.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
-					<h3 class="text-lg font-extrabold font-display">🗣️<br /> Editorial Calendar</h3>
-					<p>No need to worry about Content Production. Content Velocity Guaranteed.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
-					<h3 class="text-lg font-extrabold font-display">⏰<br /> Ongoing Optimization</h3>
-					<p>Better Internal Links? Rewriting needed? Better CTAs? We’ll do all of this for you.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-2">
-					<h3 class="text-lg font-extrabold font-display">💡<br /> Search-Focused Content</h3>
-					<p>We'll create and optimize content to help you rank for the first places in Google</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3">
-					<h3 class="text-lg font-extrabold font-display">😕<br /> Data Driven Market-Fit Content</h3>
-					<p>Still don't understand fully what makes your audience tick? We will help you uncover the mysteries of it.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1">
-					<h3 class="text-lg font-extrabold font-display">🔎<br /> Context Driven Content</h3>
-					<p>We'll help you deliver the right content, to the right person at the right moment. Value for your audience means money in your pocket.</p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
-					<h3 class="text-lg font-extrabold font-display">📢<br /> Everlasting Content</h3>
-					<p>We focus on creating content that stands the test of time. </p>
-				</li>
-				<li class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2">
-					<h3 class="text-lg font-extrabold font-display">📢<br /> We care</h3>
-					<p>Your success is our success, so we’ll give it our all to make your success a reality</p>
-				</li>
-				<li class="pl-4 sm:col-span-2"><h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3><p class="mt-4 text-base">You, your team or an agency had written articles, reviews, comments or thoughts on your industry. Now let’s make sure your past and future content gets the best shot at ranking, to make your brand's message stronger and convert more.</p></li>
-			</ul>
-		</div>
-    </div>
-	<section id="sow" aria-label="sow" class="section-spacing text-center bg-[#def4d4]">
-		<div class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-			<h3 class="title-recraftr">How we work</h3>
-		</div>
-		<div class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8">
-			<ul class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 border-current rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display">
-				<li class="py-2 m-0 border-b-4 border-current">3-month SEO Sprints</li>
-				<li class="py-2 m-0 border-b-4 border-current">No Retainer Fee</li>
-				<li class="py-2 m-0 border-b-4 border-current">Technical Audits</li>
-				<li class="py-2 m-0 border-b-4 border-current">Content and QA  </li>
-				<li class="py-2 m-0 border-b-4 border-current">PR Backlinks Services</li>
-				<li class="py-2 m-0 border-b-4 border-current">Rewriting and Optimization</li>
-				<li class="py-2 m-0 border-b-4 border-current">Content Strategy and Scaling</li>
-				<li class="py-2 m-0 border-b-4 border-current">Monitoring and reporting (ongoing)</li>
-			</ul>
-		</div>
+    <section
+      id="why-reuse-content"
+      aria-label="why-reuse-content"
+      class="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h3 class="title-recraftr">
+          ⚡️ We’ll build your<br>blazing-fast Content Machine.
+        </h3>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8"
+      >
+        <ul
+          role="list"
+          class="grid grid-cols-1 gap-4 mt-8 text-base font-medium sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              👀<br /> SEO Technicals
+            </h3>
+            <p>
+              All your SEO technicals taken care by our team on a weekly basis.
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              🗣️<br /> Editorial Calendar
+            </h3>
+            <p>
+              No need to worry about Content Production. Content Velocity
+              Guaranteed.
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              ⏰<br /> Ongoing Optimization
+            </h3>
+            <p>
+              Better Internal Links? Rewriting needed? Better CTAs? We’ll do all
+              of this for you.
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-2"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              💡<br /> Search-Focused Content
+            </h3>
+            <p>
+              We'll create and optimize content to help you rank for the first
+              places in Google
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              😕<br /> Data Driven Market-Fit Content
+            </h3>
+            <p>
+              Still don't understand fully what makes your audience tick? We
+              will help you uncover the mysteries of it.
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              🔎<br /> Context Driven Content
+            </h3>
+            <p>
+              We'll help you deliver the right content, to the right person at
+              the right moment. Value for your audience means money in your
+              pocket.
+            </p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              📢<br /> Everlasting Content
+            </h3>
+            <p>We focus on creating content that stands the test of time.</p>
+          </li>
+          <li
+            class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
+          >
+            <h3 class="text-lg font-extrabold font-display">
+              📢<br /> We care
+            </h3>
+            <p>
+              Your success is our success, so we’ll give it our all to make your
+              success a reality
+            </p>
+          </li>
+          <li class="pl-4 sm:col-span-2">
+            <h3 class="mt-12 text-xl title-recraftr">Is this for me?</h3><p
+              class="mt-4 text-base"
+            >
+              You, your team or an agency had written articles, reviews,
+              comments or thoughts on your industry. Now let’s make sure your
+              past and future content gets the best shot at ranking, to make
+              your brand's message stronger and convert more.
+            </p>
+          </li>
+        </ul>
+      </div>
     </section>
-	
-	<div class="dividing-section">
-		<div class="w-full h-1/2 bg-[#def4d4]"></div>
-		<div class="w-full h-1/2 bg-[#efe0ed]"></div>
-		<svg role="img" class="absolute w-3 fill-current"><use xlink:href={svgSymbol + "#divider-swash"}></use></svg>
-	</div>
+	<section
+	id="sow" aria-label="sow"
+      class="section-spacing bg-primary-900 text-primary-50"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+	  <h3 class="title-recraftr">How we work</h3>
+      </div>
+      <div
+        class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8"
+      >
+        <ul
+          class="grid grid-cols-1 gap-8 p-12 mt-12 font-semibold text-left bg-white border-4 border-current rounded-lg text-md sm:grid-cols-2 md:grid-cols-3 font-display text-primary-950"
+        >
+          <li class="py-2 m-0 border-b-4 border-current">
+            3-month SEO Sprints
+          </li>
+          <li class="py-2 m-0 border-b-4 border-current">No Retainer Fee</li>
+          <li class="py-2 m-0 border-b-4 border-current">Technical Audits</li>
+          <li class="py-2 m-0 border-b-4 border-current">Content and QA</li>
+          <li class="py-2 m-0 border-b-4 border-current">PR Backlinks Services</li>
+          <li class="py-2 m-0 border-b-4 border-current">Rewriting and Optimization</li>
+          <li class="py-2 m-0 border-b-4 border-current">Content Strategy and Scaling</li>
+          <li class="py-2 m-0 border-b-4 border-current">Monitoring and reporting (ongoing)</li>
+        </ul>
+      </div>
+    </section>
 
-	<section id="pricing" aria-labelledby="pricing" class="section-spacing bg-[#efe0ed] -scroll-mt-16">
-		<div class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
-		  <h3 class="title-recraftr">Packages</h3>
-		  <p class="subtitle-recraftr">An option for your stage</p>
-		</div>
-		<div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">
-		  <div class="grid w-full grid-cols-1 gap-2 mx-auto bg-secondary-50 md:grid-cols-3">
-			<div id="price-1" class="relative px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
-			  <div class="absolute text-blue-600 -top-3 -left-2 -rotate-12">
-				  <svg role="img" class="w-32 h-12 fill-current"><use xlink:href={svgSymbol + "#most-popular"}></use></svg>
-			  </div>
-			  <div class="min-h-[--price-height]">
-				<div class="font-extrabold text-lg/tight font-display">💥 Exploding Startup</div>
-				<div class="text-sm">3 months</div>
-			  </div>
-			  <div class="my-8">
-				<div class="font-extrabold leading-none text-md font-display">€10,000/month</div>
-				<!-- <div class="text-sm text-current">Pause or cancel anytime</div> -->
-				<div class="flex flex-col items-center my-8">
-				  <a role="button" href="#StartNewForm" target="_blank" class="w-full text-md btn-primary">Get started</a>
-				  <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
-				</div>
-			  </div>
-			  <p class="mt-2 mb-4 font-bold">What's included:</p>
-			  <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
-				  <li class="py-1">Technical Audit</li>
-					<li class="py-1">Content Rewriting</li>
-					<li class="py-1">Topical Map</li>
-					<li class="py-1">Editorial Calendar</li>
-					<li class="py-1">30,000 words (30-40 articles)</li>
-					<li class="py-1">PPC or Backlink Campaign (worth €1000)</li>
-					
-				</ul>
-			</div>
-			<div id="price-2" class="px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
-			  <div class="min-h-[--price-height]">
-				<div class="font-extrabold text-lg/tight font-display">🌱 Growing Startup</div>
-				<div class="text-sm">3 months</div>
-			  </div>
-			  <div class="my-8">
-				<div class="font-extrabold leading-none text-md font-display">€5,000/month</div>
-				<!-- <div class="text-sm text-current">Paid quarterly</div> -->
-				<div class="flex flex-col items-center my-8">
-					<a role="button" href="#StartNewForm" target="_blank" class="w-full text-md btn-primary">Get started</a>
-				  <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
-				</div>
-			  </div>
-			  <p class="mt-2 mb-4 font-bold">What's included:</p>
-			  <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
-				  	<li class="py-1">Technical Audit</li>
-					<li class="py-1">Topical Map</li>
-					<li class="py-1">Editorial Calendar</li>
-					<li class="py-1">Content Rewriting</li>
-					<li class="py-1">20,000 words (20-30 articles)</li>
-					<li class="py-1">PPC Campaign (worth €500)</li>
-					
-				</ul>
-			</div>
-			<div id="price-3" class="px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
-			  <div class="min-h-[--price-height]">
-				<div class="font-extrabold text-lg/tight font-display">🚀 Starter SEO Sprint</div>
-				<div class="text-sm">3 months</div>
-			  </div>
-			  <div class="my-8">
-				<div class="font-extrabold leading-none text-md font-display">€2,500/month</div>
-				<!-- <div class="text-sm text-current">Paid annually</div> -->
-				<div class="flex flex-col items-center my-8">
-					<a role="button" href="#StartNewForm" target="_blank" class="w-full text-md btn-primary">Get started</a>
-				  <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
-				</div>
-			  </div>
-			  <p class="mt-2 mb-4 font-bold">What's included:</p>
-			  <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
-				  	<li class="py-1">Technical Audit</li>
-					<li class="py-1">Topical Map</li>
-					<li class="py-1">Editorial Calendar</li>
-					<li class="py-1">10,000 words (10-15 articles)</li>
-				</ul>
-			</div>
-		  </div>
-		</div>
-	  </section>
+    <section
+      id="pricing"
+      aria-labelledby="pricing"
+      class="section-spacing"
+    >
+      <div
+        class="px-4 mx-auto text-center sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <h3 class="title-recraftr">Packages</h3>
+        <p class="subtitle-recraftr">An option for your stage</p>
+      </div>
+      <div class="max-w-2xl mx-auto mt-16 lg:max-w-7xl lg:px-6">
+        <div class="grid w-full grid-cols-1 gap-2 mx-auto md:grid-cols-3">
+          <div
+            id="price-1"
+            class="relative px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0"
+          >
+            <div class="absolute text-blue-600 -top-3 -left-2 -rotate-12">
+              <svg role="img" class="w-32 h-12 fill-current"
+                ><use xlink:href={svgSymbol + "#most-popular"}></use></svg
+              >
+            </div>
+            <div class="min-h-[--price-height]">
+              <div class="font-extrabold text-lg/tight font-display">
+                💥 Exploding Startup
+              </div>
+              <div class="text-sm">3 months</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-md font-display">
+                €10,000/month
+              </div>
+              <!-- <div class="text-sm text-current">Pause or cancel anytime</div> -->
+              <div class="flex flex-col items-center my-8">
+                <a
+                  role="button"
+                  href="#StartNewForm"
+                  target="_blank"
+                  class="w-full text-md btn-primary">Get started</a
+                >
+                <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
+              </div>
+            </div>
+            <p class="mt-2 mb-4 font-bold">What's included:</p>
+            <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
+              <li class="py-1">Technical Audit</li>
+              <li class="py-1">Content Rewriting</li>
+              <li class="py-1">Topical Map</li>
+              <li class="py-1">Editorial Calendar</li>
+              <li class="py-1">30,000 words (30-40 articles)</li>
+              <li class="py-1">PPC or Backlink Campaign (worth €1000)</li>
+            </ul>
+          </div>
+          <div id="price-2" class="px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
+            <div class="min-h-[--price-height]">
+              <div class="font-extrabold text-lg/tight font-display">
+                🌱 Growing Startup
+              </div>
+              <div class="text-sm">3 months</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-md font-display">
+                €5,000/month
+              </div>
+              <!-- <div class="text-sm text-current">Paid quarterly</div> -->
+              <div class="flex flex-col items-center my-8">
+                <a
+                  role="button"
+                  href="#StartNewForm"
+                  target="_blank"
+                  class="w-full text-md btn-primary">Get started</a
+                >
+                <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
+              </div>
+            </div>
+            <p class="mt-2 mb-4 font-bold">What's included:</p>
+            <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
+              <li class="py-1">Technical Audit</li>
+              <li class="py-1">Topical Map</li>
+              <li class="py-1">Editorial Calendar</li>
+              <li class="py-1">Content Rewriting</li>
+              <li class="py-1">20,000 words (20-30 articles)</li>
+              <li class="py-1">PPC Campaign (worth €500)</li>
+            </ul>
+          </div>
+          <div id="price-3" class="px-4 pt-8 pb-16 mx-6 bg-white sm:mx-0">
+            <div class="min-h-[--price-height]">
+              <div class="font-extrabold text-lg/tight font-display">
+                🚀 Starter SEO Sprint
+              </div>
+              <div class="text-sm">3 months</div>
+            </div>
+            <div class="my-8">
+              <div class="font-extrabold leading-none text-md font-display">
+                €2,500/month
+              </div>
+              <!-- <div class="text-sm text-current">Paid annually</div> -->
+              <div class="flex flex-col items-center my-8">
+                <a
+                  role="button"
+                  href="#StartNewForm"
+                  target="_blank"
+                  class="w-full text-md btn-primary">Get started</a
+                >
+                <!-- <a href="https://calendly.com/recraftr/recraftr-intro" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">Book a call</a> -->
+              </div>
+            </div>
+            <p class="mt-2 mb-4 font-bold">What's included:</p>
+            <ul class="-my-2 text-sm tracking-tight list-disc list-inside">
+              <li class="py-1">Technical Audit</li>
+              <li class="py-1">Topical Map</li>
+              <li class="py-1">Editorial Calendar</li>
+              <li class="py-1">10,000 words (10-15 articles)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<SwatNav />
+    <SwatNav />
 
-	<Footer />
-
+    <Footer />
   </body>
 </html>
