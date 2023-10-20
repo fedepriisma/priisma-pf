@@ -205,12 +205,12 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
                   <Image
                     class={"rounded-full h-14 w-14 bg-primary-50"}
                     src={TiboImg}
-                    alt="Tibo — TweetHunter.io CEO"
+                    alt="Tibo — TweetHunter.io Co-Founder"
                   />
                   <div class="text-base">
                     <div class="font-semibold text-primary-50">Tibo</div>
                     <div class="mt-1 text-primary-500">
-                      CEO of <a
+                      Co-Founder of <a
                         href="https://www.tweethunter.io/"
                         target="_blank">tweethunter.io</a
                       >
@@ -654,6 +654,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
+                <a href="https://calendly.com/" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">¿Prefieres hablar antes de iniciar la colaboración?</a>
               </div>
             </div>
             <p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -684,6 +685,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
+                <a href="https://calendly.com/" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">¿Prefieres hablar antes de iniciar la colaboración?</a>
               </div>
             </div>
             <p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -714,6 +716,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
+                <a href="https://calendly.com/" target="_blank" class="mt-3 text-sm font-semibold underline decoration-dotted">¿Prefieres hablar antes de iniciar la colaboración?</a>
               </div>
             </div>
             <p class="mt-2 mb-4 font-bold">What's included:</p>
@@ -728,7 +731,13 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
       </div>
     </section>
 
-    <SwatNav />
+    <SwatNav>
+      <li class="flex items-center px-2 nav-item" slot="before-items">
+        <a href="#page-intro" class="transition-all hover:rotate-12 hover:text-slate-700">
+          <svg role="img" class="w-12 h-12 fill-current"><use xlink:href={svgSymbol + "#icon-arrow-up"}></use></svg>
+        </a>
+      </li>
+    </SwatNav>
 
     <Footer />
   </body>
