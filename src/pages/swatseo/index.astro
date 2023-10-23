@@ -5,9 +5,9 @@ import MainHead from "../../components/SwatHead.astro";
 import Footer from "./footer.astro";
 import svgSymbol from "../swatseo/img/symbols.svg?url";
 import SwatNav from "../../components/Nav/swatnav.astro";
-import RecentWork01 from "./img/swats-ref-turodebt.jpg";
-import RecentWork02 from "./img/swats-ref-tweethunter.jpg";
-import RecentWork03 from "./img/swats-ref-guiajando.jpg";
+// import RecentWork01 from "./img/swats-ref-turodebt.jpg";
+// import RecentWork02 from "./img/swats-ref-tweethunter.jpg";
+// import RecentWork03 from "./img/swats-ref-guiajando.jpg";
 import TiboImg from "./img/tibo.jpg";
 import TweetHunterLogo from "./img/tweethunter-logo.svg";
 import CatavinoLogo from "./img/catavino-logo-negative.png";
@@ -22,7 +22,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
       description="An effective SEO Team for your Startup"
     />
   </head>
-  <body class="antialiased text-primary-950 bg-primary-50">
+  <body class="antialiased text-primary-950 bg-primary-50 pattern-bg-light">
     <header id="page-intro" class="lg:px-5 scroll-mt-12">
       <head>
         <div class="flex justify-center mt-8">
@@ -43,31 +43,31 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           An effective<br /> SEO Team<br /> for your Startup
         </h1>
 
-        <p class="subtitle-recraftr">SEO Traffic hacks, the SWAT Way</p>
+        <p class="subtitle-recraftr">SEO Traffic hacks, the SWAT way.</p>
 
         <div class="flex flex-col mx-auto mt-12 max-w-max">
-          <a href="#pricing" class="btn-primary">See plans</a>
+          <a href="#pricing" class="btn-primary">See packages</a>
           <div class="mt-6 text-sm text-current">
             Strategies that work, guaranteed.
           </div>
         </div>
       </div>
     </header>
-    <div
+    <section
       id="introduction"
       aria-label="Introduction"
-      class="px-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      class="px-4 mt-4 section-padding pattern-bg-light sm:px-6 md:px-4 lg:px-12 bg-secondary-100 sm:mt-12"
     >
       <h2
-        class="my-24 text-2xl font-extrabold leading-none sm:text-3xl font-display"
+        class="flex flex-col mx-auto text-3xl font-extrabold leading-none sm:text-3xl xl:text-4xl font-display max-w-fit"
       >
         We’ll build your<br />
         <span
           class="text-transparent bg-clip-text bg-gradient-to-bl from-secondary-200 to-secondary-700"
-          >SEO Content Machine</span
-        >.
+          >SEO Content Machine.</span
+        >
       </h2>
-    </div>
+    </section>
     <section
       id="benefits"
       aria-label="benefits"
@@ -81,7 +81,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           You’ll never look elsewhere for your SEO Content Startegy and Content
           Generation needs. Seriously! 😎
         </p>
-        <a href="#pricing" class="mt-12 btn-primary">See plans</a>
+        <a href="#pricing" class="mt-12 btn-primary">See packages</a>
       </div>
       <div
         class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8"
@@ -91,7 +91,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
         >
           <div class="flex flex-col items-center">
             <svg role="img" class="w-auto h-16 fill-current"
-              ><use xlink:href={svgSymbol + "#il-repurposing-board"}></use></svg
+              ><use xlink:href={svgSymbol + "#il-magnifier"}></use></svg
             >
             <h4 class="my-4 font-extrabold text-md font-display">
               Search-Focused Content
@@ -103,7 +103,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </div>
           <div class="flex flex-col items-center">
             <svg role="img" class="w-auto h-16 scale-125 fill-current"
-              ><use xlink:href={svgSymbol + "#il-superfast-delivery"}
+              ><use xlink:href={svgSymbol + "#il-datadriven"}
               ></use></svg
             >
             <h4 class="my-4 font-extrabold text-md font-display">
@@ -116,7 +116,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </div>
           <div class="flex flex-col items-center">
             <svg role="img" class="w-auto h-16 fill-current"
-              ><use xlink:href={svgSymbol + "#il-fixed-rate"}></use></svg
+              ><use xlink:href={svgSymbol + "#il-monthlyrate"}></use></svg
             >
             <h4 class="my-4 font-extrabold text-md font-display">
               Fixed Monthly Rate
@@ -127,7 +127,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </div>
           <div class="flex flex-col items-center">
             <svg role="img" class="w-auto h-16 scale-125 fill-current"
-              ><use xlink:href={svgSymbol + "#il-top-quality"}></use></svg
+              ><use xlink:href={svgSymbol + "#il-contextdriven"}></use></svg
             >
             <h4 class="my-4 font-extrabold text-md font-display">
               Context Driven Content
@@ -140,7 +140,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </div>
           <div class="flex flex-col items-center">
             <svg role="img" class="w-auto h-16 fill-current"
-              ><use xlink:href={svgSymbol + "#il-flexible-scalable"}></use></svg
+              ><use xlink:href={svgSymbol + "#il-everlastingcontent"}></use></svg
             >
             <h4 class="my-4 font-extrabold text-md font-display">
               Everlasting Content
@@ -157,7 +157,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               Tailored and Yours
             </h4>
             <p class="text-body">
-              Each of your repurposed content pieces is made especially for you
+              Each of your content pieces are made especially for you
               and is 100% yours.
             </p>
           </div>
@@ -271,7 +271,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
         class="px-4 mx-auto mt-16 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-8"
       >
         <div class="gap-4 mt-12 columns-1 lg:columns-3">
-          <figure>
+          <!-- <figure>
             <Image
               class={"pic-withloader"}
               src={RecentWork01}
@@ -288,8 +288,8 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               alt="TweetHunter"
             />
             <figcaption class="text-sm">TweetHunter</figcaption>
-          </figure>
-          <figure>
+          </figure> -->
+          <!-- <figure>
             <Image
               class={"pic-withloader"}
               src={RecentWork03}
@@ -297,7 +297,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               alt="Guiajando"
             />
             <figcaption class="text-sm">Guiajando</figcaption>
-          </figure>
+          </figure> -->
           <blockquote class="twitter-tweet">
             <p lang="en" dir="ltr">
               ⚡️ Mini-case study - Services Agency (6 months)<br /><br />Work
@@ -432,7 +432,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
 	>
           <li>
             <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
-              🔑 Search-Focused Content
+              🔎 Search-Focused Content
             </h3>
             <p class="mt-2">
               We'll optimize and create new content to help you rank for the
@@ -441,7 +441,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </li>
           <li>
             <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
-              🖼️ Data Driven Market-Fit Content
+              📊 Data Driven Market-Fit Content
             </h3>
             <p class="mt-2">
               Still don't understand fully what makes your audience tick? We
@@ -450,7 +450,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </li>
           <li>
             <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
-              💙 Context Driven Content
+              📝 Context Driven Content
             </h3>
             <p class="mt-2">
               We'll help you deliver the right content, to the right person at
@@ -460,7 +460,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
           </li>
           <li>
             <h3 class="mt-8 text-lg font-extrabold tracking-tight font-display">
-              🚀 Everlasting Content
+              🌳 Everlasting Content
             </h3>
             <p class="mt-2">
               We focus on creating content that stands the test of time.
@@ -492,7 +492,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
           >
             <h3 class="text-lg font-extrabold font-display">
-              👀<br /> SEO Technicals
+              👩‍💻<br /> SEO Technicals
             </h3>
             <p>
               All your SEO technicals taken care by our team on a weekly basis.
@@ -502,7 +502,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1"
           >
             <h3 class="text-lg font-extrabold font-display">
-              🗣️<br /> Editorial Calendar
+              🗓<br /> Editorial Calendar
             </h3>
             <p>
               No need to worry about Content Production. Content Velocity
@@ -513,7 +513,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3"
           >
             <h3 class="text-lg font-extrabold font-display">
-              ⏰<br /> Ongoing Optimization
+              🌀<br /> Ongoing Optimization
             </h3>
             <p>
               Better Internal Links? Rewriting needed? Better CTAs? We’ll do all
@@ -524,7 +524,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-2"
           >
             <h3 class="text-lg font-extrabold font-display">
-              💡<br /> Search-Focused Content
+              🔎<br /> Search-Focused Content
             </h3>
             <p>
               We'll create and optimize content to help you rank for the first
@@ -535,7 +535,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-3"
           >
             <h3 class="text-lg font-extrabold font-display">
-              😕<br /> Data Driven Market-Fit Content
+              📊<br /> Data Driven Market-Fit Content
             </h3>
             <p>
               Still don't understand fully what makes your audience tick? We
@@ -546,7 +546,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid -rotate-1"
           >
             <h3 class="text-lg font-extrabold font-display">
-              🔎<br /> Context Driven Content
+              📝<br /> Context Driven Content
             </h3>
             <p>
               We'll help you deliver the right content, to the right person at
@@ -558,7 +558,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
           >
             <h3 class="text-lg font-extrabold font-display">
-              📢<br /> Everlasting Content
+              🌳<br /> Everlasting Content
             </h3>
             <p>We focus on creating content that stands the test of time.</p>
           </li>
@@ -566,7 +566,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
             class="p-12 pl-4 bg-white border-2 border-current rounded-lg shadow-solid rotate-2"
           >
             <h3 class="text-lg font-extrabold font-display">
-              📢<br /> We care
+              🥰<br /> We care
             </h3>
             <p>
               Your success is our success, so we’ll give it our all to make your
@@ -650,7 +650,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               <div class="flex flex-col items-center my-8">
                 <a
                   role="button"
-                  href="#StartNewForm"
+                  href="https://form.typeform.com/to/Suu0Gd57"
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
@@ -681,7 +681,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               <div class="flex flex-col items-center my-8">
                 <a
                   role="button"
-                  href="#StartNewForm"
+                  href="https://form.typeform.com/to/Suu0Gd57"
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
@@ -712,7 +712,7 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
               <div class="flex flex-col items-center my-8">
                 <a
                   role="button"
-                  href="#StartNewForm"
+                  href="https://form.typeform.com/to/Suu0Gd57"
                   target="_blank"
                   class="w-full text-md btn-primary">Get started</a
                 >
@@ -732,9 +732,9 @@ import GabriellaImg from "./img/gabriella-opaz.webp";
     </section>
 
     <SwatNav>
-      <li class="flex items-center px-2 nav-item" slot="before-items">
-        <a href="#page-intro" class="transition-all hover:rotate-12 hover:text-slate-700">
-          <svg role="img" class="w-12 h-12 fill-current"><use xlink:href={svgSymbol + "#icon-arrow-up"}></use></svg>
+      <li class="flex items-center nav-item" slot="before-items">
+        <a href="#page-intro" class="icon-holder">
+          <svg role="img" class="w-full h-full fill-current"><use xlink:href={svgSymbol + "#icon-arrow-up"}></use></svg>
         </a>
       </li>
     </SwatNav>
