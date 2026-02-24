@@ -1,5 +1,6 @@
+@import 'tailwindcss';
+
 @config "../../tailwind.config.js";
-@import "tailwindcss";
 
 @layer base {
     .btn-primary {
@@ -18,9 +19,9 @@
         font-display
         tracking-wide
         py-3
-        px-[calc(theme(spacing.3)-1px)]
+        px-[calc(--spacing(3)-1px)]
         sm:py-4
-        sm:px-[calc(theme(spacing.4)-1px)]
+        sm:px-[calc(--spacing(4)-1px)]
         text-base
         bg-white
         font-semibold
@@ -29,7 +30,7 @@
         border-current
         text-current
         hover:bg-[#CEEED7]
-        hover:bg-gradient-to-tl
+        hover:bg-linear-to-tl
         hover:from-yellow-lemon
         hover:to-[#CEEED7]
         transition-all
@@ -53,7 +54,7 @@
     .nav-active > .btn-secondary {
         @apply transition-all bg-current
         group-hover:bg-[#CEEED7]
-        group-hover:bg-gradient-to-tl
+        group-hover:bg-linear-to-tl
         group-hover:from-yellow-lemon
         group-hover:to-[#CEEED7]
         group-hover:text-current;

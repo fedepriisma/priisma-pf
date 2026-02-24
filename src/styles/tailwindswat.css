@@ -1,5 +1,6 @@
+@import 'tailwindcss';
+
 @config "../../tailwind.config.js";
-@import "tailwindcss";
 
 @layer base {
     .btn-primary {
@@ -18,16 +19,16 @@
         font-display
         tracking-wide
         py-2
-        px-[calc(theme(spacing.3)-1px)]
+        px-[calc(--spacing(3)-1px)]
         sm:py-2
-        sm:px-[calc(theme(spacing.4)-1px)]
+        sm:px-[calc(--spacing(4)-1px)]
         text-base
         bg-white
         font-semibold
         focus:outline-none
         border-current
         text-current
-        hover:bg-gradient-to-tl
+        hover:bg-linear-to-tl
         hover:from-secondary-100
         hover:to-secondary-500
         transition-all
@@ -49,7 +50,7 @@
         @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
     }
     .nav-active > .btn-secondary {
-        @apply transition-all bg-current group-hover:bg-primary-950 group-hover:bg-gradient-to-tl group-hover:from-secondary-100 group-hover:to-secondary-500 group-hover:text-current;
+        @apply transition-all bg-current group-hover:bg-primary-950 group-hover:bg-linear-to-tl group-hover:from-secondary-100 group-hover:to-secondary-500 group-hover:text-current;
     }
     .nav-active > .btn-secondary > span { @apply text-white;}
 
