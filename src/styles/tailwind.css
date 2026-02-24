@@ -65,9 +65,9 @@
   .section-space {
     @apply px-4 py-16 sm:p-16 lg:p-24;
   }
-  .image-solid-high {
+  /* .image-solid-high {
 	@apply border border-current border-solid rounded-md overflow-clip shadow-solid;
-  }
+  } */
   .section-subtitle {
     @apply mt-4 text-xl uppercase font-display md:mt-8 lg:mt-16;
   }
