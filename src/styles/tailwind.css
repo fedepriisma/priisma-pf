@@ -1,5 +1,14 @@
-@config "../../tailwind.config.js";
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Mona Sans", sans-serif;
+  --font-display--font-optical-sizing: auto;
+  --font-display--font-weight: 200 900;
+  --font-display--font-style: normal;
+  --font-display--font-variation-settings: "wdth" 100;
+  --font-display--font-stretch: 75% 125%;
+}
 
 @layer base {
 
@@ -23,14 +32,7 @@
     @apply text-blue-600 transition-colors duration-150 ease-in-out;
   } */
   
-  @font-face {
-    font-family: 'Mona Sans';
-    src:
-      url('/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
-      url('/fonts/Mona-Sans.woff2') format('woff2-variations');
-    font-weight: 200 900;
-    font-stretch: 75% 125%;
-  }
+
   
 
   a.subtle,
