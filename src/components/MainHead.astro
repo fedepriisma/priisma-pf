@@ -4,6 +4,7 @@ const {
 	description = 'Fede Bozo — Designer',
 	canonical = undefined,
 	image = undefined,
+	preloadImage = undefined,
 } = Astro.props;
 const defaultImage = '/assets/mesh-gradient.jpg';
 import HeaderScripts from '../components/HeaderScripts.astro';
@@ -70,8 +71,19 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 <meta name="twitter:image" content={image ?? defaultImage} />
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<!-- Preload local variable font to avoid incorrect relative hrefs in generated HTML -->
+<link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Local @font-face with font-display to avoid render-blocking and 404 preload issues -->
+<style>
+@font-face{font-family:'Mona Sans';src: url('/fonts/Mona-Sans.woff2') format('woff2-variations');font-weight:200 900;font-stretch:75% 125%;font-display:swap}
+</style>
+
+<!-- Remote Google Fonts kept as fallback for browsers that prefer it -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+<!-- Optional LCP/image preload: pass `preloadImage` prop from pages that know their hero LCP -->
+{preloadImage && <link rel="preload" href={preloadImage} as="image" />}
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>

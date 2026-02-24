@@ -1,16 +1,61 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Cabinet Grotesk", sans-serif;
+  --font-display--font-optical-sizing: auto;
+  --font-display--font-weight: 200 900;
+  --font-display--font-style: normal;
+  --font-display--font-variation-settings: "wdth" 100;
+  --font-display--font-stretch: 75% 125%;
+  --font-base: var(--font-display);
+  --color-primary: oklch(0.47 0.3 270.67);
+  --color-primary-600: oklch(20.7% 0.37 264.1);
+  --color-secondary-50: oklch(0.97 0.01 89.49);
+  --color-secondary-200: oklch(91% 0.036 97.3);
+  --color-secondary-700: oklch(51.8% 0.079 57.4);
+  --color-secondary-300: oklch(83.5% 0.06 88.4);
+  --color-yellow-lemon: oklch(97% 0.195 108.2);
+  --color-lemon-green: oklch(0.9197 0.0456 154.17);
+  --color-dark-coal: oklch(23.4% 0.054 221.8);
+  --shadow-sm:
+    0px 19px 53px 0px rgb(0 0 0 / 0.03), 0px 10px 28px 0px rgb(0 0 0 / 0.05),
+    0px 6px 16px 0px rgb(0 0 0 / 0.05), 0px 3px 9px 0px rgb(0 0 0 / 0.075),
+    0px 1px 4px 0px rgb(0 0 0 / 0.1);
+  --shadow-solid: 4px 4px 0 0 currentColor;
+
+  --text-xs: clamp(0.64rem, 0.05vw + 0.63rem, 0.67rem);
+  --text-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --text-base: clamp(1rem, .34vw + .91rem, 1.19rem);
+  --text-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --text-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --text-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --text-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --text-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --text-4xl: clamp(3.81rem, 5.18vw + 2.52rem, 6.66rem);
+  --text-5xl: clamp(4.77rem, 7.48vw + 2.9rem, 8.88rem);
+  --text-6xl: clamp(5.96rem, 10.69vw + 3.29rem, 11.84rem);
+  --text-7xl: clamp(7.45rem, 15.14vw + 3.66rem, 15.78rem);
+  --text-8xl: clamp(9.31rem, 21.31vw + 3.99rem, 21.03rem);
+  --text-9xl: clamp(11.64rem, 29.81vw + 4.19rem, 28.04rem);
+}
 
 @layer base {
-    .btn-primary {
-        @apply
-        inline-flex justify-center px-6 py-4 text-lg font-extrabold tracking-wide text-current border-2 border-current bg-gray-50 shadow-solid focus:outline-none hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:bg-primary active:text-white/80 disabled:opacity-30 disabled:hover:bg-current font-display;
-    }
-    .btn-third {
-        @apply inline-flex justify-center px-4 py-4 text-base font-semibold tracking-tight text-current border-2 shadow-sm rounded-xl bg-secondary-50 focus:outline-none hover:bg-secondary-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-50 active:bg-secondary-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-secondary-50;
-    }
-    .btn-secondary {
-        @apply
-        inline-flex
+  .btn-primary {
+    @apply inline-flex justify-center px-6 py-4 text-lg font-extrabold tracking-wide text-current border-2 border-current bg-gray-50 shadow-(--shadow-solid) focus:outline-none hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:bg-primary active:text-white/80 disabled:opacity-30 disabled:hover:bg-current font-display;
+  }
+  .btn-third {
+    @apply inline-flex justify-center px-4 py-4 font-semibold tracking-tight text-current border-2 shadow-sm text-md rounded-xl bg-secondary-50 focus:outline-none hover:bg-secondary-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-50 active:bg-secondary-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-secondary-50;
+  }
+  .btn-secondary {
+    @apply inline-flex
         justify-center
         rounded-xl
         border-2
@@ -27,10 +72,10 @@
         focus:outline-none
         border-current
         text-current
-        hover:bg-[#CEEED7]
+        hover:bg-lemon-green
         hover:bg-linear-to-tl
         hover:from-yellow-lemon
-        hover:to-[#CEEED7]
+        hover:to-lemon-green
         transition-all
         focus-visible:outline-2
         focus-visible:outline-offset-2
@@ -39,35 +84,32 @@
         disabled:opacity-40
         disabled:hover:border-secondary-300
         disabled:hover:bg-transparent;
-    }
-    .title-recraftr {
-        @apply text-2xl font-extrabold leading-none text-current font-display;
-    }
-    .subtitle-recraftr {
-        @apply mt-4 leading-tight text-current text-md opacity-70;
-    }
-    .h2-recraftr {
-        @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
-    }
-    .nav-active > .btn-secondary {
-        @apply transition-all bg-current
-        group-hover:bg-[#CEEED7]
-        group-hover:bg-linear-to-tl
-        group-hover:from-yellow-lemon
-        group-hover:to-[#CEEED7]
-        group-hover:text-current;
-    }
-    .nav-active > .btn-secondary > span { @apply text-white;}
-    .section-spacing {
-        @apply min-h-screen pt-16 pb-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32;
-    }
-    .dividing-section {
-        @apply relative z-0 flex flex-col items-center justify-center h-32;
-    }
-    .pic-withloader {
-        @apply relative bg-gray-50 before:bg-gray-300 before:absolute before:w-full before:h-full before:animate-pulse before:z-0 ;
-    }
-    .pic-withloader img {
-        @apply relative z-10;
-    }
+  }
+  .title-recraftr {
+    @apply text-2xl font-extrabold leading-none text-current font-display;
+  }
+  .subtitle-recraftr {
+    @apply mt-4 leading-tight text-current text-md opacity-70;
+  }
+  .h2-recraftr {
+    @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
+  }
+  .nav-active > .btn-secondary {
+    @apply transition-all bg-current group-hover:bg-lemon-green group-hover:bg-linear-to-tl group-hover:from-yellow-lemon group-hover:to-lemon-green group-hover:text-white;
+  }
+  .nav-active > .btn-secondary > span {
+    @apply text-white;
+  }
+  .section-spacing {
+    @apply min-h-screen pt-16 pb-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32;
+  }
+  .dividing-section {
+    @apply relative z-0 flex flex-col items-center justify-center h-32;
+  }
+  .pic-withloader {
+    @apply relative bg-gray-50 before:bg-gray-300 before:absolute before:w-full before:h-full before:animate-pulse before:z-0;
+  }
+  .pic-withloader img {
+    @apply relative z-10;
+  }
 }
