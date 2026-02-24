@@ -4,6 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
 	corePlugins: {
 		container: false,
+		preflight: false,
 	},
 	content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
 	theme: {
