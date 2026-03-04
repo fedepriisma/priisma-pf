@@ -1,4 +1,57 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Cabinet Grotesk", sans-serif;
+  --font-display--font-optical-sizing: auto;
+  --font-display--font-weight: 200 900;
+  --font-display--font-style: normal;
+  --font-display--font-variation-settings: "wdth" 100;
+  --font-display--font-stretch: 75% 125%;
+  --font-base: var(--font-display);
+  --color-primary: oklch(0.47 0.3 270.67);
+  --color-primary-50: oklab(0.98 -0.01 0);
+  --color-primary-300: #f33;
+  --color-primary-600: oklch(20.7% 0.37 264.1);
+  --color-primary-900: #adf;
+  --color-primary-950: oklch(0.27 0.04 207.43);
+  --color-secondary-50: oklch(0.97 0.01 89.49);
+  --color-secondary-100: oklch(0.93 0.04 249.57);
+  --color-secondary-200: #900;
+  --color-secondary-500: #e3a;
+  --color-secondary-700: oklch(51.8% 0.079 57.4);
+  --color-secondary-300: oklch(83.5% 0.06 88.4);
+  --color-yellow-lemon: oklch(97% 0.195 108.2);
+  --color-lemon-green: oklch(0.9197 0.0456 154.17);
+  --color-dark-coal: oklch(23.4% 0.054 221.8);
+  --shadow-sm:
+    0px 19px 53px 0px rgb(0 0 0 / 0.03), 0px 10px 28px 0px rgb(0 0 0 / 0.05),
+    0px 6px 16px 0px rgb(0 0 0 / 0.05), 0px 3px 9px 0px rgb(0 0 0 / 0.075),
+    0px 1px 4px 0px rgb(0 0 0 / 0.1);
+  --shadow-solid: 4px 4px 0 0 currentColor;
+
+  --text-xs: clamp(0.64rem, 0.05vw + 0.63rem, 0.67rem);
+  --text-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --text-base: clamp(1rem, .34vw + .91rem, 1.19rem);
+  --text-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --text-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --text-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --text-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --text-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --text-4xl: clamp(3.81rem, 5.18vw + 2.52rem, 6.66rem);
+  --text-5xl: clamp(4.77rem, 7.48vw + 2.9rem, 8.88rem);
+  --text-6xl: clamp(5.96rem, 10.69vw + 3.29rem, 11.84rem);
+  --text-7xl: clamp(7.45rem, 15.14vw + 3.66rem, 15.78rem);
+  --text-8xl: clamp(9.31rem, 21.31vw + 3.99rem, 21.03rem);
+  --text-9xl: clamp(11.64rem, 29.81vw + 4.19rem, 28.04rem);
+}
 
 @layer base {
     .btn-primary {
