@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.priisma.com/sitemap-index.xml

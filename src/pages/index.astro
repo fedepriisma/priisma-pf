@@ -33,19 +33,20 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 	</head>
 	
 	<body class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-purplehaze text-whiterabbit">
-	<header class="sticky px-4 py-4 mx-2 border border-solid rounded-full sm:px-8 sm:mx-8 top-2 bg-purplehaze/70 text-whiterabbit backdrop-blur-md border-whiterabbit/30">
+	<header class="sticky z-50 px-4 py-4 mx-2 border border-solid rounded-full sm:px-8 sm:mx-8 top-2 bg-purplehaze/70 text-whiterabbit backdrop-blur-md border-whiterabbit/30">
 		<ContactInfo />
 	</header>
-		<div class="relative z-10 my-16 ml-4 text-left md:my-24 lg:my-48">
-			<h1 class="text-4xl font-medium uppercase font-display font-strech-expanded">I'm Fede Bozo, <br/> a Product Designer<br/> in Miami.</h1>
-			<p class="mt-1 text-md"> Here are some samples of my work ↓</p>
+		<div class="relative max-w-4xl mx-auto my-16 ml-4 text-left md:my-24 lg:my-32">
+			<p class="mb-4 text-md">Strategic Product Design · Miami</p>
+			<h1 class="text-5xl font-medium font-display font-stretch-expanded">Design <br />that moves <br />the needle.</h1>
+			<h2 class="mt-6 text-base max-w-prose">Fede Bozo — Product Designer and Developer. Working from concept to launch turning complex problems into products people actually use, leading zero-to-one initiatives and full redesigns as a strategic partner.</h2>
 		</div>
 		<main class="main-thingi">
 			<div class="grid">
 				<Quotingbill />
 				<MchAnywhere />
 				<Flyairways />
-				<Godark />
+				<!-- <Godark /> -->
 			</div>
 		</main>
 		<Footer />

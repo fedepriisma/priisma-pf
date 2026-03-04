@@ -13,8 +13,6 @@
   --font-display--font-optical-sizing: auto;
   --font-display--font-weight: 200 900;
   --font-display--font-style: normal;
-  --font-display--font-variation-settings: "wdth" 100;
-  --font-display--font-stretch: 75% 125%;
   --color-white: oklch(0.9973 0.0013 286.38);
 	--color-black: oklch(0.1776 0 0);
 	--color-tan: #f4efed;
@@ -131,8 +129,6 @@
   }
   
 
-  
-
   a.subtle,
   .link.link--subtle {
     @apply hover:no-underline hover:text-purple focus:text-purple;
@@ -142,9 +138,6 @@
     @apply inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-colors duration-200 ease-in-out border-2 border-transparent rounded-md shadow-sm bg-dusk hover:bg-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-midnight;
   }
 
-  .font-strech-expanded{
-    font-stretch: expanded;
-  }
   .font-display {
     @apply tracking-normal;
   }
