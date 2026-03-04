@@ -16,28 +16,20 @@
   --font-display--font-variation-settings: "wdth" 100;
   --font-display--font-stretch: 75% 125%;
   --font-base: var(--font-display);
-  --color-primary: oklch(0.47 0.3 270.67);
-  --color-primary-50: oklab(0.98 -0.01 0);
-  --color-primary-300: #f33;
-  --color-primary-600: oklch(20.7% 0.37 264.1);
-  --color-primary-900: #adf;
+  --color-primary: oklch(0.91 0.06 247.65);
+  --color-primary-50: oklch(0.98 0.01 191.36);
+  --color-primary-100: oklch(0.96 0.05 188.68);
+  --color-primary-300: oklch(0.86 0.12 191.89);
+  --color-primary-500: oklch(0.72 0.12 196.88);
+  --color-primary-900: oklch(0.38 0.06 201.93);
   --color-primary-950: oklch(0.27 0.04 207.43);
-  --color-secondary-50: oklch(0.97 0.01 89.49);
   --color-secondary-100: oklch(0.93 0.04 249.57);
-  --color-secondary-200: #900;
-  --color-secondary-500: #e3a;
-  --color-secondary-700: oklch(51.8% 0.079 57.4);
+  --color-secondary-200: oklch(0.88 0.06 244.26);
   --color-secondary-300: oklch(83.5% 0.06 88.4);
-  --color-yellow-lemon: oklch(97% 0.195 108.2);
-  --color-lemon-green: oklch(0.9197 0.0456 154.17);
-  --color-dark-coal: oklch(23.4% 0.054 221.8);
-  --shadow-sm:
-    0px 19px 53px 0px rgb(0 0 0 / 0.03), 0px 10px 28px 0px rgb(0 0 0 / 0.05),
-    0px 6px 16px 0px rgb(0 0 0 / 0.05), 0px 3px 9px 0px rgb(0 0 0 / 0.075),
-    0px 1px 4px 0px rgb(0 0 0 / 0.1);
+  --color-secondary-500: oklch(0.62 0.2 256.92);
+  --color-secondary-700: oklch(0.52 0.27 263.27);
   --shadow-solid: 4px 4px 0 0 currentColor;
 
-  --text-xs: clamp(0.64rem, 0.05vw + 0.63rem, 0.67rem);
   --text-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --text-base: clamp(1rem, .34vw + .91rem, 1.19rem);
   --text-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
@@ -46,20 +38,15 @@
   --text-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --text-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
   --text-4xl: clamp(3.81rem, 5.18vw + 2.52rem, 6.66rem);
-  --text-5xl: clamp(4.77rem, 7.48vw + 2.9rem, 8.88rem);
-  --text-6xl: clamp(5.96rem, 10.69vw + 3.29rem, 11.84rem);
-  --text-7xl: clamp(7.45rem, 15.14vw + 3.66rem, 15.78rem);
-  --text-8xl: clamp(9.31rem, 21.31vw + 3.99rem, 21.03rem);
-  --text-9xl: clamp(11.64rem, 29.81vw + 4.19rem, 28.04rem);
 }
 
 @layer base {
+    .nav-floater {
+        @apply sticky z-50 px-2 py-2 mx-4 border-2 border-current -mb-28 sm:mx-auto sm:max-w-fit sm:overflow-clip bottom-4 sm:rounded-full bg-primary-100;
+    }
     .btn-primary {
         @apply
         inline-flex justify-center px-6 py-4 text-lg font-extrabold tracking-wide text-current border-4 border-current rounded-lg bg-gray-50 focus:outline-none hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 active:text-white/80 disabled:opacity-30 disabled:hover:bg-current font-display;
-    }
-    .btn-third {
-        @apply inline-flex justify-center px-4 py-4 text-base font-semibold tracking-tight text-current border-2 shadow-sm rounded-xl bg-secondary-50 focus:outline-none hover:bg-secondary-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-50 active:bg-secondary-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-secondary-50;
     }
     .btn-secondary {
         @apply
@@ -97,9 +84,6 @@
     .subtitle-recraftr {
         @apply mt-4 text-base leading-tight text-current opacity-70;
     }
-    .h2-recraftr {
-        @apply inline-flex items-center px-4 py-1 mb-4 rounded-full text-primary-600 ring-1 ring-inset ring-primary-600;
-    }
     .nav-active > .btn-secondary {
         @apply transition-all bg-current group-hover:bg-primary-950 group-hover:bg-linear-to-tl group-hover:from-secondary-100 group-hover:to-secondary-500 group-hover:text-current;
     }
@@ -118,9 +102,6 @@
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIG9wYWNpdHk9IjAuMzMiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgoJPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMTIyIiBudW1PY3RhdmVzPSI0IiBzZWVkPSIxNSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiByZXN1bHQ9InR1cmJ1bGVuY2UiPjwvZmVUdXJidWxlbmNlPgoJPGZlU3BlY3VsYXJMaWdodGluZyBzdXJmYWNlU2NhbGU9IjkiIHNwZWN1bGFyQ29uc3RhbnQ9IjEuOSIgc3BlY3VsYXJFeHBvbmVudD0iMjAiIGxpZ2h0aW5nLWNvbG9yPSIjMTA0ZDk2IiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGluPSJ0dXJidWxlbmNlIiByZXN1bHQ9InNwZWN1bGFyTGlnaHRpbmciPgogICAgCQk8ZmVEaXN0YW50TGlnaHQgYXppbXV0aD0iMyIgZWxldmF0aW9uPSIxNDgiPjwvZmVEaXN0YW50TGlnaHQ+CiAgCTwvZmVTcGVjdWxhckxpZ2h0aW5nPgogIDxmZUNvbG9yTWF0cml4IHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgaW49InNwZWN1bGFyTGlnaHRpbmciIHJlc3VsdD0iY29sb3JtYXRyaXgiPjwvZmVDb2xvck1hdHJpeD4KPC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSIjMTA0ZDk2IiBmaWx0ZXI9InVybCgjbm5ub2lzZS1maWx0ZXIpIj48L3JlY3Q+PC9zdmc+");
     }
 
-    .dividing-section {
-        @apply relative z-0 flex flex-col items-center justify-center h-32;
-    }
     .pic-withloader {
         @apply relative bg-gray-50 before:bg-gray-300 before:absolute before:w-full before:h-full before:animate-pulse before:z-0 ;
     }
