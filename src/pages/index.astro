@@ -1,56 +1,220 @@
 ---
-// Component Imports
 import MainHead from "../components/MainHead.astro";
-import ContactInfo from "../components/ContactInfo.astro";
+import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import CigarWell from "./portfolio/cigarwell/cigarwell.astro";
 import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 import Godark from "./portfolio/godark/godark.astro";
 import Flyairways from "./portfolio/flyairways/flyairways.astro";
 import MchAnywhere from "./portfolio/mch/mch.astro";
-
-// Lightbox https://github.com/hellotham/hello-astro/blob/main/src/components/lightbox.astro
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
+
 <script>
-	import PhotoSwipeLightbox from 'photoswipe/lightbox';
-	import 'photoswipe/style.css';
-	  const lightbox = new PhotoSwipeLightbox({
-	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery, #mch-gallery',
-	  children: 'a',
-	  pswpModule: () => import('photoswipe')
-	});
-	lightbox.init();
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery, #mch-gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe')
+  });
+  lightbox.init();
 </script>
+
 <html lang="en">
-	<head>
-		<MainHead
-			title="Fede Bozo — Product Designer"
-			description="Fede Bozo is a Product Designer in Miami with 10+ years building digital products for airlines, hospitals, startups, and more."
-			canonical="https://www.priisma.com/"
-			image="/assets/mesh-gradient.jpg"
-		/>
-	</head>
-	
-	<body class="body-base">
-	<header class="nav-floater">
-		<ContactInfo />
-	</header>
-		<div class="relative mx-auto my-16 ml-4 md:my-16 lg:my-24 text-center">
-			<h1 class="text-5xl font-display">Designing products that are ready to scale.</h1>
-			<p class="mt-6 text-md max-w-prose mx-auto">Turning funded startups and SaaS companies from good products into great ones.</p>
-			<p class="mt-6 text-md max-w-prose mx-auto">From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.</p>
-			<p class="mt-6 text-md max-w-prose mx-auto">Real culture, a strong voice, a cohesive system, and a presence that earns trust before anyone says a word.</p>
-	<a href="#open-convo" class="primary-cta">Let's talk</a>
-		</div>
-		<main class="main-thingi">
-			<div class="grid">
-				<Quotingbill />
-				<MchAnywhere />
-				<Flyairways />
-				<!-- <Godark /> -->
-			</div>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <MainHead
+      title="Priisma — Product Design Leadership for Scaling SaaS Companies"
+      description="Priisma helps funded startups and SaaS companies shape, launch, and grow better digital products through product strategy, design leadership, and hands-on execution."
+      canonical="https://www.priisma.com/"
+      image="/assets/mesh-gradient.jpg"
+      preloadImage="/assets/mesh-gradient.jpg"
+    />
+  </head>
+
+  <body class="body-base">
+
+    <header class="nav-floater">
+      <Nav />
+    </header>
+
+    <main>
+
+      <!-- ============================================================
+           HERO
+      ============================================================ -->
+      <section id="home" class="section-space text-center">
+        <p class="text-sm font-medium tracking-widest uppercase opacity-60 mb-4">Priisma</p>
+        <h1 class="text-4xl md:text-5xl font-display max-w-3xl mx-auto leading-tight">
+          Designing products that are ready to scale.
+        </h1>
+        <p class="mt-6 text-base max-w-prose mx-auto">
+          Priisma helps funded startups and SaaS companies turn good products into great ones. From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
+        </p>
+        <a href="mailto:fede@priisma.com" class="primary-cta">
+          Start a conversation →
+        </a>
+        <div class="mt-16 mx-auto max-w-5xl">
+          <figure>
+            <div
+              class="w-full rounded-md border border-current/20 bg-midnight/5"
+              style="aspect-ratio: 16/10;"
+              role="img"
+              aria-label="Priisma — Product design leadership for scaling SaaS companies"
+            ></div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PRODUCT DESIGN LEADERSHIP
+      ============================================================ -->
+      <section id="what-we-do" class="section-space border-t border-current/10">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="section-header">More than design. Product thinking.</h2>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>Growing products reach a point where design decisions start affecting the entire company.</p>
+            <p>Features become harder to prioritize. User experience becomes inconsistent. Teams move fast but not always in the same direction.</p>
+            <p>That's where we come in.</p>
+            <p>Priisma works with founders and product teams to bring clarity to the product experience — shaping how the product works, how it looks, and how it evolves.</p>
+            <p>Sometimes that means defining the design direction. Sometimes it means helping teams think more clearly about the product itself. Often it's both.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SERVICES
+      ============================================================ -->
+      <section id="services" class="section-space border-t border-current/10 bg-tan/30">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-header mb-12">Where we bring the most value</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div>
+              <h3 class="text-base font-semibold mb-3">Product direction</h3>
+              <p class="text-sm opacity-75 mb-4">Helping teams define the product more clearly.</p>
+              <ul class="text-sm space-y-1 list-none">
+                <li>Feature prioritization</li>
+                <li>UX architecture</li>
+                <li>Product vision alignment</li>
+                <li>User experience strategy</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-base font-semibold mb-3">Design leadership</h3>
+              <p class="text-sm opacity-75 mb-4">Supporting teams as they scale.</p>
+              <ul class="text-sm space-y-1 list-none">
+                <li>Design direction</li>
+                <li>Design system thinking</li>
+                <li>Product consistency</li>
+                <li>Mentoring design teams</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-base font-semibold mb-3">Product design</h3>
+              <p class="text-sm opacity-75 mb-4">Hands-on design from early concepts to polished interfaces.</p>
+              <ul class="text-sm space-y-1 list-none">
+                <li>UX design</li>
+                <li>Interface design</li>
+                <li>Product flows</li>
+                <li>Design systems</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-base font-semibold mb-3">Launch and evolution</h3>
+              <p class="text-sm opacity-75 mb-4">Products improve through iteration.</p>
+              <ul class="text-sm space-y-1 list-none">
+                <li>Usability improvements</li>
+                <li>Product refinement</li>
+                <li>Growth-focused design</li>
+                <li>Ongoing product evolution</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SELECTED WORK
+      ============================================================ -->
+      <section id="work" class="border-t border-current/10">
+        <div class="section-space max-w-5xl mx-auto">
+          <h2 class="section-header">Products we've helped bring to life</h2>
+          <p class="mt-4 max-w-prose text-base">
+            Over the years we've worked with founders, startups, and product teams to design and evolve digital products across different industries. Here are a few examples.
+          </p>
+        </div>
+
+		<!-- CigarWell -->
+        <CigarWell />
+
+        <!-- QuotingBill -->
+        <Quotingbill />
+
+        <!-- MCH Anywhere -->
+        <MchAnywhere />
+
+        <!-- airTRFX -->
+        <Flyairways />
+
+        <!-- GoDark Chocolates -->
+        <Godark />
+
+      </section>
+
+      <!-- ============================================================
+           HOW WE WORK
+      ============================================================ -->
+      <section id="how-we-work" class="section-space border-t border-current/10">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="section-header">Thoughtful process. No unnecessary complexity.</h2>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>Great products are built through collaboration. We work closely with founders, product managers, and engineers to move ideas from concept to real product.</p>
+            <p>The process is simple:</p>
+            <ol class="space-y-2 list-decimal list-inside">
+              <li>Understand the product.</li>
+              <li>Clarify the opportunity.</li>
+              <li>Design the experience.</li>
+              <li>Ship and refine.</li>
+            </ol>
+            <p>No complicated frameworks. Just steady progress and thoughtful decisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ABOUT
+      ============================================================ -->
+      <section id="about" class="section-space border-t border-current/10 bg-tan/30">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="section-header">Hi, I'm Fede.</h2>
+            <div
+              class="mt-8 w-full max-w-xs rounded-md border border-current/20 bg-midnight/5"
+              style="aspect-ratio: 4/5;"
+              role="img"
+              aria-label="Portrait of Fede Bozo, product designer at Priisma"
+            ></div>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>I'm a product designer who enjoys helping teams turn ideas into real products.</p>
+            <p>Over the years I've worked with startups and product teams to shape digital experiences from early concept to launch and growth. What I enjoy most is the full journey — thinking through the product itself, designing the experience, and helping teams build something meaningful.</p>
+            <p>Priisma is the studio through which I collaborate with founders and companies looking to elevate their product experience.</p>
+            <p>Based in Miami. Working with teams across the US and Latin America.<br/>En español, la vida es más sabrosa. 🌶️</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+  </body>
 </html>

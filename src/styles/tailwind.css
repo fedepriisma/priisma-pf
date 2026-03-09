@@ -28,7 +28,10 @@
 	--color-woodstock: oklch(0.5236 0.1576 252.84);
 	--color-sunset: oklch(0.9332 0.1097 95.63);
 	--color-skyfly-100: oklch(95.1 0.026 236.824);
-	--color-skyfly-900: oklch(0.24 0.03 249.22);	
+	--color-skyfly-900: oklch(0.24 0.03 249.22);
+	--color-cw-dark: oklch(0.17 0 0);
+	--color-cw-light: oklch(0.82 0.17 78.63);
+	
 	--shadow-sm: 0px 19px 53px 0px rgba(var(--color-midnight), 0.03),
 		0px 10px 28px 0px rgba(var(--color-midnight), 0.05),
 		0px 6px 16px 0px rgba(var(--color-midnight), 0.05),
@@ -61,6 +64,7 @@
 	--text-9xl: clamp(11.64rem, 29.81vw + 4.19rem, 28.04rem);
 
 	--qb-gradient: 180deg, transparent 0%, var(--color-purpleish) 7%, var(--color-purpleish) 80%, var(--color-woodstock) 95%, transparent 100%;
+	--cw-gradient: 180deg, transparent 0%, var(--color-cw-dark) 7%, var(--color-cw-dark) 95%, transparent 100%;
 	--mch-gradient: 180deg, transparent 0%, var(--color-woodstock) 7%, var(--color-woodstock) 96%, transparent 100%;
 	--skyfly-gradient: 180deg, transparent 0%, var(--color-skyfly-100) 7%, var(--color-skyfly-100) 80%, transparent 100%;
 }

@@ -1,2 +1,5 @@
+.gitignore
 node_modules
 /dist
+CLAUDE.md
+.claude/settings.json
