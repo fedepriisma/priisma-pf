@@ -84,21 +84,26 @@
 	@apply selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-whiterabbit text-black;
   }
   .nav-floater {
-	@apply sticky z-50 px-1 border-b top-0 border-current bg-whiterabbit;
+	@apply sticky z-50 px-1 border-b top-0 border-current/10 bg-whiterabbit;
   }
   .navbtn {
 	@apply flex items-center px-3 py-2 rounded-full hover:bg-emerald-200 hover:text-emerald-900 hover:transition-all;
   }
-  
+
   a:not(:is(.navbtn)) {
     @apply motion-safe:transition-all opacity-85 motion-safe:duration-200 hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock;
   }
   .primary-cta {
-	@apply font-medium text-whiterabbit bg-black rounded-md hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/50 px-3 py-2 inline-block mt-8;
+	@apply font-medium text-whiterabbit bg-black rounded-md hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/50 px-6 py-3 inline-block mt-8;
   }
 .section-header{
-  @apply text-3xl font-display;
+  @apply text-3xl font-display tracking-tight;
 }
+
+  /* Mobile nav hamburger → X animation */
+  .nav-open .hamburger-bar-1 { transform: translateY(6px) rotate(45deg); }
+  .nav-open .hamburger-bar-2 { opacity: 0; }
+  .nav-open .hamburger-bar-3 { transform: translateY(-6px) rotate(-45deg); }
 
   .project-details li {
     @apply py-2;

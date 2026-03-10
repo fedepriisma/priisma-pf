@@ -38,11 +38,6 @@ const website = {
 	url: siteOrigin,
 	name: title,
 	description,
-	potentialAction: {
-		'@type': 'SearchAction',
-		target: `${siteOrigin}/search?q={search_term_string}`,
-		'query-input': 'required name=search_term_string'
-	}
 };
 
 const jsonGraph: Record<string, unknown>[] = [org, website];

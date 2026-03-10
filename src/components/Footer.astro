@@ -1,4 +1,5 @@
 ---
+const year = new Date().getFullYear();
 ---
 
 <footer id="contact" class="border-t border-current/10">
@@ -10,7 +11,7 @@
       <p class="mt-4 text-base text-amber-200">Let's talk.</p>
       <a
         href="mailto:fede@priisma.com"
-        class="inline-block mt-6 text-lg font-medium text-yellow hover:text-amber-200 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+        class="inline-block mt-6 text-lg font-medium text-yellow hover:text-amber-200 border-b-2 border-yellow hover:border-amber-200 pb-1 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
       >
         fede@priisma.com
       </a>
@@ -21,6 +22,10 @@
           rel="noopener noreferrer"
           class="text-sm text-amber-400 hover:text-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
         >
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline mr-1 align-middle relative -top-px">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
           LinkedIn: in/fedebozo<span class="sr-only"> (opens in new tab)</span>
         </a>
       </div>
@@ -31,7 +36,7 @@
   <div class="px-4 py-6 bg-black border-t border-white/10">
     <p class="max-w-5xl mx-auto text-xs text-amber-400/60">
       Priisma · Product Design &amp; Strategy · Led by Fede<br/>
-      Miami, FL · &copy; 2025 Priisma
+      Miami, FL · &copy; {year} Priisma
     </p>
   </div>
 

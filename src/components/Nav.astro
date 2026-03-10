@@ -11,7 +11,7 @@ import HomeLink from './Button/HomeLink.astro';
       <li><a class="navbtn" href="#what-we-do">What We Do</a></li>
       <li class="relative group">
         <a class="navbtn" href="#work">Work</a>
-        <ul class="absolute top-full left-0 bg-whiterabbit border border-current rounded-md py-1 hidden group-hover:flex group-focus-within:flex flex-col min-w-40 list-none z-50 shadow-md">
+        <ul class="absolute top-full left-0 bg-whiterabbit border border-current/20 rounded-md py-1 flex flex-col min-w-40 list-none z-50 shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto motion-safe:transition-opacity motion-safe:duration-150">
           <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#cigarwell">Cigarwell</a></li>
           <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#quotingbill">QuotingBill</a></li>
           <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#mchanywhere">MCH Anywhere</a></li>
@@ -33,15 +33,15 @@ import HomeLink from './Button/HomeLink.astro';
     >
       <span class="sr-only">Open navigation</span>
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="3" width="20" height="2" rx="1" fill="currentColor"/>
-        <rect y="9" width="20" height="2" rx="1" fill="currentColor"/>
-        <rect y="15" width="20" height="2" rx="1" fill="currentColor"/>
+        <rect class="hamburger-bar-1 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="3" width="20" height="2" rx="1" fill="currentColor"/>
+        <rect class="hamburger-bar-2 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="9" width="20" height="2" rx="1" fill="currentColor"/>
+        <rect class="hamburger-bar-3 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="15" width="20" height="2" rx="1" fill="currentColor"/>
       </svg>
     </button>
   </div>
 
   <!-- Mobile nav menu -->
-  <div id="mobile-nav-menu" class="hidden md:hidden border-t border-current">
+  <div id="mobile-nav-menu" class="hidden md:hidden border-t border-current/10">
     <ul class="flex flex-col list-none py-2 text-sm">
       <li><a class="block px-4 py-3 hover:bg-black/5" href="#what-we-do">What We Do</a></li>
       <li><a class="block px-4 py-3 hover:bg-black/5" href="#work">Work</a></li>
@@ -67,6 +67,7 @@ import HomeLink from './Button/HomeLink.astro';
   toggle?.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
+    toggle.classList.toggle('nav-open', !expanded);
     menu?.classList.toggle('hidden');
   });
 
@@ -75,6 +76,7 @@ import HomeLink from './Button/HomeLink.astro';
     link.addEventListener('click', () => {
       menu.classList.add('hidden');
       toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.classList.remove('nav-open');
     });
   });
 </script>

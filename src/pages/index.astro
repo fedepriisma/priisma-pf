@@ -50,17 +50,32 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
         <p class="mt-6 text-base max-w-prose mx-auto">
           Priisma helps funded startups and SaaS companies turn good products into great ones. From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
         </p>
-        <a href="mailto:fede@priisma.com" class="primary-cta">
-          Start a conversation →
-        </a>
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a href="mailto:fede@priisma.com" class="primary-cta mt-0!">
+            Start a conversation →
+          </a>
+          <a href="#work" class="inline-block text-sm font-medium opacity-60 hover:opacity-100 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
+            See our work ↓
+          </a>
+        </div>
         <div class="mt-16 mx-auto max-w-5xl">
           <figure>
             <div
-              class="w-full rounded-md border border-current/20 bg-midnight/5"
+              class="w-full rounded-md border border-current/20 bg-midnight/5 relative overflow-hidden flex items-center justify-center"
               style="aspect-ratio: 16/10;"
               role="img"
               aria-label="Priisma — Product design leadership for scaling SaaS companies"
-            ></div>
+            >
+              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#hero-grid)" />
+              </svg>
+              <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Hero image coming soon</p>
+            </div>
           </figure>
         </div>
       </section>
@@ -86,14 +101,19 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
       <!-- ============================================================
            SERVICES
       ============================================================ -->
-      <section id="services" class="section-space border-t border-current/10 bg-tan/30">
+      <section id="services" class="section-space border-t border-current/10 bg-tan/50">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-header mb-12">Where we bring the most value</h2>
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
             <div>
-              <h3 class="text-base font-semibold mb-3">Product direction</h3>
-              <p class="text-sm opacity-75 mb-4">Helping teams define the product more clearly.</p>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+              </svg>
+              <h3 class="text-lg font-semibold mb-3">Product direction</h3>
+              <p class="text-sm mb-4">Helping teams define the product more clearly.</p>
               <ul class="text-sm space-y-1 list-none">
                 <li>Feature prioritization</li>
                 <li>UX architecture</li>
@@ -103,8 +123,12 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
             </div>
 
             <div>
-              <h3 class="text-base font-semibold mb-3">Design leadership</h3>
-              <p class="text-sm opacity-75 mb-4">Supporting teams as they scale.</p>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <path d="M10 16V5M10 5L6 9M10 5L14 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <h3 class="text-lg font-semibold mb-3">Design leadership</h3>
+              <p class="text-sm mb-4">Supporting teams as they scale.</p>
               <ul class="text-sm space-y-1 list-none">
                 <li>Design direction</li>
                 <li>Design system thinking</li>
@@ -114,8 +138,13 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
             </div>
 
             <div>
-              <h3 class="text-base font-semibold mb-3">Product design</h3>
-              <p class="text-sm opacity-75 mb-4">Hands-on design from early concepts to polished interfaces.</p>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="6" y="7" width="8" height="2" rx="1" fill="currentColor"/>
+                <rect x="6" y="11" width="5" height="2" rx="1" fill="currentColor"/>
+              </svg>
+              <h3 class="text-lg font-semibold mb-3">Product design</h3>
+              <p class="text-sm mb-4">Hands-on design from early concepts to polished interfaces.</p>
               <ul class="text-sm space-y-1 list-none">
                 <li>UX design</li>
                 <li>Interface design</li>
@@ -125,8 +154,13 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
             </div>
 
             <div>
-              <h3 class="text-base font-semibold mb-3">Launch and evolution</h3>
-              <p class="text-sm opacity-75 mb-4">Products improve through iteration.</p>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <path d="M4 10a6 6 0 016-6 6 6 0 014.24 1.76L16 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 4v3.5H12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 10a6 6 0 01-6 6 6 6 0 01-4.24-1.76L4 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <h3 class="text-lg font-semibold mb-3">Launch and evolution</h3>
+              <p class="text-sm mb-4">Products improve through iteration.</p>
               <ul class="text-sm space-y-1 list-none">
                 <li>Usability improvements</li>
                 <li>Product refinement</li>
@@ -197,11 +231,21 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
           <div>
             <h2 class="section-header">Hi, I'm Fede.</h2>
             <div
-              class="mt-8 w-full max-w-xs rounded-md border border-current/20 bg-midnight/5"
+              class="mt-8 w-full max-w-xs rounded-md border border-current/30 bg-midnight/5 relative overflow-hidden flex items-end justify-center"
               style="aspect-ratio: 4/5;"
               role="img"
               aria-label="Portrait of Fede Bozo, product designer at Priisma"
-            ></div>
+            >
+              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="about-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#about-grid)" />
+              </svg>
+              <p class="relative mb-4 text-xs font-medium tracking-widest uppercase opacity-30">Portrait coming soon</p>
+            </div>
           </div>
           <div class="space-y-4 text-base">
             <p>I'm a product designer who enjoys helping teams turn ideas into real products.</p>
