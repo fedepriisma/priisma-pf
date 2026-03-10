@@ -42,58 +42,60 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
       <!-- ============================================================
            HERO
       ============================================================ -->
-      <section id="home" class="section-space text-center">
-        <p class="text-sm font-medium tracking-widest uppercase opacity-60 mb-4">Priisma</p>
-        <h1 class="text-4xl md:text-5xl font-display max-w-3xl mx-auto leading-tight">
-          Designing products that are ready to scale.
-        </h1>
-        <p class="mt-6 text-base max-w-prose mx-auto">
-          Priisma helps funded startups and SaaS companies turn good products into great ones. From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <a href="mailto:fede@priisma.com" class="primary-cta mt-0!">
-            Start a conversation →
-          </a>
-          <a href="#work" class="inline-block text-sm font-medium opacity-60 hover:opacity-100 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
-            See our work ↓
-          </a>
-        </div>
-        <div class="mt-16 mx-auto max-w-5xl">
-          <figure>
-            <div
-              class="w-full rounded-md border border-current/20 bg-midnight/5 relative overflow-hidden flex items-center justify-center"
-              style="aspect-ratio: 16/10;"
-              role="img"
-              aria-label="Priisma — Product design leadership for scaling SaaS companies"
-            >
-              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#hero-grid)" />
-              </svg>
-              <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Hero image coming soon</p>
-            </div>
-          </figure>
+      <section id="home" class="section-space">
+        <div class="mx-auto max-w-7xl">
+          <h1 class="text-5xl font-display max-w-4xl leading-[1.05]">
+            Designing products that are ready to scale.
+          </h1>
+          <p class="mt-6 text-md max-w-prose">
+            We help funded startups and SaaS companies turn good products into great ones. <br />From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a href="mailto:fede@priisma.com" class="primary-cta mt-0!">
+              Start a conversation →
+            </a>
+            <a href="#work" class="inline-block text-sm font-medium underline opacity-60 hover:opacity-100 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
+              See our work ↓
+            </a>
+          </div>
+          <div class="mt-16">
+            <figure>
+              <div
+                class="relative flex items-center justify-center w-full overflow-hidden border border-current/20 bg-ink/5"
+                style="aspect-ratio: 16/10;"
+                role="img"
+                aria-label="Priisma — Product design leadership for scaling SaaS companies"
+              >
+                <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#hero-grid)" />
+                </svg>
+                <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Hero image coming soon</p>
+              </div>
+            </figure>
+          </div>
         </div>
       </section>
 
       <!-- ============================================================
            PRODUCT DESIGN LEADERSHIP
       ============================================================ -->
-      <section id="what-we-do" class="section-space border-t border-current/10">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <section id="what-we-do" class="border-t section-space border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
           <div>
-            <h2 class="section-header">More than design. Product thinking.</h2>
+            <h2 class="section-header">More than design. Product leadership.</h2>
+            <p class="max-w-sm mt-6 text-statement">
+              "The question isn't whether you need design. It's whether your design is keeping up."
+            </p>
           </div>
           <div class="space-y-4 text-base">
-            <p>Growing products reach a point where design decisions start affecting the entire company.</p>
-            <p>Features become harder to prioritize. User experience becomes inconsistent. Teams move fast but not always in the same direction.</p>
-            <p>That's where we come in.</p>
-            <p>Priisma works with founders and product teams to bring clarity to the product experience — shaping how the product works, how it looks, and how it evolves.</p>
-            <p>Sometimes that means defining the design direction. Sometimes it means helping teams think more clearly about the product itself. Often it's both.</p>
+            <p>At Series B, design decisions start affecting the entire company. Features become harder to prioritize. User experience becomes inconsistent. Teams move fast — but not always in the same direction.</p>
+            <p>That's the design leadership gap. You've grown past needing a junior designer, but you're not ready to build a full design org.</p>
+            <p>Priisma fills that gap. Senior design leadership, product thinking, and hands-on execution — without the overhead of a full-time hire.</p>
           </div>
         </div>
       </section>
@@ -101,20 +103,21 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
       <!-- ============================================================
            SERVICES
       ============================================================ -->
-      <section id="services" class="section-space border-t border-current/10 bg-tan/50">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="section-header mb-12">Where we bring the most value</h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section id="services" class="border-t section-space border-current/10 bg-mist">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header">Where we bring the most value</h2>
+          <p class="mt-4 mb-12 text-statement">Senior design expertise, without the full-time overhead.</p>
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-            <div>
+            <div class="pl-4 border-l-2 border-yellow">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
                 <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
                 <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
                 <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
               </svg>
-              <h3 class="text-lg font-semibold mb-3">Product direction</h3>
-              <p class="text-sm mb-4">Helping teams define the product more clearly.</p>
-              <ul class="text-sm space-y-1 list-none">
+              <h3 class="mb-3 text-lg font-semibold">Product direction</h3>
+              <p class="mb-4 text-sm">Helping teams define the product more clearly.</p>
+              <ul class="space-y-1 text-sm list-none">
                 <li>Feature prioritization</li>
                 <li>UX architecture</li>
                 <li>Product vision alignment</li>
@@ -122,14 +125,14 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
               </ul>
             </div>
 
-            <div>
+            <div class="pl-4 border-l-2 border-yellow">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
                 <path d="M10 16V5M10 5L6 9M10 5L14 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4 16H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
-              <h3 class="text-lg font-semibold mb-3">Design leadership</h3>
-              <p class="text-sm mb-4">Supporting teams as they scale.</p>
-              <ul class="text-sm space-y-1 list-none">
+              <h3 class="mb-3 text-lg font-semibold">Fractional design leadership</h3>
+              <p class="mb-4 text-sm">Supporting teams as they scale.</p>
+              <ul class="space-y-1 text-sm list-none">
                 <li>Design direction</li>
                 <li>Design system thinking</li>
                 <li>Product consistency</li>
@@ -137,15 +140,15 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
               </ul>
             </div>
 
-            <div>
+            <div class="pl-4 border-l-2 border-yellow">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
                 <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
                 <rect x="6" y="7" width="8" height="2" rx="1" fill="currentColor"/>
                 <rect x="6" y="11" width="5" height="2" rx="1" fill="currentColor"/>
               </svg>
-              <h3 class="text-lg font-semibold mb-3">Product design</h3>
-              <p class="text-sm mb-4">Hands-on design from early concepts to polished interfaces.</p>
-              <ul class="text-sm space-y-1 list-none">
+              <h3 class="mb-3 text-lg font-semibold">Product design</h3>
+              <p class="mb-4 text-sm">Hands-on design from early concepts to polished interfaces.</p>
+              <ul class="space-y-1 text-sm list-none">
                 <li>UX design</li>
                 <li>Interface design</li>
                 <li>Product flows</li>
@@ -153,15 +156,15 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
               </ul>
             </div>
 
-            <div>
+            <div class="pl-4 border-l-2 border-yellow">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
                 <path d="M4 10a6 6 0 016-6 6 6 0 014.24 1.76L16 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 <path d="M16 4v3.5H12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M16 10a6 6 0 01-6 6 6 6 0 01-4.24-1.76L4 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
-              <h3 class="text-lg font-semibold mb-3">Launch and evolution</h3>
-              <p class="text-sm mb-4">Products improve through iteration.</p>
-              <ul class="text-sm space-y-1 list-none">
+              <h3 class="mb-3 text-lg font-semibold">Launch and evolution</h3>
+              <p class="mb-4 text-sm">Products improve through iteration.</p>
+              <ul class="space-y-1 text-sm list-none">
                 <li>Usability improvements</li>
                 <li>Product refinement</li>
                 <li>Growth-focused design</li>
@@ -177,48 +180,64 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
            SELECTED WORK
       ============================================================ -->
       <section id="work" class="border-t border-current/10">
-        <div class="section-space max-w-5xl mx-auto">
-          <h2 class="section-header">Products we've helped bring to life</h2>
-          <p class="mt-4 max-w-prose text-base">
-            Over the years we've worked with founders, startups, and product teams to design and evolve digital products across different industries. Here are a few examples.
+        <div class="mx-auto section-space max-w-7xl">
+          <h2 class="section-header">Work that shipped.</h2>
+          <p class="mt-4 text-base max-w-prose">
+            A few products we've designed, launched, and helped grow — across SaaS, healthcare, and consumer.
           </p>
         </div>
 
-		<!-- CigarWell -->
-        <CigarWell />
+        <!-- Dark gallery wrapper — work images pop against ink background -->
+        <div class="bg-ink">
 
-        <!-- QuotingBill -->
-        <Quotingbill />
+          <!-- CigarWell -->
+          <CigarWell />
 
-        <!-- MCH Anywhere -->
-        <MchAnywhere />
+          <!-- QuotingBill -->
+          <Quotingbill />
 
-        <!-- airTRFX -->
-        <Flyairways />
+          <!-- MCH Anywhere -->
+          <MchAnywhere />
 
-        <!-- GoDark Chocolates -->
-        <Godark />
+          <!-- airTRFX -->
+          <Flyairways />
+
+          <!-- GoDark Chocolates -->
+          <Godark />
+
+        </div>
 
       </section>
 
       <!-- ============================================================
            HOW WE WORK
       ============================================================ -->
-      <section id="how-we-work" class="section-space border-t border-current/10">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <section id="how-we-work" class="border-t section-space border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
           <div>
             <h2 class="section-header">Thoughtful process. No unnecessary complexity.</h2>
           </div>
           <div class="space-y-4 text-base">
             <p>Great products are built through collaboration. We work closely with founders, product managers, and engineers to move ideas from concept to real product.</p>
-            <p>The process is simple:</p>
-            <ol class="space-y-2 list-decimal list-inside">
-              <li>Understand the product.</li>
-              <li>Clarify the opportunity.</li>
-              <li>Design the experience.</li>
-              <li>Ship and refine.</li>
+            <ol class="mt-6 space-y-6 list-none">
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">1</span>
+                <span>Understand the product.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">2</span>
+                <span>Clarify the opportunity.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">3</span>
+                <span>Design the experience.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">4</span>
+                <span>Ship and refine.</span>
+              </li>
             </ol>
-            <p>No complicated frameworks. Just steady progress and thoughtful decisions.</p>
+            <p class="mt-4">No complicated frameworks. Just steady progress and thoughtful decisions.</p>
           </div>
         </div>
       </section>
@@ -226,12 +245,12 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
       <!-- ============================================================
            ABOUT
       ============================================================ -->
-      <section id="about" class="section-space border-t border-current/10 bg-tan/30">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <section id="about" class="border-t section-space border-current/10 bg-mist">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
           <div>
             <h2 class="section-header">Hi, I'm Fede.</h2>
             <div
-              class="mt-8 w-full max-w-xs rounded-md border border-current/30 bg-midnight/5 relative overflow-hidden flex items-end justify-center"
+              class="relative flex items-end justify-center w-full max-w-xs mt-8 overflow-hidden border rounded-md border-current/30 bg-midnight/5"
               style="aspect-ratio: 4/5;"
               role="img"
               aria-label="Portrait of Fede Bozo, product designer at Priisma"
@@ -251,6 +270,7 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
             <p>I'm a product designer who enjoys helping teams turn ideas into real products.</p>
             <p>Over the years I've worked with startups and product teams to shape digital experiences from early concept to launch and growth. What I enjoy most is the full journey — thinking through the product itself, designing the experience, and helping teams build something meaningful.</p>
             <p>Priisma is the studio through which I collaborate with founders and companies looking to elevate their product experience.</p>
+            <p>Over 10 years of product design across healthcare tech, SaaS platforms, aviation, and consumer products.</p>
             <p>Based in Miami. Working with teams across the US and Latin America.<br/>En español, la vida es más sabrosa. 🌶️</p>
           </div>
         </div>

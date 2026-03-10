@@ -3,20 +3,20 @@ import HomeLink from './Button/HomeLink.astro';
 ---
 
 <nav aria-label="Primary">
-  <div class="flex items-center justify-between max-w-7xl mx-auto">
+  <div class="flex items-center justify-between mx-1">
     <HomeLink />
 
     <!-- Desktop nav -->
-    <ul class="hidden md:flex items-center gap-1 text-sm list-none leading-normal">
+    <ul class="items-center hidden gap-1 text-sm leading-normal list-none md:flex">
       <li><a class="navbtn" href="#what-we-do">What We Do</a></li>
       <li class="relative group">
         <a class="navbtn" href="#work">Work</a>
-        <ul class="absolute top-full left-0 bg-whiterabbit border border-current/20 rounded-md py-1 flex flex-col min-w-40 list-none z-50 shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto motion-safe:transition-opacity motion-safe:duration-150">
-          <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#cigarwell">Cigarwell</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#quotingbill">QuotingBill</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#mchanywhere">MCH Anywhere</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#airtrfx">airTRFX</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-black/5 focus:bg-black/5 focus:outline-none" href="#godark">GoDark</a></li>
+        <ul class="absolute left-0 z-50 flex flex-col py-1 list-none border rounded-none shadow-md opacity-0 pointer-events-none top-full bg-paper border-current/20 min-w-40 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto motion-safe:transition-opacity motion-safe:duration-150">
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="#cigarwell">Cigarwell</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="#quotingbill">QuotingBill</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="#mchanywhere">MCH Anywhere</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="#airtrfx">airTRFX</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="#godark">GoDark</a></li>
         </ul>
       </li>
       <li><a class="navbtn" href="#about">About</a></li>
@@ -41,21 +41,21 @@ import HomeLink from './Button/HomeLink.astro';
   </div>
 
   <!-- Mobile nav menu -->
-  <div id="mobile-nav-menu" class="hidden md:hidden border-t border-current/10">
-    <ul class="flex flex-col list-none py-2 text-sm">
-      <li><a class="block px-4 py-3 hover:bg-black/5" href="#what-we-do">What We Do</a></li>
-      <li><a class="block px-4 py-3 hover:bg-black/5" href="#work">Work</a></li>
+  <div id="mobile-nav-menu" class="hidden border-t md:hidden border-current/10">
+    <ul class="flex flex-col py-2 text-sm list-none">
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#what-we-do">What We Do</a></li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#work">Work</a></li>
       <li class="pl-4">
-        <ul class="flex flex-col list-none text-sm border-l border-current/30">
-          <li><a class="block px-4 py-2 hover:bg-black/5" href="#cigarwell">Cigarwell</a></li>
-          <li><a class="block px-4 py-2 hover:bg-black/5" href="#quotingbill">QuotingBill</a></li>
-          <li><a class="block px-4 py-2 hover:bg-black/5" href="#mchanywhere">MCH Anywhere</a></li>
-          <li><a class="block px-4 py-2 hover:bg-black/5" href="#airtrfx">airTRFX</a></li>
-          <li><a class="block px-4 py-2 hover:bg-black/5" href="#godark">GoDark</a></li>
+        <ul class="flex flex-col text-sm list-none border-l border-current/30">
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="#cigarwell">Cigarwell</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="#quotingbill">QuotingBill</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="#mchanywhere">MCH Anywhere</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="#airtrfx">airTRFX</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="#godark">GoDark</a></li>
         </ul>
       </li>
-      <li><a class="block px-4 py-3 hover:bg-black/5" href="#about">About</a></li>
-      <li><a class="block px-4 py-3 hover:bg-black/5" href="#contact">Contact</a></li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#about">About</a></li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
