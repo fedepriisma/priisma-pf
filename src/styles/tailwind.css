@@ -34,6 +34,7 @@
 	--color-skyfly-900: oklch(0.24 0.03 249.22);
 	--color-cw-dark: oklch(0.17 0 0);
 	--color-cw-light: oklch(0.82 0.17 78.63);
+	--color-cw-accent: oklch(0.35 0.12 10); /* burgundy ~#7D2235 */
 	
 	--shadow-sm: 0px 19px 53px 0px rgba(var(--color-midnight), 0.03),
 		0px 10px 28px 0px rgba(var(--color-midnight), 0.05),

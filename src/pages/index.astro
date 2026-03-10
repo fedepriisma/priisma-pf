@@ -174,24 +174,77 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
           </p>
         </div>
 
-        <!-- Dark gallery wrapper — work images pop against ink background -->
-        <div class="bg-ink">
+        <!-- Brutalist card carousel -->
+        <div class="overflow-x-auto border-t border-current/10">
+          <div class="flex px-6 sm:px-12 lg:px-16 py-8 gap-3 min-w-max">
 
-          <!-- CigarWell -->
-          <CigarWell />
+            <a href="/work/cigarwell"
+               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2023–2024</p>
+                <h3 class="mt-3 text-lg font-display leading-tight">Cigarwell</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product · Brand · Design system</p>
+                <p class="mt-5 text-sm opacity-70 leading-relaxed">The first cigar platform built for how collectors actually think.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
 
-          <!-- QuotingBill -->
-          <Quotingbill />
+            <a href="/work/quotingbill"
+               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2019–2021</p>
+                <h3 class="mt-3 text-lg font-display leading-tight">QuotingBill</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · Front-end · UX Research</p>
+                <p class="mt-5 text-sm opacity-70 leading-relaxed">Making telecom billing feel like it was built for humans.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
 
-          <!-- MCH Anywhere -->
-          <MchAnywhere />
+            <a href="/work/mchanywhere"
+               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2015</p>
+                <h3 class="mt-3 text-lg font-display leading-tight">MCH Anywhere</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">UI/UX · iOS · Android · Web</p>
+                <p class="mt-5 text-sm opacity-70 leading-relaxed">Designed for the parent in the hardest moment.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
 
-          <!-- airTRFX -->
-          <Flyairways />
+            <a href="/work/airtrfx"
+               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2016–2018</p>
+                <h3 class="mt-3 text-lg font-display leading-tight">airTRFX</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · UX · Web Dev</p>
+                <p class="mt-5 text-sm opacity-70 leading-relaxed">Real-time fare pages for 20+ airlines. Built to scale.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
 
-          <!-- GoDark Chocolates -->
-          <Godark />
+            <a href="/work/godark"
+               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2017–2022</p>
+                <h3 class="mt-3 text-lg font-display leading-tight">GoDark Chocolates</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Brand Identity · Web Design</p>
+                <p class="mt-5 text-sm opacity-70 leading-relaxed">A brand as rich and warm as the chocolate itself.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
 
+          </div>
+        </div>
+
+        <!-- Hidden: original portfolio sections — preserved, not deleted -->
+        <div class="hidden" aria-hidden="true">
+          <div class="bg-ink">
+            <CigarWell />
+            <Quotingbill />
+            <MchAnywhere />
+            <Flyairways />
+            <Godark />
+          </div>
         </div>
 
       </section>
@@ -259,6 +312,36 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
             <p>Priisma is the studio through which I collaborate with founders and companies looking to elevate their product experience.</p>
             <p>Over 10 years of product design across healthcare tech, SaaS platforms, aviation, and consumer products.</p>
             <p>Based in Miami. Working with teams across the US and Latin America.<br/>En español, la vida es más sabrosa. 🌶️</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CONTACT
+      ============================================================ -->
+      <section id="contact" class="border-t border-current/10 section-space bg-black text-yellow">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header">Building something interesting?</h2>
+          <p class="mt-4 text-base text-amber-200">Let's talk.</p>
+          <a
+            href="mailto:fede@priisma.com"
+            class="inline-block mt-6 text-lg font-medium text-yellow hover:text-amber-200 border-b-2 border-yellow hover:border-amber-200 pb-1 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+          >
+            fede@priisma.com
+          </a>
+          <div class="mt-4">
+            <a
+              href="https://www.linkedin.com/in/fedebozo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-amber-400 hover:text-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+            >
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline mr-1 align-middle relative -top-px">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              LinkedIn: in/fedebozo<span class="sr-only"> (opens in new tab)</span>
+            </a>
           </div>
         </div>
       </section>
