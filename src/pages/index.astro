@@ -7,6 +7,8 @@ import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 import Godark from "./portfolio/godark/godark.astro";
 import Flyairways from "./portfolio/flyairways/flyairways.astro";
 import MchAnywhere from "./portfolio/mch/mch.astro";
+import cwVideoMp4 from "./portfolio/cigarwell/shortened-opt.mp4";
+import cwVideoWebm from "./portfolio/cigarwell/shortened-opt.webm";
 ---
 <html lang="en">
   <head>
@@ -47,24 +49,28 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
           </div>
           <div class="mt-16">
             <figure>
-              <div
-                class="relative flex items-center justify-center w-full overflow-hidden border border-current/20 bg-ink/5"
-                style="aspect-ratio: 16/10;"
-                role="img"
-                aria-label="Priisma — Product design leadership for scaling SaaS companies"
+              <video
+                id="cw-hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                disableRemotePlayback
+                class="w-full border border-current/20"
+                aria-label="Cigarwell product interface walkthrough"
               >
-                <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#hero-grid)" />
-                </svg>
-                <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Hero image coming soon</p>
-              </div>
+                <source src={cwVideoWebm} type="video/webm" />
+                <source src={cwVideoMp4} type="video/mp4" />
+              </video>
             </figure>
           </div>
+          <script>
+            const video = document.getElementById('cw-hero-video') as HTMLVideoElement | null;
+            if (video && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              video.pause();
+            }
+          </script>
         </div>
       </section>
 
@@ -176,59 +182,59 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
 
         <!-- Brutalist card carousel -->
         <div class="overflow-x-auto border-t border-current/10">
-          <div class="flex px-6 sm:px-12 lg:px-16 py-8 gap-3 min-w-max">
+          <div class="flex gap-3 px-6 py-8 sm:px-12 lg:px-16 min-w-max">
 
             <a href="/work/cigarwell"
-               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
               <div>
                 <p class="text-xs tracking-widest uppercase opacity-40">2023–2024</p>
-                <h3 class="mt-3 text-lg font-display leading-tight">Cigarwell</h3>
+                <h3 class="mt-3 text-lg leading-tight font-display">Cigarwell</h3>
                 <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product · Brand · Design system</p>
-                <p class="mt-5 text-sm opacity-70 leading-relaxed">The first cigar platform built for how collectors actually think.</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">The first cigar platform built for how collectors actually think.</p>
               </div>
               <p class="mt-8 text-sm font-medium">View case study →</p>
             </a>
 
             <a href="/work/quotingbill"
-               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
               <div>
                 <p class="text-xs tracking-widest uppercase opacity-40">2019–2021</p>
-                <h3 class="mt-3 text-lg font-display leading-tight">QuotingBill</h3>
+                <h3 class="mt-3 text-lg leading-tight font-display">QuotingBill</h3>
                 <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · Front-end · UX Research</p>
-                <p class="mt-5 text-sm opacity-70 leading-relaxed">Making telecom billing feel like it was built for humans.</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Making telecom billing feel like it was built for humans.</p>
               </div>
               <p class="mt-8 text-sm font-medium">View case study →</p>
             </a>
 
             <a href="/work/mchanywhere"
-               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
               <div>
                 <p class="text-xs tracking-widest uppercase opacity-40">2015</p>
-                <h3 class="mt-3 text-lg font-display leading-tight">MCH Anywhere</h3>
+                <h3 class="mt-3 text-lg leading-tight font-display">MCH Anywhere</h3>
                 <p class="mt-1 text-xs tracking-widest uppercase opacity-40">UI/UX · iOS · Android · Web</p>
-                <p class="mt-5 text-sm opacity-70 leading-relaxed">Designed for the parent in the hardest moment.</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Designed for the parent in the hardest moment.</p>
               </div>
               <p class="mt-8 text-sm font-medium">View case study →</p>
             </a>
 
             <a href="/work/airtrfx"
-               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
               <div>
                 <p class="text-xs tracking-widest uppercase opacity-40">2016–2018</p>
-                <h3 class="mt-3 text-lg font-display leading-tight">airTRFX</h3>
+                <h3 class="mt-3 text-lg leading-tight font-display">airTRFX</h3>
                 <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · UX · Web Dev</p>
-                <p class="mt-5 text-sm opacity-70 leading-relaxed">Real-time fare pages for 20+ airlines. Built to scale.</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Real-time fare pages for 20+ airlines. Built to scale.</p>
               </div>
               <p class="mt-8 text-sm font-medium">View case study →</p>
             </a>
 
             <a href="/work/godark"
-               class="flex flex-col justify-between w-70 sm:w-85 border-2 border-ink rounded-3xl p-8 bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
               <div>
                 <p class="text-xs tracking-widest uppercase opacity-40">2017–2022</p>
-                <h3 class="mt-3 text-lg font-display leading-tight">GoDark Chocolates</h3>
+                <h3 class="mt-3 text-lg leading-tight font-display">GoDark Chocolates</h3>
                 <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Brand Identity · Web Design</p>
-                <p class="mt-5 text-sm opacity-70 leading-relaxed">A brand as rich and warm as the chocolate itself.</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">A brand as rich and warm as the chocolate itself.</p>
               </div>
               <p class="mt-8 text-sm font-medium">View case study →</p>
             </a>
@@ -319,13 +325,13 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
       <!-- ============================================================
            CONTACT
       ============================================================ -->
-      <section id="contact" class="border-t border-current/10 section-space bg-black text-yellow">
+      <section id="contact" class="bg-black border-t border-current/10 section-space text-yellow">
         <div class="mx-auto max-w-7xl">
           <h2 class="section-header">Building something interesting?</h2>
           <p class="mt-4 text-base text-amber-200">Let's talk.</p>
           <a
             href="mailto:fede@priisma.com"
-            class="inline-block mt-6 text-lg font-medium text-yellow hover:text-amber-200 border-b-2 border-yellow hover:border-amber-200 pb-1 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+            class="inline-block pb-1 mt-6 text-lg font-medium border-b-2 text-yellow hover:text-amber-200 border-yellow hover:border-amber-200 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
           >
             fede@priisma.com
           </a>
@@ -336,7 +342,7 @@ import MchAnywhere from "./portfolio/mch/mch.astro";
               rel="noopener noreferrer"
               class="text-sm text-amber-400 hover:text-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
             >
-              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline mr-1 align-middle relative -top-px">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="relative inline mr-1 align-middle -top-px">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                 <circle cx="4" cy="4" r="2"/>
               </svg>
