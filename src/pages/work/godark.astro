@@ -1,0 +1,243 @@
+---
+import { Image } from "astro:assets";
+import MainHead from "../../components/MainHead.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+import WebOne from "../portfolio/godark/godark-web-01.jpg";
+import SnackM from "../portfolio/godark/gd-snack-mylk.jpg";
+import SnackC from "../portfolio/godark/gd-snack-71-cane.jpg";
+import SnackW from "../portfolio/godark/gd-snack-white.jpg";
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="GoDark Chocolates — Case Study | Priisma"
+      description="How Priisma built the brand identity and website for GoDark Chocolates — a premium stone-ground artisan chocolate company with a tropical, colorful personality."
+      canonical="https://www.priisma.com/work/godark"
+      image="/assets/mesh-gradient.jpg"
+    />
+  </head>
+
+  <body class="body-base">
+
+    <header class="nav-floater">
+      <Nav />
+    </header>
+
+    <main>
+
+      <!-- ============================================================
+           HERO
+      ============================================================ -->
+      <section class="section-space min-h-screen bg-linear-(--gd-gradient) text-paper">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow">Case Study</p>
+          <p class="mt-3 text-xs tracking-widest uppercase opacity-40">Brand Identity · Web Design</p>
+          <h1 class="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl max-w-4xl leading-[1.05]">
+            A brand as rich and warm as the chocolate itself.
+          </h1>
+          <p class="mt-6 max-w-lg text-base opacity-80">
+            Five years building the identity and web presence for a premium stone-ground chocolate company.
+          </p>
+          <div class="mt-16">
+            <figure>
+              <Image
+                src={WebOne}
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                alt="GoDark Chocolates website — vegan white chocolate product page showing products and prices"
+                class="w-full border border-current/20"
+                loading="eager"
+              />
+            </figure>
+          </div>
+          <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CHALLENGE + APPROACH
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <p class="eyebrow mb-4">The Challenge</p>
+            <p class="text-base">Stone-ground artisan chocolate is a niche that most people don't know they want until they taste it. GoDark Chocolates needed a brand and a website that could communicate the product's quality and personality to both chefs and direct-to-consumer customers — without borrowing from the usual premium-chocolate playbook of dark backgrounds and minimal luxury.</p>
+          </div>
+          <div>
+            <p class="eyebrow mb-4">The Approach</p>
+            <p class="text-base">Lean into the warmth and origin of the product. Tropical color palettes, bold typography, and a personality that felt handmade — not mass-produced. The brand had to work on packaging, on screen, and in the mind of someone discovering GoDark for the first time. The website needed to sell as well as it told the story.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           01 — BRAND IDENTITY
+      ============================================================ -->
+      <section class="section-space bg-ink text-paper border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4">01 — Brand</p>
+          <h2 class="section-header max-w-2xl">Tropical, bold, and honest about what it is.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">GoDark's identity started with the product itself — stone-ground, small-batch, tropical in origin. The palette drew from warm earthy tones and island vibes: a counterpoint to the minimalist-luxury approach most artisan chocolate brands default to. Logo, typography, and color system were built to feel alive and intentional — not fussy. The goal was a brand that could hold its own on a shelf next to premium products while still feeling accessible and warm.</p>
+            <div
+              class="relative flex items-center justify-center w-full overflow-hidden border border-current/20 bg-white/5"
+              style="aspect-ratio: 16/9;"
+              role="img"
+              aria-label="GoDark brand board — logo, color palette, and typography"
+            >
+              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="godark-brand-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#godark-brand-grid)" />
+              </svg>
+              <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Brand board coming soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           02 — PRODUCT + WEB
+      ============================================================ -->
+      <section class="section-space bg-mist text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4">02 — Web + Product</p>
+          <h2 class="section-header max-w-2xl">A website that sells and tells.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">The website was built to showcase the product range while communicating the care behind it. Each chocolate variety got its moment — flavors, formats, the story of how it's made. The site balanced e-commerce function with brand storytelling, because GoDark's customers buy with their eyes first and their values second. Photography was chosen to feel warm and real, not studio-artificial.</p>
+            <div class="grid grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src={SnackM}
+                  sizes="(max-width: 400px) 100vw, 400px"
+                  alt="GoDark mylk stone-ground chocolate bar packaging"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+                <figcaption class="fig-caption">Mylk</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src={SnackC}
+                  sizes="(max-width: 400px) 100vw, 400px"
+                  alt="GoDark 71 cane stone-ground chocolate bar packaging"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+                <figcaption class="fig-caption">71 Cane</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src={SnackW}
+                  sizes="(max-width: 400px) 100vw, 400px"
+                  alt="GoDark white stone-ground chocolate bar packaging"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+                <figcaption class="fig-caption">White</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           RESULT / CLOSE
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="section-header">Five years. One honest brand.</h2>
+          <p class="mt-8 text-base">GoDark ran from 2017 to 2022. Over five years, the brand grew with the product — adapting to new flavors, new formats, and an expanding customer base. The creative work supported a business that genuinely believed in what it made. That's the best kind of project: one where the brand and the product are actually in sync, and where what you're selling is worth selling.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ROLE / CREDITS
+      ============================================================ -->
+      <section class="section-space bg-mist text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header mb-12">The work.</h2>
+          <div class="grid gap-8 md:grid-cols-3">
+            <div>
+              <p class="eyebrow mb-4">Brand</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Logo & wordmark</li>
+                <li>Color palette</li>
+                <li>Typography system</li>
+                <li>Packaging design direction</li>
+                <li>Brand guidelines</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4">Web</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Website design</li>
+                <li>Product pages</li>
+                <li>E-commerce UX</li>
+                <li>Copywriting</li>
+                <li>Photography direction</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4">Ongoing</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Brand evolution</li>
+                <li>New product launches</li>
+                <li>Web updates</li>
+              </ul>
+            </div>
+          </div>
+          <dl class="mt-12 grid gap-4 text-sm md:grid-cols-3">
+            <div>
+              <dt class="eyebrow">Date</dt>
+              <dd class="mt-1">2017–2022</dd>
+            </div>
+            <div>
+              <dt class="eyebrow">Company</dt>
+              <dd class="mt-1"><a href="https://godarkchocolate.com" target="_blank" class="underline underline-offset-4 hover:opacity-70">GoDarkChocolate.com</a></dd>
+            </div>
+            <div>
+              <dt class="eyebrow">Role</dt>
+              <dd class="mt-1">Brand design + Website</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CTA / NEXT
+      ============================================================ -->
+      <section class="section-space bg-ink text-paper border-t border-current/10">
+        <div class="flex flex-col gap-8 mx-auto max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="section-header">Building something interesting?</h2>
+            <p class="mt-2 text-base opacity-70">Let's talk.</p>
+          </div>
+          <div class="flex flex-col items-start gap-4 shrink-0 sm:flex-row sm:items-center">
+            <a
+              href="mailto:fede@priisma.com"
+              class="font-medium text-ink bg-yellow rounded-none border-2 border-yellow hover:bg-yellow/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow/50 px-6 py-3 inline-block"
+            >
+              Start a project →
+            </a>
+            <a
+              href="/#work"
+              class="inline-block text-sm font-medium underline opacity-60 hover:opacity-100 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity"
+            >
+              ← Back to work
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

@@ -1,54 +1,348 @@
 ---
-// Component Imports
 import MainHead from "../components/MainHead.astro";
-import ContactInfo from "../components/ContactInfo.astro";
+import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import CigarWell from "./portfolio/cigarwell/cigarwell.astro";
 import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 import Godark from "./portfolio/godark/godark.astro";
 import Flyairways from "./portfolio/flyairways/flyairways.astro";
 import MchAnywhere from "./portfolio/mch/mch.astro";
-
-// Lightbox https://github.com/hellotham/hello-astro/blob/main/src/components/lightbox.astro
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
-<script>
-	import PhotoSwipeLightbox from 'photoswipe/lightbox';
-	import 'photoswipe/style.css';
-	  const lightbox = new PhotoSwipeLightbox({
-	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery, #mch-gallery',
-	  children: 'a',
-	  pswpModule: () => import('photoswipe')
-	});
-	lightbox.init();
-</script>
 <html lang="en">
-	<head>
-		<MainHead
-			title="Fede Bozo — Product Designer"
-			description="Fede Bozo is a Product Designer in Miami with 10+ years building digital products for airlines, hospitals, startups, and more."
-			canonical="https://www.priisma.com/"
-			image="/assets/mesh-gradient.jpg"
-		/>
-	</head>
-	
-	<body class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-purplehaze text-whiterabbit">
-	<header class="sticky z-50 px-4 py-4 mx-2 border border-solid rounded-full sm:px-8 sm:mx-8 top-2 bg-purplehaze/70 text-whiterabbit backdrop-blur-md border-whiterabbit/30">
-		<ContactInfo />
-	</header>
-		<div class="relative max-w-4xl mx-auto my-16 ml-4 text-left md:my-24 lg:my-32">
-			<p class="mb-4 text-md">Strategic Product Design · Miami</p>
-			<h1 class="text-5xl font-medium font-display font-stretch-expanded">Design <br />that moves <br />the needle.</h1>
-			<h2 class="mt-6 text-base max-w-prose">Fede Bozo — Product Designer and Developer. Working from concept to launch turning complex problems into products people actually use, leading zero-to-one initiatives and full redesigns as a strategic partner.</h2>
-		</div>
-		<main class="main-thingi">
-			<div class="grid">
-				<Quotingbill />
-				<MchAnywhere />
-				<Flyairways />
-				<!-- <Godark /> -->
-			</div>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <MainHead
+      title="Priisma — Product Design Leadership for Scaling SaaS Companies"
+      description="Priisma helps funded startups and SaaS companies shape, launch, and grow better digital products through product strategy, design leadership, and hands-on execution."
+      canonical="https://www.priisma.com/"
+      image="/assets/mesh-gradient.jpg"
+    />
+  </head>
+
+  <body class="body-base">
+
+    <header class="nav-floater">
+      <Nav />
+    </header>
+
+    <main>
+
+      <!-- ============================================================
+           HERO
+      ============================================================ -->
+      <section id="home" class="section-space">
+        <div class="mx-auto max-w-7xl">
+          <h1 class="text-5xl font-display max-w-4xl leading-[1.05]">
+            Designing products that are ready to scale.
+          </h1>
+          <p class="mt-6 text-md max-w-prose">
+            We help funded startups and SaaS companies turn good products into great ones. <br />From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a href="mailto:fede@priisma.com" class="primary-cta mt-0!">
+              Start a conversation →
+            </a>
+            <a href="#work" class="inline-block text-sm font-medium underline opacity-60 hover:opacity-100 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
+              See our work ↓
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PRODUCT DESIGN LEADERSHIP
+      ============================================================ -->
+      <section id="what-we-do" class="border-t section-space border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <h2 class="section-header">More than design. Product leadership.</h2>
+            <p class="max-w-sm mt-6 text-statement">
+              "The question isn't whether you need design. It's whether your design is keeping up."
+            </p>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>At Series B, design decisions start affecting the entire company. Features become harder to prioritize. User experience becomes inconsistent. Teams move fast — but not always in the same direction.</p>
+            <p>That's the design leadership gap. You've grown past needing a junior designer, but you're not ready to build a full design org.</p>
+            <p>Priisma fills that gap. Senior design leadership, product thinking, and hands-on execution — without the overhead of a full-time hire.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SERVICES
+      ============================================================ -->
+      <section id="services" class="border-t section-space border-current/10 bg-mist">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header">Where we bring the most value</h2>
+          <p class="mt-4 mb-12 text-statement">Senior design expertise, without the full-time overhead.</p>
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+            <div class="pl-4 border-l-2 border-yellow">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+              </svg>
+              <h3 class="mb-3 text-lg font-semibold">Product direction</h3>
+              <p class="mb-4 text-sm">Helping teams define the product more clearly.</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Feature prioritization</li>
+                <li>UX architecture</li>
+                <li>Product vision alignment</li>
+                <li>User experience strategy</li>
+              </ul>
+            </div>
+
+            <div class="pl-4 border-l-2 border-yellow">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <path d="M10 16V5M10 5L6 9M10 5L14 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <h3 class="mb-3 text-lg font-semibold">Fractional design leadership</h3>
+              <p class="mb-4 text-sm">Supporting teams as they scale.</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Design direction</li>
+                <li>Design system thinking</li>
+                <li>Product consistency</li>
+                <li>Mentoring design teams</li>
+              </ul>
+            </div>
+
+            <div class="pl-4 border-l-2 border-yellow">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="6" y="7" width="8" height="2" rx="1" fill="currentColor"/>
+                <rect x="6" y="11" width="5" height="2" rx="1" fill="currentColor"/>
+              </svg>
+              <h3 class="mb-3 text-lg font-semibold">Product design</h3>
+              <p class="mb-4 text-sm">Hands-on design from early concepts to polished interfaces.</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>UX design</li>
+                <li>Interface design</li>
+                <li>Product flows</li>
+                <li>Design systems</li>
+              </ul>
+            </div>
+
+            <div class="pl-4 border-l-2 border-yellow">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+                <path d="M4 10a6 6 0 016-6 6 6 0 014.24 1.76L16 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 4v3.5H12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 10a6 6 0 01-6 6 6 6 0 01-4.24-1.76L4 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <h3 class="mb-3 text-lg font-semibold">Launch and evolution</h3>
+              <p class="mb-4 text-sm">Products improve through iteration.</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Usability improvements</li>
+                <li>Product refinement</li>
+                <li>Growth-focused design</li>
+                <li>Ongoing product evolution</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SELECTED WORK
+      ============================================================ -->
+      <section id="work" class="border-t border-current/10">
+        <div class="mx-auto section-space max-w-7xl">
+          <h2 class="section-header">Work that shipped.</h2>
+          <p class="mt-4 text-base max-w-prose">
+            A few products we've designed, launched, and helped grow — across SaaS, healthcare, and consumer.
+          </p>
+        </div>
+
+        <!-- Brutalist card carousel -->
+        <div class="overflow-x-auto border-t border-current/10">
+          <div class="flex gap-3 px-6 py-8 sm:px-12 lg:px-16 min-w-max">
+
+            <a href="/work/cigarwell"
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2023–2024</p>
+                <h3 class="mt-3 text-lg leading-tight font-display">Cigarwell</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product · Brand · Design system</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">The first cigar platform built for how collectors actually think.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
+
+            <a href="/work/quotingbill"
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2019–2021</p>
+                <h3 class="mt-3 text-lg leading-tight font-display">QuotingBill</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · Front-end · UX Research</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Making telecom billing feel like it was built for humans.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
+
+            <a href="/work/mchanywhere"
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2015</p>
+                <h3 class="mt-3 text-lg leading-tight font-display">MCH Anywhere</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">UI/UX · iOS · Android · Web</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Designed for the parent in the hardest moment.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
+
+            <a href="/work/airtrfx"
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2016–2018</p>
+                <h3 class="mt-3 text-lg leading-tight font-display">airTRFX</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · UX · Web Dev</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">Real-time fare pages for 20+ airlines. Built to scale.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
+
+            <a href="/work/godark"
+               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
+              <div>
+                <p class="text-xs tracking-widest uppercase opacity-40">2017–2022</p>
+                <h3 class="mt-3 text-lg leading-tight font-display">GoDark Chocolates</h3>
+                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Brand Identity · Web Design</p>
+                <p class="mt-5 text-sm leading-relaxed opacity-70">A brand as rich and warm as the chocolate itself.</p>
+              </div>
+              <p class="mt-8 text-sm font-medium">View case study →</p>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Hidden: original portfolio sections — preserved, not deleted -->
+        <div class="hidden" aria-hidden="true">
+          <div class="bg-ink">
+            <CigarWell />
+            <Quotingbill />
+            <MchAnywhere />
+            <Flyairways />
+            <Godark />
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================================
+           HOW WE WORK
+      ============================================================ -->
+      <section id="how-we-work" class="border-t section-space border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <h2 class="section-header">Thoughtful process. No unnecessary complexity.</h2>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>Great products are built through collaboration. We work closely with founders, product managers, and engineers to move ideas from concept to real product.</p>
+            <ol class="mt-6 space-y-6 list-none">
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">1</span>
+                <span>Understand the product.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">2</span>
+                <span>Clarify the opportunity.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">3</span>
+                <span>Design the experience.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="text-4xl leading-none font-display opacity-15 shrink-0">4</span>
+                <span>Ship and refine.</span>
+              </li>
+            </ol>
+            <p class="mt-4">No complicated frameworks. Just steady progress and thoughtful decisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ABOUT
+      ============================================================ -->
+      <section id="about" class="border-t section-space border-current/10 bg-mist">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <h2 class="section-header">Hi, I'm Fede.</h2>
+            <div
+              class="relative flex items-end justify-center w-full max-w-xs mt-8 overflow-hidden border rounded-md border-current/30 bg-midnight/5"
+              style="aspect-ratio: 4/5;"
+              role="img"
+              aria-label="Portrait of Fede Bozo, product designer at Priisma"
+            >
+              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="about-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#about-grid)" />
+              </svg>
+              <p class="relative mb-4 text-xs font-medium tracking-widest uppercase opacity-30">Portrait coming soon</p>
+            </div>
+          </div>
+          <div class="space-y-4 text-base">
+            <p>I'm a product designer who enjoys helping teams turn ideas into real products.</p>
+            <p>Over the years I've worked with startups and product teams to shape digital experiences from early concept to launch and growth. What I enjoy most is the full journey — thinking through the product itself, designing the experience, and helping teams build something meaningful.</p>
+            <p>Priisma is the studio through which I collaborate with founders and companies looking to elevate their product experience.</p>
+            <p>Over 10 years of product design across healthcare tech, SaaS platforms, aviation, and consumer products.</p>
+            <p>Based in Miami. Working with teams across the US and Latin America.<br/>En español, la vida es más sabrosa. 🌶️</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CONTACT
+      ============================================================ -->
+      <section id="contact" class="bg-black border-t border-current/10 section-space text-yellow">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header">Building something interesting?</h2>
+          <p class="mt-4 text-base text-amber-200">Let's talk.</p>
+          <a
+            href="mailto:fede@priisma.com"
+            class="inline-block pb-1 mt-6 text-lg font-medium border-b-2 text-yellow hover:text-amber-200 border-yellow hover:border-amber-200 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+          >
+            fede@priisma.com
+          </a>
+          <div class="mt-4">
+            <a
+              href="https://www.linkedin.com/in/fedebozo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-amber-400 hover:text-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+            >
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="relative inline mr-1 align-middle -top-px">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              LinkedIn: in/fedebozo<span class="sr-only"> (opens in new tab)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+
+    <script>
+      import PhotoSwipeLightbox from 'photoswipe/lightbox';
+      import 'photoswipe/style.css';
+      document.querySelectorAll<HTMLElement>('.pswp-gallery').forEach((galleryEl) => {
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: galleryEl,
+          children: 'a',
+          pswpModule: () => import('photoswipe')
+        });
+        lightbox.init();
+      });
+    </script>
+
+  </body>
 </html>

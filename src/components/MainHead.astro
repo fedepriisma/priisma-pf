@@ -19,10 +19,18 @@ try {
 }
 
 const org = {
-	'@type': 'Organization',
+	'@type': 'ProfessionalService',
 	name: 'Priisma',
 	url: siteOrigin,
-	logo: `${siteOrigin}/assets/mesh-gradient.jpg`
+	logo: `${siteOrigin}/assets/mesh-gradient.jpg`,
+	description: 'Product design leadership for scaling SaaS companies',
+	areaServed: ['US', 'Latin America'],
+	founder: {
+		'@type': 'Person',
+		name: 'Fede Bozo',
+		jobTitle: 'Product Designer',
+		url: 'https://www.linkedin.com/in/fedebozo/'
+	}
 };
 
 const website = {
@@ -30,14 +38,9 @@ const website = {
 	url: siteOrigin,
 	name: title,
 	description,
-	potentialAction: {
-		'@type': 'SearchAction',
-		target: `${siteOrigin}/search?q={search_term_string}`,
-		'query-input': 'required name=search_term_string'
-	}
 };
 
-const jsonGraph = [org, website];
+const jsonGraph: Record<string, unknown>[] = [org, website];
 if (Astro.props.breadcrumb && Array.isArray(Astro.props.breadcrumb)) {
 	const items = Astro.props.breadcrumb.map((b, i) => ({
 		'@type': 'ListItem',
@@ -67,6 +70,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 <title>{title}</title>
 
 {canonical && <link rel="canonical" href={canonical} />}
+{canonical && <meta property="og:url" content={canonical} />}
 <meta property="og:image" content={image ?? defaultImage} />
 <meta name="twitter:image" content={image ?? defaultImage} />
 
@@ -86,4 +90,4 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 <!-- Optional LCP/image preload: pass `preloadImage` prop from pages that know their hero LCP -->
 {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>

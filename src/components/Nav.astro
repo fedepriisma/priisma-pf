@@ -1,0 +1,82 @@
+---
+import HomeLink from './Button/HomeLink.astro';
+---
+
+<nav aria-label="Primary">
+  <div class="flex items-center justify-between mx-1">
+    <HomeLink />
+
+    <!-- Desktop nav -->
+    <ul class="items-center hidden gap-1 text-sm leading-normal list-none md:flex">
+      <li><a class="navbtn" href="#what-we-do">What We Do</a></li>
+      <li class="relative group">
+        <a class="navbtn" href="#work">Work</a>
+        <ul class="absolute left-0 z-50 flex flex-col py-1 list-none border rounded-none shadow-md opacity-0 pointer-events-none top-full bg-paper border-current/20 min-w-40 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto motion-safe:transition-opacity motion-safe:duration-150">
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/cigarwell">Cigarwell</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/quotingbill">QuotingBill</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/mchanywhere">MCH Anywhere</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/airtrfx">airTRFX</a></li>
+          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/godark">GoDark</a></li>
+        </ul>
+      </li>
+      <li><a class="navbtn" href="#about">About</a></li>
+      <li><a class="navbtn" href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Mobile nav toggle -->
+    <button
+      class="md:hidden navbtn"
+      aria-expanded="false"
+      aria-controls="mobile-nav-menu"
+      id="mobile-nav-toggle"
+      type="button"
+    >
+      <span class="sr-only">Open navigation</span>
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="hamburger-bar-1 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="3" width="20" height="2" rx="1" fill="currentColor"/>
+        <rect class="hamburger-bar-2 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="9" width="20" height="2" rx="1" fill="currentColor"/>
+        <rect class="hamburger-bar-3 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="15" width="20" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav menu -->
+  <div id="mobile-nav-menu" class="hidden border-t md:hidden border-current/10">
+    <ul class="flex flex-col py-2 text-sm list-none">
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#what-we-do">What We Do</a></li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#work">Work</a></li>
+      <li class="pl-4">
+        <ul class="flex flex-col text-sm list-none border-l border-current/30">
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/cigarwell">Cigarwell</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/quotingbill">QuotingBill</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/mchanywhere">MCH Anywhere</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/airtrfx">airTRFX</a></li>
+          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/godark">GoDark</a></li>
+        </ul>
+      </li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#about">About</a></li>
+      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const menu = document.getElementById('mobile-nav-menu');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    toggle.classList.toggle('nav-open', !expanded);
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when a link is clicked
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.classList.remove('nav-open');
+    });
+  });
+</script>

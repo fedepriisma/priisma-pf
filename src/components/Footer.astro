@@ -1,18 +1,16 @@
 ---
-import ContactInfo from "../components/ContactInfo.astro";
+const year = new Date().getFullYear();
 ---
 
-<footer class="px-4 py-8 bg-black text-yellow">
-	<div class="mx-4">
-		<h4 class="text-lg font-display">You got all the way to the footer, you Rockstar!🤘👩‍🎤</h4>
-		<p class="mt-2 mb-8 text-md text-amber-200">Thank you for being awesome and please get in touch for any comments.</p>
-		<ContactInfo />
-		<p class="mt-8 text-xs text-amber-400">
-			This website is built with <a href="https://astro.build/">Astro</a>, using and Mona Sans from Google Fonts <br />
-			All other content on this website is produced by and copyright
-			&copy; 2012–{new Date().getFullYear()} by Federico Bozo. <br />
-			All assets are hosted  by GithubPages. <br />
-			Stats are tracked using Google Analytics.
-		</p>
-	</div>
+<footer class="border-t border-white/10 py-8 bg-black">
+  <div class="mx-auto max-w-7xl px-6 sm:px-12 lg:px-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-yellow/60">
+      <a href="/#home" class="hover:text-yellow motion-safe:transition-colors">Home</a>
+      <a href="/#work" class="hover:text-yellow motion-safe:transition-colors">Work</a>
+      <a href="/#about" class="hover:text-yellow motion-safe:transition-colors">About</a>
+      <a href="mailto:fede@priisma.com" class="hover:text-yellow motion-safe:transition-colors">fede@priisma.com</a>
+      <a href="https://www.linkedin.com/in/fedebozo/" target="_blank" rel="noopener noreferrer" class="hover:text-yellow motion-safe:transition-colors">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+    </nav>
+    <p class="text-xs text-yellow/30">© {year} Priisma · Miami, FL</p>
+  </div>
 </footer>
