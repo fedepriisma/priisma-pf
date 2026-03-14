@@ -7,8 +7,6 @@ import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
 import Godark from "./portfolio/godark/godark.astro";
 import Flyairways from "./portfolio/flyairways/flyairways.astro";
 import MchAnywhere from "./portfolio/mch/mch.astro";
-import cwVideoMp4 from "./portfolio/cigarwell/shortened-opt.mp4";
-import cwVideoWebm from "./portfolio/cigarwell/shortened-opt.webm";
 ---
 <html lang="en">
   <head>
@@ -47,30 +45,6 @@ import cwVideoWebm from "./portfolio/cigarwell/shortened-opt.webm";
               See our work ↓
             </a>
           </div>
-          <div class="mt-16">
-            <figure>
-              <video
-                id="cw-hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                disableRemotePlayback
-                class="w-full border border-current/20"
-                aria-label="Cigarwell product interface walkthrough"
-              >
-                <source src={cwVideoWebm} type="video/webm" />
-                <source src={cwVideoMp4} type="video/mp4" />
-              </video>
-            </figure>
-          </div>
-          <script>
-            const video = document.getElementById('cw-hero-video') as HTMLVideoElement | null;
-            if (video && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-              video.pause();
-            }
-          </script>
         </div>
       </section>
 
