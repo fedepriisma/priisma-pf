@@ -32,4 +32,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: priisma-dev
           directory: dist
-          branch: main
+          branch: new-mod-version
