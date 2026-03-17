@@ -85,6 +85,20 @@
   h6 {
     line-height: 1.11;
   }
+
+  /**
+   * Heading glow — adapts to any text color via oklch relative color syntax.
+   * Outer layer: bright halo derived from currentColor lightened +0.38 (mirrors rgba(247,247,247,0.6)).
+   * Depth layer: subtle offset shadow darkened −0.25 (simulates the inset rgba(105,105,105,0.6) feeling).
+   * Both layers clamp so they never go above white or below black.
+   * Applied to h1–h3 globally; also available as .heading-glow for explicit use.
+   */
+  h1, h2, h3, .heading-glow {
+    text-shadow:
+      0px 0px 4px oklch(from currentColor clamp(0, calc(l + 0.38), 1) c h / 0.6),
+      0px 0px 12px oklch(from currentColor clamp(0, calc(l + 0.22), 1) c h / 0.22),
+      0px 2px 3px oklch(from currentColor clamp(0, calc(l - 0.25), 1) c h / 0.45);
+  }
 .body-base {
 	@apply selection:bg-yellow selection:text-ink bg-paper text-ink;
   }
