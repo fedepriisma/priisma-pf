@@ -19,10 +19,8 @@ jobs:
 
       - name: Install, build, and upload your site output
         uses: withastro/action@v5
-        # with:
-        #   path: . # root of your Astro project (optional)
-        #   node-version: 24 # optional; defaults are handled by the action
-        #   package-manager: pnpm@latest # optional; auto-detected from lockfile
+        with:
+          node-version: 22
 
   deploy:
     needs: build
