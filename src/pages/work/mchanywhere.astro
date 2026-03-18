@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import MainHead from "../../components/MainHead.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import PhotoSwipeInit from "../../components/PhotoSwipeInit.astro";
 
 import MchTabletView from "../portfolio/mch/mch-tablet-view.png";
 import MchPaymentFlow from "../portfolio/mch/mch-payment-flow.png";
@@ -42,15 +43,17 @@ import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
           <p class="mt-6 max-w-lg text-base opacity-80">
             A telemedicine app for Miami Children's Hospital — making remote pediatric consultations simple and fast.
           </p>
-          <div class="mt-16">
+          <div class="mt-16 pswp-gallery">
             <figure>
-              <Image
-                src={MchTabletView}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                alt="MCH Anywhere telemedicine app on tablet — appointment and consultation screens"
-                class="w-full border border-current/20"
-                loading="eager"
-              />
+              <a href={MchTabletView.src} data-pswp-width={MchTabletView.width} data-pswp-height={MchTabletView.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={MchTabletView}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="MCH Anywhere telemedicine app on tablet — appointment and consultation screens"
+                  class="w-full border border-current/20"
+                  loading="eager"
+                />
+              </a>
             </figure>
           </div>
           <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
@@ -82,16 +85,20 @@ import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
           <h2 class="section-header max-w-2xl">Booking should take seconds, not minutes.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">Finding an available time slot and booking it should take seconds, not minutes. The appointment screen was built around surfacing availability clearly and reducing the friction of selection to a single tap. Visual confirmation at every step — because when a child is sick, parents need to trust the system completely. Ambiguity has no place here.</p>
-            <figure>
-              <Image
-                src={MchAppointment}
-                sizes="(max-width: 800px) 100vw, 800px"
-                alt="MCH Anywhere appointment screen showing available time slots"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
-              <figcaption class="fig-caption">Appointments — available spots with quick reservation</figcaption>
-            </figure>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchAppointment.src} data-pswp-width={MchAppointment.width} data-pswp-height={MchAppointment.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchAppointment}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere appointment screen showing available time slots"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Appointments — available spots with quick reservation</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -105,26 +112,32 @@ import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
           <h2 class="section-header max-w-2xl">Security that feels like care, not compliance.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">The payment flow was designed to feel secure without feeling clinical. Clear copy reinforced privacy and trust standards at each step — because a parent handing over payment information for a child's medical appointment needs confidence, not anxiety. Icons and language worked together to make security visible and the process feel genuinely safe.</p>
-            <figure>
-              <Image
-                src={MchPayment}
-                sizes="(max-width: 800px) 100vw, 800px"
-                alt="MCH Anywhere payment screen showing secure payment interface with trust indicators"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
-              <figcaption class="fig-caption">Payment — copy and icons reinforce privacy and security</figcaption>
-            </figure>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchPayment.src} data-pswp-width={MchPayment.width} data-pswp-height={MchPayment.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchPayment}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere payment screen showing secure payment interface with trust indicators"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Payment — copy and icons reinforce privacy and security</figcaption>
+              </figure>
+            </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-12 pswp-gallery">
             <figure>
-              <Image
-                src={MchPaymentFlow}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                alt="MCH Anywhere payment flow — complete step-by-step booking process for parents"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={MchPaymentFlow.src} data-pswp-width={MchPaymentFlow.width} data-pswp-height={MchPaymentFlow.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={MchPaymentFlow}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="MCH Anywhere payment flow — complete step-by-step booking process for parents"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Full payment flow — step-by-step booking process</figcaption>
             </figure>
           </div>
@@ -140,16 +153,20 @@ import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
           <h2 class="section-header max-w-2xl">Design doesn't end at handoff.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">Detailed iOS and Android specs — measurements, states, behaviors — were critical for the development team to implement the experience accurately. Close collaboration with the engineering team meant fewer surprises during build and a product that matched the design intent on every platform. Specs weren't documentation; they were communication.</p>
-            <figure>
-              <Image
-                src={MchDashboard}
-                sizes="(max-width: 800px) 100vw, 800px"
-                alt="MCH Anywhere dashboard with developer specs for iOS and Android implementation"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
-              <figcaption class="fig-caption">Dashboard specs — detail for iOS/Android development team</figcaption>
-            </figure>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchDashboard.src} data-pswp-width={MchDashboard.width} data-pswp-height={MchDashboard.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchDashboard}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere dashboard with developer specs for iOS and Android implementation"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Dashboard specs — detail for iOS/Android development team</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -245,6 +262,7 @@ import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
     </main>
 
     <Footer />
+    <PhotoSwipeInit />
 
   </body>
 </html>

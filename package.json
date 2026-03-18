@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",
-    "@types/photoswipe": "^4.1.3",
     "photoswipe": "^5.4.1",
     "posthog-js": "^1.362.0",
     "sharp": "^0.34.5"

@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import MainHead from "../../components/MainHead.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import PhotoSwipeInit from "../../components/PhotoSwipeInit.astro";
 
 import WebOne from "../portfolio/godark/godark-web-01.jpg";
 import SnackM from "../portfolio/godark/gd-snack-mylk.jpg";
@@ -41,15 +42,17 @@ import SnackW from "../portfolio/godark/gd-snack-white.jpg";
           <p class="mt-6 max-w-lg text-base opacity-80">
             Five years building the identity and web presence for a premium stone-ground chocolate company.
           </p>
-          <div class="mt-16">
+          <div class="mt-16 pswp-gallery">
             <figure>
-              <Image
-                src={WebOne}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                alt="GoDark Chocolates website — vegan white chocolate product page showing products and prices"
-                class="w-full border border-current/20"
-                loading="eager"
-              />
+              <a href={WebOne.src} data-pswp-width={WebOne.width} data-pswp-height={WebOne.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={WebOne}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="GoDark Chocolates website — vegan white chocolate product page showing products and prices"
+                  class="w-full border border-current/20"
+                  loading="eager"
+                />
+              </a>
             </figure>
           </div>
           <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
@@ -110,35 +113,41 @@ import SnackW from "../portfolio/godark/gd-snack-white.jpg";
           <h2 class="section-header max-w-2xl">A website that sells and tells.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">The website was built to showcase the product range while communicating the care behind it. Each chocolate variety got its moment — flavors, formats, the story of how it's made. The site balanced e-commerce function with brand storytelling, because GoDark's customers buy with their eyes first and their values second. Photography was chosen to feel warm and real, not studio-artificial.</p>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="pswp-gallery grid grid-cols-3 gap-4">
               <figure>
-                <Image
-                  src={SnackM}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="GoDark mylk stone-ground chocolate bar packaging"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={SnackM.src} data-pswp-width={SnackM.width} data-pswp-height={SnackM.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={SnackM}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="GoDark mylk stone-ground chocolate bar packaging"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">Mylk</figcaption>
               </figure>
               <figure>
-                <Image
-                  src={SnackC}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="GoDark 71 cane stone-ground chocolate bar packaging"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={SnackC.src} data-pswp-width={SnackC.width} data-pswp-height={SnackC.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={SnackC}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="GoDark 71 cane stone-ground chocolate bar packaging"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">71 Cane</figcaption>
               </figure>
               <figure>
-                <Image
-                  src={SnackW}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="GoDark white stone-ground chocolate bar packaging"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={SnackW.src} data-pswp-width={SnackW.width} data-pswp-height={SnackW.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={SnackW}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="GoDark white stone-ground chocolate bar packaging"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">White</figcaption>
               </figure>
             </div>
@@ -238,6 +247,7 @@ import SnackW from "../portfolio/godark/gd-snack-white.jpg";
     </main>
 
     <Footer />
+    <PhotoSwipeInit />
 
   </body>
 </html>

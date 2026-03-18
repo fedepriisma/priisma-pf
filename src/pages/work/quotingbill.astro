@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import MainHead from "../../components/MainHead.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import PhotoSwipeInit from "../../components/PhotoSwipeInit.astro";
 
 import QBHero from "../portfolio/quotingbill/qb-cancellations-selected.jpg";
 import QBWireframe from "../portfolio/quotingbill/qb-wireframe.jpg";
@@ -49,15 +50,17 @@ import QBProvFrn from "../portfolio/quotingbill/qb-provisioning-frontpage.png";
           <p class="mt-6 max-w-lg text-base opacity-80">
             Deep research, deliberate design, and a platform that shipped.
           </p>
-          <div class="mt-16">
+          <div class="mt-16 pswp-gallery">
             <figure>
-              <Image
-                src={QBHero}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                alt="QuotingBill — customers page showing products selected for cancellation"
-                class="w-full border border-current/20"
-                loading="eager"
-              />
+              <a href={QBHero.src} data-pswp-width={QBHero.width} data-pswp-height={QBHero.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBHero}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="QuotingBill — customers page showing products selected for cancellation"
+                  class="w-full border border-current/20"
+                  loading="eager"
+                />
+              </a>
             </figure>
           </div>
           <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
@@ -89,46 +92,56 @@ import QBProvFrn from "../portfolio/quotingbill/qb-provisioning-frontpage.png";
           <h2 class="section-header max-w-2xl">Wired end-to-end before anything was designed.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">Cancellations are where billing platforms earn or lose trust. One wrong step and the user loses confidence in the whole system. The flow was wired end-to-end from the very first concept — mapping what triggers a cancellation, how the activity log surfaces relevant context, and how multiple products can be cancelled cleanly in a single session. Breadboarding first, high-fidelity after.</p>
-            <figure>
-              <Image
-                src={QBWireframe}
-                sizes="(max-width: 800px) 100vw, 800px"
-                alt="QuotingBill user flow wireframe mapping the full cancellation process"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
-              <figcaption class="fig-caption">QuotingBill — User flow diagram</figcaption>
-            </figure>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={QBWireframe.src} data-pswp-width={QBWireframe.width} data-pswp-height={QBWireframe.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={QBWireframe}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="QuotingBill user flow wireframe mapping the full cancellation process"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">QuotingBill — User flow diagram</figcaption>
+              </figure>
+            </div>
           </div>
-          <div class="grid grid-cols-1 gap-4 mt-12 sm:grid-cols-3">
+          <div class="pswp-gallery grid grid-cols-1 gap-4 mt-12 sm:grid-cols-3">
             <figure>
-              <Image
-                src={QBbbSubWCancel}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="Breadboard — steps for cancelling a subscription"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBbbSubWCancel.src} data-pswp-width={QBbbSubWCancel.width} data-pswp-height={QBbbSubWCancel.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBbbSubWCancel}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="Breadboard — steps for cancelling a subscription"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Step 1 — Cancellation trigger</figcaption>
             </figure>
             <figure>
-              <Image
-                src={QBbbSubWLog}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="Breadboard — requests and activity log"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBbbSubWLog.src} data-pswp-width={QBbbSubWLog.width} data-pswp-height={QBbbSubWLog.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBbbSubWLog}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="Breadboard — requests and activity log"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Step 2 — Activity log surfaces context</figcaption>
             </figure>
             <figure>
-              <Image
-                src={QBbbSubWBucket}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="Breadboard — handling multiple products and confirmations"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBbbSubWBucket.src} data-pswp-width={QBbbSubWBucket.width} data-pswp-height={QBbbSubWBucket.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBbbSubWBucket}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="Breadboard — handling multiple products and confirmations"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Step 3 — Multi-product confirmation</figcaption>
             </figure>
           </div>
@@ -144,35 +157,41 @@ import QBProvFrn from "../portfolio/quotingbill/qb-provisioning-frontpage.png";
           <h2 class="section-header max-w-2xl">Fat markers before pixels.</h2>
           <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
             <p class="text-base">Fat-marker sketches kept the thinking high-level before anyone touched a screen. The bucket concept — where products could be collected and managed in batch — emerged from this phase. Once the interaction felt right on paper, the first prototype was built in HTML/CSS/JS to test timing, feel, and flow before committing to final designs. That prototype became the template for how every subsequent section was approached.</p>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="pswp-gallery grid grid-cols-3 gap-4">
               <figure>
-                <Image
-                  src={QBFatMBuck}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="Fat marker sketch — the bucket concept"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={QBFatMBuck.src} data-pswp-width={QBFatMBuck.width} data-pswp-height={QBFatMBuck.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={QBFatMBuck}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="Fat marker sketch — the bucket concept"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">The bucket</figcaption>
               </figure>
               <figure>
-                <Image
-                  src={QBFatMSel}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="Fat marker sketch — selection to bucket flow"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={QBFatMSel.src} data-pswp-width={QBFatMSel.width} data-pswp-height={QBFatMSel.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={QBFatMSel}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="Fat marker sketch — selection to bucket flow"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">Selection flow</figcaption>
               </figure>
               <figure>
-                <Image
-                  src={QBBucket}
-                  sizes="(max-width: 400px) 100vw, 400px"
-                  alt="First HTML/CSS/JS prototype of the bucket interface"
-                  class="w-full border border-current/20"
-                  loading="lazy"
-                />
+                <a href={QBBucket.src} data-pswp-width={QBBucket.width} data-pswp-height={QBBucket.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={QBBucket}
+                    sizes="(max-width: 400px) 100vw, 400px"
+                    alt="First HTML/CSS/JS prototype of the bucket interface"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption class="fig-caption">First prototype</figcaption>
               </figure>
             </div>
@@ -188,47 +207,55 @@ import QBProvFrn from "../portfolio/quotingbill/qb-provisioning-frontpage.png";
           <p class="eyebrow mb-4">03 — Product</p>
           <h2 class="section-header max-w-2xl">Every section designed as part of the whole.</h2>
           <p class="mt-6 max-w-2xl text-base">The full platform covers invoicing, project management, user provisioning, and third-party service connections. Every section was designed with a consistent information hierarchy — so moving from one area to another never required relearning the interface. The end result: a platform that makes metered billing feel manageable, not overwhelming.</p>
-          <div class="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-3">
+          <div class="pswp-gallery grid grid-cols-1 gap-6 mt-12 sm:grid-cols-3">
             <figure>
-              <Image
-                src={QBInvoice}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="QuotingBill invoice page showing billing details and line items"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBInvoice.src} data-pswp-width={QBInvoice.width} data-pswp-height={QBInvoice.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBInvoice}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="QuotingBill invoice page showing billing details and line items"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Invoice page</figcaption>
             </figure>
             <figure>
-              <Image
-                src={QBProjects}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="QuotingBill projects page showing active telecom billing projects"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBProjects.src} data-pswp-width={QBProjects.width} data-pswp-height={QBProjects.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBProjects}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="QuotingBill projects page showing active telecom billing projects"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">Projects page</figcaption>
             </figure>
             <figure>
-              <Image
-                src={QBUsers}
-                sizes="(max-width: 600px) 100vw, 600px"
-                alt="QuotingBill user provisioning interface for third-party services"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBUsers.src} data-pswp-width={QBUsers.width} data-pswp-height={QBUsers.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBUsers}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  alt="QuotingBill user provisioning interface for third-party services"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">User provisioning</figcaption>
             </figure>
           </div>
-          <div class="mt-12">
+          <div class="mt-12 pswp-gallery">
             <figure>
-              <Image
-                src={QBProvFrn}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                alt="QuotingBill provisioning front page — full product interface"
-                class="w-full border border-current/20"
-                loading="lazy"
-              />
+              <a href={QBProvFrn.src} data-pswp-width={QBProvFrn.width} data-pswp-height={QBProvFrn.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={QBProvFrn}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="QuotingBill provisioning front page — full product interface"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
               <figcaption class="fig-caption">QuotingBill — Provisioning front page</figcaption>
             </figure>
           </div>
@@ -329,6 +356,7 @@ import QBProvFrn from "../portfolio/quotingbill/qb-provisioning-frontpage.png";
     </main>
 
     <Footer />
+    <PhotoSwipeInit />
 
   </body>
 </html>
