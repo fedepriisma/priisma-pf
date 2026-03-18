@@ -8,6 +8,7 @@ const {
 } = Astro.props;
 const defaultImage = '/assets/mesh-gradient.jpg';
 import HeaderScripts from '../components/HeaderScripts.astro';
+import PostHog from '../components/PostHog.astro';
 import '../styles/tailwind.css'
 // JSON-LD defaults
 const defaultSite = 'https://www.priisma.com';
@@ -82,10 +83,12 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 @font-face{font-family:'Mona Sans';src: url('/fonts/Mona-Sans.woff2') format('woff2-variations');font-weight:200 900;font-stretch:75% 125%;font-display:swap}
 </style>
 
-<!-- Remote Google Fonts kept as fallback for browsers that prefer it -->
+<!-- Instrument Serif (display font) from Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<PostHog />
 
 <!-- Optional LCP/image preload: pass `preloadImage` prop from pages that know their hero LCP -->
 {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
