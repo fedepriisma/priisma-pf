@@ -115,7 +115,28 @@
     },
   };
 
+  const Q1_LABELS: Record<string, string> = {
+    'shipping-fast': "We're shipping fast but things feel inconsistent",
+    'no-direction':  "We have a designer but no real direction",
+    'unused-system': "We have a design system but it's not being used",
+    'pre-design':    "We're pre-design — building what works",
+  };
+  const Q2_LABELS: Record<string, string> = {
+    strategy:   "Prioritizing what to build next",
+    foundation: "Consistency across the product",
+    process:    "Speed — design slows us down",
+    leadership: "Growing or leading a design team",
+  };
+  const Q3_LABELS: Record<string, string> = {
+    consistent: "A cleaner, more consistent product",
+    foundation: "A stronger design foundation",
+    direction:  "A design direction the team can follow",
+    shipped:    "A specific feature shipped to a higher standard",
+  };
+
+  let q1Answer = '';
   let q2Answer = 'strategy';
+  let q3Answer = '';
 
   const q1El = document.getElementById('dt-q1')!;
   const q2El = document.getElementById('dt-q2')!;
@@ -163,23 +184,35 @@
       <div class="p-6 mt-8 border border-current/10 rounded-2xl">
         <p class="mb-4 text-sm font-medium">Get a full breakdown by email →</p>
         <form id="dt-email-form" novalidate>
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <label for="dt-email" class="sr-only">Your email address</label>
-            <input
-              id="dt-email"
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              required
-              autocomplete="email"
-              class="flex-1 px-4 py-3 text-base bg-paper border-2 border-ink/20 focus:outline-none focus:border-ink"
-            />
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <label for="dt-name" class="sr-only">Your first name</label>
+              <input
+                id="dt-name"
+                type="text"
+                name="name"
+                placeholder="First name"
+                required
+                autocomplete="given-name"
+                class="flex-1 px-4 py-3 text-base bg-paper border-2 border-ink/20 focus:outline-none focus:border-ink"
+              />
+              <label for="dt-email" class="sr-only">Your email address</label>
+              <input
+                id="dt-email"
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+                class="flex-1 px-4 py-3 text-base bg-paper border-2 border-ink/20 focus:outline-none focus:border-ink"
+              />
+            </div>
             <button
               type="submit"
               id="dt-email-btn"
-              class="px-6 py-3 text-sm font-medium bg-ink text-paper border-2 border-ink hover:bg-ink/90 motion-safe:transition-colors"
+              class="w-full px-6 py-3 text-sm font-medium bg-ink text-paper border-2 border-ink hover:bg-ink/90 motion-safe:transition-colors"
             >
-              Send →
+              Send my breakdown →
             </button>
           </div>
           <p id="form-feedback" aria-live="polite" class="mt-3 text-sm min-h-[1.5em]"></p>
@@ -201,14 +234,41 @@
     document.getElementById('dt-email-form')?.addEventListener('submit', handleEmailSubmit);
   }
 
+  const BOOKING_URL = 'https://calendar.notion.so/meet/federicobozo/book-a-call-with-fede';
+
+  function showBookingSuccess(firstName: string) {
+    const wrapper = document.getElementById('dt-email-form')?.parentElement!;
+    wrapper.innerHTML = `
+      <div aria-live="polite">
+        <p class="text-sm font-medium">You're on the list, ${firstName} ✓</p>
+        <p class="mt-1 text-sm opacity-60">A breakdown is on its way to your inbox.</p>
+        <a
+          href="${BOOKING_URL}"
+          target="_blank"
+          rel="noopener"
+          class="primary-cta mt-6 inline-block"
+        >
+          Book a call with Fede →
+        </a>
+      </div>
+    `;
+  }
+
   async function handleEmailSubmit(e: Event) {
     e.preventDefault();
+    const nameInput = document.getElementById('dt-name') as HTMLInputElement;
     const emailInput = document.getElementById('dt-email') as HTMLInputElement;
     const feedback = document.getElementById('form-feedback')!;
     const btn = document.getElementById('dt-email-btn') as HTMLButtonElement;
-    const form = document.getElementById('dt-email-form')!;
 
+    const name = nameInput.value.trim();
     const email = emailInput.value.trim();
+
+    if (!name) {
+      feedback.textContent = 'Please enter your first name.';
+      nameInput.focus();
+      return;
+    }
     if (!email || !emailInput.checkValidity()) {
       feedback.textContent = 'Please enter a valid email address.';
       emailInput.focus();
@@ -220,38 +280,65 @@
     feedback.textContent = '';
 
     try {
+      // Fetch client IP for Buttondown list quality (silent fail)
+      let ip_address: string | undefined;
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        ip_address = (await ipRes.json()).ip;
+      } catch { /* proceed without IP */ }
+
+      const notes = [
+        `Name: ${name}`,
+        ``,
+        `Q1 — How would you describe your product's design right now?`,
+        Q1_LABELS[q1Answer] ?? q1Answer,
+        ``,
+        `Q2 — What's your biggest design bottleneck?`,
+        Q2_LABELS[q2Answer] ?? q2Answer,
+        ``,
+        `Q3 — What would a win look like in 60 days?`,
+        Q3_LABELS[q3Answer] ?? q3Answer,
+      ].join('\n');
+
+      const payload: Record<string, unknown> = { email_address: email, notes };
+      if (ip_address) payload.ip_address = ip_address;
+
       const res = await fetch('https://api.buttondown.email/v1/subscribers', {
         method: 'POST',
         headers: {
           Authorization: `Token ${API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, tags: [q2Answer] }),
+        body: JSON.stringify(payload),
       });
 
       if (res.status === 201) {
         posthog.capture('diagnostic_email_captured', { result_type: q2Answer });
-        form.innerHTML = '<p class="py-3 text-sm font-medium">You\'re on the list ✓</p>';
+        showBookingSuccess(name);
       } else {
         const data = await res.json().catch(() => ({}));
+        console.error('[Buttondown] status', res.status, JSON.stringify(data, null, 2));
         const body = JSON.stringify(data);
-        if (res.status === 400 && body.includes('already')) {
-          form.innerHTML = '<p class="py-3 text-sm font-medium">You\'re already on the list ✓</p>';
+        if (res.status === 400 && (body.includes('already') || body.includes('duplicate'))) {
+          posthog.capture('diagnostic_email_captured', { result_type: q2Answer, returning: true });
+          showBookingSuccess(name);
         } else {
           feedback.textContent = 'Something went wrong. Email me directly → fede@priisma.com';
           btn.disabled = false;
-          btn.textContent = 'Send →';
+          btn.textContent = 'Send my breakdown →';
         }
       }
     } catch {
       feedback.textContent = 'Something went wrong. Email me directly → fede@priisma.com';
       btn.disabled = false;
-      btn.textContent = 'Send →';
+      btn.textContent = 'Send my breakdown →';
     }
   }
 
   function reset() {
+    q1Answer = '';
     q2Answer = 'strategy';
+    q3Answer = '';
     document.querySelectorAll('#dt input[type="radio"]').forEach((input) => {
       (input as HTMLInputElement).checked = false;
     });
@@ -268,7 +355,9 @@
 
   // Auto-advance: Q1 → Q2
   q1El.addEventListener('change', (e) => {
-    if ((e.target as HTMLInputElement).type === 'radio') {
+    const input = e.target as HTMLInputElement;
+    if (input.type === 'radio') {
+      q1Answer = input.value;
       posthog.capture('diagnostic_started');
       setTimeout(() => {
         hide(q1El);
@@ -293,7 +382,9 @@
 
   // Q3 complete → show result
   q3El.addEventListener('change', (e) => {
-    if ((e.target as HTMLInputElement).type === 'radio') {
+    const input = e.target as HTMLInputElement;
+    if (input.type === 'radio') {
+      q3Answer = input.value;
       posthog.capture('diagnostic_completed', { result_type: q2Answer });
       setTimeout(showResult, 200);
     }
