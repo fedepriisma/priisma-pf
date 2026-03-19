@@ -3,6 +3,11 @@ import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import DiagnosticTool from "../components/DiagnosticTool.astro";
+import { Image } from 'astro:assets';
+import AirtrfxPreview from "./portfolio/flyairways/fly-airways-devices.png";
+import MchPreview from "./portfolio/mch/mch-tablet-view.png";
+import GodarkPreview from "./portfolio/godark/godark-web-01.jpg";
+import QbPreview from "./portfolio/quotingbill/qb-cancellations-selected.jpg";
 ---
 <html lang="en">
   <head>
@@ -22,73 +27,66 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
 
     <main>
 
-      <!-- ============================================================
-           HERO
-      ============================================================ -->
-      <section id="home" class="section-space">
-        <div class="mx-auto max-w-7xl">
+      <!-- HERO -->
+      <section id="home" class="section-space min-h-screen bg-[#0d0d0d] text-white flex items-start">
+        <div class="mx-auto max-w-7xl w-full">
           <!-- Availability badge -->
-          <p class="inline-flex items-center gap-2 mb-6 text-sm font-medium">
-            <span class="w-2 h-2 rounded-full bg-yellow inline-block shrink-0" aria-hidden="true"></span>
+          <p class="inline-flex items-center gap-2 text-xs text-white/50">
+            <span class="w-2 h-2 rounded-full bg-yellow shrink-0" aria-hidden="true"></span>
             Now booking Q2 2026
           </p>
-          <h1 class="text-5xl font-display max-w-4xl leading-[1.05]">
-            Designing products that are ready to scale.
-          </h1>
-          <p class="mt-6 text-md max-w-prose">
-            We help funded startups and SaaS companies turn good products into great ones. From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.
+          <!-- Eyebrow -->
+          <p class="mt-8 text-xs font-bold tracking-[0.25em] uppercase text-red scroll-reveal">
+            Product Design Studio · Miami
           </p>
-          <div class="flex flex-wrap items-center gap-4 mt-8">
-            <a href="mailto:fede@priisma.com" class="primary-cta mt-0!">
-              Start a conversation →
+          <!-- Headline -->
+          <h1 class="mt-3 font-display text-5xl max-w-3xl leading-[0.97] tracking-tight scroll-reveal" style="transition-delay: 60ms">
+            We don't design screens.<br>We design systems.
+          </h1>
+          <!-- Secondary line -->
+          <p class="mt-5 text-base text-white/45 max-w-sm scroll-reveal" style="transition-delay: 120ms">
+            Built to scale without losing what makes them good.
+          </p>
+          <!-- Red divider -->
+          <div class="w-8 h-px bg-red mt-6 scroll-reveal" style="transition-delay: 160ms" aria-hidden="true"></div>
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mt-8 scroll-reveal" style="transition-delay: 200ms">
+            <a
+              href="#work"
+              class="font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]"
+            >
+              See the work →
             </a>
-            <a href="#diagnostic" class="inline-block text-sm font-medium underline opacity-60 hover:opacity-100 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
-              Design health check ↓
-            </a>
-            <a href="#work" class="inline-block text-sm font-medium underline opacity-60 hover:opacity-100 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock motion-safe:transition-opacity">
-              See our work ↓
+            <a
+              href="mailto:fede@priisma.com"
+              class="text-sm font-medium text-white/60 underline underline-offset-4 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2"
+            >
+              Start a conversation ↓
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ============================================================
-           PRODUCT DESIGN LEADERSHIP
-      ============================================================ -->
-      <section id="what-we-do" class="border-t section-space border-current/10">
-        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
-          <div>
-            <h2 class="section-header">More than design. Product leadership.</h2>
-            <p class="max-w-sm mt-6 text-statement">
-              "The question isn't whether you need design. It's whether your design is keeping up."
-            </p>
-          </div>
-          <div class="space-y-4 text-base">
-            <p>At Series B, design decisions start affecting the entire company. Features become harder to prioritize. User experience becomes inconsistent. Teams move fast — but not always in the same direction.</p>
-            <p>That's the design leadership gap. You've grown past needing a junior designer, but you're not ready to build a full design org.</p>
-            <p>Priisma fills that gap. Senior design leadership, product thinking, and hands-on execution — without the overhead of a full-time hire.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           SERVICES
-      ============================================================ -->
-      <section id="services" class="border-t section-space border-current/10 bg-mist">
+      <!-- SERVICES -->
+      <section id="services" class="border-t border-white/10 bg-[#0d0d0d] text-white section-space">
         <div class="mx-auto max-w-7xl">
-          <h2 class="section-header">Where we bring the most value</h2>
-          <p class="mt-4 mb-12 text-statement">Senior design expertise, without the full-time overhead.</p>
-          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <p class="text-xs font-bold tracking-[0.25em] uppercase text-red mb-4 scroll-reveal">What we do</p>
+          <h2 class="section-header text-white max-w-2xl scroll-reveal">
+            Senior design expertise,<br>without the full-time overhead.
+          </h2>
+          <p class="mt-4 text-base text-white/45 max-w-sm scroll-reveal">From product direction to hands-on execution.</p>
 
-            <div class="pl-4 border-l-2 border-yellow">
-              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+
+            <div class="pl-4 border-l-2 border-yellow scroll-reveal">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-50">
                 <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
                 <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
                 <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
               </svg>
-              <h3 class="mb-3 text-lg font-semibold">Product direction</h3>
-              <p class="mb-4 text-sm">Helping teams define the product more clearly.</p>
-              <ul class="space-y-1 text-sm list-none">
+              <h3 class="font-display text-xl font-normal text-white leading-tight mb-2">Product direction</h3>
+              <p class="text-xs text-white/45 leading-relaxed mb-4">Helping teams define the product more clearly.</p>
+              <ul class="space-y-1 text-sm text-white/50 list-none">
                 <li>Feature prioritization</li>
                 <li>UX architecture</li>
                 <li>Product vision alignment</li>
@@ -96,14 +94,14 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
               </ul>
             </div>
 
-            <div class="pl-4 border-l-2 border-yellow">
-              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+            <div class="pl-4 border-l-2 border-yellow scroll-reveal" style="transition-delay: 60ms">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-50">
                 <path d="M10 16V5M10 5L6 9M10 5L14 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4 16H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
-              <h3 class="mb-3 text-lg font-semibold">Fractional design leadership</h3>
-              <p class="mb-4 text-sm">Supporting teams as they scale.</p>
-              <ul class="space-y-1 text-sm list-none">
+              <h3 class="font-display text-xl font-normal text-white leading-tight mb-2">Fractional leadership</h3>
+              <p class="text-xs text-white/45 leading-relaxed mb-4">Supporting teams as they scale.</p>
+              <ul class="space-y-1 text-sm text-white/50 list-none">
                 <li>Design direction</li>
                 <li>Design system thinking</li>
                 <li>Product consistency</li>
@@ -111,15 +109,15 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
               </ul>
             </div>
 
-            <div class="pl-4 border-l-2 border-yellow">
-              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+            <div class="pl-4 border-l-2 border-yellow scroll-reveal" style="transition-delay: 120ms">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-50">
                 <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
                 <rect x="6" y="7" width="8" height="2" rx="1" fill="currentColor"/>
                 <rect x="6" y="11" width="5" height="2" rx="1" fill="currentColor"/>
               </svg>
-              <h3 class="mb-3 text-lg font-semibold">Product design</h3>
-              <p class="mb-4 text-sm">Hands-on design from early concepts to polished interfaces.</p>
-              <ul class="space-y-1 text-sm list-none">
+              <h3 class="font-display text-xl font-normal text-white leading-tight mb-2">Product design</h3>
+              <p class="text-xs text-white/45 leading-relaxed mb-4">Hands-on design from concept to polished interface.</p>
+              <ul class="space-y-1 text-sm text-white/50 list-none">
                 <li>UX design</li>
                 <li>Interface design</li>
                 <li>Product flows</li>
@@ -127,15 +125,15 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
               </ul>
             </div>
 
-            <div class="pl-4 border-l-2 border-yellow">
-              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-60">
+            <div class="pl-4 border-l-2 border-yellow scroll-reveal" style="transition-delay: 180ms">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mb-3 opacity-50">
                 <path d="M4 10a6 6 0 016-6 6 6 0 014.24 1.76L16 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 <path d="M16 4v3.5H12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M16 10a6 6 0 01-6 6 6 6 0 01-4.24-1.76L4 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
-              <h3 class="mb-3 text-lg font-semibold">Launch and evolution</h3>
-              <p class="mb-4 text-sm">Products improve through iteration.</p>
-              <ul class="space-y-1 text-sm list-none">
+              <h3 class="font-display text-xl font-normal text-white leading-tight mb-2">Launch and evolution</h3>
+              <p class="text-xs text-white/45 leading-relaxed mb-4">Products improve through iteration.</p>
+              <ul class="space-y-1 text-sm text-white/50 list-none">
                 <li>Usability improvements</li>
                 <li>Product refinement</li>
                 <li>Growth-focused design</li>
@@ -147,31 +145,26 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
         </div>
       </section>
 
-      <!-- ============================================================
-           TESTIMONIALS
-           TODO: Second quote still needs a real client. See TODOS.md.
-           NOTE: First quote is a draft pending Cigarwell CEO approval.
-      ============================================================ -->
-      <section id="testimonials" class="border-t section-space border-current/10">
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" class="border-t border-white/10 bg-[#0d0d0d] text-white section-space">
         <div class="mx-auto max-w-7xl">
-          <p class="eyebrow">What clients say</p>
-          <div class="grid gap-12 mt-10 md:grid-cols-2">
+          <p class="eyebrow text-red mb-10 scroll-reveal">What clients say</p>
+          <div class="grid gap-12 md:grid-cols-2">
 
-            <!-- DRAFT — pending CEO approval -->
-            <blockquote>
-              <p class="text-statement">
-                "Fede came up to speed in days, not weeks. What surprised me was how quickly his iterations moved us — each round felt considered, not just fast. We went from a scrappy MVP to a product people actually pay for and recommend. Cigarwell is now the go-to app in its category, and a big part of that is the design foundation Fede put in place."
+            <blockquote class="scroll-reveal">
+              <p class="font-display italic text-2xl text-white leading-snug">
+                "Fede came up to speed in days, not weeks. What surprised me was how quickly his iterations moved us — each round felt considered, not just fast. We went from a scrappy MVP to a product people actually pay for and recommend."
               </p>
-              <footer class="mt-4 text-sm opacity-30">
+              <footer class="mt-4 text-sm text-white/35">
                 — [CEO Name], CEO · Cigarwell
               </footer>
             </blockquote>
 
-            <blockquote>
-              <p class="text-statement">
+            <blockquote class="scroll-reveal" style="transition-delay: 60ms">
+              <p class="font-display italic text-2xl text-white leading-snug">
                 "Fede doesn't just design — he helps you think through the product itself. That's the rarer skill, and the one we needed most."
               </p>
-              <footer class="mt-4 text-sm opacity-30">
+              <footer class="mt-4 text-sm text-white/35">
                 — Founder name, Title · Company name
               </footer>
             </blockquote>
@@ -180,200 +173,206 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
         </div>
       </section>
 
-      <!-- ============================================================
-           SELECTED WORK
-      ============================================================ -->
-      <section id="work" class="border-t border-current/10 bg-mist">
-        <div class="mx-auto section-space max-w-7xl">
-          <h2 class="section-header">Work that shipped.</h2>
-          <p class="mt-4 text-base max-w-prose">
-            A few products we've designed, launched, and helped grow — across SaaS, healthcare, and consumer.
+      <!-- SELECTED WORK -->
+      <section id="work" class="border-t-2 border-ink bg-paper section-space">
+        <div class="mx-auto max-w-7xl">
+
+          <!-- Section eyebrow -->
+          <p class="text-xs font-bold tracking-[0.22em] uppercase text-red mb-4 scroll-reveal">
+            Selected work
           </p>
-        </div>
 
-        <!-- Brutalist card carousel -->
-        <div class="overflow-x-auto border-t border-current/10">
-          <div class="flex gap-3 px-6 py-8 sm:px-12 lg:px-16 min-w-max">
+          <!-- Featured block — Cigarwell -->
+          <div class="grid gap-[3px]" style="grid-template-columns: 5fr 3fr;">
 
-            <a href="/work/cigarwell"
-               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
-              <div>
-                <p class="text-xs tracking-widest uppercase opacity-40">2023–2024</p>
-                <h3 class="mt-3 text-lg leading-tight font-display">Cigarwell</h3>
-                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product · Brand · Design system</p>
-                <p class="mt-5 text-sm leading-relaxed opacity-70">The first cigar platform built for how collectors actually think.</p>
-                <p class="mt-3 pt-3 border-t border-current/10 text-xs tracking-widest uppercase opacity-40">Launched Dec 2024 · Android</p>
+            <!-- Main featured tile -->
+            <a
+              href="/work/cigarwell"
+              class="relative bg-white border-2 border-ink p-6 flex flex-col justify-between min-h-[260px] overflow-hidden group focus:outline-none focus:ring-2 focus:ring-ink"
+            >
+              <!-- Grid texture -->
+              <div
+                class="absolute inset-0 pointer-events-none"
+                style="background-image: linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 24px 24px;"
+                aria-hidden="true"
+              ></div>
+              <!-- Content -->
+              <div class="relative">
+                <p class="text-xs font-bold tracking-[0.15em] uppercase text-red">Featured · 2023–2024</p>
+                <h2 class="font-display text-[40px] text-ink leading-[0.95] tracking-tight mt-1">Cigarwell</h2>
+                <p class="text-xs text-ink/60 leading-relaxed max-w-[260px] mt-3">
+                  The first cigar platform built for how collectors actually think. Product, brand, and design system from the ground up.
+                </p>
               </div>
-              <p class="mt-8 text-sm font-medium">View case study →</p>
+              <div class="relative">
+                <p class="text-3xl font-black text-red leading-none mt-4">$1.5M</p>
+                <p class="text-xs text-ink/50 tracking-[0.1em] uppercase mt-1">new sales in a single quarter</p>
+                <span class="inline-block mt-4 bg-ink text-paper text-xs font-extrabold tracking-[0.1em] uppercase px-4 py-2 group-hover:bg-ink/80 transition-colors duration-150">
+                  View case study →
+                </span>
+              </div>
             </a>
 
-            <a href="/work/quotingbill"
-               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
-              <div>
-                <p class="text-xs tracking-widest uppercase opacity-40">2019–2021</p>
-                <h3 class="mt-3 text-lg leading-tight font-display">QuotingBill</h3>
-                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · Front-end · UX Research</p>
-                <p class="mt-5 text-sm leading-relaxed opacity-70">Making telecom billing feel like it was built for humans.</p>
-                <p class="mt-3 pt-3 border-t border-current/10 text-xs tracking-widest uppercase opacity-40">Shipped to production · SaaS · Telecom</p>
-              </div>
-              <p class="mt-8 text-sm font-medium">View case study →</p>
-            </a>
-
-            <a href="/work/mchanywhere"
-               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
-              <div>
-                <p class="text-xs tracking-widest uppercase opacity-40">2015</p>
-                <h3 class="mt-3 text-lg leading-tight font-display">MCH Anywhere</h3>
-                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">UI/UX · iOS · Android · Web</p>
-                <p class="mt-5 text-sm leading-relaxed opacity-70">Designed for the parent in the hardest moment.</p>
-                <p class="mt-3 pt-3 border-t border-current/10 text-xs tracking-widest uppercase opacity-40">iOS · Android · Web · Healthcare</p>
-              </div>
-              <p class="mt-8 text-sm font-medium">View case study →</p>
-            </a>
-
-            <a href="/work/airtrfx"
-               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
-              <div>
-                <p class="text-xs tracking-widest uppercase opacity-40">2016–2018</p>
-                <h3 class="mt-3 text-lg leading-tight font-display">airTRFX</h3>
-                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Product Design · UX · Web Dev</p>
-                <p class="mt-5 text-sm leading-relaxed opacity-70">Real-time fare pages for 20+ airlines. Built to scale.</p>
-                <p class="mt-3 pt-3 border-t border-current/10 text-xs tracking-widest uppercase opacity-40">20+ airlines · Revenue platform</p>
-              </div>
-              <p class="mt-8 text-sm font-medium">View case study →</p>
-            </a>
-
-            <a href="/work/godark"
-               class="flex flex-col justify-between p-8 border-2 w-70 sm:w-85 border-ink rounded-3xl bg-paper hover:bg-yellow focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 motion-safe:transition-colors">
-              <div>
-                <p class="text-xs tracking-widest uppercase opacity-40">2017–2022</p>
-                <h3 class="mt-3 text-lg leading-tight font-display">GoDark Chocolates</h3>
-                <p class="mt-1 text-xs tracking-widest uppercase opacity-40">Brand Identity · Web Design</p>
-                <p class="mt-5 text-sm leading-relaxed opacity-70">A brand as rich and warm as the chocolate itself.</p>
-                <p class="mt-3 pt-3 border-t border-current/10 text-xs tracking-widest uppercase opacity-40">Brand · Web · Consumer</p>
-              </div>
-              <p class="mt-8 text-sm font-medium">View case study →</p>
-            </a>
-
+            <!-- Side tiles -->
+            <div class="flex flex-col gap-[3px]">
+              <a href="/work/airtrfx" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">airTRFX</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Product Design · Web</p>
+              </a>
+              <a href="/work/mchanywhere" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">MCH Anywhere</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">UX · iOS · Android</p>
+              </a>
+              <a href="/work/godark" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">GoDark</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Brand · Web</p>
+              </a>
+            </div>
           </div>
-        </div>
 
+          <!-- Index list -->
+          <div class="mt-[3px]">
+            <!-- Header row -->
+            <div class="grid gap-x-4 border-b-2 border-ink pb-3" style="grid-template-columns: 28px 1fr 160px 60px;">
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">#</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">Project</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 hidden md:block">Discipline</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 text-right hidden md:block">Year</span>
+            </div>
+
+            {[
+              { num: "001", name: "Cigarwell",       href: "/work/cigarwell",   role: "Product · Growth",       year: "2023", imgType: "gradient", gradient: "linear-gradient(135deg, #1a0a05, #2d0d0d)" },
+              { num: "002", name: "airTRFX",         href: "/work/airtrfx",     role: "Product Design · Web",   year: "2016", imgType: "image",    imgSrc: AirtrfxPreview },
+              { num: "003", name: "MCH Anywhere",    href: "/work/mchanywhere", role: "UX · iOS · Android",     year: "2015", imgType: "image",    imgSrc: MchPreview },
+              { num: "004", name: "GoDark Chocolates", href: "/work/godark",    role: "Brand · Web",            year: "2017", imgType: "image",    imgSrc: GodarkPreview },
+              { num: "005", name: "QuotingBill",     href: "/work/quotingbill", role: "Product Design · SaaS",  year: "2019", imgType: "image",    imgSrc: QbPreview },
+            ].map((item) => (
+              <a
+                href={item.href}
+                class="index-row grid gap-x-4 border-b border-[#d0d4dc] py-[14px] relative group focus:outline-none focus:ring-2 focus:ring-ink"
+                style="grid-template-columns: 28px 1fr 160px 60px;"
+              >
+                <span class="text-xs text-red font-bold font-mono self-center">{item.num}</span>
+                <span class="font-display text-[22px] text-[#1a1a1a] leading-none self-center group-hover:text-ink transition-colors duration-150">{item.name}</span>
+                <span class="text-xs text-[#888] font-bold tracking-[0.1em] uppercase self-center hidden md:block">{item.role}</span>
+                <span class="text-xs text-[#bbb] font-mono text-right self-center hidden md:block">{item.year}</span>
+                <!-- Arrow -->
+                <span class="absolute right-0 top-1/2 -translate-y-1/2 text-sm text-ink opacity-0 group-hover:opacity-100 translate-x-[-6px] group-hover:translate-x-0 transition-[opacity,transform] duration-150" aria-hidden="true">→</span>
+                <!-- Image preview -->
+                {item.imgType === "image" ? (
+                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true">
+                    <Image src={item.imgSrc} alt="" width={140} height={88} class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                ) : (
+                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true" style={`background: ${item.gradient};`}></div>
+                )}
+              </a>
+            ))}
+          </div>
+
+        </div>
       </section>
 
-      <!-- ============================================================
-           ABOUT
-      ============================================================ -->
-      <section id="about" class="border-t section-space border-current/10">
+      <!-- ABOUT -->
+      <section id="about" class="border-t-2 border-ink bg-paper section-space">
         <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
-          <div>
-            <h2 class="section-header">Hi, I'm Fede.</h2>
-            <div class="w-full max-w-xs mt-8 overflow-hidden border rounded-md border-current/30" style="aspect-ratio: 4/5;">
+          <div class="scroll-reveal">
+            <h2 class="section-header text-ink">Hi, I'm Fede.</h2>
+            <div class="mt-8 max-w-xs border-2 border-ink shadow-brutal overflow-hidden" style="aspect-ratio: 4/5;">
               <img
                 src="/assets/fede-portrait.jpeg"
                 alt="Portrait of Fede Bozo, product designer at Priisma"
                 width="800"
-                height="772"
+                height="1000"
                 class="object-cover w-full h-full"
-                loading="eager"
+                loading="lazy"
               />
             </div>
           </div>
-          <div class="space-y-4 text-base">
+          <div class="space-y-4 text-base text-ink scroll-reveal" style="transition-delay: 60ms">
             <p>I'm a product designer who enjoys helping teams turn ideas into real products.</p>
             <p>Over the years I've worked with startups and product teams to shape digital experiences from early concept to launch and growth. What I enjoy most is the full journey — thinking through the product itself, designing the experience, and helping teams build something meaningful.</p>
             <p>Priisma is the studio through which I collaborate with founders and companies looking to elevate their product experience.</p>
             <p>Over 10 years of product design across healthcare tech, SaaS platforms, aviation, and consumer products.</p>
-            <p>Based in Miami. Working with teams across the US and Latin America.<br/>En español, la vida es más sabrosa. 🌶️</p>
+            <p>Based in Miami. Working with teams across the US and Latin America.</p>
           </div>
         </div>
       </section>
 
-      <!-- ============================================================
-           HOW WE WORK + ENGAGEMENT MODEL
-      ============================================================ -->
-      <section id="how-we-work" class="border-t section-space border-current/10 bg-mist">
+      <!-- HOW WE WORK -->
+      <section id="how-we-work" class="border-t-2 border-ink bg-paper section-space">
         <div class="grid items-start gap-16 mx-auto max-w-7xl md:grid-cols-2">
-          <div>
-            <h2 class="section-header">Thoughtful process. No unnecessary complexity.</h2>
-            <div class="space-y-4 text-base mt-8">
-              <p>Great products are built through collaboration. We work closely with founders, product managers, and engineers to move ideas from concept to real product.</p>
-              <ol class="mt-6 space-y-6 list-none">
-                <li class="flex items-baseline gap-4">
-                  <span class="text-4xl leading-none font-display opacity-15 shrink-0">1</span>
-                  <span>Understand the product.</span>
-                </li>
-                <li class="flex items-baseline gap-4">
-                  <span class="text-4xl leading-none font-display opacity-15 shrink-0">2</span>
-                  <span>Clarify the opportunity.</span>
-                </li>
-                <li class="flex items-baseline gap-4">
-                  <span class="text-4xl leading-none font-display opacity-15 shrink-0">3</span>
-                  <span>Design the experience.</span>
-                </li>
-                <li class="flex items-baseline gap-4">
-                  <span class="text-4xl leading-none font-display opacity-15 shrink-0">4</span>
-                  <span>Ship and refine.</span>
-                </li>
-              </ol>
-              <p class="mt-4">No complicated frameworks. Just steady progress and thoughtful decisions.</p>
-            </div>
+
+          <div class="scroll-reveal">
+            <h2 class="section-header text-ink max-w-sm">Thoughtful process.<br>No unnecessary complexity.</h2>
+            <ol class="mt-10 space-y-6 list-none">
+              <li class="flex items-baseline gap-4">
+                <span class="font-display text-4xl text-ink/15 leading-none shrink-0" aria-hidden="true">1</span>
+                <span class="text-base text-ink">Understand the product.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="font-display text-4xl text-ink/15 leading-none shrink-0" aria-hidden="true">2</span>
+                <span class="text-base text-ink">Clarify the opportunity.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="font-display text-4xl text-ink/15 leading-none shrink-0" aria-hidden="true">3</span>
+                <span class="text-base text-ink">Design the experience.</span>
+              </li>
+              <li class="flex items-baseline gap-4">
+                <span class="font-display text-4xl text-ink/15 leading-none shrink-0" aria-hidden="true">4</span>
+                <span class="text-base text-ink">Ship and refine.</span>
+              </li>
+            </ol>
+            <p class="mt-6 text-sm text-ink/50">No complicated frameworks. Just steady progress and thoughtful decisions.</p>
           </div>
 
-          <!-- Engagement model -->
-          <div>
-            <p class="eyebrow mb-8">How we engage</p>
+          <div class="scroll-reveal" style="transition-delay: 60ms">
+            <p class="eyebrow text-red mb-8">How we engage</p>
             <div class="space-y-8">
-
               <div class="pl-4 border-l-2 border-yellow">
                 <p class="eyebrow mb-1">Product Audit</p>
-                <p class="text-xs opacity-50 mb-2">2 weeks</p>
-                <p class="text-sm">A focused look at where your product design is working and where it isn't. Clear findings, clear next steps.</p>
+                <p class="text-xs text-ink/50 mb-2">2 weeks</p>
+                <p class="text-sm text-ink/70">A focused look at where your product design is working and where it isn't. Clear findings, clear next steps.</p>
               </div>
-
               <div class="pl-4 border-l-2 border-yellow">
                 <p class="eyebrow mb-1">Fractional Leadership</p>
-                <p class="text-xs opacity-50 mb-2">3–12 months</p>
-                <p class="text-sm">Embedded design direction for teams that need someone to set the vision, mentor the team, and ship work — without the overhead of a full-time hire.</p>
+                <p class="text-xs text-ink/50 mb-2">3–12 months</p>
+                <p class="text-sm text-ink/70">Embedded design direction for teams that need someone to set the vision, mentor the team, and ship work — without the overhead of a full-time hire.</p>
               </div>
-
               <div class="pl-4 border-l-2 border-yellow">
                 <p class="eyebrow mb-1">Project Engagement</p>
-                <p class="text-xs opacity-50 mb-2">Fixed scope</p>
-                <p class="text-sm">A specific deliverable — a redesign, a design system, a new feature — with clear scope and a defined end point.</p>
+                <p class="text-xs text-ink/50 mb-2">Fixed scope</p>
+                <p class="text-sm text-ink/70">A specific deliverable — a redesign, a design system, a new feature — with clear scope and a defined end point.</p>
               </div>
-
             </div>
           </div>
+
         </div>
       </section>
 
-      <!-- ============================================================
-           DESIGN MATURITY DIAGNOSTIC
-      ============================================================ -->
-      <section id="diagnostic" class="border-t section-space border-current/10">
+      <!-- DIAGNOSTIC -->
+      <section id="diagnostic" class="border-t border-white/10 bg-[#0d0d0d] text-white section-space">
         <div class="mx-auto max-w-7xl">
           <div class="max-w-2xl">
-            <p class="eyebrow">Design Health Check</p>
-            <h2 class="section-header mt-3">Where does your product design stand?</h2>
-            <p class="mt-4 text-base opacity-60">3 questions. 30 seconds.</p>
+            <p class="text-xs font-bold tracking-[0.25em] uppercase text-red mb-3 scroll-reveal">Design Health Check</p>
+            <h2 class="section-header text-white scroll-reveal">Where does your product design stand?</h2>
+            <p class="mt-4 text-base text-white/45 scroll-reveal">3 questions. 30 seconds.</p>
           </div>
-          <div class="mt-12 max-w-2xl">
+          <div class="mt-12 max-w-2xl scroll-reveal">
             <DiagnosticTool />
           </div>
         </div>
       </section>
 
-      <!-- ============================================================
-           CONTACT
-      ============================================================ -->
-      <section id="contact" class="bg-black border-t border-current/10 section-space text-yellow">
+      <!-- CONTACT -->
+      <section id="contact" class="border-t-2 border-yellow bg-[#0d0d0d] text-white section-space">
         <div class="mx-auto max-w-7xl">
-          <h2 class="section-header">Building something interesting?</h2>
-          <p class="mt-4 text-base text-amber-200">Let's talk.</p>
-          <div class="flex flex-wrap items-center gap-6 mt-8">
+          <h2 class="section-header text-white scroll-reveal">Building something interesting?</h2>
+          <p class="mt-4 text-base text-white/60 scroll-reveal">Let's talk.</p>
+          <div class="flex flex-wrap items-center gap-6 mt-8 scroll-reveal">
             <a
               href="mailto:fede@priisma.com"
-              class="inline-block pb-1 text-lg font-medium border-b-2 text-yellow hover:text-amber-200 border-yellow hover:border-amber-200 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+              class="text-lg font-bold text-yellow border-b-2 border-yellow pb-1 hover:text-white hover:border-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow"
             >
               fede@priisma.com
             </a>
@@ -381,19 +380,19 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
               href="https://calendar.notion.so/meet/federicobozo/book-a-call-with-fede"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block pb-1 text-base font-medium border-b border-yellow/40 text-amber-300 hover:text-yellow hover:border-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+              class="text-base text-white/50 border-b border-white/25 pb-px hover:text-yellow hover:border-yellow transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow"
             >
               Book a 30-min intro call →
             </a>
           </div>
-          <div class="mt-6">
+          <div class="mt-6 scroll-reveal">
             <a
               href="https://www.linkedin.com/in/fedebozo/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm text-amber-400 hover:text-yellow focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-black motion-safe:transition-colors"
+              class="text-sm text-white/35 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow"
             >
-              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="relative inline mr-1 align-middle -top-px">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline mr-1 align-middle relative -top-px">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                 <circle cx="4" cy="4" r="2"/>
               </svg>
@@ -406,6 +405,19 @@ import DiagnosticTool from "../components/DiagnosticTool.astro";
     </main>
 
     <Footer />
+
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll<HTMLElement>('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
 
     <script>
       import PhotoSwipeLightbox from 'photoswipe/lightbox';
