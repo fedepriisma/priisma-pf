@@ -28,41 +28,45 @@ import QbPreview from "./portfolio/quotingbill/qb-cancellations-selected.jpg";
     <main>
 
       <!-- HERO -->
-      <section id="home" class="section-space min-h-screen bg-[#0d0d0d] text-white flex items-start">
-        <div class="mx-auto max-w-7xl w-full">
-          <!-- Availability badge -->
-          <p class="inline-flex items-center gap-2 text-xs text-white/50">
-            <span class="w-2 h-2 rounded-full bg-yellow shrink-0" aria-hidden="true"></span>
-            Now booking Q2 2026
-          </p>
-          <!-- Eyebrow -->
-          <p class="mt-8 text-xs font-bold tracking-[0.25em] uppercase text-red scroll-reveal">
-            Product Design Studio · Miami
-          </p>
-          <!-- Headline -->
-          <h1 class="mt-3 font-display text-5xl leading-[0.97] tracking-tight scroll-reveal" style="transition-delay: 60ms">
-            We don't design screens.<br>We design systems.
-          </h1>
-          <!-- Secondary line -->
-          <p class="mt-5 text-base text-white/45 max-w-sm scroll-reveal" style="transition-delay: 120ms">
-            Built to scale without losing what makes them good.
-          </p>
-          <!-- Red divider -->
-          <div class="w-8 h-px bg-red mt-6 scroll-reveal" style="transition-delay: 160ms" aria-hidden="true"></div>
-          <!-- CTAs -->
-          <div class="flex flex-wrap items-center gap-4 mt-8 scroll-reveal" style="transition-delay: 200ms">
-            <a
-              href="#work"
-              class="font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]"
-            >
-              See the work →
-            </a>
-            <a
-              href="mailto:fede@priisma.com"
-              class="text-sm font-medium text-white/60 underline underline-offset-4 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2"
-            >
-              Start a conversation ↓
-            </a>
+      <section id="home" class="min-h-screen bg-[#0d0d0d] text-white flex flex-col px-6 sm:px-12 lg:px-16">
+        <div class="mx-auto max-w-7xl w-full flex-1 flex flex-col pt-10 pb-12">
+          <!-- Top content -->
+          <div class="flex-1">
+            <!-- Availability badge -->
+            <p class="inline-flex items-center gap-2 text-xs text-white/50">
+              <span class="w-2 h-2 rounded-full bg-yellow shrink-0" aria-hidden="true"></span>
+              Now booking Q2 2026
+            </p>
+            <!-- Eyebrow -->
+            <p class="mt-6 text-xs font-bold tracking-[0.25em] uppercase text-red scroll-reveal">
+              Product Design Studio · Miami
+            </p>
+            <!-- Headline -->
+            <h1 class="mt-3 font-display text-5xl leading-[0.97] tracking-tight scroll-reveal" style="transition-delay: 60ms">
+              We don't design screens.<br>We design systems.
+            </h1>
+            <!-- Secondary line -->
+            <p class="mt-5 text-base text-white/45 max-w-sm scroll-reveal" style="transition-delay: 120ms">
+              Built to scale without losing what makes them good.
+            </p>
+          </div>
+          <!-- CTAs — anchored to bottom of viewport -->
+          <div class="scroll-reveal" style="transition-delay: 160ms">
+            <div class="w-8 h-px bg-red mb-6" aria-hidden="true"></div>
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href="#work"
+                class="font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]"
+              >
+                See the work →
+              </a>
+              <a
+                href="mailto:fede@priisma.com"
+                class="text-sm font-medium text-white/60 underline underline-offset-4 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2"
+              >
+                Start a conversation ↓
+              </a>
+            </div>
           </div>
         </div>
       </section>
