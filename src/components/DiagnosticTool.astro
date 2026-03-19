@@ -8,9 +8,9 @@
 
   <!-- Progress dots (visual) -->
   <div id="dt-progress" class="flex items-center gap-2 mb-10 justify-center" aria-hidden="true">
-    <span id="dt-dot-1" class="w-2.5 h-2.5 rounded-full bg-ink motion-safe:transition-colors"></span>
-    <span id="dt-dot-2" class="w-2.5 h-2.5 rounded-full bg-ink/20 motion-safe:transition-colors"></span>
-    <span id="dt-dot-3" class="w-2.5 h-2.5 rounded-full bg-ink/20 motion-safe:transition-colors"></span>
+    <span id="dt-dot-1" class="w-2.5 h-2.5 rounded-full bg-white motion-safe:transition-colors"></span>
+    <span id="dt-dot-2" class="w-2.5 h-2.5 rounded-full bg-white/20 motion-safe:transition-colors"></span>
+    <span id="dt-dot-3" class="w-2.5 h-2.5 rounded-full bg-white/20 motion-safe:transition-colors"></span>
   </div>
   <!-- Screen reader step announcement -->
   <p id="dt-step-sr" class="sr-only" aria-live="polite">Step 1 of 3</p>
@@ -20,19 +20,19 @@
     <legend class="sr-only">Step 1 of 3: How would you describe your product's design right now?</legend>
     <p class="mb-6 text-lg font-semibold leading-snug">How would you describe your product's design right now?</p>
     <div class="grid gap-3 sm:grid-cols-2">
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q1" value="shipping-fast" class="sr-only" />
         <span>We're shipping fast but things feel inconsistent</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q1" value="no-direction" class="sr-only" />
         <span>We have a designer but no real direction</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q1" value="unused-system" class="sr-only" />
         <span>We have a design system but it's not being used</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q1" value="pre-design" class="sr-only" />
         <span>We're pre-design — building what works</span>
       </label>
@@ -44,19 +44,19 @@
     <legend class="sr-only">Step 2 of 3: What's your biggest design bottleneck?</legend>
     <p class="mb-6 text-lg font-semibold leading-snug">What's your biggest design bottleneck?</p>
     <div class="grid gap-3 sm:grid-cols-2">
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q2" value="strategy" class="sr-only" />
         <span>Prioritizing what to build next</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q2" value="foundation" class="sr-only" />
         <span>Consistency across the product</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q2" value="process" class="sr-only" />
         <span>Speed — design slows us down</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q2" value="leadership" class="sr-only" />
         <span>Growing or leading a design team</span>
       </label>
@@ -68,19 +68,19 @@
     <legend class="sr-only">Step 3 of 3: What would a win look like in 60 days?</legend>
     <p class="mb-6 text-lg font-semibold leading-snug">What would a win look like in 60 days?</p>
     <div class="grid gap-3 sm:grid-cols-2">
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q3" value="consistent" class="sr-only" />
         <span>A cleaner, more consistent product</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q3" value="foundation" class="sr-only" />
         <span>A stronger design foundation</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q3" value="direction" class="sr-only" />
         <span>A design direction the team can follow</span>
       </label>
-      <label class="flex items-center gap-4 p-5 border-2 border-ink rounded-2xl cursor-pointer has-[:checked]:bg-yellow has-[:checked]:border-yellow hover:bg-yellow/20 motion-safe:transition-colors min-h-[44px]">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
         <input type="radio" name="q3" value="shipped" class="sr-only" />
         <span>A specific feature shipped to a higher standard</span>
       </label>
@@ -161,8 +161,8 @@
   function updateProgress(step: number) {
     [dot1, dot2, dot3].forEach((dot, i) => {
       const filled = i < step;
-      dot.classList.toggle('bg-ink', filled);
-      dot.classList.toggle('bg-ink/20', !filled);
+      dot.classList.toggle('bg-white', filled);
+      dot.classList.toggle('bg-white/20', !filled);
     });
     stepSr.textContent = step <= 3 ? `Step ${step} of 3` : 'Complete';
   }
@@ -170,19 +170,19 @@
   function buildResult() {
     const result = RESULTS[q2Answer] ?? RESULTS.strategy;
     return `
-      <div class="p-8 border-2 border-ink rounded-3xl bg-paper">
+      <div class="p-8 border-2 border-white/20 rounded-3xl bg-white/10">
         <p class="eyebrow mb-4">${result.title}</p>
-        <p class="text-base leading-relaxed">${result.body}</p>
+        <p class="text-base leading-relaxed text-white">${result.body}</p>
         <div class="flex flex-wrap items-center gap-4 mt-8">
           <a href="#contact" class="primary-cta">Talk to Fede →</a>
-          <button id="dt-reset" class="px-6 py-3 text-sm border-2 border-ink/30 hover:border-ink motion-safe:transition-colors">
+          <button id="dt-reset" class="px-6 py-3 text-sm text-white border-2 border-white/30 hover:border-white motion-safe:transition-colors">
             Start over
           </button>
         </div>
       </div>
 
-      <div class="p-6 mt-8 border border-current/10 rounded-2xl">
-        <p class="mb-4 text-sm font-medium">Get a full breakdown by email →</p>
+      <div class="p-6 mt-8 border border-white/20 rounded-2xl">
+        <p class="mb-4 text-sm font-medium text-white">Get a full breakdown by email →</p>
         <form id="dt-email-form" novalidate>
           <div class="flex flex-col gap-3">
             <div class="flex flex-col gap-3 sm:flex-row">
@@ -194,7 +194,7 @@
                 placeholder="First name"
                 required
                 autocomplete="given-name"
-                class="flex-1 px-4 py-3 text-base bg-paper border-2 border-ink/20 focus:outline-none focus:border-ink"
+                class="flex-1 px-4 py-3 text-base bg-white/10 border-2 border-white/20 text-white placeholder:text-white/30 focus:outline-none focus:border-yellow focus:ring-0"
               />
               <label for="dt-email" class="sr-only">Your email address</label>
               <input
@@ -204,20 +204,20 @@
                 placeholder="your@email.com"
                 required
                 autocomplete="email"
-                class="flex-1 px-4 py-3 text-base bg-paper border-2 border-ink/20 focus:outline-none focus:border-ink"
+                class="flex-1 px-4 py-3 text-base bg-white/10 border-2 border-white/20 text-white placeholder:text-white/30 focus:outline-none focus:border-yellow focus:ring-0"
               />
             </div>
             <button
               type="submit"
               id="dt-email-btn"
-              class="w-full px-6 py-3 text-sm font-medium bg-ink text-paper border-2 border-ink hover:bg-ink/90 motion-safe:transition-colors"
+              class="w-full px-6 py-3 text-sm font-extrabold bg-yellow text-ink border-2 border-yellow rounded-none hover:bg-yellow/90 motion-safe:transition-colors"
             >
               Send my breakdown →
             </button>
           </div>
-          <p id="form-feedback" aria-live="polite" class="mt-3 text-sm min-h-[1.5em]"></p>
+          <p id="form-feedback" aria-live="polite" class="mt-3 text-sm min-h-[1.5em] text-white/70"></p>
         </form>
-        <p class="mt-1 text-xs opacity-40">No cadence, no noise.</p>
+        <p class="mt-1 text-xs text-white/40">No cadence, no noise.</p>
       </div>
     `;
   }
