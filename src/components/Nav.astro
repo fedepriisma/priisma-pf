@@ -1,82 +1,127 @@
 ---
-import HomeLink from './Button/HomeLink.astro';
+// Nav.astro — brutalist dark nav
 ---
 
-<nav aria-label="Primary">
-  <div class="flex items-center justify-between mx-1">
-    <HomeLink />
+<nav
+  class="flex items-center justify-between h-14 mx-auto max-w-7xl px-6 sm:px-12 lg:px-16"
+  aria-label="Primary"
+>
+  <!-- Logo -->
+  <a
+    href="/"
+    class="font-body font-black text-xs tracking-[0.2em] uppercase text-white opacity-100 hover:opacity-70 transition-opacity duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]"
+  >
+    Priisma
+  </a>
 
-    <!-- Desktop nav -->
-    <ul class="items-center hidden gap-1 text-sm leading-normal list-none md:flex">
-      <li><a class="navbtn" href="#what-we-do">What We Do</a></li>
-      <li class="relative group">
-        <a class="navbtn" href="#work">Work</a>
-        <ul class="absolute left-0 z-50 flex flex-col py-1 list-none border rounded-none shadow-md opacity-0 pointer-events-none top-full bg-paper border-current/20 min-w-40 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto motion-safe:transition-opacity motion-safe:duration-150">
-          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/cigarwell">Cigarwell</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/quotingbill">QuotingBill</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/mchanywhere">MCH Anywhere</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/airtrfx">airTRFX</a></li>
-          <li><a class="block px-4 py-2 text-sm hover:bg-yellow hover:text-ink focus:bg-yellow focus:text-ink focus:outline-none" href="/work/godark">GoDark</a></li>
-        </ul>
-      </li>
-      <li><a class="navbtn" href="#about">About</a></li>
-      <li><a class="navbtn" href="#contact">Contact</a></li>
-    </ul>
+  <!-- Desktop links -->
+  <ul class="hidden md:flex items-center gap-6 list-none">
+    <li>
+      <a href="/#work" class="font-body font-bold text-xs tracking-[0.12em] uppercase text-white/60 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]">
+        Work
+      </a>
+    </li>
+    <li>
+      <a href="/#about" class="font-body font-bold text-xs tracking-[0.12em] uppercase text-white/60 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]">
+        About
+      </a>
+    </li>
+    <li>
+      <a href="/#contact" class="font-body font-bold text-xs tracking-[0.12em] uppercase text-white/60 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]">
+        Contact
+      </a>
+    </li>
+    <li>
+      <a
+        href="mailto:fede@priisma.com"
+        class="font-body font-extrabold text-xs tracking-[0.1em] uppercase bg-yellow text-ink px-4 py-2 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow focus:ring-offset-2 focus:ring-offset-[#0d0d0d]"
+      >
+        Start a project →
+      </a>
+    </li>
+  </ul>
 
-    <!-- Mobile nav toggle -->
-    <button
-      class="md:hidden navbtn"
-      aria-expanded="false"
-      aria-controls="mobile-nav-menu"
-      id="mobile-nav-toggle"
-      type="button"
-    >
-      <span class="sr-only">Open navigation</span>
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="hamburger-bar-1 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="3" width="20" height="2" rx="1" fill="currentColor"/>
-        <rect class="hamburger-bar-2 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="9" width="20" height="2" rx="1" fill="currentColor"/>
-        <rect class="hamburger-bar-3 origin-center motion-safe:transition-[transform,opacity] motion-safe:duration-200" y="15" width="20" height="2" rx="1" fill="currentColor"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile nav menu -->
-  <div id="mobile-nav-menu" class="hidden border-t md:hidden border-current/10">
-    <ul class="flex flex-col py-2 text-sm list-none">
-      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#what-we-do">What We Do</a></li>
-      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#work">Work</a></li>
-      <li class="pl-4">
-        <ul class="flex flex-col text-sm list-none border-l border-current/30">
-          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/cigarwell">Cigarwell</a></li>
-          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/quotingbill">QuotingBill</a></li>
-          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/mchanywhere">MCH Anywhere</a></li>
-          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/airtrfx">airTRFX</a></li>
-          <li><a class="block px-4 py-2 hover:bg-yellow hover:text-ink" href="/work/godark">GoDark</a></li>
-        </ul>
-      </li>
-      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#about">About</a></li>
-      <li><a class="block px-4 py-3 hover:bg-yellow hover:text-ink" href="#contact">Contact</a></li>
-    </ul>
-  </div>
+  <!-- Mobile hamburger -->
+  <button
+    class="md:hidden flex flex-col gap-[5px] p-2 focus:outline-none focus:ring-2 focus:ring-yellow"
+    aria-expanded="false"
+    aria-controls="mobile-nav-overlay"
+    id="nav-hamburger"
+    type="button"
+  >
+    <span class="sr-only">Open navigation</span>
+    <span class="hamburger-bar block w-5 h-0.5 bg-white origin-center transition-transform duration-200"></span>
+    <span class="hamburger-bar block w-5 h-0.5 bg-white origin-center transition-[transform,opacity] duration-200"></span>
+    <span class="hamburger-bar block w-5 h-0.5 bg-white origin-center transition-transform duration-200"></span>
+  </button>
 </nav>
 
+<!-- Mobile full-screen overlay -->
+<div
+  id="mobile-nav-overlay"
+  class="fixed inset-0 bg-[#0d0d0d] z-[100] flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-opacity duration-200"
+  aria-hidden="true"
+>
+  <!-- Close button -->
+  <button
+    id="nav-close"
+    class="absolute top-4 right-6 text-2xl text-white/60 hover:text-white focus:outline-none focus:ring-2 focus:ring-yellow"
+    type="button"
+    aria-label="Close navigation"
+  >
+    ×
+  </button>
+
+  <ul class="flex flex-col items-center gap-8 list-none" id="mobile-nav-links">
+    <li>
+      <a href="/#work" class="font-display italic text-3xl text-white opacity-0 translate-y-2 transition-[opacity,transform] duration-300 hover:text-yellow">
+        Work
+      </a>
+    </li>
+    <li>
+      <a href="/#about" class="font-display italic text-3xl text-white opacity-0 translate-y-2 transition-[opacity,transform] duration-300 hover:text-yellow">
+        About
+      </a>
+    </li>
+    <li>
+      <a href="/#contact" class="font-display italic text-3xl text-white opacity-0 translate-y-2 transition-[opacity,transform] duration-300 hover:text-yellow">
+        Contact
+      </a>
+    </li>
+    <li>
+      <a href="mailto:fede@priisma.com" class="font-body font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow opacity-0 translate-y-2 transition-[opacity,transform] duration-300">
+        Start a project →
+      </a>
+    </li>
+  </ul>
+</div>
+
 <script>
-  const toggle = document.getElementById('mobile-nav-toggle');
-  const menu = document.getElementById('mobile-nav-menu');
+  const hamburger = document.getElementById('nav-hamburger');
+  const overlay = document.getElementById('mobile-nav-overlay');
+  const closeBtn = document.getElementById('nav-close');
+  const links = overlay?.querySelectorAll('#mobile-nav-links a');
 
-  toggle?.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    toggle.classList.toggle('nav-open', !expanded);
-    menu?.classList.toggle('hidden');
-  });
-
-  // Close mobile menu when a link is clicked
-  menu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      toggle?.setAttribute('aria-expanded', 'false');
-      toggle?.classList.remove('nav-open');
+  function openNav() {
+    overlay?.classList.remove('opacity-0', 'pointer-events-none');
+    overlay?.setAttribute('aria-hidden', 'false');
+    hamburger?.setAttribute('aria-expanded', 'true');
+    // Stagger link reveals
+    links?.forEach((link, i) => {
+      setTimeout(() => {
+        link.classList.remove('opacity-0', 'translate-y-2');
+      }, i * 60);
     });
-  });
+  }
+
+  function closeNav() {
+    overlay?.classList.add('opacity-0', 'pointer-events-none');
+    overlay?.setAttribute('aria-hidden', 'true');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    links?.forEach(link => link.classList.add('opacity-0', 'translate-y-2'));
+  }
+
+  hamburger?.addEventListener('click', openNav);
+  closeBtn?.addEventListener('click', closeNav);
+  overlay?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
 </script>

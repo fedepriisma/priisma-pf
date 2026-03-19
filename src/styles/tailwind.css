@@ -102,7 +102,7 @@
 	@apply selection:bg-yellow selection:text-ink bg-paper text-ink;
   }
   .nav-floater {
-	@apply sticky z-50 px-1 border-b top-0 border-current/10 bg-paper;
+    @apply sticky z-50 border-b top-0 border-white/20 bg-[#0d0d0d];
   }
   .navbtn {
 	@apply flex items-center px-3 py-2 rounded-full hover:bg-gradient-to-tr hover:from-sunset hover:via-pink hover:to-red hover:text-ink motion-safe:transition-colors;
