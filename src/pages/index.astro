@@ -71,6 +71,106 @@ import QbPreview from "./portfolio/quotingbill/qb-cancellations-selected.jpg";
         </div>
       </section>
 
+      <!-- SELECTED WORK -->
+      <section id="work" class="border-t-2 border-ink bg-paper section-space">
+        <div class="mx-auto max-w-7xl">
+
+          <!-- Section eyebrow -->
+          <p class="text-xs font-bold tracking-[0.22em] uppercase text-red mb-4 scroll-reveal">
+            Selected work
+          </p>
+
+          <!-- Featured block — Cigarwell -->
+          <div class="grid gap-[3px]" style="grid-template-columns: 5fr 3fr;">
+
+            <!-- Main featured tile -->
+            <a
+              href="/work/cigarwell"
+              class="relative bg-white border-2 border-ink p-6 flex flex-col justify-between min-h-[260px] overflow-hidden group focus:outline-none focus:ring-2 focus:ring-ink"
+            >
+              <!-- Grid texture -->
+              <div
+                class="absolute inset-0 pointer-events-none"
+                style="background-image: linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 24px 24px;"
+                aria-hidden="true"
+              ></div>
+              <!-- Content -->
+              <div class="relative">
+                <p class="text-xs font-bold tracking-[0.15em] uppercase text-red">Featured · 2023–2024</p>
+                <h2 class="font-display text-[40px] text-ink leading-[0.95] tracking-tight mt-1">Cigarwell</h2>
+                <p class="text-xs text-ink/60 leading-relaxed max-w-[260px] mt-3">
+                  The first cigar platform built for how collectors actually think. Product, brand, and design system from the ground up.
+                </p>
+              </div>
+              <div class="relative">
+                <p class="text-3xl font-black text-red leading-none mt-4">$1.5M</p>
+                <p class="text-xs text-ink/50 tracking-[0.1em] uppercase mt-1">new sales in a single quarter</p>
+                <span class="inline-block mt-4 bg-ink text-paper text-xs font-extrabold tracking-[0.1em] uppercase px-4 py-2 group-hover:bg-ink/80 transition-colors duration-150">
+                  View case study →
+                </span>
+              </div>
+            </a>
+
+            <!-- Side tiles -->
+            <div class="flex flex-col gap-[3px]">
+              <a href="/work/airtrfx" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">airTRFX</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Product Design · Web</p>
+              </a>
+              <a href="/work/mchanywhere" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">MCH Anywhere</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">UX · iOS · Android</p>
+              </a>
+              <a href="/work/godark" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
+                <h3 class="font-display text-lg text-ink leading-none">GoDark</h3>
+                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Brand · Web</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Index list -->
+          <div class="mt-[3px]">
+            <!-- Header row -->
+            <div class="grid gap-x-4 border-b-2 border-ink pb-3" style="grid-template-columns: 28px 1fr 160px 60px;">
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">#</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">Project</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 hidden md:block">Discipline</span>
+              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 text-right hidden md:block">Year</span>
+            </div>
+
+            {[
+              { num: "001", name: "Cigarwell",       href: "/work/cigarwell",   role: "Product · Growth",       year: "2023", imgType: "gradient", gradient: "linear-gradient(135deg, #1a0a05, #2d0d0d)" },
+              { num: "002", name: "airTRFX",         href: "/work/airtrfx",     role: "Product Design · Web",   year: "2016", imgType: "image",    imgSrc: AirtrfxPreview },
+              { num: "003", name: "MCH Anywhere",    href: "/work/mchanywhere", role: "UX · iOS · Android",     year: "2015", imgType: "image",    imgSrc: MchPreview },
+              { num: "004", name: "GoDark Chocolates", href: "/work/godark",    role: "Brand · Web",            year: "2017", imgType: "image",    imgSrc: GodarkPreview },
+              { num: "005", name: "QuotingBill",     href: "/work/quotingbill", role: "Product Design · SaaS",  year: "2019", imgType: "image",    imgSrc: QbPreview },
+            ].map((item) => (
+              <a
+                href={item.href}
+                class="index-row grid gap-x-4 border-b border-[#d0d4dc] py-[14px] relative group focus:outline-none focus:ring-2 focus:ring-ink"
+                style="grid-template-columns: 28px 1fr 160px 60px;"
+              >
+                <span class="text-xs text-red font-bold font-mono self-center">{item.num}</span>
+                <span class="font-display text-[22px] text-[#1a1a1a] leading-none self-center group-hover:text-ink transition-colors duration-150">{item.name}</span>
+                <span class="text-xs text-[#888] font-bold tracking-[0.1em] uppercase self-center hidden md:block">{item.role}</span>
+                <span class="text-xs text-[#bbb] font-mono text-right self-center hidden md:block">{item.year}</span>
+                <!-- Arrow -->
+                <span class="absolute right-0 top-1/2 -translate-y-1/2 text-sm text-ink opacity-0 group-hover:opacity-100 translate-x-[-6px] group-hover:translate-x-0 transition-[opacity,transform] duration-150" aria-hidden="true">→</span>
+                <!-- Image preview -->
+                {item.imgType === "image" ? (
+                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true">
+                    <Image src={item.imgSrc} alt="" width={140} height={88} class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                ) : (
+                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true" style={`background: ${item.gradient};`}></div>
+                )}
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       <!-- SERVICES -->
       <section id="services" class="border-t border-white/10 bg-[#0d0d0d] text-white section-space">
         <div class="mx-auto max-w-7xl">
@@ -174,106 +274,6 @@ import QbPreview from "./portfolio/quotingbill/qb-cancellations-selected.jpg";
             </blockquote>
 
           </div>
-        </div>
-      </section>
-
-      <!-- SELECTED WORK -->
-      <section id="work" class="border-t-2 border-ink bg-paper section-space">
-        <div class="mx-auto max-w-7xl">
-
-          <!-- Section eyebrow -->
-          <p class="text-xs font-bold tracking-[0.22em] uppercase text-red mb-4 scroll-reveal">
-            Selected work
-          </p>
-
-          <!-- Featured block — Cigarwell -->
-          <div class="grid gap-[3px]" style="grid-template-columns: 5fr 3fr;">
-
-            <!-- Main featured tile -->
-            <a
-              href="/work/cigarwell"
-              class="relative bg-white border-2 border-ink p-6 flex flex-col justify-between min-h-[260px] overflow-hidden group focus:outline-none focus:ring-2 focus:ring-ink"
-            >
-              <!-- Grid texture -->
-              <div
-                class="absolute inset-0 pointer-events-none"
-                style="background-image: linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 24px 24px;"
-                aria-hidden="true"
-              ></div>
-              <!-- Content -->
-              <div class="relative">
-                <p class="text-xs font-bold tracking-[0.15em] uppercase text-red">Featured · 2023–2024</p>
-                <h2 class="font-display text-[40px] text-ink leading-[0.95] tracking-tight mt-1">Cigarwell</h2>
-                <p class="text-xs text-ink/60 leading-relaxed max-w-[260px] mt-3">
-                  The first cigar platform built for how collectors actually think. Product, brand, and design system from the ground up.
-                </p>
-              </div>
-              <div class="relative">
-                <p class="text-3xl font-black text-red leading-none mt-4">$1.5M</p>
-                <p class="text-xs text-ink/50 tracking-[0.1em] uppercase mt-1">new sales in a single quarter</p>
-                <span class="inline-block mt-4 bg-ink text-paper text-xs font-extrabold tracking-[0.1em] uppercase px-4 py-2 group-hover:bg-ink/80 transition-colors duration-150">
-                  View case study →
-                </span>
-              </div>
-            </a>
-
-            <!-- Side tiles -->
-            <div class="flex flex-col gap-[3px]">
-              <a href="/work/airtrfx" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
-                <h3 class="font-display text-lg text-ink leading-none">airTRFX</h3>
-                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Product Design · Web</p>
-              </a>
-              <a href="/work/mchanywhere" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
-                <h3 class="font-display text-lg text-ink leading-none">MCH Anywhere</h3>
-                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">UX · iOS · Android</p>
-              </a>
-              <a href="/work/godark" class="flex-1 bg-mist border border-[#d0d4dc] p-4 flex flex-col justify-between group hover:border-ink transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-ink">
-                <h3 class="font-display text-lg text-ink leading-none">GoDark</h3>
-                <p class="text-xs text-ink/50 font-bold tracking-[0.1em] uppercase mt-1">Brand · Web</p>
-              </a>
-            </div>
-          </div>
-
-          <!-- Index list -->
-          <div class="mt-[3px]">
-            <!-- Header row -->
-            <div class="grid gap-x-4 border-b-2 border-ink pb-3" style="grid-template-columns: 28px 1fr 160px 60px;">
-              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">#</span>
-              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30">Project</span>
-              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 hidden md:block">Discipline</span>
-              <span class="text-xs font-bold tracking-[0.15em] uppercase text-ink/30 text-right hidden md:block">Year</span>
-            </div>
-
-            {[
-              { num: "001", name: "Cigarwell",       href: "/work/cigarwell",   role: "Product · Growth",       year: "2023", imgType: "gradient", gradient: "linear-gradient(135deg, #1a0a05, #2d0d0d)" },
-              { num: "002", name: "airTRFX",         href: "/work/airtrfx",     role: "Product Design · Web",   year: "2016", imgType: "image",    imgSrc: AirtrfxPreview },
-              { num: "003", name: "MCH Anywhere",    href: "/work/mchanywhere", role: "UX · iOS · Android",     year: "2015", imgType: "image",    imgSrc: MchPreview },
-              { num: "004", name: "GoDark Chocolates", href: "/work/godark",    role: "Brand · Web",            year: "2017", imgType: "image",    imgSrc: GodarkPreview },
-              { num: "005", name: "QuotingBill",     href: "/work/quotingbill", role: "Product Design · SaaS",  year: "2019", imgType: "image",    imgSrc: QbPreview },
-            ].map((item) => (
-              <a
-                href={item.href}
-                class="index-row grid gap-x-4 border-b border-[#d0d4dc] py-[14px] relative group focus:outline-none focus:ring-2 focus:ring-ink"
-                style="grid-template-columns: 28px 1fr 160px 60px;"
-              >
-                <span class="text-xs text-red font-bold font-mono self-center">{item.num}</span>
-                <span class="font-display text-[22px] text-[#1a1a1a] leading-none self-center group-hover:text-ink transition-colors duration-150">{item.name}</span>
-                <span class="text-xs text-[#888] font-bold tracking-[0.1em] uppercase self-center hidden md:block">{item.role}</span>
-                <span class="text-xs text-[#bbb] font-mono text-right self-center hidden md:block">{item.year}</span>
-                <!-- Arrow -->
-                <span class="absolute right-0 top-1/2 -translate-y-1/2 text-sm text-ink opacity-0 group-hover:opacity-100 translate-x-[-6px] group-hover:translate-x-0 transition-[opacity,transform] duration-150" aria-hidden="true">→</span>
-                <!-- Image preview -->
-                {item.imgType === "image" ? (
-                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true">
-                    <Image src={item.imgSrc} alt="" width={140} height={88} class="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                ) : (
-                  <div class="index-preview absolute right-10 top-1/2 -translate-y-1/2 scale-[0.92] w-[140px] h-[88px] border-2 border-ink shadow-brutal-sm z-20 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-[opacity,transform] duration-[180ms] ease-out pointer-events-none" aria-hidden="true" style={`background: ${item.gradient};`}></div>
-                )}
-              </a>
-            ))}
-          </div>
-
         </div>
       </section>
 
