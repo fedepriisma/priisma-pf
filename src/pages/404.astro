@@ -1,20 +1,32 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import HomeLink from '../components/Button/HomeLink.astro';
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<MainHead title="Not Found" />
-	</head>
-	<body class="bg-selva text-oldpink">
-		<div
-			class="container flex flex-col items-center justify-center h-screen"
-		>
-			<h1 class="text-5xl uppercase font-display">
-				🤷‍♀️ This is not the page<br /> you're looking for...
-			</h1>
-			<HomeLink title="Back to homepage" />
-		</div>
-	</body>
+  <head>
+    <MainHead
+      title="Page not found — Priisma"
+      description="This page doesn't exist."
+      canonical="https://www.priisma.com/404"
+      image="/assets/mesh-gradient.jpg"
+    />
+  </head>
+  <body class="body-base">
+    <header class="nav-floater">
+      <Nav />
+    </header>
+    <main class="min-h-screen bg-[#0d0d0d] text-white section-space flex items-center">
+      <div class="mx-auto max-w-7xl w-full">
+        <p class="text-xs font-bold tracking-[0.25em] uppercase text-red mb-3">404</p>
+        <h1 class="font-display text-5xl text-white leading-[0.97] tracking-tight max-w-lg">This page doesn't exist.</h1>
+        <p class="mt-5 text-base text-white/45">But the work does.</p>
+        <a href="/" class="inline-block mt-8 font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150">
+          ← Back to Priisma
+        </a>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
