@@ -1,22 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
 @theme {
 
   	--font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: var(--font-display);
+	--font-body: "Mona Sans", var(--font-base);
 	--font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 		Bitstream Vera Sans Mono, Courier New, monospace;
+	--font-display: "Instrument Serif", serif;
 
-  --font-display: "Mona Sans", sans-serif;
-  --font-display--font-optical-sizing: auto;
-  --font-display--font-weight: 200 900;
-  --font-display--font-style: normal;
-  --color-white: oklch(0.9973 0.0013 286.38);
-	--color-black: oklch(0.1776 0 0);
+	--color-white: oklch(0.9973 0.0013 286.38);
+	--color-black: oklch(0.08 0 0);
+	--color-paper: oklch(0.955 0.006 240);
+	--color-ink: oklch(0.10 0 0);
+	--color-mist: oklch(0.92 0.006 240);
 	--color-tan: oklch(0.9554 0.0060 43.33);
-	--color-tan-rgb: 244 239 237;
 	--color-dawn: oklch(0.9468 0.0250 311.70);
 	--color-dusk: oklch(0.4202 0.0825 295.52);
 	--color-midnight: oklch(0.3829 0 89.88);
@@ -27,10 +25,15 @@
 	--color-oldpink: oklch(0.9144 0.0392 328.50);
 	--color-selva: oklch(0.3773 0.0615 202.87);
 	--color-purplehaze: oklch(0.5427 0.2601 283.42);
-	--color-whiterabbit: oklch(0.9973 0.0013 286.38);
+	--color-whiterabbit: oklch(0.94 0.01 160.73);
 	--color-bluepop: oklch(0.5444 0.2466 263.8);
 	--color-woodstock: oklch(0.5236 0.1576 252.84);
 	--color-sunset: oklch(0.9332 0.1097 95.63);
+	--color-skyfly-100: oklch(95.1 0.026 236.824);
+	--color-skyfly-900: oklch(0.24 0.03 249.22);
+	--color-cw-dark: oklch(0.17 0 0);
+	--color-cw-light: oklch(0.82 0.17 78.63);
+	--color-cw-accent: oklch(0.35 0.12 10); /* burgundy ~#7D2235 */
 	
 	--shadow-sm: 0px 19px 53px 0px rgba(var(--color-midnight), 0.03),
 		0px 10px 28px 0px rgba(var(--color-midnight), 0.05),
@@ -62,6 +65,12 @@
 	--text-7xl: clamp(7.45rem, 15.14vw + 3.66rem, 15.78rem);
 	--text-8xl: clamp(9.31rem, 21.31vw + 3.99rem, 21.03rem);
 	--text-9xl: clamp(11.64rem, 29.81vw + 4.19rem, 28.04rem);
+
+	--qb-gradient:     180deg, var(--color-ink) 0%, oklch(0.18 0.09 295) 15%, oklch(0.18 0.09 295) 85%, var(--color-ink) 100%;
+	--cw-gradient:     180deg, var(--color-ink) 0%, oklch(0.12 0 0) 15%, oklch(0.12 0 0) 85%, var(--color-ink) 100%;
+	--mch-gradient:    180deg, var(--color-ink) 0%, oklch(0.16 0.08 253) 15%, oklch(0.16 0.08 253) 85%, var(--color-ink) 100%;
+	--skyfly-gradient: 180deg, var(--color-ink) 0%, oklch(0.15 0.03 237) 15%, oklch(0.15 0.03 237) 85%, var(--color-ink) 100%;
+	--gd-gradient:     180deg, var(--color-ink) 0%, oklch(0.18 0.04 20) 15%, oklch(0.18 0.04 20) 85%, var(--color-ink) 100%;
 }
 
 @layer base {
@@ -76,19 +85,52 @@
     line-height: 1.11;
   }
 
-  
-  a:not(:is(.homelink)) {
+  /**
+   * Heading glow — adapts to any text color via oklch relative color syntax.
+   * Outer layer: bright halo derived from currentColor lightened +0.38 (mirrors rgba(247,247,247,0.6)).
+   * Depth layer: subtle offset shadow darkened −0.25 (simulates the inset rgba(105,105,105,0.6) feeling).
+   * Both layers clamp so they never go above white or below black.
+   * Applied to h1–h3 globally; also available as .heading-glow for explicit use.
+   */
+  h1, h2, h3, .heading-glow {
+    text-shadow:
+      0px 0px 4px oklch(from currentColor clamp(0, calc(l + 0.38), 1) c h / 0.6),
+      0px 0px 12px oklch(from currentColor clamp(0, calc(l + 0.22), 1) c h / 0.22),
+      0px 2px 3px oklch(from currentColor clamp(0, calc(l - 0.25), 1) c h / 0.45);
+  }
+.body-base {
+	@apply selection:bg-yellow selection:text-ink bg-paper text-ink;
+  }
+  .nav-floater {
+    @apply sticky z-50 border-b top-0 border-white/20 bg-[#0d0d0d];
+  }
+  .navbtn {
+	@apply text-white flex items-center px-3 py-2 rounded-full hover:bg-gradient-to-tr hover:from-sunset hover:via-pink hover:to-red hover:text-ink motion-safe:transition-colors;
+  }
+
+  a:not(:is(.navbtn)) {
     @apply motion-safe:transition-all opacity-85 motion-safe:duration-200 hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock;
   }
-
-
-  .font-display {
-    @apply tracking-normal;
+  .primary-cta {
+	@apply font-extrabold tracking-[0.1em] uppercase text-paper bg-ink rounded-none border-2 border-ink hover:bg-ink/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink/50 px-6 py-3 inline-block mt-8;
   }
-  
-.section-header{
-  @apply text-3xl uppercase font-display;
-}
+  .h1-page-title {
+    @apply mt-4 font-display text-3xl leading-[1.05];
+  }
+  .section-header {
+    @apply text-2xl font-display tracking-tight leading-[0.97];
+  }
+  .text-statement {
+	@apply font-display italic text-2xl leading-snug;
+  }
+  .eyebrow {
+	@apply text-xs font-medium tracking-widest uppercase opacity-60;
+  }
+
+  /* Mobile nav hamburger → X animation */
+  .nav-open .hamburger-bar-1 { transform: translateY(6px) rotate(45deg); }
+  .nav-open .hamburger-bar-2 { opacity: 0; }
+  .nav-open .hamburger-bar-3 { transform: translateY(-6px) rotate(-45deg); }
 
   .project-details li {
     @apply py-2;
@@ -98,18 +140,46 @@
   }
 
   .section-space {
-    @apply px-4 py-16 sm:p-16 lg:p-24;
+    @apply px-6 py-24 sm:px-12 lg:px-16;
   }
   .image-solid-high {
 	@apply border border-current border-solid rounded-md overflow-clip shadow-(--shadow-solid);
   }
   .section-subtitle {
-    @apply mt-4 text-xl uppercase font-display md:mt-8 lg:mt-16;
+    @apply mt-4 text-xl font-display md:mt-8 lg:mt-16;
   }
   .section-spread {
     @apply grid gap-4 my-4 md:my-8;
   }
   .fig-caption {
 	@apply mt-2 text-sm opacity-85;
+  }
+
+  /* Scroll reveal — managed by IntersectionObserver in JS */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Brutalist offset shadow — used on portrait and featured tile */
+  .shadow-brutal {
+    box-shadow: 6px 6px 0 var(--color-ink);
+  }
+  .shadow-brutal-sm {
+    box-shadow: 4px 4px 0 var(--color-ink);
   }
 }

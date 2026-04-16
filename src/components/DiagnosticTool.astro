@@ -1,0 +1,395 @@
+---
+// DiagnosticTool.astro — Design Maturity Diagnostic
+// Vanilla JS Astro component. No framework required.
+// Result keyed on Q2 answer. Email capture via Buttondown API.
+---
+
+<div id="dt" class="max-w-2xl mx-auto">
+
+  <!-- Progress dots (visual) -->
+  <div id="dt-progress" class="flex items-center gap-2 mb-10 justify-center" aria-hidden="true">
+    <span id="dt-dot-1" class="w-2.5 h-2.5 rounded-full bg-white motion-safe:transition-colors"></span>
+    <span id="dt-dot-2" class="w-2.5 h-2.5 rounded-full bg-white/20 motion-safe:transition-colors"></span>
+    <span id="dt-dot-3" class="w-2.5 h-2.5 rounded-full bg-white/20 motion-safe:transition-colors"></span>
+  </div>
+  <!-- Screen reader step announcement -->
+  <p id="dt-step-sr" class="sr-only" aria-live="polite">Step 1 of 3</p>
+
+  <!-- Q1 -->
+  <fieldset id="dt-q1">
+    <legend class="sr-only">Step 1 of 3: How would you describe your product's design right now?</legend>
+    <p class="mb-6 text-lg font-semibold leading-snug">How would you describe your product's design right now?</p>
+    <div class="grid gap-3 sm:grid-cols-2">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q1" value="shipping-fast" class="sr-only" />
+        <span>We're shipping fast but things feel inconsistent</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q1" value="no-direction" class="sr-only" />
+        <span>We have a designer but no real direction</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q1" value="unused-system" class="sr-only" />
+        <span>We have a design system but it's not being used</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q1" value="pre-design" class="sr-only" />
+        <span>We're pre-design — building what works</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Q2 (hidden initially) — primary result driver -->
+  <fieldset id="dt-q2" class="hidden" aria-hidden="true">
+    <legend class="sr-only">Step 2 of 3: What's your biggest design bottleneck?</legend>
+    <p class="mb-6 text-lg font-semibold leading-snug">What's your biggest design bottleneck?</p>
+    <div class="grid gap-3 sm:grid-cols-2">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q2" value="strategy" class="sr-only" />
+        <span>Prioritizing what to build next</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q2" value="foundation" class="sr-only" />
+        <span>Consistency across the product</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q2" value="process" class="sr-only" />
+        <span>Speed — design slows us down</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q2" value="leadership" class="sr-only" />
+        <span>Growing or leading a design team</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Q3 (hidden initially) -->
+  <fieldset id="dt-q3" class="hidden" aria-hidden="true">
+    <legend class="sr-only">Step 3 of 3: What would a win look like in 60 days?</legend>
+    <p class="mb-6 text-lg font-semibold leading-snug">What would a win look like in 60 days?</p>
+    <div class="grid gap-3 sm:grid-cols-2">
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q3" value="consistent" class="sr-only" />
+        <span>A cleaner, more consistent product</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q3" value="foundation" class="sr-only" />
+        <span>A stronger design foundation</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q3" value="direction" class="sr-only" />
+        <span>A design direction the team can follow</span>
+      </label>
+      <label class="flex items-center gap-4 p-5 border-2 border-white/20 text-white/70 rounded-2xl cursor-pointer has-[:checked]:bg-yellow/10 has-[:checked]:border-yellow has-[:checked]:text-yellow hover:bg-yellow/10 motion-safe:transition-colors min-h-[44px]">
+        <input type="radio" name="q3" value="shipped" class="sr-only" />
+        <span>A specific feature shipped to a higher standard</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Result container — populated by JS, announced by aria-live -->
+  <div id="diagnostic-result" aria-live="polite" class="hidden"></div>
+
+</div>
+
+<script>
+  import posthog from 'posthog-js';
+  const API_KEY = import.meta.env.PUBLIC_BUTTONDOWN_API_KEY;
+
+  const RESULTS: Record<string, { title: string; body: string }> = {
+    strategy: {
+      title: 'Design Strategy',
+      body: `At your stage, design should be helping you decide what not to build, not just making things look good. The sign your product needs design leadership isn't a visual problem — it's a direction problem. The clearest symptom: good ideas compete with each other because there's no shared product vision to measure them against. Most teams at this stage benefit less from more design execution and more from someone who can help sharpen what the product actually is. That's usually the starting point.`,
+    },
+    foundation: {
+      title: 'Design Foundation',
+      body: `You've shipped a real product — now it's starting to fight itself. Navigation works one way here and another way there. Buttons look almost-but-not-quite right. Your users feel something is slightly off even if they can't name it. This is the design debt point — where the cost of inconsistency starts to show up in user confusion and in your team's velocity. A shared foundation (patterns, tokens, documentation) at this stage usually pays for itself within months.`,
+    },
+    process: {
+      title: 'Design Process',
+      body: `Design shouldn't be the slow part. When it slows a team down, it's usually one of three things: the handoffs aren't working, the scope isn't clear before design starts, or there aren't strong enough patterns to work from. Sometimes all three. This is one of the more fixable problems — it rarely requires a big redesign. It usually requires better process and better tooling. Worth diagnosing before committing to a solution.`,
+    },
+    leadership: {
+      title: 'Design Leadership',
+      body: `Building a design team is harder than hiring designers. You can hire someone great and still end up with inconsistency and unclear ownership — if there's no one setting direction. The leadership layer isn't about managing people as much as it's about making sure the team has a clear point of view about what the product should be and how it should work. That clarity, more than any individual designer, is what makes a design team effective.`,
+    },
+  };
+
+  const Q1_LABELS: Record<string, string> = {
+    'shipping-fast': "We're shipping fast but things feel inconsistent",
+    'no-direction':  "We have a designer but no real direction",
+    'unused-system': "We have a design system but it's not being used",
+    'pre-design':    "We're pre-design — building what works",
+  };
+  const Q2_LABELS: Record<string, string> = {
+    strategy:   "Prioritizing what to build next",
+    foundation: "Consistency across the product",
+    process:    "Speed — design slows us down",
+    leadership: "Growing or leading a design team",
+  };
+  const Q3_LABELS: Record<string, string> = {
+    consistent: "A cleaner, more consistent product",
+    foundation: "A stronger design foundation",
+    direction:  "A design direction the team can follow",
+    shipped:    "A specific feature shipped to a higher standard",
+  };
+
+  let q1Answer = '';
+  let q2Answer = 'strategy';
+  let q3Answer = '';
+
+  const q1El = document.getElementById('dt-q1')!;
+  const q2El = document.getElementById('dt-q2')!;
+  const q3El = document.getElementById('dt-q3')!;
+  const resultEl = document.getElementById('diagnostic-result')!;
+  const progressEl = document.getElementById('dt-progress')!;
+  const dot1 = document.getElementById('dt-dot-1')!;
+  const dot2 = document.getElementById('dt-dot-2')!;
+  const dot3 = document.getElementById('dt-dot-3')!;
+  const stepSr = document.getElementById('dt-step-sr')!;
+
+  function show(el: HTMLElement) {
+    el.classList.remove('hidden');
+    el.removeAttribute('aria-hidden');
+  }
+
+  function hide(el: HTMLElement) {
+    el.classList.add('hidden');
+    el.setAttribute('aria-hidden', 'true');
+  }
+
+  function updateProgress(step: number) {
+    [dot1, dot2, dot3].forEach((dot, i) => {
+      const filled = i < step;
+      dot.classList.toggle('bg-white', filled);
+      dot.classList.toggle('bg-white/20', !filled);
+    });
+    stepSr.textContent = step <= 3 ? `Step ${step} of 3` : 'Complete';
+  }
+
+  function buildResult() {
+    const result = RESULTS[q2Answer] ?? RESULTS.strategy;
+    return `
+      <div class="p-8 border-2 border-white/20 rounded-3xl bg-white/10">
+        <p class="eyebrow mb-4">${result.title}</p>
+        <p class="text-base leading-relaxed text-white">${result.body}</p>
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <a href="#contact" class="primary-cta">Talk to Fede →</a>
+          <button id="dt-reset" class="px-6 py-3 text-sm text-white border-2 border-white/30 hover:border-white motion-safe:transition-colors">
+            Start over
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 mt-8 border border-white/20 rounded-2xl">
+        <p class="mb-4 text-sm font-medium text-white">Get a full breakdown by email →</p>
+        <form id="dt-email-form" novalidate>
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <label for="dt-name" class="sr-only">Your first name</label>
+              <input
+                id="dt-name"
+                type="text"
+                name="name"
+                placeholder="First name"
+                required
+                autocomplete="given-name"
+                class="flex-1 px-4 py-3 text-base bg-white/10 border-2 border-white/20 text-white placeholder:text-white/30 focus:outline-none focus:border-yellow focus:ring-0"
+              />
+              <label for="dt-email" class="sr-only">Your email address</label>
+              <input
+                id="dt-email"
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+                class="flex-1 px-4 py-3 text-base bg-white/10 border-2 border-white/20 text-white placeholder:text-white/30 focus:outline-none focus:border-yellow focus:ring-0"
+              />
+            </div>
+            <button
+              type="submit"
+              id="dt-email-btn"
+              class="w-full px-6 py-3 text-sm font-extrabold bg-yellow text-ink border-2 border-yellow rounded-none hover:bg-yellow/90 motion-safe:transition-colors"
+            >
+              Send my breakdown →
+            </button>
+          </div>
+          <p id="form-feedback" aria-live="polite" class="mt-3 text-sm min-h-[1.5em] text-white/70"></p>
+        </form>
+        <p class="mt-1 text-xs text-white/40">No cadence, no noise.</p>
+      </div>
+    `;
+  }
+
+  function showResult() {
+    hide(q3El);
+    hide(progressEl);
+    hide(stepSr);
+
+    resultEl.innerHTML = buildResult();
+    show(resultEl);
+
+    document.getElementById('dt-reset')?.addEventListener('click', reset);
+    document.getElementById('dt-email-form')?.addEventListener('submit', handleEmailSubmit);
+  }
+
+  const BOOKING_URL = 'https://calendar.notion.so/meet/federicobozo/book-a-call-with-fede';
+
+  function showBookingSuccess(firstName: string) {
+    const wrapper = document.getElementById('dt-email-form')?.parentElement!;
+    wrapper.innerHTML = `
+      <div aria-live="polite">
+        <p class="text-sm font-medium">You're on the list, ${firstName} ✓</p>
+        <p class="mt-1 text-sm opacity-60">A breakdown is on its way to your inbox.</p>
+        <a
+          href="${BOOKING_URL}"
+          target="_blank"
+          rel="noopener"
+          class="primary-cta mt-6 inline-block"
+        >
+          Book a call with Fede →
+        </a>
+      </div>
+    `;
+  }
+
+  async function handleEmailSubmit(e: Event) {
+    e.preventDefault();
+    const nameInput = document.getElementById('dt-name') as HTMLInputElement;
+    const emailInput = document.getElementById('dt-email') as HTMLInputElement;
+    const feedback = document.getElementById('form-feedback')!;
+    const btn = document.getElementById('dt-email-btn') as HTMLButtonElement;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if (!name) {
+      feedback.textContent = 'Please enter your first name.';
+      nameInput.focus();
+      return;
+    }
+    if (!email || !emailInput.checkValidity()) {
+      feedback.textContent = 'Please enter a valid email address.';
+      emailInput.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '...';
+    feedback.textContent = '';
+
+    try {
+      // Fetch client IP for Buttondown list quality (silent fail)
+      let ip_address: string | undefined;
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        ip_address = (await ipRes.json()).ip;
+      } catch { /* proceed without IP */ }
+
+      const notes = [
+        `Name: ${name}`,
+        ``,
+        `Q1 — How would you describe your product's design right now?`,
+        Q1_LABELS[q1Answer] ?? q1Answer,
+        ``,
+        `Q2 — What's your biggest design bottleneck?`,
+        Q2_LABELS[q2Answer] ?? q2Answer,
+        ``,
+        `Q3 — What would a win look like in 60 days?`,
+        Q3_LABELS[q3Answer] ?? q3Answer,
+      ].join('\n');
+
+      const payload: Record<string, unknown> = { email_address: email, notes };
+      if (ip_address) payload.ip_address = ip_address;
+
+      const res = await fetch('https://api.buttondown.email/v1/subscribers', {
+        method: 'POST',
+        headers: {
+          Authorization: `Token ${API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.status === 201) {
+        posthog.capture('diagnostic_email_captured', { result_type: q2Answer });
+        showBookingSuccess(name);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        console.error('[Buttondown] status', res.status, JSON.stringify(data, null, 2));
+        const body = JSON.stringify(data);
+        if (res.status === 400 && (body.includes('already') || body.includes('duplicate'))) {
+          posthog.capture('diagnostic_email_captured', { result_type: q2Answer, returning: true });
+          showBookingSuccess(name);
+        } else {
+          feedback.textContent = 'Something went wrong. Email me directly → fede@priisma.com';
+          btn.disabled = false;
+          btn.textContent = 'Send my breakdown →';
+        }
+      }
+    } catch {
+      feedback.textContent = 'Something went wrong. Email me directly → fede@priisma.com';
+      btn.disabled = false;
+      btn.textContent = 'Send my breakdown →';
+    }
+  }
+
+  function reset() {
+    q1Answer = '';
+    q2Answer = 'strategy';
+    q3Answer = '';
+    document.querySelectorAll('#dt input[type="radio"]').forEach((input) => {
+      (input as HTMLInputElement).checked = false;
+    });
+    resultEl.innerHTML = '';
+    hide(resultEl);
+    hide(q2El);
+    hide(q3El);
+    show(q1El);
+    show(progressEl);
+    show(stepSr);
+    updateProgress(1);
+    q1El.querySelector('label')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Auto-advance: Q1 → Q2
+  q1El.addEventListener('change', (e) => {
+    const input = e.target as HTMLInputElement;
+    if (input.type === 'radio') {
+      q1Answer = input.value;
+      posthog.capture('diagnostic_started');
+      setTimeout(() => {
+        hide(q1El);
+        show(q2El);
+        updateProgress(2);
+      }, 200);
+    }
+  });
+
+  // Auto-advance: Q2 → Q3
+  q2El.addEventListener('change', (e) => {
+    const input = e.target as HTMLInputElement;
+    if (input.type === 'radio') {
+      q2Answer = input.value;
+      setTimeout(() => {
+        hide(q2El);
+        show(q3El);
+        updateProgress(3);
+      }, 200);
+    }
+  });
+
+  // Q3 complete → show result
+  q3El.addEventListener('change', (e) => {
+    const input = e.target as HTMLInputElement;
+    if (input.type === 'radio') {
+      q3Answer = input.value;
+      posthog.capture('diagnostic_completed', { result_type: q2Answer });
+      setTimeout(showResult, 200);
+    }
+  });
+
+  // Init
+  updateProgress(1);
+</script>

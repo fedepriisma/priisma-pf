@@ -1,0 +1,262 @@
+---
+import { Image } from "astro:assets";
+import MainHead from "../../components/MainHead.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import PhotoSwipeInit from "../../components/PhotoSwipeInit.astro";
+
+import MchTabletView from "../portfolio/mch/mch-tablet-view.png";
+import MchPaymentFlow from "../portfolio/mch/mch-payment-flow.png";
+import MchAppointment from "../portfolio/mch/mch-appointment.png";
+import MchPayment from "../portfolio/mch/mch-payment.png";
+import MchDashboard from "../portfolio/mch/mch-dashboard-specs.png";
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="MCH Anywhere — Case Study | Priisma"
+      description="How Priisma designed MCH Anywhere — a telemedicine app for Miami Children's Hospital that made remote pediatric consultations simple, fast, and trustworthy for parents."
+      canonical="https://www.priisma.com/work/mchanywhere"
+      image="/assets/mesh-gradient.jpg"
+    />
+  </head>
+
+  <body class="body-base">
+
+    <header class="nav-floater">
+      <Nav />
+    </header>
+
+    <main>
+
+      <!-- ============================================================
+           HERO
+      ============================================================ -->
+      <section class="section-space min-h-screen bg-linear-(--mch-gradient) text-sunset">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow">Case Study</p>
+          <p class="mt-3 text-xs tracking-widest uppercase opacity-40">UI/UX Design · iOS · Android · Web</p>
+          <h1 class="h1-page-title">
+            Designed for the parent in the hardest moment.
+          </h1>
+          <p class="mt-6 max-w-lg text-base opacity-80">
+            A telemedicine app for Miami Children's Hospital — making remote pediatric consultations simple and fast.
+          </p>
+          <div class="mt-16 pswp-gallery">
+            <figure>
+              <a href={MchTabletView.src} data-pswp-width={MchTabletView.width} data-pswp-height={MchTabletView.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={MchTabletView}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="MCH Anywhere telemedicine app on tablet — appointment and consultation screens"
+                  class="w-full border border-current/20"
+                  loading="eager"
+                />
+              </a>
+            </figure>
+          </div>
+          <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CHALLENGE + APPROACH
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <p class="eyebrow mb-4 text-red">The Challenge</p>
+            <p class="text-base">Parents of pediatric patients have enough to worry about. A telemedicine app for Miami Children's Hospital (now Nicklaus Children's Hospital) needed to make remote consultations feel simple and secure — not like navigating insurance bureaucracy at 11pm. The stakes were high, the users were stressed, and the existing options weren't designed for either.</p>
+          </div>
+          <div>
+            <p class="eyebrow mb-4 text-red">The Approach</p>
+            <p class="text-base">Design for the parent in the hardest moment. Clear copy. Obvious flows. No unnecessary steps between "I need a doctor" and "appointment confirmed." The work covered iOS, Android, and web — with precise developer specs handed off to each platform's engineering team. Every screen had one job.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           01 — APPOINTMENTS
+      ============================================================ -->
+      <section class="section-space bg-ink text-paper border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4">01 — Flow</p>
+          <h2 class="section-header max-w-2xl">Booking should take seconds, not minutes.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">Finding an available time slot and booking it should take seconds, not minutes. The appointment screen was built around surfacing availability clearly and reducing the friction of selection to a single tap. Visual confirmation at every step — because when a child is sick, parents need to trust the system completely. Ambiguity has no place here.</p>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchAppointment.src} data-pswp-width={MchAppointment.width} data-pswp-height={MchAppointment.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchAppointment}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere appointment screen showing available time slots"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Appointments — available spots with quick reservation</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           02 — PAYMENT FLOW
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4 text-red">02 — Trust</p>
+          <h2 class="section-header max-w-2xl">Security that feels like care, not compliance.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">The payment flow was designed to feel secure without feeling clinical. Clear copy reinforced privacy and trust standards at each step — because a parent handing over payment information for a child's medical appointment needs confidence, not anxiety. Icons and language worked together to make security visible and the process feel genuinely safe.</p>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchPayment.src} data-pswp-width={MchPayment.width} data-pswp-height={MchPayment.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchPayment}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere payment screen showing secure payment interface with trust indicators"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Payment — copy and icons reinforce privacy and security</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="mt-12 pswp-gallery">
+            <figure>
+              <a href={MchPaymentFlow.src} data-pswp-width={MchPaymentFlow.width} data-pswp-height={MchPaymentFlow.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={MchPaymentFlow}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="MCH Anywhere payment flow — complete step-by-step booking process for parents"
+                  class="w-full border border-current/20"
+                  loading="lazy"
+                />
+              </a>
+              <figcaption class="fig-caption">Full payment flow — step-by-step booking process</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           03 — DEVELOPER SPECS
+      ============================================================ -->
+      <section class="section-space bg-ink text-paper border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4">03 — Handoff</p>
+          <h2 class="section-header max-w-2xl">Design doesn't end at handoff.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">Detailed iOS and Android specs — measurements, states, behaviors — were critical for the development team to implement the experience accurately. Close collaboration with the engineering team meant fewer surprises during build and a product that matched the design intent on every platform. Specs weren't documentation; they were communication.</p>
+            <div class="pswp-gallery">
+              <figure>
+                <a href={MchDashboard.src} data-pswp-width={MchDashboard.width} data-pswp-height={MchDashboard.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={MchDashboard}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="MCH Anywhere dashboard with developer specs for iOS and Android implementation"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Dashboard specs — detail for iOS/Android development team</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           RESULT / CLOSE
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="section-header">Built for a moment that matters.</h2>
+          <p class="mt-8 text-base">MCH Anywhere was built for a moment that matters. When a child is sick and a parent needs answers, the last thing they should be fighting is confusing software. The app launched and served Miami Children's Hospital's patient families — now under the Nicklaus Children's Hospital brand. A straightforward brief, executed with care and close collaboration across design and engineering.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ROLE / CREDITS
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header mb-12">The work.</h2>
+          <div class="grid gap-8 md:grid-cols-3">
+            <div>
+              <p class="eyebrow mb-4 text-red">Design</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>UX design</li>
+                <li>UI design — iOS & Android</li>
+                <li>Web interface design</li>
+                <li>Interaction flows</li>
+                <li>Developer specs</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4 text-red">Product</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Appointment booking</li>
+                <li>Payment flow</li>
+                <li>Consultation interface</li>
+                <li>Dashboard</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4 text-red">Development</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>HTML / CSS / JavaScript</li>
+                <li>Web implementation</li>
+                <li>Cross-platform specs</li>
+              </ul>
+            </div>
+          </div>
+          <dl class="mt-12 grid gap-4 text-sm md:grid-cols-3">
+            <div>
+              <dt class="eyebrow text-red">Date</dt>
+              <dd class="mt-1">2015</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-red">Company</dt>
+              <dd class="mt-1">MCH Anywhere (now Nicklaus Children's Hospital)</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-red">Role</dt>
+              <dd class="mt-1">UI/UX Design · iOS · Android · Web</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CTA / NEXT
+      ============================================================ -->
+      <section class="section-space bg-[#0d0d0d] text-white border-t-2 border-yellow">
+        <div class="flex flex-col gap-8 mx-auto max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="section-header text-white">Building something interesting?</h2>
+            <p class="mt-2 text-base text-white/60">Let's talk.</p>
+          </div>
+          <div class="flex flex-col items-start gap-4 shrink-0 sm:flex-row sm:items-center">
+            <a href="mailto:fede@priisma.com" class="font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow">
+              Start a project →
+            </a>
+            <a href="/#work" class="text-sm font-bold text-white/50 underline underline-offset-4 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow">
+              ← Back to work
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+    <PhotoSwipeInit />
+
+  </body>
+</html>

@@ -1,0 +1,234 @@
+---
+import { Image } from "astro:assets";
+import MainHead from "../../components/MainHead.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import PhotoSwipeInit from "../../components/PhotoSwipeInit.astro";
+
+import FlyAirwaysImg from "../portfolio/flyairways/fly-airways-devices.png";
+import FlyAirwaysdesk from "../portfolio/flyairways/flyairways-desk.jpg";
+import FlyAirwaysMob from "../portfolio/flyairways/flyairways-mob.jpg";
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="airTRFX — Case Study | Priisma"
+      description="How Priisma led product design for airTRFX at EveryMundo — a modular fare publishing platform that helped 20+ airlines increase revenue by an average of 20% per year."
+      canonical="https://www.priisma.com/work/airtrfx"
+      image="/assets/mesh-gradient.jpg"
+    />
+  </head>
+
+  <body class="body-base">
+
+    <header class="nav-floater">
+      <Nav />
+    </header>
+
+    <main>
+
+      <!-- ============================================================
+           HERO
+      ============================================================ -->
+      <section class="section-space min-h-screen bg-linear-(--skyfly-gradient) text-paper">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow">Case Study</p>
+          <p class="mt-3 text-xs tracking-widest uppercase opacity-40">Product Design · UX · Web Development</p>
+          <h1 class="h1-page-title">
+            Real-time fare pages for 20+ airlines. Built to scale.
+          </h1>
+          <p class="mt-6 max-w-lg text-base opacity-80">
+            A modular fare publishing platform that turned airline search traffic into direct revenue.
+          </p>
+          <div class="mt-16 pswp-gallery">
+            <figure>
+              <a href={FlyAirwaysImg.src} data-pswp-width={FlyAirwaysImg.width} data-pswp-height={FlyAirwaysImg.height} target="_blank" class="cursor-zoom-in">
+                <Image
+                  src={FlyAirwaysImg}
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  alt="airTRFX fare pages shown across desktop and mobile airline implementations"
+                  class="w-full border border-current/20"
+                  loading="eager"
+                />
+              </a>
+            </figure>
+          </div>
+          <p class="mt-12 text-center text-xl opacity-30" aria-hidden="true">↓</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CHALLENGE + APPROACH
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <p class="eyebrow mb-4 text-red">The Challenge</p>
+            <p class="text-base">Airlines were leaving revenue on the table. Fare landing pages — the pages that live between a Google Flights search and an airline's booking flow — were generic, slow, and not conversion-optimized. EveryMundo's airTRFX platform set out to fix that: modular, real-time fare pages that could scale across 20+ airline brands without requiring custom builds for each one.</p>
+          </div>
+          <div>
+            <p class="eyebrow mb-4 text-red">The Approach</p>
+            <p class="text-base">Product design at the platform level — not designing for one airline, but designing a system that could absorb the complexity of many without losing quality on any. That meant modular components, clear information hierarchy, and airline-specific customization baked into the product model from day one. Design workflows were built alongside five internal departments to cut delivery times by 40%.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           01 — THE PLATFORM
+      ============================================================ -->
+      <section class="section-space bg-ink text-paper border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4">01 — Platform</p>
+          <h2 class="section-header max-w-2xl">Designed to work for any airline, right out of the box.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">airTRFX had to work for a wide range of airlines — from regional carriers to major alliances — each with different brand standards, routes, and performance needs. The design system was built to accommodate that range while maintaining a consistent, conversion-focused UX across all implementations. Over five major products and updates shipped across the engagement, each grounded in research and requirements from multiple stakeholders.</p>
+            <div
+              class="relative flex items-center justify-center w-full overflow-hidden border border-current/20 bg-white/5"
+              style="aspect-ratio: 16/9;"
+              role="img"
+              aria-label="airTRFX platform — modular design system serving 20+ airlines"
+            >
+              <svg aria-hidden="true" class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="airtrfx-platform-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#airtrfx-platform-grid)" />
+              </svg>
+              <p class="relative text-xs font-medium tracking-widest uppercase opacity-30">Platform overview</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           02 — DESKTOP + MOBILE
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <p class="eyebrow mb-4 text-red">02 — Execution</p>
+          <h2 class="section-header max-w-2xl">Desktop and mobile — both first-class.</h2>
+          <div class="grid items-start gap-12 mt-10 md:grid-cols-2">
+            <p class="text-base">Fare pages have one primary conversion goal: get the traveler to click through to book. Every layout decision — information density, fare display, call-to-action placement — was made in service of that goal. Both desktop and mobile were designed as first-class experiences, with no afterthought implementations. The same modular approach that made the platform scalable also made it possible to optimize each breakpoint independently.</p>
+            <div class="pswp-gallery flex flex-col gap-4 sm:flex-row">
+              <figure class="flex-1">
+                <a href={FlyAirwaysdesk.src} data-pswp-width={FlyAirwaysdesk.width} data-pswp-height={FlyAirwaysdesk.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={FlyAirwaysdesk}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="airTRFX desktop fare page implementation"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Desktop version</figcaption>
+              </figure>
+              <figure class="flex-1">
+                <a href={FlyAirwaysMob.src} data-pswp-width={FlyAirwaysMob.width} data-pswp-height={FlyAirwaysMob.height} target="_blank" class="cursor-zoom-in">
+                  <Image
+                    src={FlyAirwaysMob}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    alt="airTRFX mobile fare page implementation"
+                    class="w-full border border-current/20"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption class="fig-caption">Mobile version</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           RESULT / CLOSE
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="section-header">A platform that compounds.</h2>
+          <p class="mt-8 text-base">Across 20+ airlines and alliances, airTRFX drove an average 20% revenue increase per year. Personalized module designs secured over $1.5M in new sales in a single quarter. The platform became the standard for how EveryMundo delivered fare publishing products — a design system that scaled without breaking. The kind of work that doesn't announce itself loudly, but keeps paying off quietly.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ROLE / CREDITS
+      ============================================================ -->
+      <section class="section-space bg-paper text-ink border-t border-current/10">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header mb-12">The work.</h2>
+          <div class="grid gap-8 md:grid-cols-3">
+            <div>
+              <p class="eyebrow mb-4 text-red">Design</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Product design leadership</li>
+                <li>Modular design system</li>
+                <li>UX architecture</li>
+                <li>Wireframing & prototyping</li>
+                <li>Airline-specific customization</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4 text-red">Product</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>Fare landing pages</li>
+                <li>Real-time fare display</li>
+                <li>Search & discovery</li>
+                <li>Conversion optimization</li>
+                <li>Multi-airline platform</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow mb-4 text-red">Development</p>
+              <ul class="space-y-1 text-sm list-none">
+                <li>HTML / CSS / JavaScript</li>
+                <li>Responsive implementation</li>
+                <li>Cross-airline delivery</li>
+              </ul>
+            </div>
+          </div>
+          <dl class="mt-12 grid gap-4 text-sm md:grid-cols-3">
+            <div>
+              <dt class="eyebrow text-red">Date</dt>
+              <dd class="mt-1">2016–2018</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-red">Company</dt>
+              <dd class="mt-1">EveryMundo</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-red">Role</dt>
+              <dd class="mt-1">UI/UX Design + Web development</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CTA / NEXT
+      ============================================================ -->
+      <section class="section-space bg-[#0d0d0d] text-white border-t-2 border-yellow">
+        <div class="flex flex-col gap-8 mx-auto max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="section-header text-white">Building something interesting?</h2>
+            <p class="mt-2 text-base text-white/60">Let's talk.</p>
+          </div>
+          <div class="flex flex-col items-start gap-4 shrink-0 sm:flex-row sm:items-center">
+            <a href="mailto:fede@priisma.com" class="font-extrabold text-sm tracking-[0.1em] uppercase bg-yellow text-ink px-6 py-3 border-2 border-yellow rounded-none hover:bg-yellow/90 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow">
+              Start a project →
+            </a>
+            <a href="/#work" class="text-sm font-bold text-white/50 underline underline-offset-4 hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow">
+              ← Back to work
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+    <PhotoSwipeInit />
+
+  </body>
+</html>

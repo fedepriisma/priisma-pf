@@ -8,6 +8,7 @@ const {
 } = Astro.props;
 const defaultImage = '/assets/mesh-gradient.jpg';
 import HeaderScripts from '../components/HeaderScripts.astro';
+import PostHog from '../components/PostHog.astro';
 import '../styles/tailwind.css'
 // JSON-LD defaults
 const defaultSite = 'https://www.priisma.com';
@@ -19,10 +20,18 @@ try {
 }
 
 const org = {
-	'@type': 'Organization',
+	'@type': 'ProfessionalService',
 	name: 'Priisma',
 	url: siteOrigin,
-	logo: `${siteOrigin}/assets/mesh-gradient.jpg`
+	logo: `${siteOrigin}/assets/mesh-gradient.jpg`,
+	description: 'Product design leadership for scaling SaaS companies',
+	areaServed: ['US', 'Latin America'],
+	founder: {
+		'@type': 'Person',
+		name: 'Fede Bozo',
+		jobTitle: 'Product Designer',
+		url: 'https://www.linkedin.com/in/fedebozo/'
+	}
 };
 
 const website = {
@@ -30,14 +39,9 @@ const website = {
 	url: siteOrigin,
 	name: title,
 	description,
-	potentialAction: {
-		'@type': 'SearchAction',
-		target: `${siteOrigin}/search?q={search_term_string}`,
-		'query-input': 'required name=search_term_string'
-	}
 };
 
-const jsonGraph = [org, website];
+const jsonGraph: Record<string, unknown>[] = [org, website];
 if (Astro.props.breadcrumb && Array.isArray(Astro.props.breadcrumb)) {
 	const items = Astro.props.breadcrumb.map((b, i) => ({
 		'@type': 'ListItem',
@@ -67,6 +71,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 <title>{title}</title>
 
 {canonical && <link rel="canonical" href={canonical} />}
+{canonical && <meta property="og:url" content={canonical} />}
 <meta property="og:image" content={image ?? defaultImage} />
 <meta name="twitter:image" content={image ?? defaultImage} />
 
@@ -78,12 +83,14 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 @font-face{font-family:'Mona Sans';src: url('/fonts/Mona-Sans.woff2') format('woff2-variations');font-weight:200 900;font-stretch:75% 125%;font-display:swap}
 </style>
 
-<!-- Remote Google Fonts kept as fallback for browsers that prefer it -->
+<!-- Instrument Serif (display font) from Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<PostHog />
 
 <!-- Optional LCP/image preload: pass `preloadImage` prop from pages that know their hero LCP -->
 {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>

@@ -1,2 +1,11 @@
+.gitignore
+.env
+.env.local
 node_modules
 /dist
+.claude/settings.json
+src/pages/portfolio/.DS_Store
+scripts/compress-videos.sh
+.DS_Store
+.gstack/
+.superpowers/
