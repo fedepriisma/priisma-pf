@@ -1,3 +1,14 @@
+# Priisma — priisma.com
+
+One-page portfolio beacon for Fede Bozo / Priisma. Astro 5, no framework CSS on the homepage.
+
+**Live data:** the homepage ticker fetches `https://showbliz.com/feed/today.xml` at build time
+(10s timeout, snapshot fallback in `src/pages/index.astro` if the feed is unreachable).
+A scheduled GitHub Actions run rebuilds daily at 09:00 UTC so listings stay fresh — note
+GitHub disables cron workflows after ~60 days of repo inactivity (re-enable in the Actions tab).
+
+---
+
 # Astro Starter Kit: Portfolio
 
 ```
