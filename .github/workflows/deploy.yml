@@ -4,11 +4,22 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  schedule:
+    # 09:00 UTC = 5am Miami (EDT): rebuild daily so the Showbliz
+    # "on stage tonight" ticker refetches feed/today.xml.
+    # NOTE: GitHub disables scheduled workflows after ~60 days of repo
+    # inactivity — if the ticker goes stale, re-enable in the Actions tab.
+    - cron: "0 9 * * *"
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# One deploy at a time; a stale scheduled run must never overwrite a newer push deploy
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
