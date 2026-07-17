@@ -1,56 +1,1093 @@
 ---
-// Component Imports
-import MainHead from "../components/MainHead.astro";
-import ContactInfo from "../components/ContactInfo.astro";
-import Footer from "../components/Footer.astro";
-import Quotingbill from "./portfolio/quotingbill/quotingbill.astro";
-import Godark from "./portfolio/godark/godark.astro";
-import Flyairways from "./portfolio/flyairways/flyairways.astro";
-import MchAnywhere from "./portfolio/mch/mch.astro";
+// Priisma — one-page beacon. Spec-sheet brutalism: paper, ink lines, one hot accent.
+import { Image } from "astro:assets";
+import qbInvoice from "./portfolio/quotingbill/qb-invoice.png";
+import qbProjects from "./portfolio/quotingbill/qb-projects.png";
 
-// Lightbox https://github.com/hellotham/hello-astro/blob/main/src/components/lightbox.astro
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
----
-<script>
-	import PhotoSwipeLightbox from 'photoswipe/lightbox';
-	import 'photoswipe/style.css';
-	  const lightbox = new PhotoSwipeLightbox({
-	  gallery: '#breadboarding-gallery, #fatmarkers-gallery, #sectiondetails-gallery, #flyairways-gallery, #mch-gallery',
-	  children: 'a',
-	  pswpModule: () => import('photoswipe')
+const year = new Date().getFullYear();
+
+const archive = [
+	{ n: "001", name: "Cigarwell", meta: "Product · Brand · Copy", year: "2023–24" },
+	{ n: "002", name: "QuotingBill", meta: "Product · SaaS", year: "2019" },
+	{ n: "003", name: "GoDark Chocolates", meta: "Brand · Web", year: "2017" },
+	{ n: "004", name: "airTRFX", meta: "Product · Web", year: "2016" },
+	{ n: "005", name: "MCH Anywhere", meta: "UX · iOS · Android", year: "2015" },
+];
+
+const cycle = [
+	{ n: "01", t: "Product thinking", d: "Discover what matters." },
+	{ n: "02", t: "Brand systems", d: "Identity with clarity." },
+	{ n: "03", t: "Code + AI", d: "Build smarter. Ship faster." },
+	{ n: "04", t: "Copy + launch", d: "Tell it right. Release it right." },
+];
+
+// Tonight's real listings, fetched at build time from the Showbliz feed.
+// Falls back to a snapshot if the feed is unreachable so builds never break.
+const snapshot: { show: string; venue: string; img?: string }[] = [
+	{ show: "The Shark Is Broken", venue: "Actors Playhouse, Coral Gables" },
+	{ show: "Todo Lo Que No Dije", venue: "Colony Theatre, Miami Beach" },
+	{ show: "In The Heights", venue: "Lake Worth Playhouse" },
+	{ show: "Fresa y Chocolate", venue: "Teatro Trail, Little Havana" },
+	{ show: "Bluey's Big Play", venue: "Broward Center, Fort Lauderdale" },
+	{ show: "El Intercambio", venue: "Teatro Trail, Little Havana" },
+	{ show: "Probemos y ya!", venue: "Teatro Miami, Medley" },
+	{ show: "The Wizard of Oz", venue: "Actors Playhouse, Coral Gables" },
+	{ show: "Daymé Arocena", venue: "Teatro Trail, Little Havana" },
+	{ show: "Matt & Ben", venue: "Empire Stage, Fort Lauderdale" },
+];
+
+const codePoint = (n: number) => (n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : "�");
+const decode = (s: string) =>
+	s
+		.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+		.replace(/&#x([0-9a-fA-F]+);/g, (_, h) => codePoint(parseInt(h, 16)))
+		.replace(/&#(\d+);/g, (_, n) => codePoint(Number(n)))
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">")
+		.replace(/&quot;/g, '"')
+		.replace(/&apos;/g, "'")
+		.replace(/&amp;/g, "&")
+		.trim();
+
+let onStage = snapshot;
+let liveFeed = false;
+try {
+	const res = await fetch("https://showbliz.com/feed/today.xml", {
+		signal: AbortSignal.timeout(10_000),
 	});
-	lightbox.init();
-</script>
+	const size = Number(res.headers.get("content-length") ?? 0);
+	if (size > 2_000_000) throw new Error(`feed too large (${size} bytes)`);
+	if (res.ok) {
+		const xml = await res.text();
+		const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
+			.map((m) => {
+				const tag = (t: string) =>
+					m[1].match(new RegExp(`<${t}(?:\\s[^>]*)?>([\\s\\S]*?)</${t}>`))?.[1] ?? "";
+				const venue = decode(tag("description")).replace(/^At\s+/, "").split("·")[0].trim();
+				// trust boundary: only render poster URLs from the Showbliz CDN
+				const rawImg = decode(m[1].match(/<enclosure[^>]*\burl="([^"]+)"/)?.[1] ?? "");
+				const img = rawImg.startsWith("https://cdn.showbliz.com/") ? rawImg : undefined;
+				return { show: decode(tag("title")), venue, img };
+			})
+			.filter((s) => s.show);
+		console.log(`[showbliz feed] parsed ${items.length} items`);
+		if (items.length) {
+			onStage = items.slice(0, 14);
+			liveFeed = true;
+		}
+	} else {
+		console.warn(`[showbliz feed] HTTP ${res.status} — using snapshot fallback`);
+	}
+} catch (e) {
+	console.warn(`[showbliz feed] fetch failed (${e}) — using snapshot fallback`);
+}
+// keep the ticker dense when tonight is a quiet night; padded repeats are
+// marked so screen readers only hear each show once
+const realCount = onStage.length;
+while (onStage.length && onStage.length < 8) onStage = [...onStage, ...onStage];
+const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
+---
+
+<!doctype html>
 <html lang="en">
 	<head>
-		<MainHead
-			title="Fede Bozo — Product Designer"
-			description="Fede Bozo is a Product Designer in Miami with 10+ years building digital products for airlines, hospitals, startups, and more."
-			canonical="https://www.priisma.com/"
-			image="/assets/mesh-gradient.jpg"
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Fede Bozo · Priisma: I design by building</title>
+		<meta
+			name="description"
+			content="Head of design who ships. Now building Showbliz, Miami's performing-arts ecosystem: designed and built by one person in three months. Looking for partners in crime."
+		/>
+		<link rel="canonical" href="https://www.priisma.com/" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<meta property="og:title" content="Fede Bozo — Priisma" />
+		<meta property="og:description" content="I design by building." />
+		<meta property="og:url" content="https://www.priisma.com/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://www.priisma.com/img/showbliz-shot.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="theme-color" content="#f2efe9" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..80,700..900&family=Martian+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
 		/>
 	</head>
-	
-	<body class="body-base">
-	<header class="nav-floater">
-		<ContactInfo />
-	</header>
-		<div class="relative mx-auto my-16 ml-4 md:my-16 lg:my-24 text-center">
-			<h1 class="text-5xl font-display">Designing products that are ready to scale.</h1>
-			<p class="mt-6 text-md max-w-prose mx-auto">Turning funded startups and SaaS companies from good products into great ones.</p>
-			<p class="mt-6 text-md max-w-prose mx-auto">From product strategy and design leadership to hands-on execution — we help teams shape, build, and evolve digital products people genuinely enjoy using.</p>
-			<p class="mt-6 text-md max-w-prose mx-auto">Real culture, a strong voice, a cohesive system, and a presence that earns trust before anyone says a word.</p>
-	<a href="#open-convo" class="primary-cta">Let's talk</a>
+
+	<body>
+		<div class="sheet">
+			<header class="top">
+				<span class="brand">Fede&nbsp;Bozo <em>/ Priisma</em></span>
+				<a class="top-mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
+				<span class="top-chip" aria-hidden="true"></span>
+			</header>
+
+			<main>
+				<!-- HERO -->
+				<section class="hero" aria-label="Intro">
+					<div class="hero-side" aria-hidden="true">
+						<svg class="stamp" viewBox="0 0 100 100">
+							<defs>
+								<path id="ring" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"></path>
+							</defs>
+							<g class="stamp-spin">
+								<text class="stamp-ring">
+									<textPath href="#ring" startOffset="0"
+										>PRODUCT DESIGNER · MIAMI FL · PRODUCT DESIGNER ·</textPath
+									>
+								</text>
+							</g>
+							<text class="stamp-year" x="50" y="46" text-anchor="middle">20</text>
+							<text class="stamp-year" x="50" y="64" text-anchor="middle">26</text>
+						</svg>
+						<span class="coords">Based in Miami, FL · 25.7617° N, 80.1918° W</span>
+						<span class="palm">✳</span>
+					</div>
+
+					<div class="hero-main">
+						<p class="tag reveal">Product design · Miami</p>
+						<h1>
+							<span class="line reveal d1">I design</span>
+							<span class="line reveal d2">by building<span class="sq" aria-hidden="true"></span></span>
+						</h1>
+						<p class="hero-sub reveal d3">
+							The whole cycle: product thinking, brand, design system, code, copy, launch.
+						</p>
+						<p class="hero-voice reveal d3">
+							AI is my <mark class="hl">crew</mark>. Taste is the bottleneck, and I own it.
+						</p>
+						<div class="ctas reveal d3">
+							<a class="btn solid" href="#now">See Showbliz <span aria-hidden="true">↗</span></a>
+							<a class="btn" href="mailto:fede@priisma.com">Let&rsquo;s build <span aria-hidden="true">↗</span></a>
+						</div>
+					</div>
+
+					<ol class="cycle" role="list" aria-label="The whole cycle">
+						{
+							cycle.map((c) => (
+								<li>
+									<span class="cycle-n">{c.n}</span>
+									<span class="cycle-t">{c.t}</span>
+									<span class="cycle-d">{c.d}</span>
+								</li>
+							))
+						}
+					</ol>
+				</section>
+
+				<!-- NOW / SHOWBLIZ -->
+				<section class="now" id="now" aria-label="Now: Showbliz">
+					<div class="now-head">
+						<p class="tag cell"><span class="pulse" aria-hidden="true"></span>Now · Live</p>
+					</div>
+					<div class="now-inner">
+						<h2 class="now-title">Showbliz</h2>
+						<p class="now-statement">
+							Every city has an art soul.<br />Miami&rsquo;s now has a home.
+						</p>
+						<a class="fig-link" href="https://showbliz.com" target="_blank" rel="noopener">
+							<figure class="fig">
+								<div class="fig-frame">
+									<img
+										src="/img/showbliz-shot.jpg"
+										alt="Showbliz homepage: tonight's shows across Miami and South Florida"
+										width="1400"
+										height="1000"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<figcaption>Fig. 01 · Showbliz.com <span>live product ↗</span></figcaption>
+							</figure>
+						</a>
+					</div>
+
+					<!-- the product, in its own words: real listings -->
+					<div
+						class="marquee"
+						aria-label={
+							liveFeed
+								? "On Miami stages tonight, via Showbliz"
+								: "Recently on Miami stages, via Showbliz"
+						}
+					>
+						<div class="marquee-track">
+							{
+								[0, 1].map((dup) => (
+									<ul role={dup === 0 ? "list" : undefined} aria-hidden={dup === 1 || undefined}>
+										{ticker.map((s) => (
+											<li aria-hidden={s.pad || undefined}>
+												{s.img && (
+													<img src={s.img} alt="" width="88" height="46" loading="lazy" decoding="async" />
+												)}
+												<strong>{s.show}</strong>
+												<span>{s.venue}</span>
+											</li>
+										))}
+									</ul>
+								))
+							}
+						</div>
+					</div>
+					<p class="marquee-label">
+						{
+							liveFeed
+								? "On Miami stages tonight, straight from the Showbliz feed"
+								: "Recently on Miami stages, via Showbliz"
+						}
+					</p>
+
+					<div class="now-inner">
+						<ul class="stats" role="list">
+							<li><strong>200+</strong><span>shows on stage</span></li>
+							<li><strong>30+</strong><span>venues, one map</span></li>
+							<li><strong>2</strong><span>languages, EN&thinsp;/&thinsp;ES</span></li>
+							<li><strong>3 mo</strong><span>concept to launch</span></li>
+							<li><strong>1</strong><span>person, full stack of craft</span></li>
+						</ul>
+						<p class="now-note">
+							Not a case study. A working ecosystem: designed, written, coded, and shipped by one
+							person, for a real city.
+						</p>
+						<a class="btn solid inverse" href="https://showbliz.com" target="_blank" rel="noopener">
+							showbliz.com <span aria-hidden="true">↗</span>
+						</a>
+					</div>
+				</section>
+
+				<!-- SELECTED SCREENS -->
+				<section class="evidence" aria-label="Selected screens">
+					<h2 class="tag">Selected screens</h2>
+					<div class="fig-grid">
+						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
+							<figure class="fig fig--tall">
+								<div class="fig-frame">
+									<img
+										src="/img/cigarwell-home.png"
+										alt="Cigarwell mobile home: collection tracking and the Light button"
+										width="390"
+										height="844"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<figcaption>Fig. 02 · Cigarwell, home <span>live product ↗</span></figcaption>
+							</figure>
+						</a>
+						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
+							<figure class="fig fig--tall">
+								<div class="fig-frame">
+									<img
+										src="/img/cigarwell-lights.png"
+										alt="Cigarwell taste journal and cigar recommendations"
+										width="390"
+										height="844"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<figcaption>Fig. 03 · Cigarwell, taste journal <span>live product ↗</span></figcaption>
+							</figure>
+						</a>
+						<figure class="fig">
+							<div class="fig-frame">
+								<Image
+									src={qbInvoice}
+									alt="QuotingBill invoice screen"
+									width={1000}
+									format="webp"
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
+							<figcaption>Fig. 04 · QuotingBill, invoice engine <span>2019</span></figcaption>
+						</figure>
+						<figure class="fig">
+							<div class="fig-frame">
+								<Image
+									src={qbProjects}
+									alt="QuotingBill projects screen"
+									width={1000}
+									format="webp"
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
+							<figcaption>Fig. 05 · QuotingBill, projects <span>2019</span></figcaption>
+						</figure>
+					</div>
+				</section>
+
+				<!-- BEFORE / ARCHIVE -->
+				<section class="ledger" aria-label="Previous work">
+					<h2 class="tag">Before</h2>
+					<ol role="list">
+						{
+							archive.map((p) => (
+								<li class="row">
+									<span class="row-n">{p.n}</span>
+									<span class="row-name">{p.name}</span>
+									<span class="row-meta">{p.meta}</span>
+									<span class="row-year">{p.year}</span>
+								</li>
+							))
+						}
+					</ol>
+					<p class="ledger-note">Ten years of shipped product. Ask me about any of it.</p>
+				</section>
+
+				<!-- CONTACT -->
+				<section class="contact" aria-label="Contact">
+					<h2 class="tag">Building something real?</h2>
+					<a class="mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
+					<p class="filter">
+						Not looking for clients to convince.<br />Looking for
+						<mark class="hl">partners in crime</mark>.
+					</p>
+				</section>
+			</main>
+
+			<footer class="foot">
+				<span class="foot-cell dark">Current focus</span>
+				<span class="foot-cell">Showbliz.com</span>
+				<span class="foot-cell">AI-native design cycles</span>
+				<span class="foot-cell grow">© {year} Priisma · Miami</span>
+				<a class="foot-cell" href="https://www.linkedin.com/in/fedebozo" target="_blank" rel="noopener"
+					>LinkedIn ↗</a
+				>
+			</footer>
 		</div>
-		<main class="main-thingi">
-			<div class="grid">
-				<Quotingbill />
-				<MchAnywhere />
-				<Flyairways />
-				<!-- <Godark /> -->
-			</div>
-		</main>
-		<Footer />
 	</body>
 </html>
+
+<style is:global>
+	/* ————— tokens ————— */
+	:root {
+		--paper: oklch(95% 0.008 85);
+		--ink: oklch(17% 0.012 60);
+		--accent: oklch(63% 0.19 33); /* hot coral */
+		--accent-text: oklch(50% 0.185 33); /* coral dark enough for small text on paper (AA) */
+		--line: 1.5px solid var(--ink);
+		--display: "Archivo", system-ui, sans-serif;
+		--mono: "Martian Mono", ui-monospace, monospace;
+		--pad: clamp(1.1rem, 3.5vw, 2.75rem);
+	}
+
+	/* ————— base ————— */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+	}
+	html {
+		scroll-behavior: smooth;
+		background: var(--paper);
+	}
+	body {
+		background: var(--paper);
+		color: var(--ink);
+		font-family: var(--mono);
+		font-size: 1rem;
+		line-height: 1.65;
+		-webkit-font-smoothing: antialiased;
+		padding: clamp(0.5rem, 1.5vw, 1.25rem);
+	}
+	::selection {
+		background: var(--accent);
+		color: var(--paper);
+	}
+	a {
+		color: currentColor;
+	}
+	:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
+	.sheet {
+		border: var(--line);
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6em;
+	}
+	.hl {
+		background: var(--ink);
+		color: var(--paper);
+		padding-inline: 0.35em;
+		padding-block: 0.05em;
+	}
+	.sq {
+		display: inline-block;
+		inline-size: 0.14em;
+		block-size: 0.14em;
+		background: var(--accent);
+		margin-inline-start: 0.06em;
+	}
+
+	/* display type */
+	h1,
+	.now-title,
+	.mail,
+	.row-name {
+		font-family: var(--display);
+		font-variation-settings: "wdth" 68;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.005em;
+	}
+
+	/* ————— header ————— */
+	.top {
+		display: flex;
+		align-items: stretch;
+		border-block-end: var(--line);
+	}
+	.brand {
+		padding: 0.9rem var(--pad);
+		font-weight: 700;
+		font-size: 0.8rem;
+		border-inline-end: var(--line);
+	}
+	.brand em {
+		font-style: normal;
+		font-weight: 400;
+		opacity: 0.55;
+	}
+	.top-mail {
+		margin-inline-start: auto;
+		display: flex;
+		align-items: center;
+		padding: 0.9rem var(--pad);
+		font-size: 0.75rem;
+		text-decoration: none;
+		border-inline-start: var(--line);
+	}
+	.top-mail:hover {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.top-chip {
+		inline-size: 3rem;
+		border-inline-start: var(--line);
+		background:
+			linear-gradient(var(--ink), var(--ink)) center / 0.8rem 0.8rem no-repeat;
+	}
+
+	/* ————— hero ————— */
+	.hero {
+		display: grid;
+	}
+	.hero-side {
+		display: flex;
+		align-items: center;
+		gap: 1.2rem;
+		padding: 1rem var(--pad);
+		border-block-end: var(--line);
+		color: var(--accent);
+	}
+	.stamp {
+		inline-size: 5.4rem;
+		flex: none;
+		fill: var(--accent);
+		overflow: visible;
+	}
+	.stamp-spin {
+		animation: spin 36s linear infinite;
+		transform-origin: 50px 50px;
+	}
+	.stamp-ring {
+		font-family: var(--mono);
+		font-size: 10.5px;
+		letter-spacing: 2px;
+	}
+	.stamp-year {
+		font-family: var(--display);
+		font-weight: 900;
+		font-size: 17px;
+	}
+	@keyframes spin {
+		to {
+			rotate: 1turn;
+		}
+	}
+	.coords {
+		font-size: 0.68rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--ink);
+		opacity: 0.75;
+	}
+	.palm {
+		margin-inline-start: auto;
+		font-size: 1.6rem;
+		line-height: 1;
+	}
+	.hero-main {
+		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad) clamp(2.2rem, 6dvh, 4rem);
+	}
+	.hero h1 {
+		font-size: clamp(3.4rem, 15.5vw, 11rem);
+		line-height: 0.85;
+		margin-block-start: 1.1rem;
+	}
+	.hero h1 .line {
+		display: block;
+	}
+	.hero h1 .sq {
+		inline-size: 0.13em;
+		block-size: 0.13em;
+	}
+	.hero-sub {
+		margin-block-start: 1.8rem;
+		max-inline-size: 52ch;
+	}
+	.hero-voice {
+		margin-block-start: 1rem;
+		padding-block-start: 1rem;
+		border-block-start: var(--line);
+		max-inline-size: 52ch;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+	.ctas {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-block-start: 2rem;
+	}
+	.btn {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		text-decoration: none;
+		border: var(--line);
+		padding: 0.85rem 1.4rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.7em;
+		background: var(--paper);
+		color: var(--ink);
+		transition: translate 0.15s ease;
+	}
+	.btn.solid {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.btn:hover {
+		translate: 0 -2px;
+	}
+	.btn.solid.inverse {
+		background: var(--paper);
+		color: var(--ink);
+		border-color: var(--paper);
+	}
+
+	/* the whole cycle, as a spec table */
+	.cycle {
+		list-style: none;
+		padding: 0;
+		border-block-start: var(--line);
+	}
+	.cycle li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-areas: "n t" "n d";
+		column-gap: 1.1rem;
+		padding: 1rem var(--pad);
+		border-block-end: var(--line);
+	}
+	.cycle li:last-child {
+		border-block-end: none;
+	}
+	.cycle-n {
+		grid-area: n;
+		color: var(--accent-text);
+		font-weight: 700;
+		font-size: 0.75rem;
+	}
+	.cycle-t {
+		grid-area: t;
+		font-family: var(--display);
+		font-variation-settings: "wdth" 75;
+		font-weight: 800;
+		font-size: 1.05rem;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+	}
+	.cycle-d {
+		grid-area: d;
+		font-size: 0.72rem;
+		opacity: 0.75;
+	}
+
+	/* ————— now / showbliz: ink panel ————— */
+	.now {
+		background: var(--ink);
+		color: var(--paper);
+		border-block: var(--line);
+	}
+	.now-head {
+		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+	}
+	.tag.cell {
+		padding: 0.8rem var(--pad);
+		color: var(--accent);
+	}
+	.pulse {
+		inline-size: 0.55em;
+		block-size: 0.55em;
+		background: var(--accent);
+		animation: pulse 2.2s ease-in-out infinite;
+	}
+	@keyframes pulse {
+		50% {
+			opacity: 0.25;
+		}
+	}
+	.now-inner {
+		padding: clamp(2.4rem, 6dvh, 4.5rem) var(--pad);
+	}
+	.now-title {
+		font-size: clamp(3rem, 12vw, 8.5rem);
+		line-height: 0.9;
+	}
+	.now-statement {
+		margin-block-start: 1.6rem;
+		font-size: clamp(1.05rem, 3.2vw, 1.6rem);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+		line-height: 1.35;
+		text-wrap: balance;
+	}
+
+	/* marquee */
+	.marquee {
+		overflow: clip;
+		border-block: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		padding-block: 0.9rem;
+	}
+	.marquee-track {
+		display: flex;
+		width: max-content;
+		animation: slide 45s linear infinite;
+	}
+	.marquee:hover .marquee-track {
+		animation-play-state: paused;
+	}
+	.marquee-track ul {
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.marquee-track li {
+		display: flex;
+		align-items: center;
+		gap: 0.8em;
+		white-space: nowrap;
+		padding-inline-end: 1.6em;
+		margin-inline-end: 1.6em;
+		border-inline-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+	}
+	.marquee-track img {
+		block-size: 2.6rem;
+		inline-size: auto;
+		aspect-ratio: 88 / 46;
+		object-fit: cover;
+		filter: grayscale(1) contrast(1.1);
+		transition: filter 0.3s ease;
+	}
+	.marquee-track li:hover img {
+		filter: none;
+	}
+	.marquee-track strong {
+		font-weight: 700;
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+	.marquee-track span {
+		font-size: 0.68rem;
+		opacity: 0.65;
+	}
+	@keyframes slide {
+		to {
+			translate: -50% 0;
+		}
+	}
+	.marquee-label {
+		padding: 0.9rem var(--pad) 0;
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		opacity: 0.6;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.marquee {
+			overflow-x: auto;
+		}
+		.marquee-track ul[aria-hidden="true"] {
+			display: none;
+		}
+	}
+
+	/* stats */
+	.stats {
+		list-style: none;
+		padding: 0;
+		margin-block-start: 0.5rem;
+		display: grid;
+		max-inline-size: 40rem;
+	}
+	.stats li {
+		display: flex;
+		align-items: baseline;
+		gap: 1.1rem;
+		padding-block: 0.8rem;
+		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+	}
+	.stats li:first-child {
+		border-block-start: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+	}
+	.stats strong {
+		font-family: var(--display);
+		font-variation-settings: "wdth" 72;
+		font-weight: 900;
+		font-size: clamp(1.4rem, 4vw, 2rem);
+		min-inline-size: 4.4ch;
+	}
+	.stats span {
+		font-size: 0.72rem;
+		opacity: 0.75;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.now-note {
+		margin-block-start: 2rem;
+		max-inline-size: 52ch;
+	}
+	.now .btn {
+		margin-block-start: 2rem;
+	}
+
+	/* ————— figures: bold b&w evidence ————— */
+	.fig-link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
+	.fig-link:hover .fig figcaption span,
+	.fig-link:focus-visible .fig figcaption span {
+		background: var(--accent);
+		color: var(--paper);
+		padding-inline: 0.35em;
+	}
+	.fig--tall .fig-frame {
+		aspect-ratio: 390 / 844;
+	}
+	.fig--tall .fig-frame img {
+		animation-duration: 26s;
+	}
+	.fig {
+		border: var(--line);
+		background: var(--paper);
+		color: var(--ink);
+	}
+	.now .fig {
+		margin-block-start: 2.2rem;
+		max-inline-size: 64rem;
+	}
+	.fig-frame {
+		position: relative;
+		overflow: clip;
+		aspect-ratio: 8 / 5;
+		border-block-end: var(--line);
+	}
+	.fig-frame img {
+		inline-size: 100%;
+		block-size: 100%;
+		object-fit: cover;
+		object-position: left top;
+		transform-origin: top left;
+		filter: grayscale(1) contrast(1.15) brightness(1.03);
+		animation: drift 18s ease-in-out infinite alternate;
+		transition: filter 0.45s ease;
+	}
+	.fig:nth-of-type(odd) .fig-frame img {
+		animation-delay: -9s;
+		animation-duration: 22s;
+	}
+	.fig:hover .fig-frame img,
+	.fig-link:hover .fig-frame img,
+	.fig-link:focus-visible .fig-frame img {
+		filter: grayscale(0) contrast(1.05);
+	}
+	/* print grain */
+	.fig-frame::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		opacity: 0.35;
+		mix-blend-mode: overlay;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	}
+	/* zoom anchored to the top-left corner: never crops the top */
+	@keyframes drift {
+		from {
+			scale: 1;
+		}
+		to {
+			scale: 1.06;
+		}
+	}
+	.fig figcaption {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.65rem 0.95rem;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	.fig figcaption span {
+		color: var(--accent-text);
+	}
+	.evidence {
+		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
+		border-block-end: var(--line);
+	}
+	.fig-grid {
+		display: grid;
+		gap: clamp(1.1rem, 3vw, 2rem);
+		margin-block-start: 1.4rem;
+	}
+
+	/* ————— ledger ————— */
+	.ledger {
+		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
+	}
+	.ledger ol {
+		list-style: none;
+		padding: 0;
+		margin-block-start: 1.4rem;
+		border-block-start: var(--line);
+	}
+	.row {
+		display: grid;
+		grid-template-columns: 3.6ch 1fr auto;
+		grid-template-areas: "n name year" "n meta year";
+		column-gap: 1.1rem;
+		align-items: baseline;
+		padding-block: 0.95rem;
+		border-block-end: var(--line);
+		transition: background 0.15s;
+	}
+	.row:hover {
+		background: color-mix(in oklch, var(--accent) 14%, var(--paper));
+	}
+	.row-n {
+		grid-area: n;
+		font-size: 0.7rem;
+		font-weight: 700;
+		color: var(--accent-text);
+	}
+	.row-name {
+		grid-area: name;
+		font-size: clamp(1.15rem, 3.2vw, 1.7rem);
+		line-height: 1.15;
+	}
+	.row-meta {
+		grid-area: meta;
+		font-size: 0.65rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		opacity: 0.6;
+	}
+	.row-year {
+		grid-area: year;
+		font-size: 0.72rem;
+		font-variant-numeric: tabular-nums;
+		opacity: 0.65;
+	}
+	.ledger-note {
+		margin-block-start: 1.5rem;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	/* ————— contact ————— */
+	.contact {
+		padding: clamp(3rem, 10dvh, 6.5rem) var(--pad);
+		background: var(--accent);
+		color: var(--ink);
+		border-block-start: var(--line);
+	}
+	.contact ::selection {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.contact :focus-visible {
+		outline-color: var(--ink);
+	}
+	.mail {
+		display: inline-block;
+		margin-block-start: 1.3rem;
+		font-size: clamp(2rem, 8.5vw, 6.5rem);
+		text-decoration: none;
+		line-height: 0.95;
+		border-block-end: 4px solid currentColor;
+		padding-block-end: 0.06em;
+		transition:
+			background 0.2s,
+			color 0.2s;
+		overflow-wrap: anywhere;
+	}
+	.mail:hover {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.filter {
+		margin-block-start: 2rem;
+		font-size: clamp(0.95rem, 2.6vw, 1.25rem);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		line-height: 1.55;
+	}
+	.contact .hl {
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	/* ————— footer strip ————— */
+	.foot {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		border-block-start: var(--line);
+		font-size: 0.7rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+	.foot-cell {
+		padding: 0.85rem 1.1rem;
+		border-inline-end: var(--line);
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+	}
+	.foot-cell.dark {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.foot-cell.grow {
+		flex: 1;
+		border-inline-end: none;
+	}
+	a.foot-cell {
+		border-inline-start: var(--line);
+		border-inline-end: none;
+	}
+	a.foot-cell:hover {
+		background: var(--accent);
+		color: var(--ink);
+	}
+
+	/* ————— motion ————— */
+	.reveal {
+		animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+	.d1 {
+		animation-delay: 0.08s;
+	}
+	.d2 {
+		animation-delay: 0.18s;
+	}
+	.d3 {
+		animation-delay: 0.32s;
+	}
+	@keyframes rise {
+		from {
+			opacity: 0;
+			translate: 0 1.2rem;
+		}
+	}
+	@supports (animation-timeline: view()) {
+		.now-inner > *,
+		.ledger > *,
+		.contact > * {
+			animation: rise both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 45%;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation: none !important;
+			transition: none !important;
+		}
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
+	/* ————— desktop, second ————— */
+	@media (min-width: 64rem) {
+		.hero {
+			grid-template-columns: 1fr minmax(320px, 26rem);
+			grid-template-areas: "side side" "main cycle";
+		}
+		.hero-side {
+			grid-area: side;
+		}
+		.hero-main {
+			grid-area: main;
+			border-inline-end: var(--line);
+		}
+		.cycle {
+			grid-area: cycle;
+			border-block-start: none;
+			display: grid;
+			grid-template-rows: repeat(4, 1fr);
+		}
+		.cycle li {
+			align-content: center;
+		}
+		.row {
+			grid-template-columns: 4.5ch 1.2fr 1fr auto;
+			grid-template-areas: "n name meta year";
+		}
+		.fig-grid {
+			grid-template-columns: repeat(4, 1fr);
+			align-items: start;
+		}
+		.fig-grid > .fig-link {
+			grid-column: span 1;
+		}
+		.fig-grid > figure.fig {
+			grid-column: span 2;
+		}
+		.fig-grid > figure.fig:last-of-type {
+			grid-column: 3 / span 2;
+		}
+	}
+</style>
