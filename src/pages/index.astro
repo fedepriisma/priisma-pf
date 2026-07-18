@@ -1,8 +1,9 @@
 ---
 // Priisma — one-page beacon. Spec-sheet brutalism: paper, ink lines, one hot accent.
 import { Image } from "astro:assets";
-import qbInvoice from "./portfolio/quotingbill/qb-invoice.png";
-import qbProjects from "./portfolio/quotingbill/qb-projects.png";
+import sbShot from "../img/showbliz-shot.jpg";
+
+const ogImage = new URL(sbShot.src, Astro.site).href;
 
 const year = new Date().getFullYear();
 
@@ -100,11 +101,11 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		/>
 		<link rel="canonical" href="https://www.priisma.com/" />
 		<link rel="icon" href="/favicon.ico" sizes="32x32" />
-		<meta property="og:title" content="Fede Bozo — Priisma" />
+		<meta property="og:title" content="Fede Bozo · Priisma" />
 		<meta property="og:description" content="I design by building." />
 		<meta property="og:url" content="https://www.priisma.com/" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://www.priisma.com/img/showbliz-shot.jpg" />
+		<meta property="og:image" content={ogImage} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="theme-color" content="#f2efe9" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -189,14 +190,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 						<a class="fig-link" href="https://showbliz.com" target="_blank" rel="noopener">
 							<figure class="fig">
 								<div class="fig-frame">
-									<img
-										src="/img/showbliz-shot.jpg"
-										alt="Showbliz homepage: tonight's shows across Miami and South Florida"
-										width="1400"
-										height="1000"
-										loading="lazy"
-										decoding="async"
-									/>
+									<Image src={sbShot} alt="Showbliz homepage: tonight's shows across Miami and South Florida" widths={[640, 1024, 1400]} sizes="(min-width: 64rem) 62rem, 94vw" format="webp" loading="lazy" decoding="async" />
 								</div>
 								<figcaption>Fig. 01 · Showbliz.com <span>live product ↗</span></figcaption>
 							</figure>
@@ -206,6 +200,8 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 					<!-- the product, in its own words: real listings -->
 					<div
 						class="marquee"
+						id="stage-marquee"
+						role="marquee"
 						aria-label={
 							liveFeed
 								? "On Miami stages tonight, via Showbliz"
@@ -230,13 +226,18 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 							}
 						</div>
 					</div>
-					<p class="marquee-label">
-						{
-							liveFeed
-								? "On Miami stages tonight, straight from the Showbliz feed"
-								: "Recently on Miami stages, via Showbliz"
-						}
-					</p>
+					<div class="marquee-bar">
+						<p class="marquee-label">
+							{
+								liveFeed
+									? "On Miami stages tonight, straight from the Showbliz feed"
+									: "Recently on Miami stages, via Showbliz"
+							}
+						</p>
+						<button class="marquee-toggle" type="button" aria-controls="stage-marquee">
+							Pause
+						</button>
+					</div>
 
 					<div class="now-inner">
 						<ul class="stats" role="list">
@@ -244,7 +245,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 							<li><strong>30+</strong><span>venues, one map</span></li>
 							<li><strong>2</strong><span>languages, EN&thinsp;/&thinsp;ES</span></li>
 							<li><strong>3 mo</strong><span>concept to launch</span></li>
-							<li><strong>1</strong><span>person, full stack of craft</span></li>
 						</ul>
 						<p class="now-note">
 							Not a case study. A working ecosystem: designed, written, coded, and shipped by one
@@ -253,69 +253,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 						<a class="btn solid inverse" href="https://showbliz.com" target="_blank" rel="noopener">
 							showbliz.com <span aria-hidden="true">↗</span>
 						</a>
-					</div>
-				</section>
-
-				<!-- SELECTED SCREENS -->
-				<section class="evidence" aria-label="Selected screens">
-					<h2 class="tag">Selected screens</h2>
-					<div class="fig-grid">
-						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
-							<figure class="fig fig--tall">
-								<div class="fig-frame">
-									<img
-										src="/img/cigarwell-home.png"
-										alt="Cigarwell mobile home: collection tracking and the Light button"
-										width="390"
-										height="844"
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-								<figcaption>Fig. 02 · Cigarwell, home <span>live product ↗</span></figcaption>
-							</figure>
-						</a>
-						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
-							<figure class="fig fig--tall">
-								<div class="fig-frame">
-									<img
-										src="/img/cigarwell-lights.png"
-										alt="Cigarwell taste journal and cigar recommendations"
-										width="390"
-										height="844"
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-								<figcaption>Fig. 03 · Cigarwell, taste journal <span>live product ↗</span></figcaption>
-							</figure>
-						</a>
-						<figure class="fig">
-							<div class="fig-frame">
-								<Image
-									src={qbInvoice}
-									alt="QuotingBill invoice screen"
-									width={1000}
-									format="webp"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-							<figcaption>Fig. 04 · QuotingBill, invoice engine <span>2019</span></figcaption>
-						</figure>
-						<figure class="fig">
-							<div class="fig-frame">
-								<Image
-									src={qbProjects}
-									alt="QuotingBill projects screen"
-									width={1000}
-									format="webp"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-							<figcaption>Fig. 05 · QuotingBill, projects <span>2019</span></figcaption>
-						</figure>
 					</div>
 				</section>
 
@@ -358,6 +295,23 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 				>
 			</footer>
 		</div>
+		<script>
+			// WCAG 2.2.2: keyboard/touch pause for the ticker
+			const marquee = document.getElementById("stage-marquee");
+			const toggle = document.querySelector<HTMLButtonElement>(".marquee-toggle");
+			toggle?.addEventListener("click", () => {
+				const paused = marquee?.classList.toggle("paused");
+				toggle.textContent = paused ? "Play" : "Pause";
+			});
+			// idle the ticker while offscreen (battery)
+			const io = new IntersectionObserver(
+				(entries) => {
+					for (const e of entries) e.target.classList.toggle("idle", !e.isIntersecting);
+				},
+				{ rootMargin: "10%" }
+			);
+			if (marquee) io.observe(marquee);
+		</script>
 	</body>
 </html>
 
@@ -369,6 +323,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		--accent: oklch(63% 0.19 33); /* hot coral */
 		--accent-text: oklch(50% 0.185 33); /* coral dark enough for small text on paper (AA) */
 		--line: 1.5px solid var(--ink);
+		--line-soft: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
 		--display: "Archivo", system-ui, sans-serif;
 		--mono: "Martian Mono", ui-monospace, monospace;
 		--pad: clamp(1.1rem, 3.5vw, 2.75rem);
@@ -459,7 +414,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 	.brand em {
 		font-style: normal;
 		font-weight: 400;
-		opacity: 0.55;
+		opacity: 0.65;
 	}
 	.top-mail {
 		margin-inline-start: auto;
@@ -639,7 +594,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		border-block: var(--line);
 	}
 	.now-head {
-		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		border-block-end: var(--line-soft);
 	}
 	.tag.cell {
 		padding: 0.8rem var(--pad);
@@ -676,7 +631,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 	/* marquee */
 	.marquee {
 		overflow: clip;
-		border-block: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		border-block: var(--line-soft);
 		padding-block: 0.9rem;
 	}
 	.marquee-track {
@@ -700,7 +655,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		white-space: nowrap;
 		padding-inline-end: 1.6em;
 		margin-inline-end: 1.6em;
-		border-inline-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		border-inline-end: var(--line-soft);
 	}
 	.marquee-track img {
 		block-size: 2.6rem;
@@ -728,18 +683,47 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 			translate: -50% 0;
 		}
 	}
-	.marquee-label {
+	.marquee-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
 		padding: 0.9rem var(--pad) 0;
+	}
+	.marquee-label {
 		font-size: 0.7rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		opacity: 0.6;
+	}
+	.marquee-toggle {
+		font-family: var(--mono);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--paper);
+		background: none;
+		border: var(--line-soft);
+		padding: 0.7em 1em;
+		cursor: pointer;
+	}
+	.marquee-toggle:hover {
+		background: var(--paper);
+		color: var(--ink);
+	}
+	.marquee.paused .marquee-track,
+	.marquee.idle .marquee-track {
+		animation-play-state: paused;
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.marquee {
 			overflow-x: auto;
 		}
 		.marquee-track ul[aria-hidden="true"] {
+			display: none;
+		}
+		.marquee-toggle {
 			display: none;
 		}
 	}
@@ -757,10 +741,10 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		align-items: baseline;
 		gap: 1.1rem;
 		padding-block: 0.8rem;
-		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		border-block-end: var(--line-soft);
 	}
 	.stats li:first-child {
-		border-block-start: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		border-block-start: var(--line-soft);
 	}
 	.stats strong {
 		font-family: var(--display);
@@ -783,7 +767,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		margin-block-start: 2rem;
 	}
 
-	/* ————— figures: bold b&w evidence ————— */
+	/* ————— figure: the proof ————— */
 	.fig-link {
 		display: block;
 		text-decoration: none;
@@ -794,12 +778,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		background: var(--accent);
 		color: var(--paper);
 		padding-inline: 0.35em;
-	}
-	.fig--tall .fig-frame {
-		aspect-ratio: 390 / 844;
-	}
-	.fig--tall .fig-frame img {
-		animation-duration: 26s;
 	}
 	.fig {
 		border: var(--line);
@@ -821,14 +799,8 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		block-size: 100%;
 		object-fit: cover;
 		object-position: left top;
-		transform-origin: top left;
 		filter: grayscale(1) contrast(1.15) brightness(1.03);
-		animation: drift 18s ease-in-out infinite alternate;
 		transition: filter 0.45s ease;
-	}
-	.fig:nth-of-type(odd) .fig-frame img {
-		animation-delay: -9s;
-		animation-duration: 22s;
 	}
 	.fig:hover .fig-frame img,
 	.fig-link:hover .fig-frame img,
@@ -845,15 +817,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		mix-blend-mode: overlay;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 	}
-	/* zoom anchored to the top-left corner: never crops the top */
-	@keyframes drift {
-		from {
-			scale: 1;
-		}
-		to {
-			scale: 1.06;
-		}
-	}
 	.fig figcaption {
 		display: flex;
 		justify-content: space-between;
@@ -867,16 +830,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 	.fig figcaption span {
 		color: var(--accent-text);
 	}
-	.evidence {
-		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
-		border-block-end: var(--line);
-	}
-	.fig-grid {
-		display: grid;
-		gap: clamp(1.1rem, 3vw, 2rem);
-		margin-block-start: 1.4rem;
-	}
-
 	/* ————— ledger ————— */
 	.ledger {
 		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
@@ -1029,15 +982,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 			translate: 0 1.2rem;
 		}
 	}
-	@supports (animation-timeline: view()) {
-		.now-inner > *,
-		.ledger > *,
-		.contact > * {
-			animation: rise both;
-			animation-timeline: view();
-			animation-range: entry 0% entry 45%;
-		}
-	}
 	@media (prefers-reduced-motion: reduce) {
 		*,
 		*::before,
@@ -1075,19 +1019,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		.row {
 			grid-template-columns: 4.5ch 1.2fr 1fr auto;
 			grid-template-areas: "n name meta year";
-		}
-		.fig-grid {
-			grid-template-columns: repeat(4, 1fr);
-			align-items: start;
-		}
-		.fig-grid > .fig-link {
-			grid-column: span 1;
-		}
-		.fig-grid > figure.fig {
-			grid-column: span 2;
-		}
-		.fig-grid > figure.fig:last-of-type {
-			grid-column: 3 / span 2;
 		}
 	}
 </style>
