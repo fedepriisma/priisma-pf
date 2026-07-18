@@ -61,8 +61,8 @@ credibility; Fede is done proving himself.
    (Cigarwell, QuotingBill, GoDark, airTRFX, MCH Anywhere), never case
    studies.
 4. Honest numbers only.
-5. Spec-sheet discipline: the page reads like a printed technical data sheet
-   with one hot accent (see DESIGN.md).
+5. Quiet discipline: system type, four sizes, no rules or decoration; the
+   coral accent and live feed do the talking (see DESIGN.md).
 
 ## Accessibility & Inclusion
 

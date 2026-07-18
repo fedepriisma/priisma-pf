@@ -1,71 +1,79 @@
-# DESIGN.md — Priisma spec-sheet system
+# DESIGN.md — Priisma quiet system
 
 Source of truth: the `<style is:global>` block in `src/pages/index.astro`.
+Revised July 18, 2026: lines removed, webfonts removed, four-size scale.
 The homepage is self-contained; it does NOT use `src/styles/tailwind.css`
 (that file serves the legacy `/portfolio`, `/about`, `/recraftr`, `/swatseo`
 pages only).
 
 ## Color
 
-Strategy: Restrained with one committed accent. Warm paper, near-black ink,
-hot coral. Nothing else.
+Unchanged from the spec-sheet era: warm paper, near-black ink, hot coral.
 
 | Token | Value | Use |
 |---|---|---|
-| `--paper` | `oklch(95% 0.008 85)` | Page + sheet background |
-| `--ink` | `oklch(17% 0.012 60)` | Text, borders, inverted panels |
-| `--accent` | `oklch(63% 0.19 33)` | Hot coral: stamps, highlights, ::selection |
+| `--paper` | `oklch(95% 0.008 85)` | Page background |
+| `--ink` | `oklch(17% 0.012 60)` | Text, solid buttons, Showbliz band |
+| `--accent` | `oklch(63% 0.19 33)` | Coral: stamp, rail, eyebrow in ink band, contact band, ::selection |
 | `--accent-text` | `oklch(50% 0.185 33)` | Coral for small text on paper (AA) |
-| `--line` | `1.5px solid var(--ink)` | Every structural border |
 
-Rules: no other hues. Inverted sections are ink bg / paper text (Showbliz
-panel, CURRENT FOCUS footer cell). Selection = accent bg, paper text.
-`theme-color` meta = `#f2efe9`.
+Bands carry structure: ink band (Showbliz), coral band (contact). No border
+rules anywhere; separation is spacing and background changes only.
 
 ## Typography
 
-| Token | Font | Use |
-|---|---|---|
-| `--display` | Archivo variable, `wdth 62..80, wght 700..900` | Condensed-black uppercase display headings (target wdth ~68, wght 900) |
-| `--mono` | Martian Mono 400/700 | ALL body, labels, spec cells, nav, footer |
+System stack only, one family: `--sans: system-ui, -apple-system, "Segoe
+UI", Roboto, "Helvetica Neue", Arial, sans-serif`. No webfonts, no mono.
 
-Body: 1rem, line-height 1.65. Loaded via Google Fonts in index.astro head.
-No third typeface, ever.
+Exactly four sizes (tokens, page-wide):
+
+| Token | Value | Use |
+|---|---|---|
+| `--fs-caption` | 0.75rem | Smallest: captions, coords, meta, years, footer, ticker venues, toggle |
+| `--fs-eyebrow` | 0.8125rem | Tags/eyebrows, buttons, brand, ticker titles |
+| `--fs-body` | 1rem | Body, subs, notes, ledger names, cycle titles |
+| `--fs-title` | `clamp(1.9rem, 1.45rem + 1.9vw, 2.75rem)` | h1, Showbliz title, mail, stat numbers |
+
+Hierarchy leans on weight (800 titles, 650 emphasis, 600 eyebrows/buttons)
+and uppercase+tracking for eyebrow/caption roles. Never add a fifth size.
 
 ## Layout
 
-- Whole page framed in a `.sheet` with `--line` borders; body padding
-  `clamp(0.5rem, 1.5vw, 1.25rem)` shows paper around the sheet.
-- Section padding: `--pad: clamp(1.1rem, 3.5vw, 2.75rem)`.
-- Sections divided by full `--line` rules, spec-sheet style: numbered cells
-  (01–04 cycle), segmented footer strip, coordinates line.
-- Grid cells with `border-inline-start/end: var(--line)`; no cards, no
-  shadows, no rounded corners.
+- No borders, no rules, no sheet frame. `--pad` inline padding +
+  `--measure: 68rem` centered content blocks.
+- Hero: centered text. Rail (`.hero-side`: spinning coral stamp, coordinates,
+  ✳ palm) sits horizontal on top for mobile, vertical left column on desktop
+  (`writing-mode: vertical-rl` coords), hero-main compensates with extra
+  inline-end padding for optical centering.
+- Cycle: quiet 4-up strip under the hero CTAs (numbers coral, caption size).
+- Ledger: numbered rows, each with an 88×66 project screenshot
+  (`.row-thumb`, object-fit cover, top crop). Every screenshot belongs to
+  its own project.
+- Footer: single caption-size flex row, no cells.
 
-## Signature elements
+## Signature elements (kept through the redesign)
 
-- Rotating circular stamp badge (SVG, accent).
-- ✳ palm glyph as ornament.
-- `.hl` inverted-highlight words (ink bg, paper text) inside display headings.
-- Numbered archive list 001–005; numbered method cells 01–04.
-- Showbliz panel: ink background, live RSS marquee ticker from
-  `https://showbliz.com/feed/today.xml` (build-time fetch, snapshot fallback,
-  nightly cron rebuild in `.github/workflows/deploy.yml`).
+- Rotating circular stamp badge (coral SVG).
+- ✳ palm glyph, coordinates line.
+- Numbered markers (01–04 cycle, 001–005 ledger), coral.
+- Showbliz ink band with live RSS ticker (`feed/today.xml`, build-time
+  fetch, snapshot fallback, nightly rebuild) + Pause/Play control.
 
 ## Motion
 
-- Marquee ticker (continuous, pausable, `prefers-reduced-motion` respected).
-- Rotating stamp. Nothing else animates. No scroll effects, no fades.
+Hero load reveal (rise, expo-out, staggered), stamp spin, ticker slide.
+Nothing scroll-driven. `prefers-reduced-motion` kills all animation; ticker
+becomes a scrollable strip.
 
 ## Accessibility
 
-- `--accent-text` exists because raw accent fails AA at small sizes on paper.
-- Focus: `outline: 2px solid var(--accent)`.
-- Padded ticker repeats are `aria-hidden` so screen readers hear each show
-  once.
+- Four-size scale keeps captions at 12px minimum; contrast tokens AA.
+- Ticker: `role="marquee"`, visible Pause/Play (WCAG 2.2.2), offscreen
+  idling via IntersectionObserver.
+- Links ≥24px targets (padding-block on caption-size links).
+- Focus: 2px coral outline (ink outline inside the coral band).
 
 ## Legacy (do not extend)
 
-`src/styles/tailwind.css` (Mona Sans / Instrument Serif, whiterabbit,
-gradients) powers old sub-pages only. New work follows the spec-sheet system
-above.
+`src/styles/tailwind.css` powers old sub-pages only. Archivo + Martian Mono
+and all ink-border spec-sheet styling are retired; do not reintroduce.
