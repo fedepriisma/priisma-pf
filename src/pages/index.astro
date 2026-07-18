@@ -1,17 +1,23 @@
 ---
-// Priisma — one-page beacon. Spec-sheet brutalism: paper, ink lines, one hot accent.
+// Priisma — one-page beacon. Quiet system-type edition: paper, ink, one hot accent, no rules.
 import { Image } from "astro:assets";
+import sbShot from "../img/showbliz-shot.jpg";
+import cwHome from "../img/cigarwell-home.png";
 import qbInvoice from "./portfolio/quotingbill/qb-invoice.png";
-import qbProjects from "./portfolio/quotingbill/qb-projects.png";
+import gdWeb from "./portfolio/godark/godark-web-01.jpg";
+import flyDevices from "./portfolio/flyairways/fly-airways-devices.png";
+import mchTablet from "./portfolio/mch/mch-tablet-view.png";
+
+const ogImage = new URL(sbShot.src, Astro.site).href;
 
 const year = new Date().getFullYear();
 
 const archive = [
-	{ n: "001", name: "Cigarwell", meta: "Product · Brand · Copy", year: "2023–24" },
-	{ n: "002", name: "QuotingBill", meta: "Product · SaaS", year: "2019" },
-	{ n: "003", name: "GoDark Chocolates", meta: "Brand · Web", year: "2017" },
-	{ n: "004", name: "airTRFX", meta: "Product · Web", year: "2016" },
-	{ n: "005", name: "MCH Anywhere", meta: "UX · iOS · Android", year: "2015" },
+	{ n: "001", name: "Cigarwell", meta: "Product · Brand · Copy", year: "2023–24", img: cwHome, alt: "Cigarwell mobile home screen" },
+	{ n: "002", name: "QuotingBill", meta: "Product · SaaS", year: "2019", img: qbInvoice, alt: "QuotingBill invoice screen" },
+	{ n: "003", name: "GoDark Chocolates", meta: "Brand · Web", year: "2017", img: gdWeb, alt: "GoDark Chocolates website" },
+	{ n: "004", name: "airTRFX", meta: "Product · Web", year: "2016", img: flyDevices, alt: "airTRFX fare pages across devices" },
+	{ n: "005", name: "MCH Anywhere", meta: "UX · iOS · Android", year: "2015", img: mchTablet, alt: "MCH Anywhere tablet view" },
 ];
 
 const cycle = [
@@ -100,70 +106,61 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		/>
 		<link rel="canonical" href="https://www.priisma.com/" />
 		<link rel="icon" href="/favicon.ico" sizes="32x32" />
-		<meta property="og:title" content="Fede Bozo — Priisma" />
+		<meta property="og:title" content="Fede Bozo · Priisma" />
 		<meta property="og:description" content="I design by building." />
 		<meta property="og:url" content="https://www.priisma.com/" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://www.priisma.com/img/showbliz-shot.jpg" />
+		<meta property="og:image" content={ogImage} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="theme-color" content="#f2efe9" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..80,700..900&family=Martian+Mono:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
 	</head>
 
 	<body>
-		<div class="sheet">
-			<header class="top">
-				<span class="brand">Fede&nbsp;Bozo <em>/ Priisma</em></span>
-				<a class="top-mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
-				<span class="top-chip" aria-hidden="true"></span>
-			</header>
+		<header class="top">
+			<span class="brand">Fede&nbsp;Bozo <em>/ Priisma</em></span>
+			<a class="top-mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
+		</header>
 
-			<main>
-				<!-- HERO -->
-				<section class="hero" aria-label="Intro">
-					<div class="hero-side" aria-hidden="true">
-						<svg class="stamp" viewBox="0 0 100 100">
-							<defs>
-								<path id="ring" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"></path>
-							</defs>
-							<g class="stamp-spin">
-								<text class="stamp-ring">
-									<textPath href="#ring" startOffset="0"
-										>PRODUCT DESIGNER · MIAMI FL · PRODUCT DESIGNER ·</textPath
-									>
-								</text>
-							</g>
-							<text class="stamp-year" x="50" y="46" text-anchor="middle">20</text>
-							<text class="stamp-year" x="50" y="64" text-anchor="middle">26</text>
-						</svg>
-						<span class="coords">Based in Miami, FL · 25.7617° N, 80.1918° W</span>
-						<span class="palm">✳</span>
+		<main>
+			<!-- HERO -->
+			<section class="hero" aria-label="Intro">
+				<div class="hero-side" aria-hidden="true">
+					<svg class="stamp" viewBox="0 0 100 100">
+						<defs>
+							<path id="ring" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"></path>
+						</defs>
+						<g class="stamp-spin">
+							<text class="stamp-ring">
+								<textPath href="#ring" startOffset="0"
+									>PRODUCT DESIGNER · MIAMI FL · PRODUCT DESIGNER ·</textPath
+								>
+							</text>
+						</g>
+						<text class="stamp-year" x="50" y="46" text-anchor="middle">20</text>
+						<text class="stamp-year" x="50" y="64" text-anchor="middle">26</text>
+					</svg>
+					<span class="coords">Based in Miami, FL · 25.7617° N, 80.1918° W</span>
+					<span class="palm">✳</span>
+				</div>
+
+				<div class="hero-main">
+					<p class="tag reveal">Product design · Miami</p>
+					<h1>
+						<span class="line reveal d1">I design</span>
+						<span class="line reveal d2">by building.</span>
+					</h1>
+					<p class="hero-sub reveal d3">
+						The whole cycle: product thinking, brand, design system, code, copy, launch.
+					</p>
+					<p class="hero-voice reveal d3">
+						AI is my <strong>crew</strong>. Taste is the bottleneck, and I own it.
+					</p>
+					<div class="ctas reveal d3">
+						<a class="btn solid" href="#now">See Showbliz</a>
+						<a class="btn" href="mailto:fede@priisma.com">Let&rsquo;s build</a>
 					</div>
 
-					<div class="hero-main">
-						<p class="tag reveal">Product design · Miami</p>
-						<h1>
-							<span class="line reveal d1">I design</span>
-							<span class="line reveal d2">by building<span class="sq" aria-hidden="true"></span></span>
-						</h1>
-						<p class="hero-sub reveal d3">
-							The whole cycle: product thinking, brand, design system, code, copy, launch.
-						</p>
-						<p class="hero-voice reveal d3">
-							AI is my <mark class="hl">crew</mark>. Taste is the bottleneck, and I own it.
-						</p>
-						<div class="ctas reveal d3">
-							<a class="btn solid" href="#now">See Showbliz <span aria-hidden="true">↗</span></a>
-							<a class="btn" href="mailto:fede@priisma.com">Let&rsquo;s build <span aria-hidden="true">↗</span></a>
-						</div>
-					</div>
-
-					<ol class="cycle" role="list" aria-label="The whole cycle">
+					<ol class="cycle reveal d3" role="list" aria-label="The whole cycle">
 						{
 							cycle.map((c) => (
 								<li>
@@ -174,62 +171,55 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 							))
 						}
 					</ol>
-				</section>
+				</div>
+			</section>
 
-				<!-- NOW / SHOWBLIZ -->
-				<section class="now" id="now" aria-label="Now: Showbliz">
-					<div class="now-head">
-						<p class="tag cell"><span class="pulse" aria-hidden="true"></span>Now · Live</p>
-					</div>
-					<div class="now-inner">
-						<h2 class="now-title">Showbliz</h2>
-						<p class="now-statement">
-							Every city has an art soul.<br />Miami&rsquo;s now has a home.
-						</p>
-						<a class="fig-link" href="https://showbliz.com" target="_blank" rel="noopener">
-							<figure class="fig">
-								<div class="fig-frame">
-									<img
-										src="/img/showbliz-shot.jpg"
-										alt="Showbliz homepage: tonight's shows across Miami and South Florida"
-										width="1400"
-										height="1000"
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-								<figcaption>Fig. 01 · Showbliz.com <span>live product ↗</span></figcaption>
-							</figure>
-						</a>
-					</div>
+			<!-- NOW / SHOWBLIZ -->
+			<section class="now" id="now" aria-label="Now: Showbliz">
+				<div class="now-inner">
+					<p class="tag now-tag">Now · Live</p>
+					<h2 class="now-title">Showbliz</h2>
+					<p class="now-statement">
+						Every city has an art soul.<br />Miami&rsquo;s now has a home.
+					</p>
+					<a class="fig-link" href="https://showbliz.com" target="_blank" rel="noopener">
+						<figure class="fig">
+							<Image src={sbShot} alt="Showbliz homepage: tonight's shows across Miami and South Florida" widths={[640, 1024, 1400]} sizes="(min-width: 64rem) 62rem, 94vw" format="webp" loading="lazy" decoding="async" />
+							<figcaption>Fig. 01 · Showbliz.com <span>live product ↗</span></figcaption>
+						</figure>
+					</a>
+				</div>
 
-					<!-- the product, in its own words: real listings -->
-					<div
-						class="marquee"
-						aria-label={
-							liveFeed
-								? "On Miami stages tonight, via Showbliz"
-								: "Recently on Miami stages, via Showbliz"
+				<!-- the product, in its own words: real listings -->
+				<div
+					class="marquee"
+					id="stage-marquee"
+					role="marquee"
+					aria-label={
+						liveFeed
+							? "On Miami stages tonight, via Showbliz"
+							: "Recently on Miami stages, via Showbliz"
+					}
+				>
+					<div class="marquee-track">
+						{
+							[0, 1].map((dup) => (
+								<ul role={dup === 0 ? "list" : undefined} aria-hidden={dup === 1 || undefined}>
+									{ticker.map((s) => (
+										<li aria-hidden={s.pad || undefined}>
+											{s.img && (
+												<img src={s.img} alt="" width="88" height="46" loading="lazy" decoding="async" />
+											)}
+											<strong>{s.show}</strong>
+											<span>{s.venue}</span>
+										</li>
+									))}
+								</ul>
+							))
 						}
-					>
-						<div class="marquee-track">
-							{
-								[0, 1].map((dup) => (
-									<ul role={dup === 0 ? "list" : undefined} aria-hidden={dup === 1 || undefined}>
-										{ticker.map((s) => (
-											<li aria-hidden={s.pad || undefined}>
-												{s.img && (
-													<img src={s.img} alt="" width="88" height="46" loading="lazy" decoding="async" />
-												)}
-												<strong>{s.show}</strong>
-												<span>{s.venue}</span>
-											</li>
-										))}
-									</ul>
-								))
-							}
-						</div>
 					</div>
+				</div>
+				<div class="marquee-bar">
 					<p class="marquee-label">
 						{
 							liveFeed
@@ -237,127 +227,92 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 								: "Recently on Miami stages, via Showbliz"
 						}
 					</p>
+					<button class="marquee-toggle" type="button" aria-controls="stage-marquee">
+						Pause
+					</button>
+				</div>
 
-					<div class="now-inner">
-						<ul class="stats" role="list">
-							<li><strong>200+</strong><span>shows on stage</span></li>
-							<li><strong>30+</strong><span>venues, one map</span></li>
-							<li><strong>2</strong><span>languages, EN&thinsp;/&thinsp;ES</span></li>
-							<li><strong>3 mo</strong><span>concept to launch</span></li>
-							<li><strong>1</strong><span>person, full stack of craft</span></li>
-						</ul>
-						<p class="now-note">
-							Not a case study. A working ecosystem: designed, written, coded, and shipped by one
-							person, for a real city.
-						</p>
-						<a class="btn solid inverse" href="https://showbliz.com" target="_blank" rel="noopener">
-							showbliz.com <span aria-hidden="true">↗</span>
-						</a>
-					</div>
-				</section>
-
-				<!-- SELECTED SCREENS -->
-				<section class="evidence" aria-label="Selected screens">
-					<h2 class="tag">Selected screens</h2>
-					<div class="fig-grid">
-						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
-							<figure class="fig fig--tall">
-								<div class="fig-frame">
-									<img
-										src="/img/cigarwell-home.png"
-										alt="Cigarwell mobile home: collection tracking and the Light button"
-										width="390"
-										height="844"
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-								<figcaption>Fig. 02 · Cigarwell, home <span>live product ↗</span></figcaption>
-							</figure>
-						</a>
-						<a class="fig-link" href="https://cigarwell.com" target="_blank" rel="noopener">
-							<figure class="fig fig--tall">
-								<div class="fig-frame">
-									<img
-										src="/img/cigarwell-lights.png"
-										alt="Cigarwell taste journal and cigar recommendations"
-										width="390"
-										height="844"
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-								<figcaption>Fig. 03 · Cigarwell, taste journal <span>live product ↗</span></figcaption>
-							</figure>
-						</a>
-						<figure class="fig">
-							<div class="fig-frame">
-								<Image
-									src={qbInvoice}
-									alt="QuotingBill invoice screen"
-									width={1000}
-									format="webp"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-							<figcaption>Fig. 04 · QuotingBill, invoice engine <span>2019</span></figcaption>
-						</figure>
-						<figure class="fig">
-							<div class="fig-frame">
-								<Image
-									src={qbProjects}
-									alt="QuotingBill projects screen"
-									width={1000}
-									format="webp"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-							<figcaption>Fig. 05 · QuotingBill, projects <span>2019</span></figcaption>
-						</figure>
-					</div>
-				</section>
-
-				<!-- BEFORE / ARCHIVE -->
-				<section class="ledger" aria-label="Previous work">
-					<h2 class="tag">Before</h2>
-					<ol role="list">
-						{
-							archive.map((p) => (
-								<li class="row">
-									<span class="row-n">{p.n}</span>
-									<span class="row-name">{p.name}</span>
-									<span class="row-meta">{p.meta}</span>
-									<span class="row-year">{p.year}</span>
-								</li>
-							))
-						}
-					</ol>
-					<p class="ledger-note">Ten years of shipped product. Ask me about any of it.</p>
-				</section>
-
-				<!-- CONTACT -->
-				<section class="contact" aria-label="Contact">
-					<h2 class="tag">Building something real?</h2>
-					<a class="mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
-					<p class="filter">
-						Not looking for clients to convince.<br />Looking for
-						<mark class="hl">partners in crime</mark>.
+				<div class="now-inner">
+					<ul class="stats" role="list">
+						<li><strong>200+</strong><span>shows on stage</span></li>
+						<li><strong>30+</strong><span>venues, one map</span></li>
+						<li><strong>2</strong><span>languages, EN&thinsp;/&thinsp;ES</span></li>
+						<li><strong>3 mo</strong><span>concept to launch</span></li>
+					</ul>
+					<p class="now-note">
+						Not a case study. A working ecosystem: designed, written, coded, and shipped by one
+						person, for a real city.
 					</p>
-				</section>
-			</main>
+					<a class="btn solid inverse" href="https://showbliz.com" target="_blank" rel="noopener">
+						showbliz.com
+					</a>
+				</div>
+			</section>
 
-			<footer class="foot">
-				<span class="foot-cell dark">Current focus</span>
-				<span class="foot-cell">Showbliz.com</span>
-				<span class="foot-cell">AI-native design cycles</span>
-				<span class="foot-cell grow">© {year} Priisma · Miami</span>
-				<a class="foot-cell" href="https://www.linkedin.com/in/fedebozo" target="_blank" rel="noopener"
-					>LinkedIn ↗</a
-				>
-			</footer>
-		</div>
+			<!-- BEFORE / ARCHIVE -->
+			<section class="ledger" aria-label="Previous work">
+				<h2 class="tag">Before</h2>
+				<ol role="list">
+					{
+						archive.map((p) => (
+							<li class="row">
+								<span class="row-n">{p.n}</span>
+								<Image
+									class="row-thumb"
+									src={p.img}
+									alt={p.alt}
+									widths={[176, 352]}
+									sizes="88px"
+									format="webp"
+									loading="lazy"
+									decoding="async"
+								/>
+								<span class="row-name">{p.name}</span>
+								<span class="row-meta">{p.meta}</span>
+								<span class="row-year">{p.year}</span>
+							</li>
+						))
+					}
+				</ol>
+				<p class="ledger-note">Ten years of shipped product. Ask me about any of it.</p>
+			</section>
+
+			<!-- CONTACT -->
+			<section class="contact" aria-label="Contact">
+				<h2 class="tag">Building something real?</h2>
+				<a class="mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
+				<p class="filter">
+					Not looking for clients to convince.<br />Looking for
+					<strong>partners in crime</strong>.
+				</p>
+			</section>
+		</main>
+
+		<footer class="foot">
+			<span class="foot-item"><strong>Current focus</strong> Showbliz.com</span>
+			<span class="foot-item">AI-native design cycles</span>
+			<span class="foot-item grow">© {year} Priisma · Miami</span>
+			<a class="foot-item" href="https://www.linkedin.com/in/fedebozo" target="_blank" rel="noopener"
+				>LinkedIn ↗</a
+			>
+		</footer>
+		<script>
+			// WCAG 2.2.2: keyboard/touch pause for the ticker
+			const marquee = document.getElementById("stage-marquee");
+			const toggle = document.querySelector<HTMLButtonElement>(".marquee-toggle");
+			toggle?.addEventListener("click", () => {
+				const paused = marquee?.classList.toggle("paused");
+				toggle.textContent = paused ? "Play" : "Pause";
+			});
+			// idle the ticker while offscreen (battery)
+			const io = new IntersectionObserver(
+				(entries) => {
+					for (const e of entries) e.target.classList.toggle("idle", !e.isIntersecting);
+				},
+				{ rootMargin: "10%" }
+			);
+			if (marquee) io.observe(marquee);
+		</script>
 	</body>
 </html>
 
@@ -368,10 +323,16 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		--ink: oklch(17% 0.012 60);
 		--accent: oklch(63% 0.19 33); /* hot coral */
 		--accent-text: oklch(50% 0.185 33); /* coral dark enough for small text on paper (AA) */
-		--line: 1.5px solid var(--ink);
-		--display: "Archivo", system-ui, sans-serif;
-		--mono: "Martian Mono", ui-monospace, monospace;
+		--sans:
+			system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 		--pad: clamp(1.1rem, 3.5vw, 2.75rem);
+		--measure: 68rem;
+
+		/* the whole page uses exactly four sizes */
+		--fs-caption: 0.75rem;
+		--fs-eyebrow: 0.8125rem;
+		--fs-body: 1rem;
+		--fs-title: clamp(1.9rem, 1.45rem + 1.9vw, 2.75rem);
 	}
 
 	/* ————— base ————— */
@@ -388,11 +349,10 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 	body {
 		background: var(--paper);
 		color: var(--ink);
-		font-family: var(--mono);
-		font-size: 1rem;
-		line-height: 1.65;
+		font-family: var(--sans);
+		font-size: var(--fs-body);
+		line-height: 1.6;
 		-webkit-font-smoothing: antialiased;
-		padding: clamp(0.5rem, 1.5vw, 1.25rem);
 	}
 	::selection {
 		background: var(--accent);
@@ -405,83 +365,46 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		outline: 2px solid var(--accent);
 		outline-offset: 3px;
 	}
-	.sheet {
-		border: var(--line);
+	strong {
+		font-weight: 650;
 	}
 
 	.tag {
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.18em;
+		font-size: var(--fs-eyebrow);
+		font-weight: 600;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.6em;
-	}
-	.hl {
-		background: var(--ink);
-		color: var(--paper);
-		padding-inline: 0.35em;
-		padding-block: 0.05em;
-	}
-	.sq {
-		display: inline-block;
-		inline-size: 0.14em;
-		block-size: 0.14em;
-		background: var(--accent);
-		margin-inline-start: 0.06em;
-	}
-
-	/* display type */
-	h1,
-	.now-title,
-	.mail,
-	.row-name {
-		font-family: var(--display);
-		font-variation-settings: "wdth" 68;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: 0.005em;
 	}
 
 	/* ————— header ————— */
 	.top {
 		display: flex;
-		align-items: stretch;
-		border-block-end: var(--line);
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1.1rem var(--pad);
 	}
 	.brand {
-		padding: 0.9rem var(--pad);
+		font-size: var(--fs-eyebrow);
 		font-weight: 700;
-		font-size: 0.8rem;
-		border-inline-end: var(--line);
 	}
 	.brand em {
 		font-style: normal;
 		font-weight: 400;
-		opacity: 0.55;
+		opacity: 0.65;
 	}
 	.top-mail {
-		margin-inline-start: auto;
-		display: flex;
-		align-items: center;
-		padding: 0.9rem var(--pad);
-		font-size: 0.75rem;
+		font-size: var(--fs-caption);
 		text-decoration: none;
-		border-inline-start: var(--line);
+		padding-block: 0.5rem;
 	}
-	.top-mail:hover {
-		background: var(--ink);
-		color: var(--paper);
-	}
-	.top-chip {
-		inline-size: 3rem;
-		border-inline-start: var(--line);
-		background:
-			linear-gradient(var(--ink), var(--ink)) center / 0.8rem 0.8rem no-repeat;
+	.top-mail:hover,
+	.top-mail:focus-visible {
+		text-decoration: underline;
+		text-underline-offset: 0.25em;
 	}
 
-	/* ————— hero ————— */
+	/* ————— hero: rail on top (mobile), vertical rail beside (desktop) ————— */
 	.hero {
 		display: grid;
 	}
@@ -490,7 +413,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		align-items: center;
 		gap: 1.2rem;
 		padding: 1rem var(--pad);
-		border-block-end: var(--line);
 		color: var(--accent);
 	}
 	.stamp {
@@ -504,13 +426,11 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		transform-origin: 50px 50px;
 	}
 	.stamp-ring {
-		font-family: var(--mono);
 		font-size: 10.5px;
 		letter-spacing: 2px;
 	}
 	.stamp-year {
-		font-family: var(--display);
-		font-weight: 900;
+		font-weight: 800;
 		font-size: 17px;
 	}
 	@keyframes spin {
@@ -519,165 +439,142 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		}
 	}
 	.coords {
-		font-size: 0.68rem;
-		letter-spacing: 0.14em;
+		font-size: var(--fs-caption);
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--ink);
-		opacity: 0.75;
+		opacity: 0.7;
 	}
 	.palm {
 		margin-inline-start: auto;
-		font-size: 1.6rem;
+		font-size: var(--fs-title);
 		line-height: 1;
 	}
 	.hero-main {
-		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad) clamp(2.2rem, 6dvh, 4rem);
+		padding: clamp(3rem, 9dvh, 6rem) var(--pad) clamp(2.5rem, 7dvh, 5rem);
+		text-align: center;
 	}
 	.hero h1 {
-		font-size: clamp(3.4rem, 15.5vw, 11rem);
-		line-height: 0.85;
-		margin-block-start: 1.1rem;
+		font-size: var(--fs-title);
+		font-weight: 800;
+		line-height: 1.05;
+		letter-spacing: -0.01em;
+		margin-block-start: 1rem;
 	}
 	.hero h1 .line {
 		display: block;
 	}
-	.hero h1 .sq {
-		inline-size: 0.13em;
-		block-size: 0.13em;
-	}
 	.hero-sub {
-		margin-block-start: 1.8rem;
-		max-inline-size: 52ch;
+		margin-block-start: 1.4rem;
+		max-inline-size: 46ch;
+		margin-inline: auto;
 	}
 	.hero-voice {
-		margin-block-start: 1rem;
-		padding-block-start: 1rem;
-		border-block-start: var(--line);
-		max-inline-size: 52ch;
-		font-size: 0.85rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
+		margin-block-start: 0.6rem;
+		max-inline-size: 46ch;
+		margin-inline: auto;
+		opacity: 0.85;
 	}
 	.ctas {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 0.8rem;
-		margin-block-start: 2rem;
+		margin-block-start: 2.2rem;
 	}
 	.btn {
-		font-family: var(--mono);
-		font-size: 0.78rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
+		font-size: var(--fs-eyebrow);
+		font-weight: 600;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		text-decoration: none;
-		border: var(--line);
-		padding: 0.85rem 1.4rem;
+		padding: 0.8rem 1.5rem;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.7em;
-		background: var(--paper);
+		gap: 0.6em;
 		color: var(--ink);
-		transition: translate 0.15s ease;
+		transition: opacity 0.15s ease;
 	}
 	.btn.solid {
 		background: var(--ink);
 		color: var(--paper);
 	}
+	.btn:not(.solid) {
+		text-decoration: underline;
+		text-underline-offset: 0.3em;
+	}
 	.btn:hover {
-		translate: 0 -2px;
+		opacity: 0.85;
 	}
 	.btn.solid.inverse {
 		background: var(--paper);
 		color: var(--ink);
-		border-color: var(--paper);
 	}
 
-	/* the whole cycle, as a spec table */
+	/* the whole cycle, quiet strip */
 	.cycle {
 		list-style: none;
 		padding: 0;
-		border-block-start: var(--line);
+		margin-block-start: clamp(3rem, 8dvh, 5rem);
+		display: grid;
+		gap: 1.1rem;
+		justify-items: center;
 	}
 	.cycle li {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-areas: "n t" "n d";
-		column-gap: 1.1rem;
-		padding: 1rem var(--pad);
-		border-block-end: var(--line);
+		justify-items: center;
+		gap: 0.15rem;
 	}
-	.cycle li:last-child {
-		border-block-end: none;
+	/* connect the steps: it reads as a sequence, not four floating notes */
+	.cycle li + li::before {
+		content: "↓" / "";
+		color: var(--accent-text);
+		font-size: var(--fs-caption);
+		line-height: 1;
+		padding-block-end: 0.6rem;
 	}
 	.cycle-n {
-		grid-area: n;
 		color: var(--accent-text);
-		font-weight: 700;
-		font-size: 0.75rem;
+		font-size: var(--fs-caption);
+		font-weight: 600;
 	}
 	.cycle-t {
-		grid-area: t;
-		font-family: var(--display);
-		font-variation-settings: "wdth" 75;
-		font-weight: 800;
-		font-size: 1.05rem;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
+		font-size: var(--fs-body);
+		font-weight: 650;
 	}
 	.cycle-d {
-		grid-area: d;
-		font-size: 0.72rem;
-		opacity: 0.75;
+		font-size: var(--fs-caption);
+		opacity: 0.7;
 	}
 
-	/* ————— now / showbliz: ink panel ————— */
+	/* ————— now / showbliz: ink band ————— */
 	.now {
 		background: var(--ink);
 		color: var(--paper);
-		border-block: var(--line);
-	}
-	.now-head {
-		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
-	}
-	.tag.cell {
-		padding: 0.8rem var(--pad);
-		color: var(--accent);
-	}
-	.pulse {
-		inline-size: 0.55em;
-		block-size: 0.55em;
-		background: var(--accent);
-		animation: pulse 2.2s ease-in-out infinite;
-	}
-	@keyframes pulse {
-		50% {
-			opacity: 0.25;
-		}
 	}
 	.now-inner {
-		padding: clamp(2.4rem, 6dvh, 4.5rem) var(--pad);
+		padding: clamp(2.6rem, 7dvh, 5rem) var(--pad);
+		max-inline-size: var(--measure);
+		margin-inline: auto;
+	}
+	.now-tag {
+		color: var(--accent);
 	}
 	.now-title {
-		font-size: clamp(3rem, 12vw, 8.5rem);
-		line-height: 0.9;
+		font-size: var(--fs-title);
+		font-weight: 800;
+		line-height: 1.05;
+		margin-block-start: 0.6rem;
 	}
 	.now-statement {
-		margin-block-start: 1.6rem;
-		font-size: clamp(1.05rem, 3.2vw, 1.6rem);
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.03em;
-		line-height: 1.35;
-		text-wrap: balance;
+		margin-block-start: 0.8rem;
+		max-inline-size: 46ch;
 	}
 
 	/* marquee */
 	.marquee {
 		overflow: clip;
-		border-block: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
-		padding-block: 0.9rem;
+		padding-block: 0.6rem;
 	}
 	.marquee-track {
 		display: flex;
@@ -698,29 +595,19 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		align-items: center;
 		gap: 0.8em;
 		white-space: nowrap;
-		padding-inline-end: 1.6em;
-		margin-inline-end: 1.6em;
-		border-inline-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		margin-inline-end: 3rem;
 	}
 	.marquee-track img {
 		block-size: 2.6rem;
 		inline-size: auto;
 		aspect-ratio: 88 / 46;
 		object-fit: cover;
-		filter: grayscale(1) contrast(1.1);
-		transition: filter 0.3s ease;
-	}
-	.marquee-track li:hover img {
-		filter: none;
 	}
 	.marquee-track strong {
-		font-weight: 700;
-		font-size: 0.82rem;
-		text-transform: uppercase;
-		letter-spacing: 0.03em;
+		font-size: var(--fs-eyebrow);
 	}
 	.marquee-track span {
-		font-size: 0.68rem;
+		font-size: var(--fs-caption);
 		opacity: 0.65;
 	}
 	@keyframes slide {
@@ -728,12 +615,40 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 			translate: -50% 0;
 		}
 	}
+	.marquee-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.6rem var(--pad) 0;
+		max-inline-size: var(--measure);
+		margin-inline: auto;
+	}
 	.marquee-label {
-		padding: 0.9rem var(--pad) 0;
-		font-size: 0.7rem;
-		letter-spacing: 0.1em;
+		font-size: var(--fs-caption);
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		opacity: 0.6;
+	}
+	.marquee-toggle {
+		font-family: var(--sans);
+		font-size: var(--fs-caption);
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--paper);
+		background: color-mix(in oklch, var(--paper) 14%, var(--ink));
+		border: none;
+		padding: 0.6em 1.1em;
+		cursor: pointer;
+	}
+	.marquee-toggle:hover {
+		background: var(--paper);
+		color: var(--ink);
+	}
+	.marquee.paused .marquee-track,
+	.marquee.idle .marquee-track {
+		animation-play-state: paused;
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.marquee {
@@ -742,35 +657,28 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		.marquee-track ul[aria-hidden="true"] {
 			display: none;
 		}
+		.marquee-toggle {
+			display: none;
+		}
 	}
 
 	/* stats */
 	.stats {
 		list-style: none;
 		padding: 0;
-		margin-block-start: 0.5rem;
 		display: grid;
-		max-inline-size: 40rem;
-	}
-	.stats li {
-		display: flex;
-		align-items: baseline;
-		gap: 1.1rem;
-		padding-block: 0.8rem;
-		border-block-end: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
-	}
-	.stats li:first-child {
-		border-block-start: 1.5px solid color-mix(in oklch, var(--paper) 25%, var(--ink));
+		grid-template-columns: repeat(2, auto);
+		justify-content: start;
+		gap: 1.8rem 3.5rem;
 	}
 	.stats strong {
-		font-family: var(--display);
-		font-variation-settings: "wdth" 72;
-		font-weight: 900;
-		font-size: clamp(1.4rem, 4vw, 2rem);
-		min-inline-size: 4.4ch;
+		display: block;
+		font-size: var(--fs-title);
+		font-weight: 800;
+		line-height: 1.1;
 	}
 	.stats span {
-		font-size: 0.72rem;
+		font-size: var(--fs-caption);
 		opacity: 0.75;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
@@ -783,161 +691,106 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		margin-block-start: 2rem;
 	}
 
-	/* ————— figures: bold b&w evidence ————— */
+	/* ————— figure: the proof ————— */
 	.fig-link {
 		display: block;
 		text-decoration: none;
 		color: inherit;
-	}
-	.fig-link:hover .fig figcaption span,
-	.fig-link:focus-visible .fig figcaption span {
-		background: var(--accent);
-		color: var(--paper);
-		padding-inline: 0.35em;
-	}
-	.fig--tall .fig-frame {
-		aspect-ratio: 390 / 844;
-	}
-	.fig--tall .fig-frame img {
-		animation-duration: 26s;
+		max-inline-size: 62rem;
 	}
 	.fig {
-		border: var(--line);
-		background: var(--paper);
-		color: var(--ink);
-	}
-	.now .fig {
 		margin-block-start: 2.2rem;
-		max-inline-size: 64rem;
 	}
-	.fig-frame {
-		position: relative;
-		overflow: clip;
-		aspect-ratio: 8 / 5;
-		border-block-end: var(--line);
-	}
-	.fig-frame img {
+	.fig img {
 		inline-size: 100%;
-		block-size: 100%;
-		object-fit: cover;
-		object-position: left top;
-		transform-origin: top left;
-		filter: grayscale(1) contrast(1.15) brightness(1.03);
-		animation: drift 18s ease-in-out infinite alternate;
-		transition: filter 0.45s ease;
-	}
-	.fig:nth-of-type(odd) .fig-frame img {
-		animation-delay: -9s;
-		animation-duration: 22s;
-	}
-	.fig:hover .fig-frame img,
-	.fig-link:hover .fig-frame img,
-	.fig-link:focus-visible .fig-frame img {
-		filter: grayscale(0) contrast(1.05);
-	}
-	/* print grain */
-	.fig-frame::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		opacity: 0.35;
-		mix-blend-mode: overlay;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-	}
-	/* zoom anchored to the top-left corner: never crops the top */
-	@keyframes drift {
-		from {
-			scale: 1;
-		}
-		to {
-			scale: 1.06;
-		}
+		block-size: auto;
+		display: block;
 	}
 	.fig figcaption {
 		display: flex;
 		justify-content: space-between;
 		gap: 1rem;
-		padding: 0.65rem 0.95rem;
-		font-size: 0.68rem;
-		font-weight: 700;
-		letter-spacing: 0.14em;
+		padding-block-start: 0.7rem;
+		font-size: var(--fs-caption);
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
+		opacity: 0.85;
 	}
 	.fig figcaption span {
-		color: var(--accent-text);
+		color: var(--accent);
 	}
-	.evidence {
-		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
-		border-block-end: var(--line);
-	}
-	.fig-grid {
-		display: grid;
-		gap: clamp(1.1rem, 3vw, 2rem);
-		margin-block-start: 1.4rem;
+	.fig-link:hover figcaption span,
+	.fig-link:focus-visible figcaption span {
+		text-decoration: underline;
+		text-underline-offset: 0.25em;
 	}
 
 	/* ————— ledger ————— */
 	.ledger {
-		padding: clamp(2.5rem, 7dvh, 5rem) var(--pad);
+		padding: clamp(2.6rem, 7dvh, 5rem) var(--pad);
+		max-inline-size: var(--measure);
+		margin-inline: auto;
 	}
 	.ledger ol {
 		list-style: none;
 		padding: 0;
-		margin-block-start: 1.4rem;
-		border-block-start: var(--line);
+		margin-block-start: 1.8rem;
+		display: grid;
+		gap: 1.6rem;
 	}
 	.row {
 		display: grid;
-		grid-template-columns: 3.6ch 1fr auto;
-		grid-template-areas: "n name year" "n meta year";
+		grid-template-columns: 3.6ch auto 1fr;
+		grid-template-areas: "n thumb name" "n thumb meta";
 		column-gap: 1.1rem;
-		align-items: baseline;
-		padding-block: 0.95rem;
-		border-block-end: var(--line);
-		transition: background 0.15s;
-	}
-	.row:hover {
-		background: color-mix(in oklch, var(--accent) 14%, var(--paper));
+		align-items: center;
 	}
 	.row-n {
 		grid-area: n;
-		font-size: 0.7rem;
-		font-weight: 700;
+		font-size: var(--fs-caption);
+		font-weight: 600;
 		color: var(--accent-text);
+		align-self: start;
+		padding-block-start: 0.2rem;
+	}
+	.row-thumb {
+		grid-area: thumb;
+		inline-size: 5.5rem;
+		block-size: 4.125rem;
+		object-fit: cover;
+		object-position: top;
 	}
 	.row-name {
 		grid-area: name;
-		font-size: clamp(1.15rem, 3.2vw, 1.7rem);
-		line-height: 1.15;
+		font-size: var(--fs-body);
+		font-weight: 650;
+		align-self: end;
 	}
 	.row-meta {
 		grid-area: meta;
-		font-size: 0.65rem;
-		letter-spacing: 0.1em;
+		font-size: var(--fs-caption);
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		opacity: 0.6;
+		align-self: start;
 	}
 	.row-year {
-		grid-area: year;
-		font-size: 0.72rem;
-		font-variant-numeric: tabular-nums;
-		opacity: 0.65;
+		display: none;
 	}
 	.ledger-note {
-		margin-block-start: 1.5rem;
-		font-size: 0.85rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
+		margin-block-start: 2rem;
+		font-weight: 650;
 	}
 
 	/* ————— contact ————— */
 	.contact {
-		padding: clamp(3rem, 10dvh, 6.5rem) var(--pad);
+		padding: clamp(3.5rem, 12dvh, 7rem) var(--pad);
 		background: var(--accent);
 		color: var(--ink);
-		border-block-start: var(--line);
+	}
+	.contact > * {
+		max-inline-size: var(--measure);
+		margin-inline: auto;
 	}
 	.contact ::selection {
 		background: var(--ink);
@@ -947,67 +800,49 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		outline-color: var(--ink);
 	}
 	.mail {
-		display: inline-block;
-		margin-block-start: 1.3rem;
-		font-size: clamp(2rem, 8.5vw, 6.5rem);
-		text-decoration: none;
-		line-height: 0.95;
-		border-block-end: 4px solid currentColor;
-		padding-block-end: 0.06em;
-		transition:
-			background 0.2s,
-			color 0.2s;
+		display: block;
+		margin-block-start: 1.1rem;
+		font-size: var(--fs-title);
+		font-weight: 800;
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.18em;
 		overflow-wrap: anywhere;
 	}
 	.mail:hover {
-		background: var(--ink);
-		color: var(--paper);
+		text-decoration-thickness: 4px;
 	}
 	.filter {
-		margin-block-start: 2rem;
-		font-size: clamp(0.95rem, 2.6vw, 1.25rem);
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		line-height: 1.55;
-	}
-	.contact .hl {
-		background: var(--ink);
-		color: var(--paper);
+		margin-block-start: 1.6rem;
 	}
 
-	/* ————— footer strip ————— */
+	/* ————— footer ————— */
 	.foot {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: stretch;
-		border-block-start: var(--line);
-		font-size: 0.7rem;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
-	.foot-cell {
-		padding: 0.85rem 1.1rem;
-		border-inline-end: var(--line);
-		display: inline-flex;
 		align-items: center;
+		gap: 0.8rem 2rem;
+		padding: 1.4rem var(--pad) 2rem;
+		font-size: var(--fs-caption);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		opacity: 0.85;
+	}
+	.foot-item {
 		text-decoration: none;
+		padding-block: 0.5rem;
 	}
-	.foot-cell.dark {
-		background: var(--ink);
-		color: var(--paper);
+	.foot-item strong {
+		font-weight: 700;
+		margin-inline-end: 0.4em;
 	}
-	.foot-cell.grow {
+	.foot-item.grow {
 		flex: 1;
-		border-inline-end: none;
 	}
-	a.foot-cell {
-		border-inline-start: var(--line);
-		border-inline-end: none;
-	}
-	a.foot-cell:hover {
-		background: var(--accent);
-		color: var(--ink);
+	a.foot-item:hover,
+	a.foot-item:focus-visible {
+		text-decoration: underline;
+		text-underline-offset: 0.25em;
 	}
 
 	/* ————— motion ————— */
@@ -1029,15 +864,6 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 			translate: 0 1.2rem;
 		}
 	}
-	@supports (animation-timeline: view()) {
-		.now-inner > *,
-		.ledger > *,
-		.contact > * {
-			animation: rise both;
-			animation-timeline: view();
-			animation-range: entry 0% entry 45%;
-		}
-	}
 	@media (prefers-reduced-motion: reduce) {
 		*,
 		*::before,
@@ -1050,44 +876,70 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		}
 	}
 
-	/* ————— desktop, second ————— */
+	/* ————— wider viewports ————— */
+	@media (min-width: 40rem) {
+		.cycle {
+			grid-template-columns: repeat(4, 1fr);
+			align-items: start;
+			gap: 0;
+		}
+		.cycle li {
+			position: relative;
+			padding-inline: 1rem;
+		}
+		.cycle li + li::before {
+			content: "→" / "";
+			position: absolute;
+			inset-inline-start: -0.5ch;
+			inset-block-start: 0.3em;
+			padding: 0;
+		}
+		.stats {
+			grid-template-columns: repeat(4, auto);
+		}
+		.row {
+			grid-template-columns: 3.6ch auto 1.2fr 1fr auto;
+			grid-template-areas: "n thumb name meta year";
+		}
+		.row-name,
+		.row-meta {
+			align-self: center;
+		}
+		.row-year {
+			display: block;
+			grid-area: year;
+			font-size: var(--fs-caption);
+			font-variant-numeric: tabular-nums;
+			opacity: 0.65;
+		}
+	}
+
+	/* desktop: the rail turns vertical beside a centered hero */
 	@media (min-width: 64rem) {
 		.hero {
-			grid-template-columns: 1fr minmax(320px, 26rem);
-			grid-template-areas: "side side" "main cycle";
+			grid-template-columns: auto 1fr;
+			grid-template-areas: "side main";
 		}
 		.hero-side {
 			grid-area: side;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 2rem;
+			padding: clamp(2.5rem, 7dvh, 5rem) 1.6rem;
+		}
+		.coords {
+			writing-mode: vertical-rl;
+			letter-spacing: 0.18em;
+		}
+		.palm {
+			margin-inline-start: 0;
+			margin-block-start: auto;
 		}
 		.hero-main {
 			grid-area: main;
-			border-inline-end: var(--line);
-		}
-		.cycle {
-			grid-area: cycle;
-			border-block-start: none;
-			display: grid;
-			grid-template-rows: repeat(4, 1fr);
-		}
-		.cycle li {
-			align-content: center;
-		}
-		.row {
-			grid-template-columns: 4.5ch 1.2fr 1fr auto;
-			grid-template-areas: "n name meta year";
-		}
-		.fig-grid {
-			grid-template-columns: repeat(4, 1fr);
-			align-items: start;
-		}
-		.fig-grid > .fig-link {
-			grid-column: span 1;
-		}
-		.fig-grid > figure.fig {
-			grid-column: span 2;
-		}
-		.fig-grid > figure.fig:last-of-type {
-			grid-column: 3 / span 2;
+			/* optically re-center against the rail's width */
+			padding-inline-end: calc(var(--pad) + 4rem);
 		}
 	}
 </style>
