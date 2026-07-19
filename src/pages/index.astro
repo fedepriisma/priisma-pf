@@ -10,7 +10,10 @@ import mchTablet from "./portfolio/mch/mch-tablet-view.png";
 
 const ogImage = new URL(sbShot.src, Astro.site).href;
 
-const year = new Date().getFullYear();
+const now = new Date();
+const year = now.getFullYear();
+// build-time receipt: the daily rebuild + every push keeps this honest
+const shipped = now.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
 const archive = [
 	{ n: "001", name: "Cigarwell", meta: "Product · Brand · Copy", year: "2023–24", img: cwHome, alt: "Cigarwell mobile home screen" },
@@ -57,6 +60,8 @@ const decode = (s: string) =>
 
 let onStage = snapshot;
 let liveFeed = false;
+let feedShows = 0;
+let feedVenues = 0;
 try {
 	const res = await fetch("https://showbliz.com/feed/today.xml", {
 		signal: AbortSignal.timeout(10_000),
@@ -78,6 +83,8 @@ try {
 			.filter((s) => s.show);
 		console.log(`[showbliz feed] parsed ${items.length} items`);
 		if (items.length) {
+			feedShows = items.length;
+			feedVenues = new Set(items.map((s) => s.venue).filter(Boolean)).size;
 			onStage = items.slice(0, 14);
 			liveFeed = true;
 		}
@@ -105,7 +112,12 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 			content="Head of design who ships. Now building Showbliz, Miami's performing-arts ecosystem: designed and built by one person in three months. Looking for partners in crime."
 		/>
 		<link rel="canonical" href="https://www.priisma.com/" />
-		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<!-- the ✳ mark, coral on paper: the tab is unmistakably ours -->
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f2efe9'/%3E%3Ctext x='16' y='23' font-size='26' text-anchor='middle' fill='%23e0512f'%3E%E2%9C%B3%3C/text%3E%3C/svg%3E"
+		/>
+		<link rel="alternate icon" href="/favicon.ico" sizes="32x32" />
 		<meta property="og:title" content="Fede Bozo · Priisma" />
 		<meta property="og:description" content="I design by building." />
 		<meta property="og:url" content="https://www.priisma.com/" />
@@ -150,7 +162,8 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 						<span class="line reveal d2">by building.</span>
 					</h1>
 					<p class="hero-sub reveal d3">
-						The whole cycle: product thinking, brand, design system, code, copy, launch.
+						I don&rsquo;t do handoffs. Strategy, design systems, the real code, the copy,
+						the launch: I take it from &ldquo;what if&rdquo; to shipped.
 					</p>
 					<p class="hero-voice reveal d3">
 						AI is my <strong>crew</strong>. Taste is the bottleneck, and I own it.
@@ -182,6 +195,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 					<p class="now-statement">
 						Every city has an art soul.<br />Miami&rsquo;s now has a home.
 					</p>
+					<p class="now-statement-es" lang="es">Cada ciudad tiene un alma. La de Miami ya tiene casa.</p>
 					<a class="fig-link" href="https://showbliz.com" target="_blank" rel="noopener">
 						<figure class="fig">
 							<Image src={sbShot} alt="Showbliz homepage: tonight's shows across Miami and South Florida" widths={[640, 1024, 1400]} sizes="(min-width: 64rem) 62rem, 94vw" format="webp" loading="lazy" decoding="async" />
@@ -197,7 +211,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 					role="marquee"
 					aria-label={
 						liveFeed
-							? "On Miami stages tonight, via Showbliz"
+							? `${feedShows} shows across ${feedVenues} venues on Miami stages tonight, via Showbliz`
 							: "Recently on Miami stages, via Showbliz"
 					}
 				>
@@ -223,7 +237,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 					<p class="marquee-label">
 						{
 							liveFeed
-								? "On Miami stages tonight, straight from the Showbliz feed"
+								? `${feedShows} shows · ${feedVenues} venues on stage tonight, live from the Showbliz feed`
 								: "Recently on Miami stages, via Showbliz"
 						}
 					</p>
@@ -282,7 +296,7 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 				<h2 class="tag">Building something real?</h2>
 				<a class="mail" href="mailto:fede@priisma.com">fede@priisma.com</a>
 				<p class="filter">
-					Not looking for clients to convince.<br />Looking for
+					Not here to convince anyone. No decks, no bullshit.<br />Just
 					<strong>partners in crime</strong>.
 				</p>
 			</section>
@@ -290,8 +304,9 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 
 		<footer class="foot">
 			<span class="foot-item"><strong>Current focus</strong> Showbliz.com</span>
-			<span class="foot-item">AI-native design cycles</span>
-			<span class="foot-item grow">© {year} Priisma · Miami</span>
+			<span class="foot-item">This site: me + AI, start to shipped</span>
+			<span class="foot-item">Last shipped {shipped}</span>
+			<span class="foot-item grow"><span lang="es">Hecho en Miami</span> · © {year}</span>
 			<a class="foot-item" href="https://www.linkedin.com/in/fedebozo" target="_blank" rel="noopener"
 				>LinkedIn ↗</a
 			>
@@ -570,6 +585,13 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		margin-block-start: 0.8rem;
 		max-inline-size: 46ch;
 	}
+	.now-statement-es {
+		margin-block-start: 0.5rem;
+		max-inline-size: 46ch;
+		font-size: var(--fs-caption);
+		font-style: italic;
+		color: var(--accent);
+	}
 
 	/* marquee */
 	.marquee {
@@ -759,12 +781,20 @@ const ticker = onStage.map((s, i) => ({ ...s, pad: i >= realCount }));
 		block-size: 4.125rem;
 		object-fit: cover;
 		object-position: top;
+		transition: scale 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+	}
+	.row:hover .row-thumb {
+		scale: 1.04;
 	}
 	.row-name {
 		grid-area: name;
 		font-size: var(--fs-body);
 		font-weight: 650;
 		align-self: end;
+		transition: color 0.2s ease;
+	}
+	.row:hover .row-name {
+		color: var(--accent-text);
 	}
 	.row-meta {
 		grid-area: meta;
