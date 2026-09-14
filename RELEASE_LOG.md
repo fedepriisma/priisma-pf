@@ -1,5 +1,13 @@
 # Release log
 
+## 2026-09-14 — Promote new-mod-version to master (production)
+**Branch:** claude/promote-new-mod-version-to-master · **PR:** https://github.com/fedepriisma/priisma-pf/pull/9
+### What shipped
+- Everything from PR #8 reaches www.priisma.com; replaces master's "I design by building" homepage and its Showbliz feed ticker.
+- Nine conflicts resolved toward `new-mod-version` (homepage, footer, stylesheet, DESIGN.md, Astro 6 + PhotoSwipe deps); `.gitignore` is the union.
+### Notes
+Production deploys from `master` on merge and nightly; dev.priisma.com deploys from `new-mod-version`.
+
 ## 2026-09-14 — Fede Bozo direction across every page
 **Branch:** claude/code-review-before-pr-dcabf9 · **PR:** https://github.com/fedepriisma/priisma-pf/pull/8
 ### What shipped
