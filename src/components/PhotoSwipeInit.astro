@@ -1,0 +1,11 @@
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.pswp-gallery',
+    children: 'a[data-pswp-width]',
+    pswpModule: () => import('photoswipe'),
+  });
+  lightbox.init();
+</script>

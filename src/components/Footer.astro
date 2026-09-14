@@ -1,18 +1,5 @@
----
-import ContactInfo from "../components/ContactInfo.astro";
----
-
-<footer class="px-4 py-8 bg-black text-yellow">
-	<div class="mx-4">
-		<h4 class="text-lg font-display">You got all the way to the footer, you Rockstar!🤘👩‍🎤</h4>
-		<p class="mt-2 mb-8 text-md text-amber-200">Thank you for being awesome and please get in touch for any comments.</p>
-		<ContactInfo />
-		<p class="mt-8 text-xs text-amber-400">
-			This website is built with <a href="https://astro.build/">Astro</a>, using Mona Sans and Instrument Serif from Google Fonts <br />
-			All other content on this website is produced by and copyright
-			&copy; 2012–{new Date().getFullYear()} by Federico Bozo. <br />
-			All assets are hosted  by GithubPages. <br />
-			Stats are tracked using Google Analytics.
-		</p>
-	</div>
-</footer>
+<footer class="page-width footer"><p>© {new Date().getFullYear()} Fede Bozo</p><p>Think for yourself. Build with others.</p><a href="#home">Back to the beginning ↑</a></footer>
+<style>
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-block:20px;font:10px/1.5 ui-monospace,monospace;color:var(--ink)}.footer a{opacity:1;box-shadow:none;text-decoration:none;transition:none}.footer a:hover{text-decoration:underline;text-underline-offset:5px}.footer a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
+@media(max-width:700px){.footer{flex-wrap:wrap;font-size:9px}.footer p:nth-child(2){display:none}}
+</style>

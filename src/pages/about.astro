@@ -1,44 +1,77 @@
 ---
 import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-// import Nav from '../components/Nav/index.jsx';
-import ContactInfo from "../components/ContactInfo.astro";
 ---
 
 <html lang="en">
-	<head>
-		<MainHead
-			title="About | Fede Bozo — Product Designer in Miami"
-			description="Designer, storyteller, developer, musician."
-			canonical="https://www.priisma.com/about/"
-			image="/assets/mesh-gradient.jpg"
-		/>
-	</head>
-	<body
-		class="selection:bg-fuchsia-300 selection:text-fuchsia-900 bg-slate-100 text-slate-800"
-	>
-	<header class="container">
-		<ContactInfo />
-	</header>
-		<div class="container">
-			<h1 class="section-header">Hola, I'm Fede</h1>
-			<div class="mt-8 prose lg:prose-xl">
-				<p>Designer, yes. Developer, sort-of yes. Storyteller, tell me if you make it to the end.</p>
-				<p>Design has been my way to help express interesting ideas. But I also graduated from it.</p>
-				<p>I've helped <a href="http://www.calcanet.com/">Calcanet</a> sell domains, others to sell cars, dog food, human food, downloadable mobile pictures (back in the WAP era), horse racing news and tips, and one of my favorites <a href="https://godarkchocolate.com/">GoDark Chocolate</a>, a premium chocolate brand.</p>
-				<p>
-					Built some cool stuff for OpenEnglish for student testing and payments, a tele-medicine app for the Miami Children's Hospital, airline tickets bookings, and lately a telecom billing platform at <a href="https://quotingbill.com">QuotingBill</a> that you should check out.
-				</p>
-				<p>
-					I'm continuously learning new ways to bring ideas to life (corny, I know) and have experience with different methodologies and technologies, Shape up (from the <a href="https://basecamp.com/shapeup">ShapeUp</a> book) has been my best experience so far in delivering relevant products that matter.
-				</p>
-				<p>I ask a lot, write notes and love teaming up with devs, business and everyone I can to get the best results.</p>
-				<p>
-					I'm a musician so in my spare time I bang some tunes to enjoy life.<br>
-					Enough for of me now. I'm curious about you, so shoot me a message so we can start talking.
-				</p>
-			</div>
-		</div>
-		<Footer />
-	</body>
+  <head>
+    <MainHead
+      title="About Fede Bozo — Product designer, design engineer, writer"
+      description="Fede Bozo is a product designer, design engineer, and writer in Miami. Over ten years of healthcare, SaaS, aviation, and consumer products, and the maker of ShowBliz."
+      canonical="https://www.priisma.com/about/"
+      image="https://www.priisma.com/assets/fede-portrait.jpeg"
+    />
+  </head>
+  <body class="body-base">
+
+    <Nav />
+
+    <main>
+
+      <!-- Hero -->
+      <section class="section-space bg-[#0d0d0d] text-white min-h-[50vh] flex items-end">
+        <div class="mx-auto max-w-7xl w-full">
+          <p class="text-xs font-bold tracking-[0.25em] uppercase text-red mb-3">About</p>
+          <h1 class="font-display text-5xl text-white leading-[0.97] tracking-tight">Hola, I'm Fede.</h1>
+        </div>
+      </section>
+
+      <!-- Bio -->
+      <section class="section-space bg-paper border-t-2 border-ink">
+        <div class="grid items-start gap-12 mx-auto max-w-7xl md:grid-cols-2">
+          <div>
+            <div class="max-w-xs border-2 border-ink shadow-brutal overflow-hidden" style="aspect-ratio: 4/5;">
+              <img
+                src="/assets/fede-portrait.jpeg"
+                alt="Portrait of Fede Bozo"
+                width="800"
+                height="1000"
+                class="object-cover w-full h-full"
+                loading="eager"
+              />
+            </div>
+          </div>
+          <div class="space-y-4 text-base text-ink">
+            <p>I'm a product designer, design engineer, and writer. I like taking an idea from the first question to something people can actually use.</p>
+            <p>I've worked with startups and product teams in healthcare, SaaS, aviation, and consumer products, from early concept through launch and what comes after.</p>
+            <p>The most recent thing I made is <a href="https://showbliz.com/">ShowBliz</a>, a way into Miami's live arts. I wanted to see a play. It turned out I first needed to build a platform, so I did: concept, design, engineering, launch.</p>
+            <p>Priisma is my imprint. Same person on every project.</p>
+            <p>Over ten years of product design. Based in Miami. Working with teams across the US and Latin America.</p>
+            <p class="text-ink/60">En español, la vida es más sabrosa. 🌶️</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section-space bg-[#0d0d0d] text-white border-t-2 border-yellow">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="section-header text-white">Have something worth figuring out?</h2>
+          <p class="mt-4 text-base text-white/60">Let's talk.</p>
+          <div class="flex flex-wrap items-center gap-6 mt-8">
+            <a href="mailto:fede@priisma.com" class="text-lg font-bold text-yellow border-b-2 border-yellow pb-1 hover:text-white hover:border-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-yellow">
+              fede@priisma.com
+            </a>
+            <a href="https://calendar.notion.so/meet/federicobozo/book-a-call-with-fede" target="_blank" rel="noopener noreferrer" class="text-base text-white/50 border-b border-white/25 pb-px hover:text-yellow hover:border-yellow transition-colors duration-150">
+              Book a 30-min intro call →
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+  </body>
 </html>

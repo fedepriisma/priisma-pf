@@ -1,0 +1,11 @@
+---
+// PostHog.astro — initializes PostHog analytics
+// Bundled by Vite (not is:inline) so TypeScript and npm imports work.
+---
+<script>
+  import posthog from 'posthog-js';
+  posthog.init('phc_HPR1ok5isuQxcHotZjph14tcJP6v2i40pUtoOlQXJAS', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only',
+  });
+</script>
