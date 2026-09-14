@@ -13,6 +13,12 @@ The site lives at https://www.priisma.com
 Stack: Astro + Tailwind CSS
 Output: static, single-page portfolio
 
+## Branches, deploys, gate
+
+- `master` = production, www.priisma.com (`deploy.yml`: on push + nightly). `new-mod-version` = dev, dev.priisma.com (`deploy-dev.yml`).
+- A ship ends on `master` unless Fede says otherwise. Work merged only into `new-mod-version` never reaches production (decided 2026-09-14 after PR #8 landed on dev only).
+- Gate: `npm run build`. No tests or lint.
+
 This is not a full redesign from scratch. We are updating the existing site with new copy, better structure, improved semantics, and a stronger positioning. Keep implementation simple and the site performant.
 
 ---
