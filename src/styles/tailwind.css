@@ -101,14 +101,13 @@
 .body-base {
 	@apply selection:bg-yellow selection:text-ink bg-paper text-ink;
   }
-  .nav-floater {
-    @apply sticky z-50 border-b top-0 border-white/20 bg-[#0d0d0d];
-  }
-  .navbtn {
-	@apply text-white flex items-center px-3 py-2 rounded-full hover:bg-gradient-to-tr hover:from-sunset hover:via-pink hover:to-red hover:text-ink motion-safe:transition-colors;
-  }
+  /* Fede Bozo masthead/footer tokens + page width (homepage system) */
+  :root { --paper: #efefe8; --ink: #121310; --blue: #164bea; --muted: #595b53; --line: #bebfb5; }
+  .page-width { width: min(1504px, calc(100% - 80px)); margin-inline: auto; }
+  @media (max-width: 1050px) { .page-width { width: calc(100% - 48px); } }
+  @media (max-width: 700px) { .page-width { width: calc(100% - 36px); } }
 
-  a:not(:is(.navbtn)) {
+  a {
     @apply motion-safe:transition-all opacity-85 motion-safe:duration-200 hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-woodstock;
   }
   .primary-cta {
@@ -126,11 +125,6 @@
   .eyebrow {
 	@apply text-xs font-medium tracking-widest uppercase opacity-60;
   }
-
-  /* Mobile nav hamburger → X animation */
-  .nav-open .hamburger-bar-1 { transform: translateY(6px) rotate(45deg); }
-  .nav-open .hamburger-bar-2 { opacity: 0; }
-  .nav-open .hamburger-bar-3 { transform: translateY(-6px) rotate(-45deg); }
 
   .project-details li {
     @apply py-2;

@@ -1,17 +1,5 @@
----
-const year = new Date().getFullYear();
----
-
-<footer class="border-t border-white/10 py-8 bg-[#0d0d0d]">
-  <div class="mx-auto p-2 sm:px-6 lg:px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-    <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold tracking-[0.1em] uppercase text-white/40">
-      <a href="/#work" class="hover:text-white motion-safe:transition-colors duration-150">Work</a>
-      <a href="/#about" class="hover:text-white motion-safe:transition-colors duration-150">About</a>
-      <a href="mailto:fede@priisma.com" class="hover:text-white motion-safe:transition-colors duration-150">fede@priisma.com</a>
-      <a href="https://www.linkedin.com/in/fedebozo/" target="_blank" rel="noopener noreferrer" class="hover:text-white motion-safe:transition-colors duration-150">
-        LinkedIn<span class="sr-only"> (opens in new tab)</span>
-      </a>
-    </nav>
-    <p class="text-xs text-white/25 font-mono">© {year} Priisma · Miami, FL</p>
-  </div>
-</footer>
+<footer class="page-width footer"><p>© {new Date().getFullYear()} Fede Bozo</p><p>Think for yourself. Build with others.</p><a href="#home">Back to the beginning ↑</a></footer>
+<style>
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-block:20px;font:10px/1.5 ui-monospace,monospace;color:var(--ink)}.footer a{opacity:1;box-shadow:none;text-decoration:none;transition:none}.footer a:hover{text-decoration:underline;text-underline-offset:5px}.footer a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
+@media(max-width:700px){.footer{flex-wrap:wrap;font-size:9px}.footer p:nth-child(2){display:none}}
+</style>
