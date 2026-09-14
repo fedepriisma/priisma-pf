@@ -5,28 +5,6 @@ Read it fully before touching any file.
 
 ---
 
-## gstack
-
-For all web browsing, use the `/browse` skill from gstack. Never use `mcp__claude-in-chrome__*` tools.
-
-Available gstack skills:
-- `/browse` — open and interact with URLs in a real browser
-- `/plan-ceo-review` — review a plan from a CEO/business perspective
-- `/plan-eng-review` — review a plan from an engineering perspective
-- `/plan-design-review` — review a plan from a design perspective
-- `/design-consultation` — design consultation and critique
-- `/review` — code review
-- `/ship` — ship a feature end-to-end
-- `/browse` — web browsing with a real browser
-- `/qa` — QA a feature with browser + design review
-- `/qa-only` — QA without design review
-- `/qa-design-review` — QA with design review only
-- `/setup-browser-cookies` — configure browser session cookies
-- `/retro` — run a retrospective
-- `/document-release` — document a release
-
----
-
 ## What this project is
 
 Priisma is the portfolio site of Fede Bozo — a product designer and strategist who works with Series B SaaS companies and funded founders.
