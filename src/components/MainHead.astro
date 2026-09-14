@@ -19,19 +19,14 @@ try {
 	siteOrigin = defaultSite;
 }
 
-const org = {
-	'@type': 'ProfessionalService',
-	name: 'Priisma',
+const person = {
+	'@type': 'Person',
+	name: 'Fede Bozo',
 	url: siteOrigin,
-	logo: `${siteOrigin}/assets/mesh-gradient.jpg`,
-	description: 'Product design leadership for scaling SaaS companies',
-	areaServed: ['US', 'Latin America'],
-	founder: {
-		'@type': 'Person',
-		name: 'Fede Bozo',
-		jobTitle: 'Product Designer',
-		url: 'https://www.linkedin.com/in/fedebozo/'
-	}
+	image: `${siteOrigin}/assets/fede-portrait.jpeg`,
+	jobTitle: 'Product designer, design engineer, writer',
+	address: { '@type': 'PostalAddress', addressLocality: 'Miami', addressRegion: 'FL', addressCountry: 'US' },
+	sameAs: ['https://www.linkedin.com/in/fedebozo/', 'https://showbliz.com/']
 };
 
 const website = {
@@ -41,7 +36,7 @@ const website = {
 	description,
 };
 
-const jsonGraph: Record<string, unknown>[] = [org, website];
+const jsonGraph: Record<string, unknown>[] = [person, website];
 if (Astro.props.breadcrumb && Array.isArray(Astro.props.breadcrumb)) {
 	const items = Astro.props.breadcrumb.map((b, i) => ({
 		'@type': 'ListItem',
