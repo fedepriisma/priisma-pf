@@ -7,7 +7,6 @@ const {
 	preloadImage = undefined,
 } = Astro.props;
 const defaultImage = '/assets/mesh-gradient.jpg';
-import HeaderScripts from '../components/HeaderScripts.astro';
 import PostHog from '../components/PostHog.astro';
 import '../styles/tailwind.css'
 // JSON-LD defaults
@@ -51,7 +50,6 @@ if (Astro.props.breadcrumb && Array.isArray(Astro.props.breadcrumb)) {
 }
 const jsonLd = { '@context': 'https://schema.org', '@graph': jsonGraph };
 ---
-<HeaderScripts />
 <meta charset="UTF-8" />
 <meta name="description" content={description} />
 <meta property="og:description" content={description} />

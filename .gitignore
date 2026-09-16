@@ -4,8 +4,10 @@
 node_modules
 /dist
 .claude/settings.json
-src/pages/portfolio/.DS_Store
 scripts/compress-videos.sh
 .DS_Store
 .gstack/
-.superpowers/.claude/
+.superpowers/
+.astro/
+.claude/settings.local.json
+

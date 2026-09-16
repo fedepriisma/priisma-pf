@@ -5,9 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.priisma.com',
-  integrations: [sitemap({
-    filter: (page) => !page.includes('/footer/'),
-  })],
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
     build: {
