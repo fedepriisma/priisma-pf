@@ -1,16 +1,19 @@
 ---
 // Masthead shared by every page. Links point at the homepage sections.
+// The wordmark is the H1 on the homepage only; inner pages have their own H1.
+import Wordmark from './Wordmark.astro';
+const Tag = Astro.url.pathname === '/' ? 'h1' : 'div';
 ---
 <header id="home" class="masthead page-width">
-  <a class="name" href="/">FEDE BOZO</a>
+  <Tag class="name"><a href="/"><Wordmark /></a></Tag>
   <p class="occupation">Product designer.<br>Design engineer. Writer.</p>
   <nav aria-label="Primary"><a href="/#showbliz">The work</a><a href="/#thinking">The thinking</a><a href="/#contact">Say hello <span aria-hidden="true">↗</span></a></nav>
 </header>
 <style>
 .masthead{display:flex;align-items:center;gap:30px;min-height:100px;border-bottom:1px solid var(--ink);color:var(--ink);font:16px/1.5 'Mona Sans',Arial,sans-serif}
 .masthead a{opacity:1;box-shadow:none;text-decoration:none;transition:none}.masthead a:hover{text-decoration:underline;text-underline-offset:5px}.masthead a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
-.name{font-size:30px;font-weight:850;letter-spacing:-1.6px;white-space:nowrap}.occupation{font:11px/1.4 ui-monospace,monospace;padding-left:26px;border-left:1px solid var(--line)}nav{display:flex;gap:30px;margin-left:auto;font-size:14px}nav a{padding-block:14px}
+.name{margin:0;line-height:0}.name a{display:block}.name :global(svg){height:40px;width:auto}.occupation{font:11px/1.4 ui-monospace,monospace;padding-left:26px;border-left:1px solid var(--line)}nav{display:flex;gap:30px;margin-left:auto;font-size:14px}nav a{padding-block:14px}
 @media(max-width:1050px){.occupation{display:none}.masthead{min-height:84px}}
-@media(max-width:700px){.masthead{min-height:76px;flex-wrap:wrap;padding-block:16px;gap:12px}.name{font-size:25px}nav{font-size:12px;gap:15px}nav a{padding-block:8px}}
+@media(max-width:700px){.masthead{min-height:76px;flex-wrap:wrap;padding-block:16px;gap:12px}.name :global(svg){height:32px}nav{font-size:12px;gap:15px}nav a{padding-block:8px}}
 @media(max-width:380px){nav{margin-left:0;width:100%;justify-content:space-between}}
 </style>

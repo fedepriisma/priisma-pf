@@ -1,5 +1,17 @@
 # Release log
 
+## 2026-09-16 — Wordmark H1 and repo cleanup
+**Branch:** claude/fede-bozo-headline-svg-35bfc1 · **PR:** https://github.com/fedepriisma/priisma-pf/pull/10
+### What shipped
+- Hand-drawn "fede bozo" SVG wordmark replaces the FEDE BOZO text in the shared masthead (`Wordmark.astro`, inline, fill bound to `--ink`); it is the `<h1>` on the homepage with the accessible name "Fede Bozo - Product Designer, Design Engineer", a plain link on inner pages. The homepage opening title became an `<h2>`.
+- Dead code removed: DiagnosticTool, ProjectDetails, FooterScripts, HeaderScripts, `public/favicon_io`, `src/img`, `docs/superpowers`, `bun.lock`; unused `sharp` and `@tailwindcss/typography` dependencies dropped; dead sitemap filter dropped.
+- Case-study media moved from `src/pages/portfolio/` to `src/assets/portfolio/`.
+- Homepage work list: QuotingBill and Cigarwell cards lead with a screenshot (`astro:assets`, 320×240 webp, cover crop, Cigarwell anchored top; 160px desktop / 104px mobile).
+- `.astro/` build cache and `.claude/settings.local.json` untracked and ignored.
+- TODOS: three stale entries retired into Completed.
+### Notes
+The nightly deploy cron in `.github/workflows/deploy.yml` still exists for a ticker that no longer exists; harmless, left in place.
+
 ## 2026-09-14 — Promote new-mod-version to master (production)
 **Branch:** claude/promote-new-mod-version-to-master · **PR:** https://github.com/fedepriisma/priisma-pf/pull/9
 ### What shipped
